@@ -1,0 +1,157 @@
+{
+  "name": "Paidar",
+  "description": "Podcast production company",
+  "color": "#0055ff",
+  "details": {
+    "contactName": "Darren",
+    "size": "Small"
+  },
+  "states": {
+    "Current": {
+      "name": "Current",
+      "order": 1,
+      "description": "Current state of the organization",
+      "targetDate": "2025-01-25",
+      "suppliers": {
+        "Intel": {
+          "name": "Intel",
+          "partner": "Intel",
+          "contact": "Name of the contact at the supplier",
+          "description": "Any descirption about the relationship",
+          "engagements": [
+            {
+              "name": "Laptops",
+              "element": "Core",
+              "description": "Using laptops",
+              "layers": [
+                "Physical Layer-Devices-Enterprise Devices"
+              ]
+            }
+          ]
+        },
+        "Self": {
+          "name": "Paidar",
+          "engagements": [
+            {
+              "name": "ailtire",
+              "element": "ailtire",
+              "description": "AI driven Sysstem Architecture",
+              "layers": [
+                "Logical Layer-Application Layer-Developer Services",
+                "Process Layer-Innovation New Capability"
+              ]
+            },
+            {
+              "name": "guthan",
+              "element": "guthan",
+              "description": "Podcast Production Tool",
+              "layers": [
+                "Logical Layer-Application Layer",
+                "Process Layer-Operational and Delivery"
+              ]
+            }
+          ]
+        },
+        "JetBrains": {
+          "name": "JetBrains",
+          "partner": "JetBrains",
+          "contact": "www.jetbrains.com",
+          "description": "Any descirption about the relationship",
+          "engagements": [
+            {
+              "name": "intellij",
+              "element": "intellij",
+              "description": "Used for development",
+              "layers": [
+                "Logical Layer-Application Layer-Developer Services",
+                "Process Layer-Innovation New Capability"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "Future": {
+      "name": "Future",
+      "order": 1,
+      "description": "Current state of the organization",
+      "targetDate": "2025-01-25",
+      "suppliers": {
+        "Intel": {
+          "name": "Intel",
+          "partner": "Intel",
+          "contact": "Name of the contact at the supplier",
+          "description": "Any description about the relationship",
+          "engagements": [
+            {
+              "name": "Laptops",
+              "element": "Core",
+              "description": "Using laptops",
+              "layers": [
+                "Physical Layer-Devices-Enterprise Devices"
+              ]
+            },
+            {
+              "name": "Workstations",
+              "element": "Xeon",
+              "description": "High powered workstations",
+              "layers": [
+                "Physical Layer-Devices-Enterprise Devices"
+              ]
+            }
+          ]
+        },
+        "Self": {
+          "name": "Paidar",
+          "engagements": [
+            {
+              "name": "ailtire",
+              "element": "ailtire",
+              "description": "AI driven Sysstem Architecture",
+              "layers": [
+                "Logical Layer-Application Layer-Developer Services",
+                "Process Layer-Innovation New Capability"
+              ]
+            },
+            {
+              "name": "guthan",
+              "element": "guthan",
+              "description": "Podcast Production Tool",
+              "layers": [
+                "Logical Layer-Application Layer",
+                "Process Layer-Operational and Delivery"
+              ]
+            },
+            {
+              "name": "tuig",
+              "element": "tuig",
+              "description": "Tacit Knowledge Capture",
+              "layers": [
+                "Logical Layer-Application Layer",
+                "Process Layer-Innovation New Capability",
+                "Process Layer-Operational and Delivery"
+              ]
+            }
+          ]
+        },
+        "JetBrains": {
+          "name": "JetBrains",
+          "partner": "JetBrains",
+          "contact": "www.jetbrains.com",
+          "description": "Any descirption about the relationship",
+          "engagements": [
+            {
+              "name": "intellij",
+              "element": "intellij",
+              "description": "Used for development",
+              "layers": [
+                "Logical Layer-Application Layer-Developer Services",
+                "Process Layer-Innovation New Capability"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

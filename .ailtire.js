@@ -1,0 +1,1 @@
+module.exports = {"baseDir":".","host":"localhost","urlPrefix":"/web","listenPort":80,"internalURL":"localhost:80/web","routes":{}};

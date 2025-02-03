@@ -1,0 +1,880 @@
+{
+  "Physical Layer": {
+    "description": "Physical Layer contains all of the devices, locations, and connectivity in the system.",
+    "orientation": "right",
+    "color": "#880088",
+    "layers": {
+      "Devices": {
+        "description": "Devices represent all physical devices involved in the system's operation, such as sensors and hardware endpoints.",
+        "position": {
+          "row": 1,
+          "col": 1
+        },
+        "layers": {
+          "Dynamic Edge Devices": {
+            "description": "Dynamic Edge Devices are adaptive, location-dependent devices connecting users to systems.",
+            "position": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          "Operations Devices": {
+            "description": "Devices used for operational workflows, ensuring smooth day-to-day system functioning.",
+            "position": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          "Enterprise Devices": {
+            "description": "Enterprise-level devices supporting organizational goals, such as servers and high-performance hardware.",
+            "position": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "Multi-Hybrid Cloud": {
+            "description": "Multi-Hybrid Cloud systems represent cloud environments supporting connectivity and scaling across devices.",
+            "position": {
+              "row": 1,
+              "col": 4
+            }
+          }
+        }
+      },
+      "Communications": {
+        "description": "Communication represents the physical network and protocols connecting devices within locations.",
+        "position": {
+          "row": 2,
+          "col": 1
+        }
+      },
+      "Locations": {
+        "description": "Locations define geographic and logical places in the system where resources are located.",
+        "position": {
+          "row": 3,
+          "col": 1
+        },
+        "layers": {
+          "Dynamic Locations": {
+            "description": "Dynamic Locations are movable and adaptive spaces, such as temporary work areas or mobile units.",
+            "position": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          "Operations Locations": {
+            "description": "Locations used for managing and monitoring operational tasks in the system.",
+            "position": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          "Hybrid Offices": {
+            "description": "Merged work and home environments supporting hybrid work practices.",
+            "position": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "Datacenters": {
+            "description": "Dedicated locations that store and manage system-critical data and applications.",
+            "position": {
+              "row": 1,
+              "col": 4
+            }
+          },
+          "Outsourced Locations": {
+            "description": "Third-party-managed spaces where some system operations are handled.",
+            "position": {
+              "row": 1,
+              "col": 5
+            }
+          }
+        }
+      }
+    }
+  },
+  "Logical Layer": {
+    "description": "Software stack of the system, including the middleware, software and applications.",
+    "orientation": "front",
+    "color": "#008800",
+    "layers": {
+      "Application Layer": {
+        "description": "Handles user-facing applications, ensuring interaction between system and users.",
+        "position": {
+          "row": 1,
+          "col": 2,
+          "colspan": 2
+        },
+        "layers": {
+          "Analytics Services": {
+            "position": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          "AI ML Services": {
+            "position": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          "Workflow Services": {
+            "position": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "Developer Services": {
+            "position": {
+              "row": 2,
+              "col": 1,
+              "colspan": 3
+            }
+          }
+        }
+      },
+      "Distributed Information Management Layer": {
+        "description": "Oversees the efficient distribution and access of system data across modules.",
+        "position": {
+          "row": 2,
+          "col": 2,
+          "colspan": 1
+        },
+        "layers": {
+          "Data Definition Framework": {
+            "position": {
+              "row": 1,
+              "col": 1,
+              "rowspan": 2
+            }
+          },
+          "Data Management Layer": {
+            "position": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          "Common Data Services": {
+            "position": {
+              "row": 2,
+              "col": 2
+            }
+          }
+        }
+      },
+      "Service Management Layer": {
+        "description": "Monitors and controls services for smooth operation and functionality.",
+        "position": {
+          "row": 2,
+          "col": 3
+        },
+        "layers": {
+          "Service Repository": {
+            "position": {
+              "row": 2,
+              "col": 1
+            }
+          },
+          "Environment Manager": {
+            "position": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          "Service Orchestration": {
+            "position": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "Common Data Services": {
+            "position": {
+              "row": 2,
+              "col": 2,
+              "colspan": 2
+            }
+          }
+        }
+      },
+      "Software Defined Infrastructure": {
+        "description": "Focuses on abstract control over underlying hardware through software.",
+        "position": {
+          "row": 3,
+          "col": 2,
+          "colspan": 2
+        },
+        "layers": {
+          "Orchestration": {
+            "position": {
+              "row": 1,
+              "col": 1,
+              "colspan": 5
+            }
+          },
+          "Compute": {
+            "position": {
+              "row": 2,
+              "col": 1,
+              "colspan": 1
+            }
+          },
+          "Storage": {
+            "position": {
+              "row": 2,
+              "col": 2,
+              "colspan": 1
+            }
+          },
+          "Network": {
+            "position": {
+              "row": 2,
+              "col": 3,
+              "colspan": 1
+            }
+          },
+          "Accelerators": {
+            "position": {
+              "row": 2,
+              "col": 4,
+              "colspan": 1
+            }
+          },
+          "Security": {
+            "position": {
+              "row": 2,
+              "col": 5,
+              "colspan": 1
+            }
+          }
+        }
+      },
+      "Physical Layer": {
+        "description": "Acts as the logical representation of the lower physical layer.",
+        "position": {
+          "row": 4,
+          "col": 2,
+          "colspan": 2
+        },
+        "layers": {
+          "IoT Devices": {
+            "position": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          "OT Devices": {
+            "position": {
+              "row": 1,
+              "col": 2,
+              "colspan": 1
+            }
+          },
+          "Mobile Devices": {
+            "position": {
+              "row": 1,
+              "col": 3,
+              "colspan": 1
+            }
+          },
+          "Labtops/Desktops": {
+            "position": {
+              "row": 1,
+              "col": 4,
+              "colspan": 1
+            }
+          },
+          "Datacenter Devices": {
+            "position": {
+              "row": 1,
+              "col": 5,
+              "colspan": 1
+            }
+          },
+          "Private Cloud": {
+            "position": {
+              "row": 1,
+              "col": 6,
+              "colspan": 1
+            }
+          },
+          "Public Cloud": {
+            "position": {
+              "row": 1,
+              "col": 7,
+              "colspan": 1
+            }
+          }
+        }
+      },
+      "Identity Aspect": {
+        "description": "Manages all identity-related elements like authentication and user properties.",
+        "position": {
+          "row": 1,
+          "col": 1,
+          "rowspan": 4
+        },
+        "layers": {
+          "Access": {
+            "position": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          "Authorization": {
+            "position": {
+              "row": 2,
+              "col": 1
+            }
+          },
+          "Authentication": {
+            "position": {
+              "row": 3,
+              "col": 1
+            }
+          },
+          "Key Management": {
+            "position": {
+              "row": 4,
+              "col": 1
+            }
+          }
+        }
+      },
+      "Security Aspect": {
+        "description": "Enforces security protocols and measures across all layers of the system.",
+        "position": {
+          "row": 1,
+          "col": 4,
+          "rowspan": 4
+        },
+        "layers": {
+          "Remediation": {
+            "position": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          "Encryption": {
+            "position": {
+              "row": 2,
+              "col": 1
+            }
+          },
+          "Detection": {
+            "position": {
+              "row": 3,
+              "col": 1
+            }
+          },
+          "Root of Trust": {
+            "position": {
+              "row": 4,
+              "col": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "Process Layer": {
+    "description": "Processes of the system including supporting, strategic and operational processes.",
+    "orientation": "back",
+    "color": "#000088",
+    "layers": {
+      "Governance": {
+        "color": "#004488",
+        "description": "Defines rules, policies, and mechanisms established at a higher level.",
+        "position": {
+          "row": 1,
+          "col": 2,
+          "colspan": 3
+        },
+        "layers": {
+          "Policy Development": {
+            "color": "#0066cc",
+            "description": "Formulating policies and regulations. Including ESG.",
+            "position": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          "Legislative Compliance": {
+            "color": "#0066cc",
+            "description": "Ensuring adherence to laws and regulations.",
+            "position": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          "Ethics and Integrity": {
+            "color": "#0066cc",
+            "description": "Maintaining ethical standards and preventing corruption.",
+            "position": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "Audit and Oversight": {
+            "color": "#0066cc",
+            "description": "Internal and external audits, reviews, and evaluations.",
+            "position": {
+              "row": 2,
+              "col": 1
+            }
+          },
+          "Transparency and Accountability": {
+            "color": "#0066cc",
+            "description": "Public reporting, disclosure, and citizen engagement.",
+            "position": {
+              "row": 2,
+              "col": 2
+            }
+          },
+          "Data Governance": {
+            "color": "#0066cc",
+            "description": "Governance of data through out the system.",
+            "position": {
+              "row": 2,
+              "col": 3
+            }
+          },
+          "Legal Services": {
+            "color": "#0066cc",
+            "description": "Managing legal issues and compliance",
+            "position": {
+              "row": 3,
+              "col": 1
+            }
+          }
+        }
+      },
+      "Mission Vision": {
+        "description": "Outlines the organization's goals and purpose in developing its processes.",
+        "color": "#004488",
+        "position": {
+          "row": 2,
+          "col": 1
+        },
+        "layers": {
+          "Vision Formulation": {
+            "color": "#0066cc",
+            "description": "Defining the long-term goals and aspirations of the organization to provide a clear direction for the future.",
+            "position": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          "Strategy Management": {
+            "color": "#0066cc",
+            "description": "Developing, implementing, and monitoring organizational strategies to align actions with the long-term vision.",
+            "position": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          "Mission Definition": {
+            "color": "#0066cc",
+            "description": "Crafting a mission statement focused on the organization's core purpose, goals, and the value it delivers to stakeholders.",
+            "position": {
+              "row": 2,
+              "col": 1
+            }
+          },
+          "Goal Setting and Alignment": {
+            "color": "#0066cc",
+            "description": "Establishing specific, measurable, achievable, relevant, and time-bound (SMART) goals that align with the mission and vision.",
+            "position": {
+              "row": 2,
+              "col": 2
+            }
+          }
+        }
+      },
+      "Strategy": {
+        "description": "Strategic planning activities to align system processes with long-term goals.",
+        "color": "#004488",
+        "position": {
+          "row": 2,
+          "col": 2
+        },
+        "layers": {
+          "Vision Formulation": {
+            "color": "#0066cc",
+            "description": "",
+            "position": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          "Strategic Planning": {
+            "color": "#0066cc",
+            "description": "Setting long-term goals and priorities for the agency.",
+            "position": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          "Public Policy Analysis": {
+            "color": "#0066cc",
+            "description": "Analyzing and developing public policies.",
+            "position": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "Program Evaluation": {
+            "color": "#0066cc",
+            "description": "Assessing the effectiveness of government programs.",
+            "position": {
+              "row": 2,
+              "col": 1
+            }
+          },
+          "Resource Allocation": {
+            "color": "#0066cc",
+            "description": "Distributing resources based on strategic priorities.",
+            "position": {
+              "row": 2,
+              "col": 2
+            }
+          },
+          "Performance Measurement": {
+            "color": "#0066cc",
+            "description": "Monitoring and evaluating agency performance and outcomes.",
+            "position": {
+              "row": 2,
+              "col": 3
+            }
+          }
+        }
+      },
+      "Innovation New Capability": {
+        "color": "#004488",
+        "description": "Focuses on exploring innovative improvements to system capabilities.",
+        "position": {
+          "row": 2,
+          "col": 3
+        },
+        "layers": {
+          "Ideation Processes": {
+            "color": "#0066cc",
+            "description": "",
+            "position": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          "Research and Development": {
+            "color": "#0066cc",
+            "description": "Developing new technologies and methodologies.",
+            "position": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          "Develop Digital Services Process": {
+            "color": "#0066cc",
+            "description": "Implementing digital government services. DevSecOps, scaling and deployment.",
+            "position": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "Process Improvement": {
+            "color": "#0066cc",
+            "description": "Enhancing efficiency and effectiveness of government processes.",
+            "position": {
+              "row": 2,
+              "col": 1
+            }
+          },
+          "Partnerships Processes": {
+            "color": "#0066cc",
+            "description": "Collaborating with private sector for innovation. Including private sector, inter-agencies, and governments.",
+            "position": {
+              "row": 2,
+              "col": 2
+            }
+          },
+          "Citizen Engagement": {
+            "color": "#0066cc",
+            "description": "Leveraging new technologies to engage and serve citizens better with built-in feedback loops.",
+            "position": {
+              "row": 2,
+              "col": 3
+            }
+          },
+          "PR and Marketing": {
+            "color": "#0066cc",
+            "description": "Social Media, Websites, Publicity",
+            "position": {
+              "row": 3,
+              "col": 1
+            }
+          },
+          "Revenue Acceleration": {
+            "color": "#0066cc",
+            "description": "",
+            "position": {
+              "row": 3,
+              "col": 2
+            }
+          }
+        }
+      },
+      "Operational and Delivery": {
+        "color": "#004488",
+        "description": "Covers routine activities and day-to-day procedures within the organization.",
+        "position": {
+          "row": 2,
+          "col": 4
+        },
+        "layers": {
+          "Service Delivery": {
+            "color": "#0066cc",
+            "description": "Providing public services to citizens and businesses efficiently and effectively.",
+            "position": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          "Monitoring Processes": {
+            "color": "#0066cc",
+            "description": "Tracking and reviewing various operational and service metrics for better performance.",
+            "position": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          "Service Maintenance": {
+            "color": "#0066cc",
+            "description": "Ensuring consistent maintenance and functionality of public services.",
+            "position": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "Operational Technology Management": {
+            "color": "#0066cc",
+            "description": "Managing and maintaining technology systems that support operations and services.",
+            "position": {
+              "row": 2,
+              "col": 1
+            }
+          },
+          "Manufacturing Processes": {
+            "color": "#0066cc",
+            "description": "Overseeing production processes to ensure quality and efficiency in service-related goods.",
+            "position": {
+              "row": 2,
+              "col": 2
+            }
+          },
+          "Business Continuity Disaster Recovery": {
+            "color": "#0066cc",
+            "description": "Developing and maintaining plans to ensure critical business functions during emergencies.",
+            "position": {
+              "row": 2,
+              "col": 3
+            }
+          },
+          "Data Operations Management": {
+            "color": "#0066cc",
+            "description": "Managing the storage, processing, and usage of data to ensure its availability and reliability.",
+            "position": {
+              "row": 3,
+              "col": 1
+            }
+          }
+        }
+      },
+      "Risk Management": {
+        "color": "#004488",
+        "description": "Manages identification, analysis, and mitigation of risks in various operations.",
+        "position": {
+          "row": 3,
+          "col": 2,
+          "colspan": 3
+        },
+        "layers": {
+          "Risk Identification": {
+            "color": "#0066cc",
+            "description": "Identifying potential risks to operations and services.",
+            "position": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          "Risk Analysis": {
+            "color": "#0066cc",
+            "description": "Assessing the impact and likelihood of risks.",
+            "position": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          "Mitigation Planning": {
+            "color": "#0066cc",
+            "description": "Developing strategies to mitigate identified risks.",
+            "position": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "Emergency Preparedness": {
+            "color": "#0066cc",
+            "description": "Planning and preparation for emergencies and disasters.",
+            "position": {
+              "row": 2,
+              "col": 1
+            }
+          },
+          "Compliance Management": {
+            "color": "#0066cc",
+            "description": "Ensuring ongoing adherence to risk-related regulations.",
+            "position": {
+              "row": 2,
+              "col": 2
+            }
+          },
+          "Cybersecurity": {
+            "color": "#0066cc",
+            "description": "",
+            "position": {
+              "row": 2,
+              "col": 3
+            }
+          }
+        }
+      },
+      "Support": {
+        "color": "#004488",
+        "description": "Includes supporting actions like troubleshooting and external/internal assistance.",
+        "position": {
+          "row": 4,
+          "col": 1,
+          "colspan": 4
+        },
+        "layers": {
+          "Human Resources": {
+            "color": "#0066cc",
+            "description": "Recruiting, hiring, training employees, and managing employee relations to build a productive workforce.",
+            "position": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          "Information Technology (IT)": {
+            "color": "#0066cc",
+            "description": "Managing IT infrastructure, systems, and services to support organizational goals.",
+            "position": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          "Infrastructure Management": {
+            "color": "#0066cc",
+            "description": "Monitoring, maintaining, and developing public infrastructure for efficient operations.",
+            "position": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "Network Communications Processes": {
+            "color": "#0066cc",
+            "description": "Managing systems and processes for seamless and secure network communications.",
+            "position": {
+              "row": 2,
+              "col": 1
+            }
+          },
+          "Facilities Management": {
+            "color": "#0066cc",
+            "description": "Overseeing the maintenance, functionality, and safety of physical facilities and buildings.",
+            "position": {
+              "row": 2,
+              "col": 2
+            }
+          },
+          "Financial Management": {
+            "color": "#0066cc",
+            "description": "Handling budgeting, financial reporting, and ensuring compliance with financial regulations.",
+            "position": {
+              "row": 2,
+              "col": 3
+            }
+          },
+          "Procurement and Supply Chain": {
+            "color": "#0066cc",
+            "description": "Acquiring goods and services necessary to support operations and manage supply chains effectively.",
+            "position": {
+              "row": 3,
+              "col": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "Organizational Layer": {
+    "description": "People centric organizational structure of the system.",
+    "orientation": "left",
+    "color": "#884400",
+    "layers": {
+      "Stakeholders": {
+        "description": "All stakeholders involved in decision-making and system requirements.",
+        "position": {
+          "row": 1,
+          "col": 1,
+          "colspan": 4
+        }
+      },
+      "Personas": {
+        "description": "Different personas representing user groups interacting with the system.",
+        "position": {
+          "row": 2,
+          "col": 1,
+          "colspan": 3
+        }
+      },
+      "Communication Channels": {
+        "description": "Channels of communication between system users, stakeholders, and decision-makers.",
+        "position": {
+          "row": 2,
+          "col": 4,
+          "rowspan": 2
+        }
+      },
+      "Roles & Responsibilities": {
+        "description": "Defines specific tasks and duties assigned to different entities.",
+        "position": {
+          "row": 3,
+          "col": 1
+        }
+      },
+      "Skills & Competencies": {
+        "description": "Profiles skills and abilities required for system operations.",
+        "position": {
+          "row": 3,
+          "col": 2
+        }
+      },
+      "Structure": {
+        "description": "Maps the hierarchical structure of the organization supporting the system.",
+        "position": {
+          "row": 3,
+          "col": 3
+        }
+      },
+      "Culture & Values": {
+        "description": "Refers to the organizational culture, values, and principles guiding how operations are conducted.",
+        "position": {
+          "row": 4,
+          "col": 1,
+          "colspan": 4
+        }
+      }
+    }
+  }
+}

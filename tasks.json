@@ -1,0 +1,22 @@
+{
+  "Task1": {
+    "name": "Task1",
+    "details": "This is the details of the task.",
+    "status": "Created"
+  },
+  "Task2": {
+    "name": "Task2",
+    "details": "This is the details of the task.",
+    "status": "WIP"
+  },
+  "Task3": {
+    "name": "Task3 is something",
+    "details": "This is the details of the task.",
+    "status": "Completed"
+  },
+  "Task4": {
+    "name": "Task4 long text for the name something",
+    "details": "This is the details of the task4.",
+    "status": "Cancelled"
+  }
+}
