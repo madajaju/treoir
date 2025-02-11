@@ -2,7 +2,8 @@ import A3DGraph from '../js/ailtire/A3DGraph.js'
 import {Graph3D} from '../js/Graph3D.js'
 import GPartnerView from './GPartnerView.js'
 import GLayerView from './GLayerView.js'
-import { marked } from '../js/marked.esm.js'
+import {marked} from '../js/marked.esm.js'
+import GSuggestionView from "./GSuggestionView.js";
 
 export default class GMainView {
     static scolor = {
@@ -24,31 +25,81 @@ export default class GMainView {
         moved: "#00ff00",
         nocontact: "#ff0000"
     };
+
     constructor(config) {
-       this.selectedObject = {};
-       this.currentView = undefined;
-       this.previewWindow = undefined;
-       this.config = {
-           title: "GEAR",
-           toolbar: {
-               "background-color": "#00aaff",
-               "color": "#000000"
-           },
-           mainDiv: "#main",
-           graphDiv: "#modelGraph",
-           graph3D: {
-               div: "#modelGraph",
-               color: "#"
-           },
-           graph2D: {
-               div: "#model2D",
-               color: "#ffffff"
-           }
-       };
-       this.handlers = {};
-       this.handlers2d = {};
-       this.editors = {};
-       this.init(config);
+        this.selectedObject = {};
+        this.currentView = undefined;
+        this.previewWindow = undefined;
+        this.config = {
+            title: "GEAR",
+            toolbar: {
+                "background-color": "#00aaff",
+                "color": "#000000"
+            },
+            mainDiv: "#main",
+            graphDiv: "#modelGraph",
+            graph3D: {
+                div: "#modelGraph",
+                color: "#"
+            },
+            graph2D: {
+                div: "#model2D",
+                color: "#ffffff"
+            }
+        };
+        this.handlers = {};
+        this.handlers2d = {};
+        this.editors = {};
+        this.init(config);
+    }
+
+    static submitDocForm() {
+        let form = $("#docForm");
+        let url = form.attr("action");
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: form,
+            dataType: "json", encode: true,
+        }).done(function (data) {
+            w2popup.close();
+        });
+    }
+
+    static createErrorDialog(results) {
+        for (let i in results) {
+            results[i].recid = i;
+            let result = results[i];
+            switch (results[i].type) {
+                case "model.associations":
+                    result.dataView = result.data.name + ':' + result.data.type;
+                    result.objectView = result.object.name;
+                    break;
+                case "package.depend":
+                    result.dataView = result.data;
+                    result.objectView = result.object.name;
+                    break;
+                default:
+                    result.dataView = result.data;
+                    result.objectView = results.object;
+                    break;
+            }
+        }
+        $().w2grid({
+            name: "ErrorList",
+            columns: [
+                {field: 'type', size: "20%", resizable: true, caption: 'Type', sortable: true},
+                {field: 'message', size: "20%", resizable: true, caption: 'Message', sortable: true},
+                {field: 'objectView', size: "20%", resizable: true, caption: 'Object', sortable: true},
+                {field: 'dataView', size: "20%", resizable: true, caption: 'Data', sortable: true},
+                {field: 'lookup', size: "20%", resizable: true, caption: 'Lookup', sortable: true}
+            ],
+            show: {
+                header: true,
+                columnHeaders: true,
+            },
+            records: results
+        });
     }
 
     init(pconfig) {
@@ -60,7 +111,7 @@ export default class GMainView {
         this.setup3DGraphics();
         this.setupEventWatcher();
         this.showObjectList();
-        this.showEventList();
+        GSuggestionView.showList();
         this.showAIForm();
         this.showTaskForm();
         this.objectEditors = pconfig.objectEditors;
@@ -261,9 +312,9 @@ export default class GMainView {
                 nodes: [],
                 onExpand: (event) => {
                     let nodeID = '';
-                    if(typeof event.target === 'string') {
+                    if (typeof event.target === 'string') {
                         nodeID = event.target;
-                    } else if(typeof event.target === 'object') {
+                    } else if (typeof event.target === 'object') {
                         nodeID = event.target.id;
                     }
                     switch (nodeID) {
@@ -399,25 +450,9 @@ export default class GMainView {
             {path: window.location.pathname + '/socket.io'}
         );
         socket.onAny((event, msg) => {
-            this.showEvent(event, msg);
-            let [eventClass, methodClass] = event.split('.');
-            if (methodClass === "create") {
-                let rec = w2ui['rightbar'].get(eventClass);
-                if (rec) {
-                    w2ui['rightbar'].set(eventClass, {count: rec.count + 1});
-                    w2ui['rightbar'].select(eventClass);
-                }
-            } else if (event.includes('ship.')) {
-                // Add the ship to the list on the left.
-                w2ui['sidebar'].add('ships', {id: msg.MMSI, text: msg.VesselName, view: 'ship', data: msg});
-            }
-            if (this.currentView) {
-                let [model, view] = this.currentView.split('/');
-                model = model.toLowerCase();
-                let obj = msg;
-                if (msg.obj) {
-                    obj = msg.obj;
-                }
+            let [eventClass, eventName] = event.split('.');
+            if(eventName === 'suggested') {
+                GSuggestionView.addSuggestion(event.msg);
             }
         });
     }
@@ -591,54 +626,6 @@ export default class GMainView {
         }
     }
 
-    static submitDocForm() {
-        let form = $("#docForm");
-        let url = form.attr("action");
-        $.ajax({
-            type: "POST",
-            url: url,
-            data: form,
-            dataType: "json", encode: true,
-        }).done(function (data) {
-            w2popup.close();
-        });
-    }
-
-    static createErrorDialog(results) {
-        for (let i in results) {
-            results[i].recid = i;
-            let result = results[i];
-            switch (results[i].type) {
-                case "model.associations":
-                    result.dataView = result.data.name + ':' + result.data.type;
-                    result.objectView = result.object.name;
-                    break;
-                case "package.depend":
-                    result.dataView = result.data;
-                    result.objectView = result.object.name;
-                    break;
-                default:
-                    result.dataView = result.data;
-                    result.objectView = results.object;
-                    break;
-            }
-        }
-        $().w2grid({
-            name: "ErrorList",
-            columns: [
-                {field: 'type', size: "20%", resizable: true, caption: 'Type', sortable: true},
-                {field: 'message', size: "20%", resizable: true, caption: 'Message', sortable: true},
-                {field: 'objectView', size: "20%", resizable: true, caption: 'Object', sortable: true},
-                {field: 'dataView', size: "20%", resizable: true, caption: 'Data', sortable: true},
-                {field: 'lookup', size: "20%", resizable: true, caption: 'Lookup', sortable: true}
-            ],
-            show: {
-                header: true,
-                columnHeaders: true,
-            },
-            records: results
-        });
-    }
     showTaskForm() {
         // Validate if 'bottomLayout' is initialized
         if (!w2ui['bottomLayout']) {
@@ -674,14 +661,14 @@ export default class GMainView {
                     footer: true
                 },
                 columns: [
-                    { field: 'task', text: 'Task', size: '50%' },
-                    { field: 'status', text: 'Status', size: '20%' },
+                    {field: 'task', text: 'Task', size: '50%'},
+                    {field: 'status', text: 'Status', size: '20%'},
                     {
                         field: 'actions',
                         text: 'Actions',
                         size: '30%',
                         render: function (record) {
-                            if(record.status === 'Created' || record.status === 'WIP') {
+                            if (record.status === 'Created' || record.status === 'WIP') {
                                 return ` <button class="mark-complete" onclick="markComplete(${record.recid})">Complete</button>
                                          <button class="cancel-task" onclick="cancelTask(${record.recid})">Cancel</button>`;
                             }
@@ -709,7 +696,7 @@ export default class GMainView {
                 taskGrid.clear(); // Clear existing data
                 let records = [];
                 let i = 0;
-                for(let name in results) {
+                for (let name in results) {
                     let task = results[name];
                     records.push({recid: i++, task: task.name, status: task.status});
                 }
@@ -721,6 +708,7 @@ export default class GMainView {
             }
         });
     }
+
     showAIForm() {
         let me = this;
         // Check if bottomLayout exists
@@ -732,7 +720,6 @@ export default class GMainView {
         // Define the entire custom HTML structure for the response area and form
         const htmlContent = `
         <style>
-        
                 .aiprompt {
                 display: inline-block;
                 padding: 10px;
@@ -743,6 +730,24 @@ export default class GMainView {
                 font-size: 12px;
                 font-family: Arial, sans-serif;
                 color: #333; /* Text color */
+            }
+            .aiSendButton {
+                display: inline-flex; 
+                justify-content: center; 
+                align-items: center; width: 40px; height: 40px; 
+                background-color: #007bff; color: #fff; 
+                border: none; border-radius: 50%; 
+                font-size: 20px; line-height: 20px; 
+                cursor: pointer;
+            }
+            .aiStopButton {
+                display: inline-flex; 
+                justify-content: center; 
+                align-items: center; width: 40px; height: 40px; 
+                background-color: #aa3300; color: #fff; 
+                border: none; border-radius: 0%; 
+                font-size: 32px; line-height: 20px; 
+                cursor: wait;
             }
         </style>
         <div id="aiContainer" style="display: flex; flex-direction: column; height: 100%; border: 1px solid #ddd;">
@@ -758,13 +763,7 @@ export default class GMainView {
                                        border-radius: 5px; resize: none;"
                   placeholder="Enter your prompt here..."
                   onkeydown="if (event.key === 'Enter') { event.preventDefault(); askAI(); }"></textarea>
-        <button id="send-button" style="display: inline-flex; justify-content: center; 
-                                         align-items: center; width: 40px; height: 40px; 
-                                         background-color: #007bff; color: #fff; 
-                                         border: none; border-radius: 50%; 
-                                         font-size: 20px; line-height: 20px; 
-                                         cursor: pointer;"
-                onClick="askAI();">
+        <button id="send-button" class="aiSendButton" onClick="askAI();">
             ▶
         </button>
     </div>
@@ -773,7 +772,7 @@ export default class GMainView {
         window.askAI = () => {
             const promptInput = document.getElementById('aiPrompt');
             const promptValue = promptInput.value.trim();
-            if(!promptValue) {
+            if (!promptValue) {
                 w2alert("Please enter a prompt.");
                 return;
             }
@@ -784,15 +783,21 @@ export default class GMainView {
             newPromptDiv.textContent = promptValue;
             responseDiv.appendChild(newPromptDiv);
 
-            const uid = `gearai-${Math.random().toString(36).substr(2,9)}`;
+            const uid = `gearai-${Math.random().toString(36).substr(2, 9)}`;
             const newReplyDiv = document.createElement('div');
             newReplyDiv.id = uid;
             newReplyDiv.className = 'airesults';
+            newReplyDiv.innerHTML = '<small><i>Generating Answer...</i></small>';
             responseDiv.appendChild(newReplyDiv);
             responseDiv.scrollTop = responseDiv.scrollHeight;
-            promptInput.value = '';
-            const url = 'ai/ask';
-            let data = { prompt: promptValue} ;
+            promptInput.value = 'Waiting...';
+            const url = 'ai/askAndMap';
+            const sendButton = document.getElementById('send-button');
+//            sendButton.innerHTML = '□';
+            sendButton.innerHTML = '&#x25FC';
+            sendButton.className = 'aiStopButton';
+
+            let data = {prompt: promptValue};
             /*
             if(me.selectedObject) {
                 data.context = `${me.selectedObject.type}:${me.selectedObject.id}`;
@@ -805,12 +810,16 @@ export default class GMainView {
                 success: (results) => {
                     const uniqResponseDiv = document.getElementById(uid);
                     let htmlResults = marked(results);
-                    uniqResponseDiv.innerHTML += `<p>${htmlResults}</p>`;
+                    uniqResponseDiv.innerHTML = `<p>${htmlResults}</p>`;
                     responseDiv.scrollTop = responseDiv.scrollHeight;
+                    promptInput.value = "Ask Gear AI a question..";
+                    sendButton.className = 'aiSendButton';
+                    sendButton.innerHTML = '▶';
+
                 },
                 failed: (error) => {
                     w2alert("Error: " + error);
-                    return;
+
                 }
             });
         }
@@ -819,6 +828,7 @@ export default class GMainView {
 
         // Add event listener to handle the form submission
     }
+
     selectNode(object) {
         this.selectedObject = object;
     }

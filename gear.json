@@ -277,7 +277,7 @@
               "colspan": 1
             }
           },
-          "Labtops/Desktops": {
+          "Labtops and Desktops": {
             "position": {
               "row": 1,
               "col": 4,
@@ -286,22 +286,22 @@
           },
           "Datacenter Devices": {
             "position": {
-              "row": 1,
-              "col": 5,
+              "row": 2,
+              "col": 1,
               "colspan": 1
             }
           },
           "Private Cloud": {
             "position": {
-              "row": 1,
-              "col": 6,
+              "row": 2,
+              "col": 2,
               "colspan": 1
             }
           },
           "Public Cloud": {
             "position": {
-              "row": 1,
-              "col": 7,
+              "row": 2,
+              "col": 3,
               "colspan": 1
             }
           }

@@ -1,5 +1,6 @@
 const fs = require('fs');
 const AOpenAI = require('ailtire/src/AI/AOpenAI.js');
+const AOLlama = require('ailtire/src/AI/AOLlama.js');
 // Check for node_modules directory. If it exists then continue. If not ask to run npm install.
 if(!fs.existsSync('./node_modules')) {
     console.error('Error: you must run "npm install" first');
@@ -18,9 +19,15 @@ let config = {
     internalURL: `${host}:${port}${urlPrefix}`,
     routes: {},
     ai: {
+        /*
        adaptor: AOpenAI,
         model: 'gpt-4o-mini',
        apiKey: process.env.AILTIRE_OPENAI_KEY,
+         */
+        adaptor: AOLlama,
+        model: 'llama3.2',
+        url: 'http://localhost:11434',
+        apiKey: ''
     },
     post: (config) => {
         const gearStr = fs.readFileSync('gear.json', 'utf8');

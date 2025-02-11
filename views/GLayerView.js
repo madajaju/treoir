@@ -210,6 +210,13 @@ export default class GLayerView {
         let color = obj.color || GLayerView.default.color;
         let opacity = obj.opacity || GLayerView.default.opacity;
 
+        if (type === 'Selected') {
+            color = "yellow";
+        } else if (type === 'Targeted') {
+            color = "red";
+        } else if (type === 'Sourced') {
+            color = "green";
+        }
         let shape = new THREE.BoxGeometry(width, height, depth);
         const material = new THREE.MeshPhysicalMaterial({
             color: color,

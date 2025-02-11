@@ -19,6 +19,10 @@ module.exports = {
 
     fn: async function (inputs, env) {
         let layer = inputs.id;
+        if(!layer) {
+            console.log(inputs);
+            return;
+        }
         layer = Layer.find(layer);
         let retval = {};
         let partners = await Partner.instances();

@@ -6,6 +6,10 @@ module.exports = {
     description: 'Convert the layer to JSON',
     static: false, // True is for Class methods. False is for object based.
     inputs: {
+        depth: {
+            type: 'number',
+            description: 'Depth of the recursion',
+        }
     },
 
     exits: {
@@ -15,16 +19,20 @@ module.exports = {
     fn: function (obj, inputs, env) {
 
         let retval = {};
+        let depth = Number(inputs?.depth) || Infinity;
         for(let aname in obj._attributes) {
             let attr = obj._attributes[aname];
             retval[aname] = attr;
         }
-        retval = _processSubLayers(retval, obj);
+        let currentDepth = 1;
+        if(currentDepth < depth) {
+            retval = _processSubLayers(currentDepth+1,depth, retval, obj);
+        }
         return retval;
     }
 };
 
-function _processSubLayers(retval, layer) {
+function _processSubLayers(currentDepth, targetDepth, retval, layer) {
     retval.layers = {};
 
     for(let lname in layer.layers) {
@@ -35,7 +43,9 @@ function _processSubLayers(retval, layer) {
         }
         retval.layers[tempLayer.name] = tempLayer;
         if(subLayer.layers) {
-             _processSubLayers(retval.layers[tempLayer.name], subLayer);
+            if(currentDepth < targetDepth) {
+                _processSubLayers(currentDepth+1, targetDepth, retval.layers[tempLayer.name], subLayer);
+            }
         }
     }
     return retval;
