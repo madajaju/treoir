@@ -452,7 +452,7 @@ export default class GMainView {
         socket.onAny((event, msg) => {
             let [eventClass, eventName] = event.split('.');
             if(eventName === 'suggested') {
-                GSuggestionView.addSuggestion(event.msg);
+                GSuggestionView.addSuggestion(msg);
             }
         });
     }

@@ -203,7 +203,7 @@ export default class GLayerView {
         window.graph.setData(data.nodes, data.links);
     }
 
-    static view3D(obj) {
+    static view3D(obj, type) {
         let width = obj.width || GLayerView.default.width;
         let height = obj.height || GLayerView.default.height;
         let depth = obj.depth || GLayerView.default.depth;

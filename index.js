@@ -19,15 +19,16 @@ let config = {
     internalURL: `${host}:${port}${urlPrefix}`,
     routes: {},
     ai: {
-        /*
        adaptor: AOpenAI,
         model: 'gpt-4o-mini',
        apiKey: process.env.AILTIRE_OPENAI_KEY,
-         */
+        /*
         adaptor: AOLlama,
         model: 'llama3.2',
         url: 'http://localhost:11434',
         apiKey: ''
+
+         */
     },
     post: (config) => {
         const gearStr = fs.readFileSync('gear.json', 'utf8');

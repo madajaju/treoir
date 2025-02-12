@@ -147,11 +147,11 @@ export default class GSuggestionView {
     static addSuggestion(suggestion) {
         let sGrid = w2ui.suggestionList;
         let record = {
-            recid: suggestion.id,
+            recid: suggestion.id || suggestion._attributes.id,
             name: suggestion._attributes.name,
             description: suggestion._attributes.description,
-            type: suggestion.type.replace('Suggestion', ''),
-            status: suggestion.state,
+            type: (suggestion.type || suggestion.definition.name).replace('Suggestion', ''),
+            status: suggestion.state || suggestion._attributes.state,
             obj: suggestion
         };
         sGrid.add(record);
