@@ -82,7 +82,7 @@ module.exports = {
                         " including people, process and technology to the GEAR Architecture. The GEAR architecture is a " +
                         "conceptual architecture that is used to capture and map current environments and identify gaps. " +
                         "The GEAR Architecture is has the following layers. Use this architecture to help map the organization's " +
-                        "organizational architecture, process, technology and physical hardware environments. Here are the layers: "
+                        "organizational architecture, process, technology and physical hardware environments. If there is not a mapping do not create one. Here are the layers: "
                     if(customerName) {
                         let customer = await Customer.find(customerName);
                         let customerJSON = customer.convertJSON();
@@ -107,7 +107,7 @@ module.exports = {
                 let layersJSON = {};
                 for (let lname in layers) {
                     if(!lname.includes('-')) {
-                        layersJSON[lname] = layers[lname].convertJSON({depth:1});
+                        layersJSON[lname] = layers[lname].convertJSON({depth:2});
                     }
                 }
                 systemInfo = JSON.stringify(layersJSON);
@@ -149,7 +149,7 @@ async function _mapElements(prompt) {
     let layersJSON = {};
     for (let lname in layers) {
         if(!lname.includes('-')) {
-            layersJSON[lname] = layers[lname].convertJSON({depth:1});
+            layersJSON[lname] = layers[lname].convertJSON({depth:2});
         }
     }
     systemInfo = JSON.stringify(layersJSON);

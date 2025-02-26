@@ -108,19 +108,26 @@ export default class GSuggestionView {
                     footer: true
                 },
                 columns: [
-                    {field: 'type', text: 'Type', size: '15%'},
-                    {field: 'name', text: 'Suggestion', size: '15%'},
-                    {field: 'description', text: 'Description', size: '60%'},
+                    {field: 'layers', text: 'Layer', size: '20%'},
+                    {field: 'name', text: 'Suggestion', size: '20%'},
+                    {field: 'description', text: 'Description', size: '50%'},
                     {
                         field: 'actions',
                         text: 'Actions',
-                        size: '10%',
+                        size: '5%',
                         render: function (record) {
-                            if (record.status === 'Created' || record.status === 'WIP') {
-                                return ` <button class="mark-complete" onclick="markComplete(${record.recid})">Complete</button>
-                                         <button class="cancel-task" onclick="cancelTask(${record.recid})">Cancel</button>`;
-                            }
-                            return ` <button class="delete-task" onclick="deleteTask(${record.recid})">Delete</button>`;
+                            let retval = '';
+                            retval = ` <button class="mark-complete" style="color: green; border: none; background: none; cursor: pointer;" onclick="markComplete(${record.recid})">
+                                         <i class="fas fa-check"></i>
+                                      </button>
+                                      <button class="cancel-task" style="color: red; border: none; background: none; cursor: pointer;" onclick="cancelTask(${record.recid})">
+                                         <i class="fas fa-times"></i>
+                                      </button>`;
+                            retval += ` <button class="delete-task" style="color: black; border: none; background: none; cursor: pointer;" onclick="deleteTask(${record.recid})">
+                                         <i class="fas fa-trash"></i>
+                                      </button>`;
+
+                            return retval;
                         }
                     }
                 ],
@@ -128,7 +135,7 @@ export default class GSuggestionView {
                     // Place the suggestion and Highlight the layer.
                     let object = event.recid;
                     let rec = w2ui['suggestionList'].get(object);
-                    let layers = rec.obj.layers.split(',');
+                    let layers = rec.layers.split(',');
                     for (let i in layers) {
                         let layer = layers[i].replace(/^ /, '').trim();
                         window.graph.selectNodeByID(layer);
@@ -152,6 +159,7 @@ export default class GSuggestionView {
             description: suggestion._attributes.description,
             type: (suggestion.type || suggestion.definition.name).replace('Suggestion', ''),
             status: suggestion.state || suggestion._attributes.state,
+            layers: suggestion.layers || suggestion._attributes.layers,
             obj: suggestion
         };
         sGrid.add(record);
@@ -177,6 +185,7 @@ export default class GSuggestionView {
                         name: suggestion.name,
                         description: suggestion.description,
                         type: suggestion.type.replace('Suggestion', ''),
+                        layers: suggestion.layers,
                         status: suggestion.state,
                         obj: suggestion
                     });

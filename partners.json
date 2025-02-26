@@ -2,6 +2,11 @@
   "name": "Intel",
   "description": "Intel Chip Manufacture and opensource software king.",
   "color": "#0000ff",
+  "regions": {
+    "AMR": "High",
+    "LATAM": "High",
+    "APJ": "Low"
+  },
   "elements": {
     "OneAPI":  {
       "name": "OneAPI",

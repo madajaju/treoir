@@ -24,6 +24,11 @@ class Partner {
                 composition: false,
                 owner: false,
             },
+            regions: {
+                type: 'PartnerInfluence',
+                cardinality: 'n',
+                composition: false,
+            }
         },
     }
 }

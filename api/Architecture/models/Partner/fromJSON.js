@@ -34,6 +34,14 @@ module.exports = {
                 partnerObj.addToElements(element);
                 partnerObj.save();
             }
+            for(let rname in partner.regions) {
+                let level = partner.regions[rname];
+                let regionObj = new Region({id: rname, name: rname});
+                let influence = new PartnerInfluence({level: level, partner:partnerObj, region:regionObj});
+                partnerObj.addToRegions(influence);
+                regionObj.addToPartners(influence);
+                partnerObj.save();
+            }
         }
         return partners;
     }

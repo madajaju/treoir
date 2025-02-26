@@ -23,6 +23,11 @@ module.exports = {
             let element = obj.elements[ename];
             retval.elements[element.name] = element.convertJSON();
         }
+        retval.regions ={};
+        for(let i in obj.regions) {
+            let influence = obj.regions[i];
+            retval.regions[influence.region.name] = influence.level;
+        }
         return retval;
     }
 };
