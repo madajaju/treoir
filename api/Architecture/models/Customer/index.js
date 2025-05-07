@@ -22,13 +22,19 @@ class Customer {
             }
         },
         associations: {
-            states: {
-                type: 'State',
-                description: 'States of the customer, current, future and any step-states to get from current to future.',
+            phases: {
+                type: 'Phase',
+                description: 'Phases of the customer, current, future and any step-phases to get from current to future.',
                 cardinality: 'n',
                 composition: true,
                 owner: true,
             },
+            suggestions: {
+                type: 'Suggestion',
+                cardinality: 'n',
+                composition: true,
+                description: 'Suggestions made by the AI to create elements or engagements.',
+            }
         },
     }
 }

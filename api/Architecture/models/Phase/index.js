@@ -1,12 +1,12 @@
 
-class State {
+class Phase {
     static definition = {
-        name: 'State',
-        description: 'This is the state of the customers current systems in the organization.',
+        name: 'Phase',
+        description: 'This is the phase of the customers current systems in the organization.',
         attributes: {
             name: {
                 type: 'string',
-                description: 'Name of the state, there should be current and future states',
+                description: 'Name of the phase, there should be current and future phases',
             },
             order: {
                 type: 'number',
@@ -14,19 +14,19 @@ class State {
             },
             description: {
                 type: 'string',
-                description: 'Description of the state',
+                description: 'Description of the phase',
             },
             targetDate: {
                 type: 'date',
-                description: 'Target date for the state',
+                description: 'Target date for the phase',
             },
             details: {
                 type: 'json',
-                description: 'Details of the state',
+                description: 'Details of the phase',
             },
             kpis: {
                 type: 'json',
-                description: 'KPIs of the state',
+                description: 'KPIs of the phase',
             }
         },
         associations: {
@@ -40,5 +40,5 @@ class State {
     }
 }
 
-module.exports = State;
+module.exports = Phase;
 

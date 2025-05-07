@@ -5,13 +5,13 @@ class ElementSuggestion {
         description: 'Suggestion made from the AI to create and element.',
         extends: 'Suggestion',
         attributes: {
-            layers: {
+            layer: {
                 type: 'string',
-                description: 'This is the name of the layers the element should be placed. This should be a comma separated list.'
+                description: 'This is the name of the layer the element should be placed.',
             },
-            partners: {
+            partner: {
                 type: 'string',
-                description: "This is the name of the partners of the element. This should be a comma separated list.",
+                description: 'This is the name of the partner of the element.'
             }
         },
         associations: {

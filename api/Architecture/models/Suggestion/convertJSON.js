@@ -24,6 +24,17 @@ module.exports = {
             let attr = obj._attributes[aname];
             retval[aname] = attr;
         }
+        for(let aname in obj._associations) {
+            let assoc = obj._associations[aname];
+            if(obj.definition.associations[aname].cardinality === 1) {
+                retval[aname] = { type: assoc.className, id: assoc.id };
+            } else {
+                retval[aname] = [];
+                for(let i in assoc) {
+                    retval[aname].push({ type: assoc[i].className, id:assoc[i].id});
+                }
+            }
+        }
         retval.type = obj.definition.name;
         return retval;
     }

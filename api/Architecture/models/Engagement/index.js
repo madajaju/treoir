@@ -18,6 +18,12 @@ class Engagement {
             }
         },
         associations: {
+            supplier: {
+                type: 'Supplier',
+                cardinality: 1,
+                composition: false,
+                owner: false,
+            },
             element: {
                 type: 'Element',
                 cardinality: 1,

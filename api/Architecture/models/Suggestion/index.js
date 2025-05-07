@@ -17,7 +17,7 @@ class Suggestion {
         },
         statenet: {
             Init: {
-                description: "Initial State",
+                description: "Initial Phase",
                 events: {
                     create: {
                         Suggested: { }

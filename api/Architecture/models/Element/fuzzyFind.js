@@ -1,19 +1,19 @@
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'convertJSON',
-    description: 'Convert Element JSON',
+    friendlyName: 'fuzzyFind',
+    description: 'Find a set of elements that contain the given string',
     static: true, // True is for Class methods. False is for object based.
     inputs: {
-        owner: {
-            description: 'owner of the element',
+        query: {
+            description: 'String to search for in the Elements.',
             type: 'string',
             required: true
         },
-        element: {
-            description: 'element in a JSON format',
-            type: 'json',
-            required: true
+        supplier: {
+            description: 'Name of the supplier to search for the element. If it is not given then search all of the elements.',
+            type: 'string',
+            required: false
         }
     },
 
@@ -23,26 +23,34 @@ module.exports = {
         },
     },
 
-    fn: function (obj, inputs, env) {
-        let element = inputs.element;
-        let owner = inputs.owner;
-        let eid = inputs.owner.id + "-" + element.name;
-        let elementObj = Element.find(eid);
-        if (!elementObj) {
-            elementObj = new Element({id: eid, name: element.name});
-        }
-        elementObj.description = element.description;
-        elementObj.color = element.color;
-        elementObj.save();
-        for (let i in element.layers) {
-            let lname = element.layers[i];
-            let layer = Layer.find(lname);
-            if (!layer) {
-                console.error("Layer not found: " + lname);
+    fn: async function (obj, inputs, env) {
+        let query = inputs.query;
+        let supplier = null;
+        let element = Element.find(query);
+        if (element) {
+            if (!supplier || supplier === element.supplier.name) {
+                return [element];
             }
-            elementObj.addToLayers(layer);
-            elementObj.save();
         }
-        return elementObj;
+        let elements = await Element.instances();
+        let retval = [];
+        let queryString = query.toLowerCase();
+        for(let i in elements) {
+            let element = elements[i];
+            if(element.name.toLowerCase() === queryString) {
+                retval.push(element);
+            } else if(element.id.toLowerCase() === queryString) {
+                retval.push(element);
+            } else if(element.name.toLowerCase().includes(queryString)) {
+                retval.push(element);
+            } else if(queryString.includes(element.name.toLowerCase())) {
+                retval.push(element);
+            } else if(queryString.replace(/\s/g,'').includes(element.name.toLowerCase().replace(/\s/g,''))) {
+                retval.push(element);
+            } else if(element.name.replace(/\s/g,'').includes(queryString.toLowerCase().replace(/\s/g,''))) {
+                retval.push(element);
+            }
+        }
+        return retval;
     }
 };

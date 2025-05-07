@@ -1,34 +1,46 @@
-export default class AFileView {
+import GMainView from './GMainView.js';
+
+export default class GFileView {
     static newFileDialog() {
-        let myForm = AFileView.newFileForm();
+        let myForm = GFileView.newFileForm();
         w2popup.open({
             title: 'New File',
-            body: '<div id="newFileForm"></div>',
-            width: 300,
-            height: 200,
+            body: '<div id="newFileFormContainer" style="width: 100%; height: 100%;"></div>', // Update ID
+            width: 400,
+            height: 300,
             showMax: true,
             onOpen: function (event) {
-                $('#newFileForm').w2form(myForm);
-                myForm.refresh();
+                event.onComplete = function () {
+                    if (!w2ui.newFileForm) {
+                        $('#newFileFormContainer').w2form(myForm); // Attach the form after popup fully opens
+                    } else {
+                        w2ui.newFileForm.refresh();
+                    }
+                };
+            },
+            onClose: function () {
+                if (w2ui.newFileForm) {
+                    w2ui.newFileForm.destroy(); // Remove form instance on close
+                }
             }
-        })
+        });
     }
 
     static newFileForm() {
         if (!w2ui.newFileForm) {
-            $().w2form({
+            return {
                 name: 'newFileForm',
                 fields: [
                     {
                         name: 'type',
                         type: 'radio',
+                        options: {
+                            items: ['Customer', 'Partner', 'Architecture'] // Set radio options
+                        },
                         required: true,
                         html: {
                             caption: 'Type',
                             text: 'Select a type'
-                        },
-                        options: {
-                            items: ['Customer', 'Partner', 'Architecture']
                         }
                     },
                     {
@@ -45,6 +57,7 @@ export default class AFileView {
                     save: function () {
                         const record = this.record;
                         if (this.validate().length === 0) {
+                            GMainView.setContext(record);
                             console.log('Form Data:', record);
                             w2popup.close();
                             w2alert('Saved successfully!');
@@ -54,10 +67,9 @@ export default class AFileView {
                         w2popup.close();
                     }
                 }
-            });
-        } else {
-            w2ui.newFileForm.clear();
+            };
         }
+        w2ui.newFileForm.clear();
         return w2ui.newFileForm;
     }
 }

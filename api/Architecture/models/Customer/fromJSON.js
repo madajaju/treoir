@@ -29,10 +29,10 @@ module.exports = {
         customerObj.color = customer.color;
         customerObj.details = customer.details;
         customerObj.save();
-        for (let sname in customer.states) {
-            let state = State.fromJSON({state: customer.states[sname]});
-            state.save();
-            customerObj.addToStates(state);
+        for (let sname in customer.phases) {
+            let phase = Phase.fromJSON({phase: customer.phases[sname]});
+            phase.save();
+            customerObj.addToPhases(phase);
             customerObj.save();
         }
         return customerObj;

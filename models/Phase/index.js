@@ -22,18 +22,18 @@ class Phase {
         /*
         statenet: {
             Init: {
-                description: "Initial State"
+                description: "Initial Phase"
                 events: {
                     create: {
-                        StateName: { }
+                        PhaseName: { }
                     }
                 }
             },
-            StateName: {
+            PhaseName: {
                 description: "My Description of the state",
                 events: {
                     eventName: {
-                        StateName: {
+                        PhaseName: {
                             condition: function(obj) { ... },
                             action: function(obj) { ... },
                         }
