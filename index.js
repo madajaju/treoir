@@ -19,28 +19,39 @@ let config = {
     internalURL: `${host}:${port}${urlPrefix}`,
     routes: {},
     ai: {
-        /*
        adaptor: AOpenAI,
         model: 'gpt-4o-mini',
        apiKey: process.env.AILTIRE_OPENAI_KEY,
-         */
+        /*
         adaptor: AOLlama,
         model: 'llama3.2',
         url: 'http://localhost:11434',
         apiKey: ''
+
+         */
     },
     post: (config) => {
-        const gearStr = fs.readFileSync('gear.json', 'utf8');
+        config.dbDir = config.dbDir || config.baseDir + '/.database';
+        let dbDir = config.dbDir;
+        const gearStr = fs.readFileSync(path.resolve(dbDir, 'gear.json'), 'utf8');
         const gearJSON = JSON.parse(gearStr);
         Layer.fromJSON({layers:gearJSON});
 
-        const partnerStr = fs.readFileSync('partners.json', 'utf8');
-        const partnersJSON = JSON.parse(partnerStr);
-        Partner.fromJSON({partners:partnersJSON});
+        let partnerDir = path.resolve(dbDir, 'partners');
+        let pdir = fs.readdirSync(partnerDir);
+        for(let i in pdir) {
+            const partnerStr = fs.readFileSync(path.resolve(partnerDir, pdir,'partners.json'), 'utf8');
+            const partnersJSON = JSON.parse(partnerStr);
+            Partner.fromJSON({partners: partnersJSON});
+        }
 
+       /*
         const customerStr = fs.readFileSync('customer.json', 'utf8');
         const customerJSON = JSON.parse(customerStr);
         Customer.fromJSON({customer:customerJSON});
+
+        */
+
         const tasksStr = fs.readFileSync('tasks.json', 'utf8');
         const tasksJSON = JSON.parse(tasksStr);
         Task.fromJSON({tasks:tasksJSON});

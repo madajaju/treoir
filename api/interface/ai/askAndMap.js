@@ -82,7 +82,7 @@ module.exports = {
                         " including people, process and technology to the GEAR Architecture. The GEAR architecture is a " +
                         "conceptual architecture that is used to capture and map current environments and identify gaps. " +
                         "The GEAR Architecture is has the following layers. Use this architecture to help map the organization's " +
-                        "organizational architecture, process, technology and physical hardware environments. Here are the layers: "
+                        "organizational architecture, process, technology and physical hardware environments. If there is not a mapping do not create one, only map the tools mentioned and not neccessarily what underlying elements are required to support the tools. Here are the layers: "
                     if(customerName) {
                         let customer = await Customer.find(customerName);
                         let customerJSON = customer.convertJSON();
@@ -102,12 +102,12 @@ module.exports = {
                     " including people, process and technology to the GEAR Architecture. The GEAR architecture is a " +
                     "conceptual architecture that is used to capture and map current environments and identify gaps. " +
                     "The GEAR Architecture has the following layers. Use this architecture to help map the organization's " +
-                    "organizational architecture, process, technology and physical hardware environments. Here are the layers: "
+                    "organizational architecture, process, technology and physical hardware environments. If there is not a mapping do not create one, only map the tools mentioned and not neccessarily what underlying elements are required to support the tools. Here are the layers: "
                 let layers = await Layer.instances();
                 let layersJSON = {};
                 for (let lname in layers) {
                     if(!lname.includes('-')) {
-                        layersJSON[lname] = layers[lname].convertJSON({depth:1});
+                        layersJSON[lname] = layers[lname].convertJSON({depth:2});
                     }
                 }
                 systemInfo = JSON.stringify(layersJSON);
@@ -141,22 +141,22 @@ async function _mapElements(prompt) {
     const elementJSON = `
         { 
             "name": "MyElementName", // Name of the tool, process, or service
-            "suppliers": "MySupplierName", // Name of the supplier of the element, use Self if the  customer is providing it. Comma separate if more than one.
+            "suppliers": "MySupplierName", // Name of the supplier/vendor of the element, use Self if the customer has built the element themselves. Comma separate if more than one vendor for the element.
             "description": "Description on how the company uses the element."
-            "layers": "Layers from the GEAR Architecture" // Must match one or more of the layers in GEAR. Comma separate if more than one.
-        }`
+            "layers": "LayerID from GEAR", // comma separate list of the layerids from the GEAR architecture.
+        }`;
     let layers = await Layer.instances();
     let layersJSON = {};
     for (let lname in layers) {
         if(!lname.includes('-')) {
-            layersJSON[lname] = layers[lname].convertJSON({depth:1});
+            layersJSON[lname] = layers[lname].convertJSON({depth:2});
         }
     }
     systemInfo = JSON.stringify(layersJSON);
         let messages = [];
     messages.push({
         role: 'system',
-        content: 'The user prompt contains a textural analysis that I need to turn into suggestions to a mapping defined by JSON. ' +
+        content: 'The user prompt contains a textual analysis that I need to turn into suggestions to a mapping defined by JSON. ' +
             'Identify the elements in the architecture from this user prompt. An Element is a tool, process, service or organizational construct. ' +
             `The layers of the GEAR architecture are ${systemInfo}. Create an array of JSON objects that strictly adhere to this JSON format: ${elementJSON}.
             Return only the array of JSON objects.`
@@ -170,13 +170,18 @@ async function _mapElements(prompt) {
     for(let i in results) {
         // First look if the element exists
         let result = results[i];
-        let element = Element.find(result.name);
-        if(!element) {
-            let suggestion = new ElementSuggestion(result);
-            console.log(suggestion);
+        let elements = await Element.fuzzyFind({query: result.name, supplier: result.suppliers});
+        if(elements.length === 0) {
+            let layers = result.layers.split(',');
+            for(let i in layers) {
+                result.layer = layers[i];
+                let suggestion = new ElementSuggestion(result);
+                if (suggestion.supplier === 'Self') {
+                    // Check if there is a supplier already in the list.
+                }
+            }
         } else {
-            let engagement =  new Engagement(results);
-            console.log(engagement);
+            let engagement =  new Engagement(result);
 
         }
         // If if does then use it.

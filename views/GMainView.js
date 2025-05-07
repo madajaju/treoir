@@ -25,6 +25,7 @@ export default class GMainView {
         moved: "#00ff00",
         nocontact: "#ff0000"
     };
+    static context = {};
 
     constructor(config) {
         this.selectedObject = {};
@@ -50,9 +51,18 @@ export default class GMainView {
         this.handlers = {};
         this.handlers2d = {};
         this.editors = {};
+        this.context = {};
         this.init(config);
     }
 
+    static setContext(context) {
+        GMainView.context = context;
+        let htmlContext = `<div style="color:white;"><b>${this.context.type}:</b> <b>${this.context.name}</b></div>`;
+        $('#mainContextMenu').html(htmlContext);
+    }
+    static getContext() {
+        return GMainView.context;
+    }
     static submitDocForm() {
         let form = $("#docForm");
         let url = form.attr("action");
@@ -452,7 +462,7 @@ export default class GMainView {
         socket.onAny((event, msg) => {
             let [eventClass, eventName] = event.split('.');
             if(eventName === 'suggested') {
-                GSuggestionView.addSuggestion(event.msg);
+                GSuggestionView.addSuggestion(msg);
             }
         });
     }
@@ -744,7 +754,7 @@ export default class GMainView {
                 display: inline-flex; 
                 justify-content: center; 
                 align-items: center; width: 40px; height: 40px; 
-                background-color: #aa3300; color: #fff; 
+                background-color: #aa0000; color: #fff; 
                 border: none; border-radius: 0%; 
                 font-size: 32px; line-height: 20px; 
                 cursor: wait;
@@ -791,7 +801,7 @@ export default class GMainView {
             responseDiv.appendChild(newReplyDiv);
             responseDiv.scrollTop = responseDiv.scrollHeight;
             promptInput.value = 'Waiting...';
-            const url = 'ai/askAndMap';
+            const url = 'customer/askAndMap';
             const sendButton = document.getElementById('send-button');
 //            sendButton.innerHTML = '□';
             sendButton.innerHTML = '&#x25FC';

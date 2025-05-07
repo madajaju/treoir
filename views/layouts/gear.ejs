@@ -9,6 +9,7 @@ let hostURL = global.ailtire.config.host;
 
     <base href="http://<%= global.ailtire.config.host %>:<%= global.ailtire.config.listenPort%><%= global.ailtire.config.urlPrefix%>/">
     <link rel="stylesheet/less" type="text/css" href="styles/top.less"/>
+    <link rel="stylesheet" type="text/css" href="styles/all.css" />
     <script src="js/less.js"></script>
     <script type="module" src="js/ckeditor.js"></script>
     <script src="js/jquery.js"></script>
@@ -63,7 +64,7 @@ let hostURL = global.ailtire.config.host;
     $(function () {
         // initialization
         let config = {
-            title: "Gear"
+            title: "Gear",
             toolbar: {
                 "background-color": "#664422",
                 "color": "#ffffff"

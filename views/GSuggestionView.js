@@ -1,4 +1,5 @@
 import AText from '../js/ailtire/AText.js';
+import GMainView from "./GMainView.js";
 
 export default class GSuggestionView {
     static default = {
@@ -108,19 +109,29 @@ export default class GSuggestionView {
                     footer: true
                 },
                 columns: [
-                    {field: 'type', text: 'Type', size: '15%'},
-                    {field: 'name', text: 'Suggestion', size: '15%'},
-                    {field: 'description', text: 'Description', size: '60%'},
+                    {field: 'layer', text: 'Layer', size: '20%'},
+                    {field: 'name', text: 'Suggestion', size: '20%'},
+                    {field: 'description', text: 'Description', size: '50%'},
                     {
                         field: 'actions',
                         text: 'Actions',
                         size: '10%',
                         render: function (record) {
-                            if (record.status === 'Created' || record.status === 'WIP') {
-                                return ` <button class="mark-complete" onclick="markComplete(${record.recid})">Complete</button>
-                                         <button class="cancel-task" onclick="cancelTask(${record.recid})">Cancel</button>`;
-                            }
-                            return ` <button class="delete-task" onclick="deleteTask(${record.recid})">Delete</button>`;
+                            let retval = '';
+                            retval = ` <button class="mark-complete" style="color: green; border: none; background: none; cursor: pointer;" onclick="markComplete('${record.recid}')">
+                                         <i class="fas fa-check"></i>
+                                      </button>
+                                      <button class="cancel-task" style="color: red; border: none; background: none; cursor: pointer;" onclick="cancelTask('${record.recid}')">
+                                         <i class="fas fa-times"></i>
+                                      </button>`;
+                            retval += ` <button class="delete-task" style="color: black; border: none; background: none; cursor: pointer;" onClick="deleteTask('${record.recid}')">
+                                         <i class="fas fa-trash"></i>
+                                      </button>`;
+                            retval += ` <button class="delete-task" style="color: blue; border: none; background: none; cursor: pointer;" onClick="refineSuggestion('${record.recid}')">
+                                         <i class="fas fa-magnifying-glass"></i>
+                                      </button>`;
+
+                            return retval;
                         }
                     }
                 ],
@@ -128,11 +139,35 @@ export default class GSuggestionView {
                     // Place the suggestion and Highlight the layer.
                     let object = event.recid;
                     let rec = w2ui['suggestionList'].get(object);
-                    let layers = rec.obj.layers.split(',');
+                    let layers = rec.layer.split(',');
                     for (let i in layers) {
                         let layer = layers[i].replace(/^ /, '').trim();
                         window.graph.selectNodeByID(layer);
                     }
+                }
+            });
+        }
+
+        window.markComplete = (recid) => {
+            const context = GMainView.getContext();
+            const url = `suggestion/accept?id=${recid}&context=${context.name}&contextType=${context.type}`;
+            $.ajax({
+                url: url,
+                method: 'GET',
+                success: (results) => {
+                    console.log(results);
+                }
+            });
+        }
+
+        window.refineSuggestion = (recid) => {
+            const context = GMainView.getContext();
+            const url = `suggestion/refine?id=${recid}`;
+            $.ajax({
+                url: url,
+                method: 'GET',
+                success: (results) => {
+                    console.log(results);
                 }
             });
         }
@@ -147,11 +182,12 @@ export default class GSuggestionView {
     static addSuggestion(suggestion) {
         let sGrid = w2ui.suggestionList;
         let record = {
-            recid: suggestion.id,
+            recid: suggestion.id || suggestion._attributes.id,
             name: suggestion._attributes.name,
             description: suggestion._attributes.description,
-            type: suggestion.type.replace('Suggestion', ''),
-            status: suggestion.state,
+            type: (suggestion.type || suggestion.definition.name).replace('Suggestion', ''),
+            status: suggestion.state || suggestion._attributes.state,
+            layer: suggestion.layer || suggestion._attributes.layer || suggestion._associations.layer,
             obj: suggestion
         };
         sGrid.add(record);
@@ -173,11 +209,13 @@ export default class GSuggestionView {
                 for (let name in results) {
                     let suggestion = results[name];
                     records.push({
-                        recid: i++,
+                        recid: suggestion.id || suggestion._attributes?.id,
                         name: suggestion.name,
                         description: suggestion.description,
                         type: suggestion.type.replace('Suggestion', ''),
+                        layer: suggestion.layer,
                         status: suggestion.state,
+                        layer: suggestion.layer || suggestion._attributes?.layer || suggestion._associations?.layer,
                         obj: suggestion
                     });
                 }

@@ -1,0 +1,329 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="800" viewBox="0 0 1000 800"
+     style="font-family: Arial, sans-serif;">
+    <rect width="100%" height="100%" fill="white"/>
+    <rect x="50" y="50" width="150" height="70" fill="#880088" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="125" y="90" fill="black" font-size="12" text-anchor="middle">Physical Layer</text>
+    <line x1="125" y1="120" x2="125" y2="150" stroke="#666666" stroke-width="2"/>
+    <rect x="50" y="150" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="125" y="190" fill="black" font-size="12" text-anchor="middle">Devices</text>
+    <line x1="125" y1="220" x2="125" y2="250" stroke="#666666" stroke-width="2"/>
+    <rect x="50" y="250" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="125" y="290" fill="black" font-size="12" text-anchor="middle">Dynamic Edge Devices</text>
+    <line x1="125" y1="220" x2="305" y2="250" stroke="#666666" stroke-width="2"/>
+    <rect x="230" y="250" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="305" y="290" fill="black" font-size="12" text-anchor="middle">Operations Devices</text>
+    <line x1="125" y1="220" x2="485" y2="250" stroke="#666666" stroke-width="2"/>
+    <rect x="410" y="250" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="485" y="290" fill="black" font-size="12" text-anchor="middle">Enterprise Devices</text>
+    <line x1="125" y1="220" x2="665" y2="250" stroke="#666666" stroke-width="2"/>
+    <rect x="590" y="250" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="665" y="290" fill="black" font-size="12" text-anchor="middle">Multi-Hybrid Cloud</text>
+    <line x1="125" y1="120" x2="125" y2="250" stroke="#666666" stroke-width="2"/>
+    <rect x="50" y="250" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="125" y="290" fill="black" font-size="12" text-anchor="middle">Communications</text>
+    <line x1="125" y1="120" x2="125" y2="350" stroke="#666666" stroke-width="2"/>
+    <rect x="50" y="350" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="125" y="390" fill="black" font-size="12" text-anchor="middle">Locations</text>
+    <line x1="125" y1="420" x2="125" y2="450" stroke="#666666" stroke-width="2"/>
+    <rect x="50" y="450" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="125" y="490" fill="black" font-size="12" text-anchor="middle">Dynamic Locations</text>
+    <line x1="125" y1="420" x2="305" y2="450" stroke="#666666" stroke-width="2"/>
+    <rect x="230" y="450" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="305" y="490" fill="black" font-size="12" text-anchor="middle">Operations Locations</text>
+    <line x1="125" y1="420" x2="485" y2="450" stroke="#666666" stroke-width="2"/>
+    <rect x="410" y="450" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="485" y="490" fill="black" font-size="12" text-anchor="middle">Hybrid Offices</text>
+    <line x1="125" y1="420" x2="665" y2="450" stroke="#666666" stroke-width="2"/>
+    <rect x="590" y="450" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="665" y="490" fill="black" font-size="12" text-anchor="middle">Datacenters</text>
+    <line x1="125" y1="420" x2="845" y2="450" stroke="#666666" stroke-width="2"/>
+    <rect x="770" y="450" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="845" y="490" fill="black" font-size="12" text-anchor="middle">Outsourced Locations</text>
+    <rect x="50" y="350" width="150" height="70" fill="#008800" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="125" y="390" fill="black" font-size="12" text-anchor="middle">Logical Layer</text>
+    <line x1="125" y1="420" x2="305" y2="450" stroke="#666666" stroke-width="2"/>
+    <rect x="230" y="450" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="305" y="490" fill="black" font-size="12" text-anchor="middle">Application Layer</text>
+    <line x1="305" y1="520" x2="305" y2="550" stroke="#666666" stroke-width="2"/>
+    <rect x="230" y="550" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="305" y="590" fill="black" font-size="12" text-anchor="middle">Analytics Services</text>
+    <line x1="305" y1="520" x2="485" y2="550" stroke="#666666" stroke-width="2"/>
+    <rect x="410" y="550" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="485" y="590" fill="black" font-size="12" text-anchor="middle">AI ML Services</text>
+    <line x1="305" y1="520" x2="665" y2="550" stroke="#666666" stroke-width="2"/>
+    <rect x="590" y="550" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="665" y="590" fill="black" font-size="12" text-anchor="middle">Workflow Services</text>
+    <line x1="305" y1="520" x2="305" y2="650" stroke="#666666" stroke-width="2"/>
+    <rect x="230" y="650" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="305" y="690" fill="black" font-size="12" text-anchor="middle">Developer Services</text>
+    <line x1="125" y1="420" x2="305" y2="550" stroke="#666666" stroke-width="2"/>
+    <rect x="230" y="550" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="305" y="590" fill="black" font-size="12" text-anchor="middle">Distributed Information Management Layer
+    </text>
+    <line x1="305" y1="620" x2="305" y2="650" stroke="#666666" stroke-width="2"/>
+    <rect x="230" y="650" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="305" y="690" fill="black" font-size="12" text-anchor="middle">Data Definition Framework</text>
+    <line x1="305" y1="620" x2="485" y2="650" stroke="#666666" stroke-width="2"/>
+    <rect x="410" y="650" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="485" y="690" fill="black" font-size="12" text-anchor="middle">Data Management Layer</text>
+    <line x1="305" y1="620" x2="485" y2="750" stroke="#666666" stroke-width="2"/>
+    <rect x="410" y="750" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="485" y="790" fill="black" font-size="12" text-anchor="middle">Common Data Services</text>
+    <line x1="125" y1="420" x2="485" y2="550" stroke="#666666" stroke-width="2"/>
+    <rect x="410" y="550" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="485" y="590" fill="black" font-size="12" text-anchor="middle">Service Management Layer</text>
+    <line x1="485" y1="620" x2="485" y2="750" stroke="#666666" stroke-width="2"/>
+    <rect x="410" y="750" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="485" y="790" fill="black" font-size="12" text-anchor="middle">Service Repository</text>
+    <line x1="485" y1="620" x2="665" y2="650" stroke="#666666" stroke-width="2"/>
+    <rect x="590" y="650" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="665" y="690" fill="black" font-size="12" text-anchor="middle">Environment Manager</text>
+    <line x1="485" y1="620" x2="845" y2="650" stroke="#666666" stroke-width="2"/>
+    <rect x="770" y="650" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="845" y="690" fill="black" font-size="12" text-anchor="middle">Service Orchestration</text>
+    <line x1="485" y1="620" x2="665" y2="750" stroke="#666666" stroke-width="2"/>
+    <rect x="590" y="750" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="665" y="790" fill="black" font-size="12" text-anchor="middle">Common Data Services</text>
+    <line x1="125" y1="420" x2="305" y2="650" stroke="#666666" stroke-width="2"/>
+    <rect x="230" y="650" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="305" y="690" fill="black" font-size="12" text-anchor="middle">Software Defined Infrastructure</text>
+    <line x1="305" y1="720" x2="305" y2="750" stroke="#666666" stroke-width="2"/>
+    <rect x="230" y="750" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="305" y="790" fill="black" font-size="12" text-anchor="middle">Orchestration</text>
+    <line x1="305" y1="720" x2="305" y2="850" stroke="#666666" stroke-width="2"/>
+    <rect x="230" y="850" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="305" y="890" fill="black" font-size="12" text-anchor="middle">Compute</text>
+    <line x1="305" y1="720" x2="485" y2="850" stroke="#666666" stroke-width="2"/>
+    <rect x="410" y="850" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="485" y="890" fill="black" font-size="12" text-anchor="middle">Storage</text>
+    <line x1="305" y1="720" x2="665" y2="850" stroke="#666666" stroke-width="2"/>
+    <rect x="590" y="850" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="665" y="890" fill="black" font-size="12" text-anchor="middle">Network</text>
+    <line x1="305" y1="720" x2="845" y2="850" stroke="#666666" stroke-width="2"/>
+    <rect x="770" y="850" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="845" y="890" fill="black" font-size="12" text-anchor="middle">Accelerators</text>
+    <line x1="305" y1="720" x2="1025" y2="850" stroke="#666666" stroke-width="2"/>
+    <rect x="950" y="850" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="1025" y="890" fill="black" font-size="12" text-anchor="middle">Security</text>
+    <line x1="125" y1="420" x2="305" y2="750" stroke="#666666" stroke-width="2"/>
+    <rect x="230" y="750" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="305" y="790" fill="black" font-size="12" text-anchor="middle">Physical Layer</text>
+    <line x1="305" y1="820" x2="305" y2="850" stroke="#666666" stroke-width="2"/>
+    <rect x="230" y="850" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="305" y="890" fill="black" font-size="12" text-anchor="middle">IoT Devices</text>
+    <line x1="305" y1="820" x2="485" y2="850" stroke="#666666" stroke-width="2"/>
+    <rect x="410" y="850" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="485" y="890" fill="black" font-size="12" text-anchor="middle">OT Devices</text>
+    <line x1="305" y1="820" x2="665" y2="850" stroke="#666666" stroke-width="2"/>
+    <rect x="590" y="850" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="665" y="890" fill="black" font-size="12" text-anchor="middle">Mobile Devices</text>
+    <line x1="305" y1="820" x2="845" y2="850" stroke="#666666" stroke-width="2"/>
+    <rect x="770" y="850" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="845" y="890" fill="black" font-size="12" text-anchor="middle">Labtops and Desktops</text>
+    <line x1="305" y1="820" x2="305" y2="950" stroke="#666666" stroke-width="2"/>
+    <rect x="230" y="950" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="305" y="990" fill="black" font-size="12" text-anchor="middle">Datacenter Devices</text>
+    <line x1="305" y1="820" x2="485" y2="950" stroke="#666666" stroke-width="2"/>
+    <rect x="410" y="950" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="485" y="990" fill="black" font-size="12" text-anchor="middle">Private Cloud</text>
+    <line x1="305" y1="820" x2="665" y2="950" stroke="#666666" stroke-width="2"/>
+    <rect x="590" y="950" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="665" y="990" fill="black" font-size="12" text-anchor="middle">Public Cloud</text>
+    <line x1="125" y1="420" x2="125" y2="450" stroke="#666666" stroke-width="2"/>
+    <rect x="50" y="450" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="125" y="490" fill="black" font-size="12" text-anchor="middle">Identity Aspect</text>
+    <line x1="125" y1="520" x2="125" y2="550" stroke="#666666" stroke-width="2"/>
+    <rect x="50" y="550" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="125" y="590" fill="black" font-size="12" text-anchor="middle">Access</text>
+    <line x1="125" y1="520" x2="125" y2="650" stroke="#666666" stroke-width="2"/>
+    <rect x="50" y="650" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="125" y="690" fill="black" font-size="12" text-anchor="middle">Authorization</text>
+    <line x1="125" y1="520" x2="125" y2="750" stroke="#666666" stroke-width="2"/>
+    <rect x="50" y="750" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="125" y="790" fill="black" font-size="12" text-anchor="middle">Authentication</text>
+    <line x1="125" y1="520" x2="125" y2="850" stroke="#666666" stroke-width="2"/>
+    <rect x="50" y="850" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="125" y="890" fill="black" font-size="12" text-anchor="middle">Key Management</text>
+    <rect x="50" y="650" width="150" height="70" fill="#000088" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="125" y="690" fill="black" font-size="12" text-anchor="middle">Process Layer</text>
+    <line x1="125" y1="720" x2="305" y2="750" stroke="#666666" stroke-width="2"/>
+    <rect x="230" y="750" width="150" height="70" fill="#004488" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="305" y="790" fill="black" font-size="12" text-anchor="middle">Governance</text>
+    <line x1="305" y1="820" x2="305" y2="850" stroke="#666666" stroke-width="2"/>
+    <rect x="230" y="850" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="305" y="890" fill="black" font-size="12" text-anchor="middle">Policy Development</text>
+    <line x1="305" y1="820" x2="485" y2="850" stroke="#666666" stroke-width="2"/>
+    <rect x="410" y="850" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="485" y="890" fill="black" font-size="12" text-anchor="middle">Legislative Compliance</text>
+    <line x1="305" y1="820" x2="665" y2="850" stroke="#666666" stroke-width="2"/>
+    <rect x="590" y="850" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="665" y="890" fill="black" font-size="12" text-anchor="middle">Ethics and Integrity</text>
+    <line x1="305" y1="820" x2="305" y2="950" stroke="#666666" stroke-width="2"/>
+    <rect x="230" y="950" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="305" y="990" fill="black" font-size="12" text-anchor="middle">Audit and Oversight</text>
+    <line x1="305" y1="820" x2="485" y2="950" stroke="#666666" stroke-width="2"/>
+    <rect x="410" y="950" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="485" y="990" fill="black" font-size="12" text-anchor="middle">Transparency and Accountability</text>
+    <line x1="305" y1="820" x2="665" y2="950" stroke="#666666" stroke-width="2"/>
+    <rect x="590" y="950" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="665" y="990" fill="black" font-size="12" text-anchor="middle">Data Governance</text>
+    <line x1="305" y1="820" x2="305" y2="1050" stroke="#666666" stroke-width="2"/>
+    <rect x="230" y="1050" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="305" y="1090" fill="black" font-size="12" text-anchor="middle">Legal Services</text>
+    <line x1="125" y1="720" x2="125" y2="850" stroke="#666666" stroke-width="2"/>
+    <rect x="50" y="850" width="150" height="70" fill="#004488" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="125" y="890" fill="black" font-size="12" text-anchor="middle">Mission Vision</text>
+    <line x1="125" y1="920" x2="125" y2="950" stroke="#666666" stroke-width="2"/>
+    <rect x="50" y="950" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="125" y="990" fill="black" font-size="12" text-anchor="middle">Vision Formulation</text>
+    <line x1="125" y1="920" x2="305" y2="950" stroke="#666666" stroke-width="2"/>
+    <rect x="230" y="950" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="305" y="990" fill="black" font-size="12" text-anchor="middle">Strategy Management</text>
+    <line x1="125" y1="920" x2="125" y2="1050" stroke="#666666" stroke-width="2"/>
+    <rect x="50" y="1050" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="125" y="1090" fill="black" font-size="12" text-anchor="middle">Mission Definition</text>
+    <line x1="125" y1="920" x2="305" y2="1050" stroke="#666666" stroke-width="2"/>
+    <rect x="230" y="1050" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="305" y="1090" fill="black" font-size="12" text-anchor="middle">Goal Setting and Alignment</text>
+    <line x1="125" y1="720" x2="305" y2="850" stroke="#666666" stroke-width="2"/>
+    <rect x="230" y="850" width="150" height="70" fill="#004488" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="305" y="890" fill="black" font-size="12" text-anchor="middle">Strategy</text>
+    <line x1="305" y1="920" x2="305" y2="950" stroke="#666666" stroke-width="2"/>
+    <rect x="230" y="950" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="305" y="990" fill="black" font-size="12" text-anchor="middle">Vision Formulation</text>
+    <line x1="305" y1="920" x2="485" y2="950" stroke="#666666" stroke-width="2"/>
+    <rect x="410" y="950" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="485" y="990" fill="black" font-size="12" text-anchor="middle">Strategic Planning</text>
+    <line x1="305" y1="920" x2="665" y2="950" stroke="#666666" stroke-width="2"/>
+    <rect x="590" y="950" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="665" y="990" fill="black" font-size="12" text-anchor="middle">Public Policy Analysis</text>
+    <line x1="305" y1="920" x2="305" y2="1050" stroke="#666666" stroke-width="2"/>
+    <rect x="230" y="1050" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="305" y="1090" fill="black" font-size="12" text-anchor="middle">Program Evaluation</text>
+    <line x1="305" y1="920" x2="485" y2="1050" stroke="#666666" stroke-width="2"/>
+    <rect x="410" y="1050" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="485" y="1090" fill="black" font-size="12" text-anchor="middle">Resource Allocation</text>
+    <line x1="305" y1="920" x2="665" y2="1050" stroke="#666666" stroke-width="2"/>
+    <rect x="590" y="1050" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="665" y="1090" fill="black" font-size="12" text-anchor="middle">Performance Measurement</text>
+    <line x1="125" y1="720" x2="485" y2="850" stroke="#666666" stroke-width="2"/>
+    <rect x="410" y="850" width="150" height="70" fill="#004488" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="485" y="890" fill="black" font-size="12" text-anchor="middle">Innovation New Capability</text>
+    <line x1="485" y1="920" x2="485" y2="950" stroke="#666666" stroke-width="2"/>
+    <rect x="410" y="950" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="485" y="990" fill="black" font-size="12" text-anchor="middle">Ideation Processes</text>
+    <line x1="485" y1="920" x2="665" y2="950" stroke="#666666" stroke-width="2"/>
+    <rect x="590" y="950" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="665" y="990" fill="black" font-size="12" text-anchor="middle">Research and Development</text>
+    <line x1="485" y1="920" x2="845" y2="950" stroke="#666666" stroke-width="2"/>
+    <rect x="770" y="950" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="845" y="990" fill="black" font-size="12" text-anchor="middle">Develop Digital Services Process</text>
+    <line x1="485" y1="920" x2="485" y2="1050" stroke="#666666" stroke-width="2"/>
+    <rect x="410" y="1050" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="485" y="1090" fill="black" font-size="12" text-anchor="middle">Process Improvement</text>
+    <line x1="485" y1="920" x2="665" y2="1050" stroke="#666666" stroke-width="2"/>
+    <rect x="590" y="1050" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="665" y="1090" fill="black" font-size="12" text-anchor="middle">Partnerships Processes</text>
+    <line x1="485" y1="920" x2="845" y2="1050" stroke="#666666" stroke-width="2"/>
+    <rect x="770" y="1050" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="845" y="1090" fill="black" font-size="12" text-anchor="middle">Citizen Engagement</text>
+    <line x1="485" y1="920" x2="485" y2="1150" stroke="#666666" stroke-width="2"/>
+    <rect x="410" y="1150" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="485" y="1190" fill="black" font-size="12" text-anchor="middle">PR and Marketing</text>
+    <line x1="485" y1="920" x2="665" y2="1150" stroke="#666666" stroke-width="2"/>
+    <rect x="590" y="1150" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="665" y="1190" fill="black" font-size="12" text-anchor="middle">Revenue Acceleration</text>
+    <line x1="125" y1="720" x2="665" y2="850" stroke="#666666" stroke-width="2"/>
+    <rect x="590" y="850" width="150" height="70" fill="#004488" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="665" y="890" fill="black" font-size="12" text-anchor="middle">Operational and Delivery</text>
+    <line x1="665" y1="920" x2="665" y2="950" stroke="#666666" stroke-width="2"/>
+    <rect x="590" y="950" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="665" y="990" fill="black" font-size="12" text-anchor="middle">Service Delivery</text>
+    <line x1="665" y1="920" x2="845" y2="950" stroke="#666666" stroke-width="2"/>
+    <rect x="770" y="950" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="845" y="990" fill="black" font-size="12" text-anchor="middle">Monitoring Processes</text>
+    <line x1="665" y1="920" x2="1025" y2="950" stroke="#666666" stroke-width="2"/>
+    <rect x="950" y="950" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="1025" y="990" fill="black" font-size="12" text-anchor="middle">Service Maintenance</text>
+    <line x1="665" y1="920" x2="665" y2="1050" stroke="#666666" stroke-width="2"/>
+    <rect x="590" y="1050" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="665" y="1090" fill="black" font-size="12" text-anchor="middle">Operational Technology Management</text>
+    <line x1="665" y1="920" x2="845" y2="1050" stroke="#666666" stroke-width="2"/>
+    <rect x="770" y="1050" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="845" y="1090" fill="black" font-size="12" text-anchor="middle">Manufacturing Processes</text>
+    <line x1="665" y1="920" x2="1025" y2="1050" stroke="#666666" stroke-width="2"/>
+    <rect x="950" y="1050" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="1025" y="1090" fill="black" font-size="12" text-anchor="middle">Business Continuity Disaster Recovery
+    </text>
+    <line x1="665" y1="920" x2="665" y2="1150" stroke="#666666" stroke-width="2"/>
+    <rect x="590" y="1150" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="665" y="1190" fill="black" font-size="12" text-anchor="middle">Data Operations Management</text>
+    <line x1="125" y1="720" x2="305" y2="950" stroke="#666666" stroke-width="2"/>
+    <rect x="230" y="950" width="150" height="70" fill="#004488" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="305" y="990" fill="black" font-size="12" text-anchor="middle">Risk Management</text>
+    <line x1="305" y1="1020" x2="305" y2="1050" stroke="#666666" stroke-width="2"/>
+    <rect x="230" y="1050" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="305" y="1090" fill="black" font-size="12" text-anchor="middle">Risk Identification</text>
+    <line x1="305" y1="1020" x2="485" y2="1050" stroke="#666666" stroke-width="2"/>
+    <rect x="410" y="1050" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="485" y="1090" fill="black" font-size="12" text-anchor="middle">Risk Analysis</text>
+    <line x1="305" y1="1020" x2="665" y2="1050" stroke="#666666" stroke-width="2"/>
+    <rect x="590" y="1050" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="665" y="1090" fill="black" font-size="12" text-anchor="middle">Mitigation Planning</text>
+    <line x1="305" y1="1020" x2="305" y2="1150" stroke="#666666" stroke-width="2"/>
+    <rect x="230" y="1150" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="305" y="1190" fill="black" font-size="12" text-anchor="middle">Emergency Preparedness</text>
+    <line x1="305" y1="1020" x2="485" y2="1150" stroke="#666666" stroke-width="2"/>
+    <rect x="410" y="1150" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="485" y="1190" fill="black" font-size="12" text-anchor="middle">Compliance Management</text>
+    <line x1="305" y1="1020" x2="665" y2="1150" stroke="#666666" stroke-width="2"/>
+    <rect x="590" y="1150" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="665" y="1190" fill="black" font-size="12" text-anchor="middle">Cybersecurity</text>
+    <line x1="125" y1="720" x2="125" y2="1050" stroke="#666666" stroke-width="2"/>
+    <rect x="50" y="1050" width="150" height="70" fill="#004488" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="125" y="1090" fill="black" font-size="12" text-anchor="middle">Support</text>
+    <line x1="125" y1="1120" x2="125" y2="1150" stroke="#666666" stroke-width="2"/>
+    <rect x="50" y="1150" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="125" y="1190" fill="black" font-size="12" text-anchor="middle">Human Resources</text>
+    <line x1="125" y1="1120" x2="305" y2="1150" stroke="#666666" stroke-width="2"/>
+    <rect x="230" y="1150" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="305" y="1190" fill="black" font-size="12" text-anchor="middle">Information Technology (IT)</text>
+    <line x1="125" y1="1120" x2="485" y2="1150" stroke="#666666" stroke-width="2"/>
+    <rect x="410" y="1150" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="485" y="1190" fill="black" font-size="12" text-anchor="middle">Infrastructure Management</text>
+    <line x1="125" y1="1120" x2="125" y2="1250" stroke="#666666" stroke-width="2"/>
+    <rect x="50" y="1250" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="125" y="1290" fill="black" font-size="12" text-anchor="middle">Network Communications Processes</text>
+    <line x1="125" y1="1120" x2="305" y2="1250" stroke="#666666" stroke-width="2"/>
+    <rect x="230" y="1250" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="305" y="1290" fill="black" font-size="12" text-anchor="middle">Facilities Management</text>
+    <line x1="125" y1="1120" x2="485" y2="1250" stroke="#666666" stroke-width="2"/>
+    <rect x="410" y="1250" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="485" y="1290" fill="black" font-size="12" text-anchor="middle">Financial Management</text>
+    <line x1="125" y1="1120" x2="125" y2="1350" stroke="#666666" stroke-width="2"/>
+    <rect x="50" y="1350" width="150" height="70" fill="#0066cc" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="125" y="1390" fill="black" font-size="12" text-anchor="middle">Procurement and Supply Chain</text>
+    <rect x="50" y="950" width="150" height="70" fill="#884400" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="125" y="990" fill="black" font-size="12" text-anchor="middle">Organizational Layer</text>
+    <line x1="125" y1="1020" x2="125" y2="1050" stroke="#666666" stroke-width="2"/>
+    <rect x="50" y="1050" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="125" y="1090" fill="black" font-size="12" text-anchor="middle">Stakeholders</text>
+    <line x1="125" y1="1020" x2="125" y2="1150" stroke="#666666" stroke-width="2"/>
+    <rect x="50" y="1150" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="125" y="1190" fill="black" font-size="12" text-anchor="middle">Personas</text>
+    <line x1="125" y1="1020" x2="665" y2="1150" stroke="#666666" stroke-width="2"/>
+    <rect x="590" y="1150" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="665" y="1190" fill="black" font-size="12" text-anchor="middle">Communication Channels</text>
+    <line x1="125" y1="1020" x2="125" y2="1250" stroke="#666666" stroke-width="2"/>
+    <rect x="50" y="1250" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="125" y="1290" fill="black" font-size="12" text-anchor="middle">Roles Responsibilities</text>
+    <line x1="125" y1="1020" x2="305" y2="1250" stroke="#666666" stroke-width="2"/>
+    <rect x="230" y="1250" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="305" y="1290" fill="black" font-size="12" text-anchor="middle">Skills Competencies</text>
+    <line x1="125" y1="1020" x2="485" y2="1250" stroke="#666666" stroke-width="2"/>
+    <rect x="410" y="1250" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="485" y="1290" fill="black" font-size="12" text-anchor="middle">Structure</text>
+    <line x1="125" y1="1020" x2="125" y2="1350" stroke="#666666" stroke-width="2"/>
+    <rect x="50" y="1350" width="150" height="70" fill="#AAAAAA" stroke="#333333" stroke-width="2" rx="10" ry="10"/>
+    <text x="125" y="1390" fill="black" font-size="12" text-anchor="middle">Culture Values</text>
+</svg>

@@ -2,6 +2,11 @@
   "name": "Intel",
   "description": "Intel Chip Manufacture and opensource software king.",
   "color": "#0000ff",
+  "regions": {
+    "AMR": "High",
+    "LATAM": "High",
+    "APJ": "Low"
+  },
   "elements": {
     "OneAPI":  {
       "name": "OneAPI",
@@ -31,12 +36,12 @@
   }
 },
   "Redhat": {
-    "name": "Rehat",
-    "description": "Rehat includes OS and middleware",
+    "name": "Redhat",
+    "description": "Redhat includes OS and middleware",
     "color": "#ff0000",
     "elements": {
       "Redhat OpenShift":  {
-        "name": "Readhat OpenShift",
+        "name": "Redhat OpenShift",
         "color": "#880000",
         "description": "Redhat OpenShift",
         "layers": [ "Logical Layer-Service Management Layer-Service Orchestration"]

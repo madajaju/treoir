@@ -2,7 +2,7 @@ const fs = require('fs');
 
 module.exports = {
     friendlyName: 'convertJSON',
-    description: 'Convert the State to JSON',
+    description: 'Convert the Phase to JSON',
     static: false, // True is for Class methods. False is for object based.
     inputs: {
     },

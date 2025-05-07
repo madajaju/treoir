@@ -1,5 +1,6 @@
 import A3DGraph from '../js/ailtire/A3DGraph.js'
 import GMainView from './GMainView.js'
+import GFileView from "./GFileView.js";
 
 export default class GMainCustomerView extends GMainView {
     constructor(config) {
@@ -29,6 +30,7 @@ export default class GMainCustomerView extends GMainView {
                         overflow: 'hidden',
                         style: 'border: 1px solid #0088ff; background-color:#4a96d3; color:white;',
                         toolbar: {
+                            name: 'main_toolbar',
                             style: `background-color: ${me.config.toolbar["background-color"]}; color: ${me.config.color};`,
                             items: [
                                 {
@@ -53,6 +55,7 @@ export default class GMainCustomerView extends GMainView {
                                         { id: 'viewLayers', text: 'Layers View'},
                                     ]
                                 },
+                                {type: "html", id: "context", html: "<div id='mainContextMenu'></div>"},
                                 {type: 'spacer'},
                                 {type: 'button', id: 'home', group: '1', text: 'Home Screen', style: 'color: white;'},
                                 {type: 'button', id: 'expand', group: '1', text: 'Graph Only', style: 'color: white;'},
@@ -73,6 +76,16 @@ export default class GMainCustomerView extends GMainView {
                                     w2ui['layout'].sizeTo('preview', "80%");
                                 } else if (event.target === 'home') {
                                     me.graphOpening();
+                                } else if (event.target === 'fileMenu:fileNew') {
+                                    GFileView.newFileDialog(me);
+                                } else if (event.target === 'fileMenu:fileSave') {
+
+                                } else if (event.target === 'fileMenu:fileImport') {
+
+                                } else if (event.target === 'fileMenu:fileExport') {
+
+                                } else if (event.target === 'fileMenu:fileClose') {
+
                                 }
                             }
                         }

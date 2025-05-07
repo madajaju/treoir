@@ -34,7 +34,19 @@ module.exports = {
             suggObj = new cls({id: eid, name: sugg.name});
         }
         for(let aname in sugg) {
-            suggObj[aname] = sugg[aname];
+            if(suggObj.definition.associations.hasOwnProperty(aname)) {
+                if(suggObj.definition.associations[aname].cardinality === 1) {
+                    let cls = AClass.getClasss(sugg[aname].type)
+                    suggObj[aname] = cls.find(sugg[aname].id);
+                } else {
+                    for(let i in sugg[aname]) {
+                        let cls = AClass.getClasss(sugg[aname][i].type)
+                        suggObj[aname].add(cls.find(sugg[aname][i].id));
+                    }
+                }
+            } else {
+                suggObj[aname] = sugg[aname];
+            }
         }
         sugObj.save();
         return sugObj;

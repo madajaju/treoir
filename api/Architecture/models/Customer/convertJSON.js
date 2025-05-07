@@ -18,10 +18,15 @@ module.exports = {
             let attr = obj._attributes[aname];
             retval[aname] = attr;
         }
-        retval.states = {};
-        for(let sname in obj.states) {
-            let state = obj.states[sname];
-            retval.states[state.name] = state.convertJSON();
+        retval.phases = {};
+        for(let sname in obj.phases) {
+            let phase = obj.phases[sname];
+            retval.phases[phase.name] = phase.convertJSON();
+        }
+        retval.suggestions = [];
+        for(let sname in obj.suggestions) {
+            let sugg = obj.suggestions[sname];
+            retval.suggestions.push(sugg.convertJSON());
         }
         return retval;
     }

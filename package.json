@@ -22,5 +22,9 @@
     "marked": "^15.0.6",
     "mocha": "^7.0.0",
     "openai": "^4.76.3"
+  },
+  "devDependencies": {
+    "@skeletonlabs/skeleton": "^3.1.0",
+    "@skeletonlabs/skeleton-svelte": "^1.0.0"
   }
 }
