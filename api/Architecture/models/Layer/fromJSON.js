@@ -1,8 +1,8 @@
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'convert',
-    description: 'Convert Layer file',
+    friendlyName: 'fromJSON',
+    description: 'Convert Layer file to Objects',
     static: true, // True is for Class methods. False is for object based.
     inputs: {
         layers: {
@@ -28,7 +28,12 @@ module.exports = {
             layerObj.description = layer.description;
             layerObj.color = layer.color;
             layerObj.orientation = layer.orientation;
+            layerObj.position = layer.position;
             layerObj.save();
+            for(let ename in layer.assets) {
+                let asset = Asset.fromJSON({asset: layer.assets[ename], owner: layerObj});
+                layerObj.addToAssets(asset);
+            }
             _processSubLayers(layerObj, layer);
         }
         return;

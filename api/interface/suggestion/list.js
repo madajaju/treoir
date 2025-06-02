@@ -16,7 +16,7 @@ module.exports = {
         let retval = {};
         for(let name in suggs) {
             let sugg = suggs[name];
-            retval[name] = sugg.convertJSON();
+            retval[name] = sugg;
         }
         return retval;
     }

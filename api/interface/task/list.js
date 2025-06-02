@@ -5,6 +5,11 @@ module.exports = {
     description: 'List all of the tasks',
     static: true, // True is for Class methods. False is for object based.
     inputs: {
+        owner: {
+            type: 'ref',
+            required: false,
+            description: 'This is the owner of the tasks'
+        }
     },
 
     exits: {

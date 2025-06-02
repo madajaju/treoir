@@ -35,6 +35,12 @@ module.exports = {
             customerObj.addToPhases(phase);
             customerObj.save();
         }
+        for(let ename in customer.suggestions) {
+            let sugg = Suggestion.fromJSON({element: customer.elements[ename], owner: customerObj});
+            sugg.save();
+            customerObj.addToSuggestions(sugg);
+            customerObj.save();
+        }
         return customerObj;
     }
 };

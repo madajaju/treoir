@@ -23,12 +23,21 @@ class Element {
                 cardinality: 'n',
                 composition: false,
                 owner: false,
+                description: "Partners that the element is provided by."
             },
             layers: {
                 type: "Layer",
                 cardinality: 'n',
                 composition: false,
                 owner: false,
+                description: "Layers that the element is in."
+            },
+            assets: {
+                type: "Asset",
+                cardinality: 'n',
+                composition: true,
+                owner: true,
+                description: "Assets that are related to the element."
             }
         },
     }

@@ -34,6 +34,13 @@ class Customer {
                 cardinality: 'n',
                 composition: true,
                 description: 'Suggestions made by the AI to create elements or engagements.',
+            },
+            assets: {
+                type: 'Asset',
+                cardinality: 'n',
+                composition: true,
+                description: 'Assets that are related to the customer.',
+                owner: true,
             }
         },
     }

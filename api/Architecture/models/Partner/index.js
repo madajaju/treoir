@@ -28,6 +28,19 @@ class Partner {
                 type: 'PartnerInfluence',
                 cardinality: 'n',
                 composition: false,
+            },
+            suggestions: {
+                type: 'Suggestion',
+                cardinality: 'n',
+                composition: true,
+                owner: true,
+            },
+            assets: {
+                type: 'Asset',
+                cardinality: 'n',
+                composition: true,
+                owner: true,
+                description: "Assets that are related to the partner."
             }
         },
     }

@@ -21,7 +21,7 @@ export default class GViewer {
         let data = {nodes: {}, links: []};
         data.nodes["Logical"] = {
             id: "Logical",
-            name: "Logical Layer",
+            name: "Digital Architecture",
             view: GLayerView.view3D,
             color: "#118844",
             fx: 0,
@@ -33,7 +33,7 @@ export default class GViewer {
 
             data.nodes["Process"] = {
                 id: "Process",
-                name: "Process Layer",
+                name: "Process Architecture",
                 view: GLayerView.view3D,
                 color: "#115588",
                 fx: 0,
@@ -62,7 +62,7 @@ export default class GViewer {
     static loadOrganizationalNodes(data) {
         data.nodes["Organizational"] = {
             id: "Organizational",
-            name: "Organizational Layer",
+            name: "Organizational Architecture",
             color: "#884411",
             view: GLayerView.view3D,
             fx: -GLayerView.default.width/2,

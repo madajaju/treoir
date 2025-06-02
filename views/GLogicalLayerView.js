@@ -10,8 +10,8 @@ export default class GLogicalLayerView {
     }
     static view3D(config) {
         let node = {
-            name: "Logical Layer",
-            description: "Logical Layer consists of software stacks."
+            name: "Digital Architecture",
+            description: "Digital Architecture consists of software stacks."
         }
         let shape = new THREE.BoxGeometry(GLogicalLayerView.default.width, GLogicalLayerView.default.height, GLogicalLayerView.default.depth);
         let opacity = 1;

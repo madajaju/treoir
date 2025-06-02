@@ -28,7 +28,7 @@
     <rect x="766" y="170" width="164" height="-40" fill="#CCCCCC" stroke="#333" stroke-width="2" rx="10" ry="10"/>
     <text x="848" y="190" fill="black" font-size="14" text-anchor="middle">Outsourced Locations</text>
     <rect x="50" y="200" width="900" height="100" fill="#008800" stroke="#333" stroke-width="2" rx="10" ry="10"/>
-    <text x="500" y="220" fill="black" font-size="14" text-anchor="middle">Logical Layer</text>
+    <text x="500" y="220" fill="black" font-size="14" text-anchor="middle">Digital Architecture</text>
     <rect x="356.6666666666667" y="240" width="583.3333333333334" height="5" fill="#CCCCCC" stroke="#333"
           stroke-width="2" rx="10" ry="10"/>
     <text x="648.3333333333334" y="260" fill="black" font-size="14" text-anchor="middle">Application Layer</text>
@@ -136,7 +136,7 @@
           ry="10"/>
     <text x="203.33333333333334" y="307.5" fill="black" font-size="14" text-anchor="middle">Key Management</text>
     <rect x="50" y="350" width="900" height="100" fill="#000088" stroke="#333" stroke-width="2" rx="10" ry="10"/>
-    <text x="500" y="370" fill="black" font-size="14" text-anchor="middle">Process Layer</text>
+    <text x="500" y="370" fill="black" font-size="14" text-anchor="middle">Process Architecture</text>
     <rect x="282.5" y="390" width="657.5" height="5" fill="#004488" stroke="#333" stroke-width="2" rx="10" ry="10"/>
     <text x="611.25" y="410" fill="black" font-size="14" text-anchor="middle">Governance</text>
     <rect x="292.5" y="430" width="205.83333333333334" height="-21.666666666666668" fill="#0066cc" stroke="#333"
@@ -297,7 +297,7 @@
     <text x="210" y="471.6666666666667" fill="black" font-size="14" text-anchor="middle">Procurement and Supply Chain
     </text>
     <rect x="50" y="500" width="900" height="100" fill="#884400" stroke="#333" stroke-width="2" rx="10" ry="10"/>
-    <text x="500" y="520" fill="black" font-size="14" text-anchor="middle">Organizational Layer</text>
+    <text x="500" y="520" fill="black" font-size="14" text-anchor="middle">Organizational Architecture</text>
     <rect x="60" y="540" width="880" height="5" fill="#CCCCCC" stroke="#333" stroke-width="2" rx="10" ry="10"/>
     <text x="500" y="560" fill="black" font-size="14" text-anchor="middle">Stakeholders</text>
     <rect x="60" y="555" width="657.5" height="5" fill="#CCCCCC" stroke="#333" stroke-width="2" rx="10" ry="10"/>

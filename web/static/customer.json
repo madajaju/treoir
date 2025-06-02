@@ -1,0 +1,157 @@
+{
+  "name": "Paidar",
+  "description": "Podcast production company",
+  "color": "#0055ff",
+  "details": {
+    "contactName": "Darren",
+    "size": "Small"
+  },
+  "states": {
+    "Current": {
+      "name": "Current",
+      "order": 1,
+      "description": "Current state of the organization",
+      "targetDate": "2025-01-25",
+      "suppliers": {
+        "Intel": {
+          "name": "Intel",
+          "partner": "Intel",
+          "contact": "Name of the contact at the supplier",
+          "description": "Any descirption about the relationship",
+          "engagements": [
+            {
+              "name": "Laptops",
+              "element": "Core",
+              "description": "Using laptops",
+              "layers": [
+                "Physical Architecture-Devices-Enterprise Devices"
+              ]
+            }
+          ]
+        },
+        "Self": {
+          "name": "Paidar",
+          "engagements": [
+            {
+              "name": "ailtire",
+              "element": "ailtire",
+              "description": "AI driven Sysstem Architecture",
+              "layers": [
+                "Digital Architecture-Application Layer-Developer Services",
+                "Process Architecture-Innovation New Capability"
+              ]
+            },
+            {
+              "name": "guthan",
+              "element": "guthan",
+              "description": "Podcast Production Tool",
+              "layers": [
+                "Digital Architecture-Application Layer",
+                "Process Architecture-Operational and Delivery"
+              ]
+            }
+          ]
+        },
+        "JetBrains": {
+          "name": "JetBrains",
+          "partner": "JetBrains",
+          "contact": "www.jetbrains.com",
+          "description": "Any description about the relationship",
+          "engagements": [
+            {
+              "name": "intellij",
+              "element": "intellij",
+              "description": "Used for development",
+              "layers": [
+                "Digital Architecture-Application Layer-Developer Services",
+                "Process Architecture-Innovation New Capability"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "Future": {
+      "name": "Future",
+      "order": 2,
+      "description": "Current state of the organization",
+      "targetDate": "2025-01-25",
+      "suppliers": {
+        "Intel": {
+          "name": "Intel",
+          "partner": "Intel",
+          "contact": "Name of the contact at the supplier",
+          "description": "Any description about the relationship",
+          "engagements": [
+            {
+              "name": "Laptops",
+              "element": "Core",
+              "description": "Using laptops",
+              "layers": [
+                "Physical Architecture-Devices-Enterprise Devices"
+              ]
+            },
+            {
+              "name": "Workstations",
+              "element": "Xeon",
+              "description": "High powered workstations",
+              "layers": [
+                "Physical Architecture-Devices-Enterprise Devices"
+              ]
+            }
+          ]
+        },
+        "Self": {
+          "name": "Paidar",
+          "engagements": [
+            {
+              "name": "ailtire",
+              "element": "ailtire",
+              "description": "AI driven Sysstem Architecture",
+              "layers": [
+                "Digital Architecture-Application Layer-Developer Services",
+                "Process Architecture-Innovation New Capability"
+              ]
+            },
+            {
+              "name": "guthan",
+              "element": "guthan",
+              "description": "Podcast Production Tool",
+              "layers": [
+                "Digital Architecture-Application Layer",
+                "Process Architecture-Operational and Delivery"
+              ]
+            },
+            {
+              "name": "tuig",
+              "element": "tuig",
+              "description": "Tacit Knowledge Capture",
+              "layers": [
+                "Digital Architecture-Application Layer",
+                "Process Architecture-Innovation New Capability",
+                "Process Architecture-Operational and Delivery"
+              ]
+            }
+          ]
+        },
+        "JetBrains": {
+          "name": "JetBrains",
+          "partner": "JetBrains",
+          "contact": "www.jetbrains.com",
+          "description": "Any descirption about the relationship",
+          "engagements": [
+            {
+              "name": "intellij",
+              "element": "intellij",
+              "description": "Used for development",
+              "layers": [
+                "Digital Architecture-Application Layer-Developer Services",
+                "Process Architecture-Innovation New Capability"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -18,34 +18,24 @@ module.exports = {
         }
     },
 
-    fn: function (obj, inputs, env) {
-        let partner = Partner.find(inputs.id);
-        if(!partner) {
-            return {status: 404, message: "Partner not found"};
-        }
-        let retObj = {
-        };
-        retObj[partner.name] = {
-            name: partner.name,
-            color: partner.color,
-            description: partner.description,
-            elements: {},
-        }
-        for(let ename in partner.elements) {
-            let element = partner.elements[ename];
-            retObj[partner.name].elements[ename] = {
-                name: element.name,
-                color: element.color,
-                description: element.description,
-                layers: [],
-            };
-            for(let lname in element.layers) {
-                let layer = element.layers[lname];
-                retObj[partner.name].elements[ename].layers.push(layer.name);
+    fn: async function (inputs, env) {
+        let customer = Customer.find(inputs.id);
+        if(!customer) {
+            let customers =  await Customer.instances();
+            for(let i in customers) {
+                let c = customers[i];
+                if(c.name === inputs.id) {
+                    customer = c;
+                    break;
+                }
             }
         }
-        const retStr = JSON.stringify(retObj, null, 4);
-        const filename = `${partner.name.replaceAll(' ','')}.json`;
+        if(!customer) {
+            return {status: 404, message: `Customer ${inputs.id} not found`};
+        }
+        let retval = customer.convertJSON();
+        const retStr = JSON.stringify(retval, null, 4);
+        const filename = `${customer.name.replaceAll(' ','')}.json`;
         env.res.setHeader('Content-disposition', 'attachment; filename=' + filename);
         env.res.setHeader('Content-type', 'application/json');
         env.res.end(retStr);

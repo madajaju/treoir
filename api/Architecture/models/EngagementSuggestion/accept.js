@@ -7,7 +7,7 @@ module.exports = {
     inputs: {
         phase: {
             type: 'string',
-            description: 'The Phase that the engagment should be added',
+            description: 'The Phase that the engagement should be added',
         }
     },
 
@@ -36,6 +36,7 @@ module.exports = {
         }
         // Now check for the supplier
         let mySupplier = null;
+        let mySelfSupplier = null;
         for(let i in myPhase.suppliers) {
             let supplier = myPhase.suppliers[i];
             for (let j in obj.element.partners) {
@@ -43,6 +44,9 @@ module.exports = {
                 if (supplier.partner.name === partner.name) {
                     mySupplier = supplier;
                 }
+            }
+            if(supplier.name === "Self") {
+                mySelfSupplier = supplier;
             }
         }
         if(!mySupplier) {
@@ -54,7 +58,11 @@ module.exports = {
             }
         }
         if(!mySupplier) {
-            mySupplier = myPhase.addToSuppliers( { name: "Self"});
+            if(mySelfSupplier) {
+                mySupplier = mySelfSupplier;
+            } else {
+                mySupplier = myPhase.addToSuppliers({name: "Self"});
+            }
         }
 
         // Now make sure the engagement isn't already there.

@@ -35,6 +35,13 @@ class Supplier {
                 cardinality: 'n',
                 composition: true,
                 owner: true,
+            },
+            assets: {
+                type: 'Asset',
+                cardinality: 'n',
+                composition: true,
+                owner: true,
+                description: "Assets that are related to the supplier."
             }
         },
     }

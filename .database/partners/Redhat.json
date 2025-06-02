@@ -1,0 +1,63 @@
+{
+  "Redhat": {
+    "name": "Redhat",
+    "description": "Redhat includes OS and middleware",
+    "color": "#ff0000",
+    "elements": {
+      "Redhat OpenShift":  {
+        "name": "Redhat OpenShift",
+        "color": "#880000",
+        "description": "Redhat OpenShift",
+        "layers": [ "Digital Architecture-Service Management Layer-Service Orchestration"]
+      },
+      "Container Storage":  {
+        "name": "Container Storage",
+        "color": "#880000",
+        "description": "Container Storage",
+        "layers": [ "Digital Architecture-Distributed Information Management Layer-Data Management Layer" ]
+      },
+      "Data Foundation":  {
+        "name": "Data Foundation",
+        "color": "#880000",
+        "description": "Data Foundation",
+        "layers": [ "Digital Architecture-Distributed Information Management Layer-Data Management Layer" ]
+      },
+      "Red Hat Virtualization": {
+        "name": "Red Hat Virtualization",
+        "color": "#880000",
+        "description": "Red Hat Virtualization",
+        "layers": [ "Digital Architecture-Software Defined Infrastructure-Orchestration" ]
+      },
+      "IBM Ceph": {
+        "name": "IBM Ceph",
+        "color": "#880000",
+        "description": "IBM Ceph Storage",
+        "layers": [ "Digital Architecture-Software Defined Infrastructure-Storage" ]
+      },
+      "Multi-Cluster Management": {
+        "name": "Multi-Cluster Management",
+        "color": "#880000",
+        "description": "Multi-Cluster Management",
+        "layers": [ "Digital Architecture-Software Defined Infrastructure-Orchestration" ]
+      },
+      "OpenShit DevOps": {
+        "name": "OpenShift DevOps",
+        "color": "#880000",
+        "description": "OpenShift DevOps",
+        "layers": [ "Digital Architecture-Application Layer-Developer Services" ]
+      },
+      "Cluster Security":  {
+          "name": "Cluster Security",
+          "color": "#880000",
+          "description": "Cluster Security",
+          "layers": [ "Digital Architecture-Security Aspect-Detection" ]
+        }
+      },
+      "OpenShift SDN":  {
+        "name": "OpenShift SDN",
+        "color": "#880000",
+        "description": "OpenShift SDN",
+        "layers": [ "Digital Architecture-Software Defined Infrastructure-Network" ]
+      }
+  }
+}

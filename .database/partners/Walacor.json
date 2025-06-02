@@ -1,0 +1,15 @@
+{
+  "Walacor": {
+    "name": "Walacor",
+    "description": "Walacor is a data security company",
+    "color": "#00ffff",
+    "elements": {
+      "Walacor": {
+        "name": "Walacor",
+        "color": "#008800",
+        "description": "Walacor",
+        "layers": [ "Digital Architecture-Security Aspect-Encryption" ]
+      }
+    }
+  }
+}

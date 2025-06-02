@@ -34,6 +34,12 @@ module.exports = {
                 partnerObj.addToElements(element);
                 partnerObj.save();
             }
+            for(let ename in partner.suggestions) {
+                let sugg = Suggestion.fromJSON({element: partner.elements[ename], owner: partnerObj});
+                sugg.save();
+                partnerObj.addToSuggestions(sugg);
+                partnerObj.save();
+            }
             for(let rname in partner.regions) {
                 let level = partner.regions[rname];
                 let regionObj = new Region({id: rname, name: rname});
@@ -41,6 +47,10 @@ module.exports = {
                 partnerObj.addToRegions(influence);
                 regionObj.addToPartners(influence);
                 partnerObj.save();
+            }
+            for(let ename in partner.assets) {
+                let asset = Asset.fromJSON({asset: partner.assets[ename], owner: partnerObj});
+                partnerObj.addToAssets(asset);
             }
         }
         return partners;

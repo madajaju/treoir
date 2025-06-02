@@ -1,0 +1,146 @@
+{
+    "id": "workflow-1",
+    "name": "Gear Mapping Workflow",
+    "description": "This workflow guides a solution architect through the GEAR mapping session.",
+    "status": "in-progress",
+    "templates": [
+        {
+            "id": "template-1",
+            "name": "Verify Environment Setup",
+            "objective": "Ensure the environment and prerequisites are ready.",
+            "inputFormat": {
+                "checklist": ["Database connectivity", "API keys", "System parameters"]
+            },
+            "outputFormat": {
+                "checklistResults": ["string"],
+                "status": "boolean"
+            },
+            "guidance": "Follow the checklist and mark each item as completed."
+        },
+        {
+            "id": "template-2",
+            "name": "Collect Requirements",
+            "objective": "Gather all the necessary inputs and requirements.",
+            "inputFormat": {
+                "questions": [
+                    "What are the top-level objectives?",
+                    "Who are the stakeholders?"
+                ]
+            },
+            "outputFormat": {
+                "answers": ["string"],
+                "status": "boolean"
+            },
+            "guidance": "Interview stakeholders and complete the questionnaire before starting."
+        },
+        {
+            "id": "template-3",
+            "name": "Validate Mapping",
+            "objective": "Verify that the mapping meets the required standards.",
+            "inputFormat": {
+                "components": ["Processes", "Framework elements"]
+            },
+            "outputFormat": {
+                "validationResults": "boolean",
+                "comments": "string"
+            },
+            "guidance": "Review the mapping, verify accuracy, and address any discrepancies."
+        }
+    ],
+    "stages": [
+        {
+            "id": "stage-1",
+            "name": "Setup",
+            "description": "Prepare the environment and gather necessary data.",
+            "inputs": {
+                "name": "Name of the organization",
+                "address": "Address of the organization"
+            },
+            "objective": "Obtain the name and adress of the organization and verify that they are real entities. Also create a list of requirements for the the organization.",
+            "context": {
+                "name": "Paidar Production",
+                "address": "180 Orange Blossom Circle"
+            },
+            "tasks": [
+                {
+                    "id": "task-1",
+                    "name": "Verify Development Environment",
+                    "template": "template-1",
+                    "status": "completed",
+                    "inputs": {
+                        "checklist": ["Database connectivity", "API keys", "System parameters"]
+                    },
+                    "outputs": {
+                        "checklistResults": ["Connected", "Keys loaded", "Valid parameters"],
+                        "status": true
+                    },
+                    "details": "All environment checks have passed."
+                },
+                {
+                    "id": "task-2",
+                    "name": "Collect Stakeholder Requirements",
+                    "template": "template-2",
+                    "status": "pending",
+                    "inputs": {
+                        "questions": [
+                            "What are the top-level objectives?",
+                            "Who are the stakeholders?"
+                        ]
+                    },
+                    "outputs": null,
+                    "details": null
+                }
+            ],
+            "status": "in-progress"
+        },
+        {
+            "id": "stage-2",
+            "name": "Mapping",
+            "description": "Perform the mapping of processes to the GEAR framework.",
+            "tasks": [
+                {
+                    "id": "task-3",
+                    "name": "Map Organizational Processes",
+                    "template": "template-3",
+                    "status": "pending",
+                    "inputs": {
+                        "components": ["Marketing processes", "IT operations", "HR policies"]
+                    },
+                    "outputs": null,
+                    "details": null
+                }
+            ],
+            "status": "pending"
+        },
+        {
+            "id": "stage-3",
+            "name": "Validation",
+            "description": "Verify that the mapping meets stakeholder expectations.",
+            "tasks": [
+                {
+                    "id": "task-4",
+                    "name": "Validate Mapping",
+                    "template": "template-3",
+                    "status": "pending",
+                    "inputs": {
+                        "components": ["Mapped processes", "Structured framework"]
+                    },
+                    "outputs": null,
+                    "details": null
+                },
+                {
+                    "id": "task-5",
+                    "name": "Obtain Stakeholder Approval",
+                    "template": "template-2",
+                    "status": "pending",
+                    "inputs": {
+                        "questions": ["Is the mapping accurate?", "Do you approve the results?"]
+                    },
+                    "outputs": null,
+                    "details": null
+                }
+            ],
+            "status": "pending"
+        }
+    ]
+}

@@ -35,6 +35,10 @@ module.exports = {
 function _processSubLayers(currentDepth, targetDepth, retval, layer) {
     retval.layers = {};
 
+    retval.assets = {};
+    for(let aname in layer.assets) {
+        retval.assets[aname] = layer.assets[aname].convertJSON();
+    }
     for(let lname in layer.layers) {
         let tempLayer = {};
         let subLayer = layer.layers[lname];

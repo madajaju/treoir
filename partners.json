@@ -12,15 +12,15 @@
       "name": "OneAPI",
       "color": "#114488",
       "description": "Intel OneAPI allows for development of applications on heterogenous platforms.",
-      "layers":  [ "Logical Layer-Application Layer-Developer Services" ]
+      "layers":  [ "Digital Architecture-Application Layer-Developer Services" ]
     },
     "Xeon":  {
       "name": "Xeon",
       "color": "#114488",
       "description": "Server CPUs for datacenter and cloud",
       "layers": [
-        "Physical Layer-Devices-Multi-Hybrid Cloud",
-        "Physical Layer-Devices-Enterprise Devices"
+        "Physical Architecture-Devices-Multi-Hybrid Cloud",
+        "Physical Architecture-Devices-Enterprise Devices"
       ]
     },
     "Core": {
@@ -28,9 +28,9 @@
       "color": "#114488",
       "description": "Desktop and Labptop CPUs for Enterprise IT",
       "layers": [
-        "Physical Layer-Devices-Dynamic Edge Devices",
-        "Physical Layer-Devices-Operations Devices",
-        "Physical Layer-Devices-Enterprise Devices"
+        "Physical Architecture-Devices-Dynamic Edge Devices",
+        "Physical Architecture-Devices-Operations Devices",
+        "Physical Architecture-Devices-Enterprise Devices"
       ]
     }
   }
@@ -44,56 +44,56 @@
         "name": "Redhat OpenShift",
         "color": "#880000",
         "description": "Redhat OpenShift",
-        "layers": [ "Logical Layer-Service Management Layer-Service Orchestration"]
+        "layers": [ "Digital Architecture-Service Management Layer-Service Orchestration"]
       },
       "Container Storage":  {
         "name": "Container Storage",
         "color": "#880000",
         "description": "Container Storage",
-        "layers": [ "Logical Layer-Distributed Information Management Layer-Data Management Layer" ]
+        "layers": [ "Digital Architecture-Distributed Information Management Layer-Data Management Layer" ]
       },
       "Data Foundation":  {
         "name": "Data Foundation",
         "color": "#880000",
         "description": "Data Foundation",
-        "layers": [ "Logical Layer-Distributed Information Management Layer-Data Management Layer" ]
+        "layers": [ "Digital Architecture-Distributed Information Management Layer-Data Management Layer" ]
       },
       "Red Hat Virtualization": {
         "name": "Red Hat Virtualization",
         "color": "#880000",
         "description": "Red Hat Virtualization",
-        "layers": [ "Logical Layer-Software Defined Infrastructure-Orchestration" ]
+        "layers": [ "Digital Architecture-Software Defined Infrastructure-Orchestration" ]
       },
       "IBM Ceph": {
         "name": "IBM Ceph",
         "color": "#880000",
         "description": "IBM Ceph Storage",
-        "layers": [ "Logical Layer-Software Defined Infrastructure-Storage" ]
+        "layers": [ "Digital Architecture-Software Defined Infrastructure-Storage" ]
       },
       "Multi-Cluster Management": {
         "name": "Multi-Cluster Management",
         "color": "#880000",
         "description": "Multi-Cluster Management",
-        "layers": [ "Logical Layer-Software Defined Infrastructure-Orchestration" ]
+        "layers": [ "Digital Architecture-Software Defined Infrastructure-Orchestration" ]
       },
       "OpenShit DevOps": {
         "name": "OpenShift DevOps",
         "color": "#880000",
         "description": "OpenShift DevOps",
-        "layers": [ "Logical Layer-Application Layer-Developer Services" ]
+        "layers": [ "Digital Architecture-Application Layer-Developer Services" ]
       },
       "Cluster Security":  {
           "name": "Cluster Security",
           "color": "#880000",
           "description": "Cluster Security",
-          "layers": [ "Logical Layer-Security Aspect-Detection" ]
+          "layers": [ "Digital Architecture-Security Aspect-Detection" ]
         }
       },
       "OpenShift SDN":  {
         "name": "OpenShift SDN",
         "color": "#880000",
         "description": "OpenShift SDN",
-        "layers": [ "Logical Layer-Software Defined Infrastructure-Network" ]
+        "layers": [ "Digital Architecture-Software Defined Infrastructure-Network" ]
       }
   },
   "Walacor": {
@@ -105,7 +105,7 @@
         "name": "Walacor",
         "color": "#008800",
         "description": "Walacor",
-        "layers": [ "Logical Layer-Security Aspect-Encryption" ]
+        "layers": [ "Digital Architecture-Security Aspect-Encryption" ]
       }
     }
   }

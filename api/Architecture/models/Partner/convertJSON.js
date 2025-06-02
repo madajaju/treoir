@@ -28,6 +28,15 @@ module.exports = {
             let influence = obj.regions[i];
             retval.regions[influence.region.name] = influence.level;
         }
+        retval.suggestions = [];
+        for(let sname in obj.suggestions) {
+            let sugg = obj.suggestions[sname];
+            retval.suggestions.push(sugg.convertJSON());
+        }
+        for(let aname in obj.assets) {
+            let asset = obj.assets[aname];
+            retval.assets[aname] = asset.convertJSON();
+        }
         return retval;
     }
 };

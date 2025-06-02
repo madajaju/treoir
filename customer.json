@@ -6,7 +6,7 @@
     "contactName": "Darren",
     "size": "Small"
   },
-  "states": {
+  "phases": {
     "Current": {
       "name": "Current",
       "order": 1,
@@ -24,7 +24,7 @@
               "element": "Core",
               "description": "Using laptops",
               "layers": [
-                "Physical Layer-Devices-Enterprise Devices"
+                "Physical Architecture-Devices-Enterprise Devices"
               ]
             }
           ]
@@ -37,8 +37,8 @@
               "element": "ailtire",
               "description": "AI driven Sysstem Architecture",
               "layers": [
-                "Logical Layer-Application Layer-Developer Services",
-                "Process Layer-Innovation New Capability"
+                "Digital Architecture-Application Layer-Developer Services",
+                "Process Architecture-Innovation New Capability"
               ]
             },
             {
@@ -46,8 +46,8 @@
               "element": "guthan",
               "description": "Podcast Production Tool",
               "layers": [
-                "Logical Layer-Application Layer",
-                "Process Layer-Operational and Delivery"
+                "Digital Architecture-Application Layer",
+                "Process Architecture-Operational and Delivery"
               ]
             }
           ]
@@ -63,8 +63,8 @@
               "element": "intellij",
               "description": "Used for development",
               "layers": [
-                "Logical Layer-Application Layer-Developer Services",
-                "Process Layer-Innovation New Capability"
+                "Digital Architecture-Application Layer-Developer Services",
+                "Process Architecture-Innovation New Capability"
               ]
             }
           ]
@@ -88,7 +88,7 @@
               "element": "Core",
               "description": "Using laptops",
               "layers": [
-                "Physical Layer-Devices-Enterprise Devices"
+                "Physical Architecture-Devices-Enterprise Devices"
               ]
             },
             {
@@ -96,7 +96,7 @@
               "element": "Xeon",
               "description": "High powered workstations",
               "layers": [
-                "Physical Layer-Devices-Enterprise Devices"
+                "Physical Architecture-Devices-Enterprise Devices"
               ]
             }
           ]
@@ -109,8 +109,8 @@
               "element": "ailtire",
               "description": "AI driven Sysstem Architecture",
               "layers": [
-                "Logical Layer-Application Layer-Developer Services",
-                "Process Layer-Innovation New Capability"
+                "Digital Architecture-Application Layer-Developer Services",
+                "Process Architecture-Innovation New Capability"
               ]
             },
             {
@@ -118,8 +118,8 @@
               "element": "guthan",
               "description": "Podcast Production Tool",
               "layers": [
-                "Logical Layer-Application Layer",
-                "Process Layer-Operational and Delivery"
+                "Digital Architecture-Application Layer",
+                "Process Architecture-Operational and Delivery"
               ]
             },
             {
@@ -127,9 +127,9 @@
               "element": "tuig",
               "description": "Tacit Knowledge Capture",
               "layers": [
-                "Logical Layer-Application Layer",
-                "Process Layer-Innovation New Capability",
-                "Process Layer-Operational and Delivery"
+                "Digital Architecture-Application Layer",
+                "Process Architecture-Innovation New Capability",
+                "Process Architecture-Operational and Delivery"
               ]
             }
           ]
@@ -145,8 +145,8 @@
               "element": "intellij",
               "description": "Used for development",
               "layers": [
-                "Logical Layer-Application Layer-Developer Services",
-                "Process Layer-Innovation New Capability"
+                "Digital Architecture-Application Layer-Developer Services",
+                "Process Architecture-Innovation New Capability"
               ]
             }
           ]

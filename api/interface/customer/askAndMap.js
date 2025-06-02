@@ -66,6 +66,7 @@ module.exports = {
         }
 
         await _mapElements(results, customer);
+        console.log("Results:", results);
         return results;
     }
 };
@@ -111,9 +112,6 @@ async function _mapElements(prompt, customer) {
                 result.layer = layers[i];
                 let suggestion = new ElementSuggestion(result);
                 customer.addToSuggestions(suggestion);
-                if (suggestion.supplier === 'Self') {
-                    // Check if there is a supplier already in the list.
-                }
             }
         } else {
             for(let j in elements) {

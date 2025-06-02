@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const AOpenAI = require('ailtire/src/AI/AOpenAI.js');
 const AOLlama = require('ailtire/src/AI/AOLlama.js');
 // Check for node_modules directory. If it exists then continue. If not ask to run npm install.
@@ -40,11 +41,20 @@ let config = {
         let partnerDir = path.resolve(dbDir, 'partners');
         let pdir = fs.readdirSync(partnerDir);
         for(let i in pdir) {
-            const partnerStr = fs.readFileSync(path.resolve(partnerDir, pdir,'partners.json'), 'utf8');
+            const pfile = path.resolve(partnerDir, pdir[i]);
+            const partnerStr = fs.readFileSync(pfile, 'utf8');
             const partnersJSON = JSON.parse(partnerStr);
             Partner.fromJSON({partners: partnersJSON});
         }
-
+        let guidanceDir = path.resolve(dbDir, 'workflows');
+        let gdir = fs.readdirSync(guidanceDir);
+        for(let i in gdir) {
+            const gfile = path.resolve(guidanceDir, gdir[i]);
+            const wfStr = fs.readFileSync(gfile, 'utf8');
+            const workflowJSON = JSON.parse(wfStr);
+            const workflow = GuidedWorkflow.fromJSON({json: workflowJSON});
+            workflow.start();
+        }
        /*
         const customerStr = fs.readFileSync('customer.json', 'utf8');
         const customerJSON = JSON.parse(customerStr);
@@ -52,9 +62,12 @@ let config = {
 
         */
 
+        /*
         const tasksStr = fs.readFileSync('tasks.json', 'utf8');
         const tasksJSON = JSON.parse(tasksStr);
         Task.fromJSON({tasks:tasksJSON});
+
+         */
     }
 };
 if(fs.existsSync('.ailtire.js')) {

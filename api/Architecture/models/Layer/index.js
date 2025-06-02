@@ -37,6 +37,13 @@ class Layer {
                 type: 'Element',
                 cardinality: 'n',
                 description: "Elements supported in this layer of the architecture."
+            },
+            assets: {
+                type: 'Asset',
+                cardinality: 'n',
+                description: "Assets supported in this layer of the architecture.",
+                owner: true,
+                composition: true,
             }
         },
     }

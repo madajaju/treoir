@@ -37,6 +37,13 @@ class Engagement {
                 composition: false,
                 owner: false,
             },
+            assets: {
+                type: 'Asset',
+                cardinality: 'n',
+                composition: true,
+                owner: true,
+                description: "Assets that are related to the engagement."
+            }
         },
     }
 }

@@ -23,13 +23,14 @@ module.exports = {
         let pObj = Partner.find(partner);
         if(pObj) {
             newElement.addToPartners(pObj);
+            pObj.addToElements(newElement);
         } else {
             console.error("Partner Not Found");
         }
-        let layer = object.layer;
+        let layer = obj.layer;
         let lObj = Layer.find(layer);
         if(lObj) {
-            newElement.addToLayers(layer);
+            newElement.addToLayers(lObj);
         }
         newElement.save();
         obj.artifact = newElement;
