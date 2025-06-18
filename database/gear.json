@@ -15,7 +15,8 @@
         "description": "Defines the organization's aspirational long-term goals and core purpose.",
         "position": {
           "row": 1,
-          "col": 2
+          "col": 1,
+          "colspan": 3
         },
         "layers": {
           "Vision Statement": {
@@ -34,8 +35,8 @@
               "col": 2
             }
           },
-          "Leadership and Stakeholder Aspirations": {
-            "name": "Leadership and Stakeholder Aspirations",
+          "Leadership Aspirations": {
+            "name": "Leadership Aspirations",
             "description": "Captures the strategic priorities, values, and transformational ambitions expressed by organizational leadership and key internal or external stakeholders, reflecting the organization's intentional direction.",
             "position": {
               "row": 2,
@@ -50,8 +51,8 @@
               "col": 2
             }
           },
-          "Narrative of Change": {
-            "name": "Narrative of Change",
+          "Narrative of Action": {
+            "name": "Narrative of Action",
             "description": "Explains how the vision and mission adapt over time to address evolving societal needs, emerging trends, and environmental shifts, maintaining ongoing relevance and strategic focus.",
             "position": {
               "row": 3,
@@ -65,7 +66,8 @@
         "description": "Identifies the medium- to long-term outcomes and key focus areas necessary to achieve the vision.",
         "position": {
           "row": 2,
-          "col": 2
+          "col": 1,
+          "rowspan": 3
         },
         "layers": {
           "Strategic Objectives": {
@@ -106,8 +108,9 @@
         "name": "Value Streams & Capabilities",
         "description": "Outlines the key value flows and enabling capabilities required to deliver on the strategy and mission.",
         "position": {
-          "row": 3,
-          "col": 2
+          "row": 2,
+          "col": 3,
+          "rowspan": 3
         },
         "layers": {
           "Constituent Service Journeys": {
@@ -164,9 +167,9 @@
         "name": "Policy & Compliance",
         "description": "Documents the legal, regulatory, and policy frameworks guiding the organization’s operations and architecture.",
         "position": {
-          "row": 1,
-          "col": 1,
-          "rowspan": 4
+          "row": 3,
+          "col": 2,
+          "rowspan": 1
         },
         "layers": {
           "Mandates and Statutes": {
@@ -224,9 +227,8 @@
         "name": "Risk & Resilience",
         "description": "Addresses the organization's ability to anticipate, mitigate, and recover from risks while maintaining operational continuity.",
         "position": {
-          "row": 1,
-          "col": 3,
-          "rowspan": 4
+          "row": 2,
+          "col": 2
         },
         "layers": {
           "Risk Identification & Prioritization": {
@@ -374,12 +376,78 @@
       }
     },
     "layers": {
+      "Machines": {
+        "name": "Machines",
+        "description": "Machines include non digital and digital machines that interact with the physical world.",
+        "position": {
+          "row": 1,
+          "col": 1,
+          "rowspan": 2
+        },
+        "layers": {
+          "Manual Input Devices": {
+            "name": "Manual Input Machines",
+            "description": "Machines operated by humans to provide direct input to the system.\n\nPush buttons\n\nSelector switches\n\nFoot pedals\n\nEmergency stop switches\n\nHandwheels and levers with feedback",
+            "position": {
+              "row": 1,
+              "col": 1,
+              "colspan": 3
+            }
+          },
+          "Sensors": {
+            "name": "Sensors",
+            "description": "Machines that measure physical parameters from the process. Temperature sensors (RTDs, thermocouples)\n\nPressure transducers\n\nFlow meters\n\nLevel sensors (ultrasonic, float)\n\nProximity and position sensors (inductive, optical)\n\nSpeed/rotation sensors (encoders, tachometers)\n\nChemical/gas sensors (pH, CO₂, VOCs)",
+            "position": {
+              "row": 1,
+              "col": 4,
+              "colspan": 3
+            }
+          },
+          "Composite Machines": {
+            "name": "Composite Machines",
+            "description": "Assemblies that combine sensors, actuators, controllers, and logic into an integrated device.\n\nRobotic arms (with encoders, motors, force sensors)\n\nCNC machines\n\nAutonomous guided vehicles (AGVs)\n\nSmart conveyor modules\n\nPackaging machines with embedded control\n\nPick-and-place machines",
+            "position": {
+              "row": 2,
+              "col": 1,
+              "colspan": 6
+            }
+          },
+          "Motion Acuators": {
+            "name": "Motion Acuators",
+            "description": "Machines that cause linear or rotary movement in mechanical systems.\n\nElectric motors (AC, DC, servo, stepper)\n\nPneumatic or hydraulic cylinders\n\nLinear actuators\n\nRotary actuators\n\nDrives and motor controllers",
+            "position": {
+              "row": 3,
+              "col": 1,
+              "colspan": 2
+            }
+          },
+          "Flow Acuators": {
+            "name": "Flow Acuators",
+            "description": "Machines that regulate flow of liquids, gases, or materials in the process.\n\nSolenoid valves\n\nControl valves (pneumatic, electric)\n\nDosing pumps\n\nDampers and gates\n\nHeaters (used to control thermal flow)",
+            "position": {
+              "row": 3,
+              "col": 3,
+              "colspan": 2
+            }
+          },
+          "Signal and Power Switching": {
+            "name": "Signal and Power Switching",
+            "description": "Machines that switch electrical signals or power to machines.\n\nRelays\n\nContactors\n\nSolid-state switches\n\nCircuit breakers (with signaling)\n\nInterposing relays",
+            "position": {
+              "row": 3,
+              "col": 5,
+              "colspan": 2
+            }
+          }
+
+        }
+      },
       "Devices": {
         "name": "Devices",
         "description": "Devices represent all physical devices involved in the system's operation, such as sensors and hardware endpoints.",
         "position": {
           "row": 1,
-          "col": 1
+          "col": 2
         },
         "layers": {
           "Dynamic Edge Devices": {
@@ -421,14 +489,15 @@
         "description": "Communication represents the physical network and protocols connecting devices within locations.",
         "position": {
           "row": 2,
-          "col": 1
+          "col": 2
         }
       },
       "Locations": {
         "description": "Locations define geographic and logical places in the system where resources are located.",
         "position": {
           "row": 3,
-          "col": 1
+          "col": 1,
+          "colspan": 2
         },
         "layers": {
           "Dynamic Locations": {
@@ -650,7 +719,7 @@
           "colspan": 2
         },
         "layers": {
-          "IoT Devices": {
+          "Edge Devices": {
             "position": {
               "row": 1,
               "col": 1
@@ -753,8 +822,9 @@
           "Architecture & Trust Foundations": {
             "description": "Establishes principles of security by design and zero-trust architecture, defining core building blocks like product assurance, secure boot, attestation, and trusted execution environments.",
             "position": {
-              "row": 1,
-              "col": 1
+              "row": 4,
+              "col": 1,
+              "colspan": 3
             },
             "layers": {
               "Product Security Assurance & Secure Supply Chain": {
@@ -822,7 +892,7 @@
                   "col": 1
                 }
               },
-              "Edge & IoT Security": {
+              "Edge Security": {
                 "description": "Ensures devices and systems operating at the network's edge are protected against physical and cyber threats.",
                 "position": {
                   "row": 4,
@@ -835,7 +905,8 @@
             "description": "Protects the confidentiality and integrity of data in motion, leveraging technologies like microsegmentation, SDN-based controls, and pervasive encryption.",
             "position": {
               "row": 3,
-              "col": 1
+              "col": 1,
+              "colspan": 2
             },
             "layers": {
               "East-West & North-South Encryption": {
@@ -871,8 +942,8 @@
           "Data & Application Security": {
             "description": "Embeds security into the application lifecycle and data handling practices, including encryption across all data states, robust secrets management, and secure development practices.",
             "position": {
-              "row": 4,
-              "col": 1
+              "row": 2,
+              "col": 2
             },
             "layers": {
               "Encryption": {
@@ -901,8 +972,9 @@
           "Threat Detection & Response": {
             "description": "Provides real-time monitoring and analysis of system behavior to combat evolving threats, including tools like EDR/XDR, user and entity behavior analytics, and deception technologies.",
             "position": {
-              "row": 5,
-              "col": 1
+              "row": 2,
+              "col": 3,
+              "rowspan": 2
             },
             "layers": {
               "EDR/XDR": {
@@ -938,8 +1010,9 @@
           "Resilience, Remediation & Compliance": {
             "description": "Ensures systems can recover from compromise while meeting regulatory and operational mandates, covering automated recovery playbooks, audit logging, security chaos engineering, and SBOMs.",
             "position": {
-              "row": 6,
-              "col": 1
+              "row": 1,
+              "col": 1,
+              "colspan": 3
             },
             "layers": {
               "Remediation & Recovery Playbooks": {

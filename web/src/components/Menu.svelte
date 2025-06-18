@@ -6,7 +6,11 @@
 <nav class="top-menu bg-blue-500 text-white p-1">
     <ul class="menu-list flex justify-between">
         {#each menuItems as item}
-            <li class="menu-item px-2 py-1 text-sm flex items-center gap-2" on:click={() => item.action && item.action()}>
+            <li
+                    class="menu-item px-2 py-1 text-sm flex items-center gap-2"
+                    on:click={item.action}
+                    disabled={item.disable}
+            >
                 {#if item.class}
                     <i class={item.class} aria-hidden="true"></i> <!-- Render the class-based icon -->
                 {/if}

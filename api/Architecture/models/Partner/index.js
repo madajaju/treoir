@@ -9,11 +9,11 @@ class Partner {
                 description: 'Description of the partner.'
             },
             description: {
-                type: "string",
+                type: "text",
                 description: "Description of the partner."
             },
             color: {
-                type: "string",
+                type: "color",
                 description: "Color of the partner in the architecture."
             },
         },

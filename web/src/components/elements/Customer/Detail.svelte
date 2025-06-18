@@ -24,39 +24,49 @@
 {/if}
 
 {#if element.phases && Object.keys(element.phases).length > 0}
-    <table class="asset-list" width="100%">
+    <table class="phase-list">
         <thead>
         <tr>
-        {#each Object.entries(element.phases) as [key, phase]}
-            <th>
-                <ToolTip item="{ { key: phase.id, value: phase } }">
-                    <b><i>{phase.name}</i>
-                </ToolTip>
-            </th>
-        {/each}
+            {#each Object.entries(element.phases) as [key, phase]}
+                <th>
+                    <ToolTip item="{ { key: phase.id, value: phase } }">
+                        <b><i>{phase.name}</i>
+                    </ToolTip>
+                </th>
+            {/each}
         </tr>
         </thead>
         <tbody>
         <tr>
-        {#each Object.entries(element.phases) as [key, phase]}
-            <td>
-                <ul>
-                {#each Object.entries(phase.suppliers) as [key, supplier] }
-                    <li>
-                        <ToolTip item="{ { key: supplier.id, value: supplier } }">
-                            <b>{supplier.name}</b> - {Object.keys(supplier.engagements).join(', ')}
-                        </ToolTip>
-                    </li>
-                {/each}
-                </ul>
-            </td>
-        {/each}
+            {#each Object.entries(element.phases) as [key, phase]}
+                <td>
+                    <ul>
+                        {#if phase?.suppliers }
+                            {#each Object.entries(phase.suppliers) as [key, supplier] }
+                                <li>
+                                    <ToolTip item="{ { key: supplier.id, value: supplier } }">
+                                        <b>{supplier.name}</b> - {Object.keys(supplier.engagements).join(', ')}
+                                    </ToolTip>
+                                </li>
+                            {/each}
+                        {/if}
+                    </ul>
+                </td>
+            {/each}
         </tr>
         </tbody>
     </table>
 {/if}
 
 <style>
+    .phase-list {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    .phase-list th, td {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
     .detail-view {
         padding: 20px;
         border: 1px solid #ddd;
@@ -81,10 +91,12 @@
         border: 1px solid #ccc;
         border-radius: 4px;
     }
+
     .asset-list {
         list-style-type: disc; /* Bullet points */
         padding-left: 20px; /* Add some spacing for the bullets */
         margin: 0;
+        width: 100%;
     }
 
     .asset-list li {
@@ -99,6 +111,7 @@
         color: #007ACC; /* Link color */
         text-decoration: none; /* Remove underline */
     }
+
     .ellipsed-text {
         display: inline-block; /* Ensure it acts like a block for proper width measurement */
         max-width: 100%; /* Ensures it stays within the container width */

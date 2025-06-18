@@ -1,5 +1,4 @@
 import {writable, get, derived} from "svelte/store";
-import {API_BASE_URL} from "../config";
 import {selectedRun} from "./store.js";
 
 // The main store to hold the entire architecture
@@ -54,7 +53,7 @@ export const workflowInstanceNodes = derived(workflowInstances, ($workflowInstan
 
 export async function fetchRun(run) {
     try {
-        const res = await fetch(`${API_BASE_URL}/workflow/instance?name=${run.name}&id=${run.id}`); // Replace with your API URL
+        const res = await fetch(`/api/workflow/instance?name=${run.name}&id=${run.id}`); // Replace with your API URL
         if (!res.ok) {
             throw new Error(`API Error: ${res.statusText}`);
         }
@@ -70,7 +69,7 @@ export async function fetchRun(run) {
 export async function fetchWorkflows() {
     // workflows.update((state) => ({ ...state, isLoading: true, error: null }));
     try {
-        const res = await fetch(`${API_BASE_URL}/workflow/list`); // Replace with your API URL
+        const res = await fetch(`/api/workflow/list`); // Replace with your API URL
         if (!res.ok) {
             throw new Error(`API Error: ${res.statusText}`);
         }
@@ -82,7 +81,7 @@ export async function fetchWorkflows() {
         console.error("Error fetching workflows: ", err);
     }
     try {
-        const res = await fetch(`${API_BASE_URL}/workflow/instances`); // Replace with your API URL
+        const res = await fetch(`/api/workflow/instances`); // Replace with your API URL
         if (!res.ok) {
             throw new Error(`API Error: ${res.statusText}`);
         }

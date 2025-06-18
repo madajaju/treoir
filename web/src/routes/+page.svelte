@@ -6,7 +6,6 @@
         goto(`/actors/${actor.dir}/Dashboard`);
     }
     let actorPanels = data.actorPanels;
-    console.log("Actor Panels Length:", actorPanels.length);
 
 </script>
 

@@ -72,6 +72,10 @@ function addInteractiveCircle(container, groupElement, node, selectEngagement, s
 
 
 	const existingCircles = groupElement.querySelectorAll("circle");
+	const checkCircle = groupElement.querySelector(`circle[node-id="${node.id}"]`);
+	if(checkCircle) {
+		return;
+	}
 	const numCircles = existingCircles.length;
 
 	// Get the group's bounding box
@@ -92,6 +96,7 @@ function addInteractiveCircle(container, groupElement, node, selectEngagement, s
 
 	// Create the circle element
 	const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+	circle.setAttribute("node-id", node.id);
 	circle.setAttribute("cx", cx);
 	circle.setAttribute("cy", cy);
 	circle.setAttribute("r", circleOptions.radius || 20);

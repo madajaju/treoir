@@ -9,7 +9,7 @@ class Suggestion {
                 description: 'Name of the suggestion.',
             },
             description: {
-               type: 'string',
+               type: 'text',
                 description: 'Description of the suggestion.',
             }
         },
@@ -38,7 +38,23 @@ class Suggestion {
                     reject: {
                         Rejected: {}
                     },
+                    update: {
+                        Edited: { }
+                    }
                 },
+            },
+            Edited: {
+                events: {
+                    update: {
+                        Edited: { }
+                    },
+                    accept: {
+                        Accepted: { }
+                    },
+                    reject: {
+                        Rejected: {}
+                    },
+                }
             },
             Accepted: {
                 description: "The Suggestion was accepted and the artifact can be created.",

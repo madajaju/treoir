@@ -13,7 +13,7 @@ class Supplier {
                 description: 'The contact person at the supplier, e.g., Name of the contact at the supplier.'
             },
             description: {
-                type: 'string',
+                type: 'text',
                 description: 'Description about the relationship, e.g., Any description about the relationship.'
             },
             details: {

@@ -1,0 +1,284 @@
+{
+  "Intel": {
+    "name": "Intel",
+    "color": "#0000ff",
+    "description": "Intel Chip Manufacture and opensource software king.",
+    "elements": {
+      "OneAPI": {
+        "name": "OneAPI",
+        "color": "#114488",
+        "description": "Intel OneAPI allows for development of applications on heterogenous platforms.",
+        "layers": [
+          "Developer Services"
+        ]
+      },
+      "Xeon": {
+        "name": "Xeon",
+        "color": "#114488",
+        "description": "Server CPUs for datacenter and cloud",
+        "layers": [
+          "Multi-Hybrid Cloud",
+          "Enterprise Devices"
+        ]
+      },
+      "Core": {
+        "name": "Core",
+        "color": "#114488",
+        "description": "Desktop and Labptop CPUs for Enterprise IT",
+        "layers": [
+          "Dynamic Edge Devices",
+          "Operations Devices",
+          "Enterprise Devices"
+        ]
+      },
+      "Intel C++ Compiler": {
+        "name": "Intel C++ Compiler",
+        "color": "#0000ff",
+        "description": "A highly optimizing compiler for C and C++ programming languages, part of the Intel oneAPI toolkit.",
+        "layers": [
+          "Developer Services"
+        ]
+      },
+      "Intel Distribution of OpenVINO Toolkit": {
+        "name": "Intel Distribution of OpenVINO Toolkit",
+        "color": "#0000ff",
+        "description": "Specific distribution optimized for deploying deep learning applications.",
+        "layers": [
+          "Developer Services",
+          "Developer Services"
+        ]
+      },
+      "Intel Fortran Compiler": {
+        "name": "Intel Fortran Compiler",
+        "color": "#0000ff",
+        "description": "Optimizes Fortran applications, also part of the oneAPI toolkit.",
+        "layers": [
+          "Developer Services"
+        ]
+      },
+      "Intel Graphics Driver": {
+        "name": "Intel Graphics Driver",
+        "color": "#0000ff",
+        "description": "Offers support for Intel integrated graphics hardware, enhancing graphics performance and stability in applications.",
+        "layers": [
+          "Developer Services"
+        ]
+      },
+      "Intel Media SDK": {
+        "name": "Intel Media SDK",
+        "color": "#0000ff",
+        "description": "A software development kit providing APIs for video processing, enabling developers to leverage Intel hardware acceleration for multimedia applications.",
+        "layers": [
+          "Developer Services"
+        ]
+      },
+      "Intel OpenVINO Toolkit": {
+        "name": "Intel OpenVINO Toolkit",
+        "color": "#0000ff",
+        "description": "A toolkit facilitating the optimization of deep learning models for inference across various Intel hardware platforms.",
+        "layers": [
+          "AI ML Services"
+        ]
+      },
+      "Intel Parallel Studio": {
+        "name": "Intel Parallel Studio",
+        "color": "#0000ff",
+        "description": "A suite of tools designed to help developers create high-performing applications using parallel programming.",
+        "layers": [
+          "Workflow Services"
+        ]
+      },
+      "Intel Software Guard Extensions (SGX)": {
+        "name": "Intel Software Guard Extensions (SGX)",
+        "color": "#0000ff",
+        "description": "Provides security features for applications by enabling secure enclaves for sensitive operations.",
+        "layers": []
+      },
+      "Intel System Studio": {
+        "name": "Intel System Studio",
+        "color": "#0000ff",
+        "description": "Integrated development environment (IDE) for creating systems-level software, including tools for debugging, performance analysis, and optimization.",
+        "layers": [
+          "Software Defined Infrastructure"
+        ]
+      },
+      "Intel VTune Profiler": {
+        "name": "Intel VTune Profiler",
+        "color": "#0000ff",
+        "description": "A performance analysis tool that allows developers to optimize their application’s performance across Intel CPUs and GPUs.",
+        "layers": [
+          "Developer Services",
+          "Developer Services"
+        ]
+      },
+      "Intel 400 Series Chipsets": {
+        "name": "Intel 400 Series Chipsets",
+        "color": "#0000ff",
+        "description": "Support for previous generation Intel processors, providing essential connectivity solutions.",
+        "layers": [
+          "Enterprise Devices"
+        ]
+      },
+      "Intel 500 Series Chipsets": {
+        "name": "Intel 500 Series Chipsets",
+        "color": "#0000ff",
+        "description": "Chipsets that enhance connectivity and performance for Intel processors.",
+        "layers": [
+          "Enterprise Devices"
+        ]
+      },
+      "Intel Agilex FPGAs": {
+        "name": "Intel Agilex FPGAs",
+        "color": "#0000ff",
+        "description": "Field Programmable Gate Arrays that offer flexibility and performance for custom hardware solutions.",
+        "layers": [
+          "Multi-Hybrid Cloud"
+        ]
+      },
+      "Intel AI Accelerators": {
+        "name": "Intel AI Accelerators",
+        "color": "#0000ff",
+        "description": "Hardware solutions that enhance AI processing capabilities for various applications.",
+        "layers": [
+          "Enterprise Devices"
+        ]
+      },
+      "Intel Atom Processors": {
+        "name": "Intel Atom Processors",
+        "color": "#0000ff",
+        "description": "Low-power processors designed for lightweight devices and embedded applications.",
+        "layers": [
+          "Dynamic Edge Devices",
+          "Dynamic Edge Devices"
+        ]
+      },
+      "Intel Celeron Processors": {
+        "name": "Intel Celeron Processors",
+        "color": "#0000ff",
+        "description": "Entry-level processors optimized for budget-friendly computing solutions.",
+        "layers": [
+          "Dynamic Edge Devices"
+        ]
+      },
+      "Intel Compute Sticks": {
+        "name": "Intel Compute Sticks",
+        "color": "#0000ff",
+        "description": "Pocket-sized devices that convert any display into a full computer, enhancing portability.",
+        "layers": [
+          "Operations Devices",
+          "Operations Devices"
+        ]
+      },
+      "Intel Iris and Intel UHD Graphics": {
+        "name": "Intel Iris and Intel UHD Graphics",
+        "color": "#0000ff",
+        "description": "Integrated graphics solutions that provide enhanced visual experiences for both gaming and professional applications.",
+        "layers": [
+          "Operations Devices",
+          "Operations Devices"
+        ]
+      },
+      "Intel IoT Gateways": {
+        "name": "Intel IoT Gateways",
+        "color": "#0000ff",
+        "description": "Solutions bridging devices and the cloud for efficient data management in IoT applications.",
+        "layers": [
+          "Communications"
+        ]
+      },
+      "Intel Ethernet Controllers and Adapters": {
+        "name": "Intel Ethernet Controllers and Adapters",
+        "color": "#0000ff",
+        "description": "Networking hardware that provides reliable Ethernet connectivity for a wide range of devices.",
+        "layers": [
+          "Communications"
+        ]
+      },
+      "Intel Optane Memory": {
+        "name": "Intel Optane Memory",
+        "color": "#0000ff",
+        "description": "A storage technology that accelerates system performance by bridging the gap between RAM and SSD.",
+        "layers": [
+          "Enterprise Devices"
+        ]
+      },
+      "Intel Optane persistent memory modules": {
+        "name": "Intel Optane persistent memory modules",
+        "color": "#0000ff",
+        "description": "Hybrid memory technology that combines the speed of memory with the capacity of storage.",
+        "layers": [
+          "Enterprise Devices",
+          "Enterprise Devices"
+        ]
+      },
+      "Intel SSD Data Center Family": {
+        "name": "Intel SSD Data Center Family",
+        "color": "#0000ff",
+        "description": "Enterprise solid-state drives that deliver performance and reliability for data-intensive applications.",
+        "layers": [
+          "Multi-Hybrid Cloud",
+          "Multi-Hybrid Cloud"
+        ]
+      },
+      "Intel Pentium Processors": {
+        "name": "Intel Pentium Processors",
+        "color": "#0000ff",
+        "description": "Affordable processors suitable for basic computing tasks in consumer devices.",
+        "layers": [
+          "Enterprise Devices"
+        ]
+      },
+      "Intel Rack and Blade Servers": {
+        "name": "Intel Rack and Blade Servers",
+        "color": "#0000ff",
+        "description": "Server solutions optimized for space efficiency and performance in data center environments.",
+        "layers": [
+          "Multi-Hybrid Cloud"
+        ]
+      },
+      "Intel Server Boards and Systems": {
+        "name": "Intel Server Boards and Systems",
+        "color": "#0000ff",
+        "description": "Comprehensive server solutions designed for robust performance in data centers.",
+        "layers": [
+          "Multi-Hybrid Cloud"
+        ]
+      },
+      "Intel SSDs": {
+        "name": "Intel SSDs",
+        "color": "#0000ff",
+        "description": "Solid-state drives that offer high-speed data access and storage solutions.",
+        "layers": [
+          "Enterprise Devices",
+          "Enterprise Devices"
+        ]
+      },
+      "Intel Stratix FPGAs": {
+        "name": "Intel Stratix FPGAs",
+        "color": "#0000ff",
+        "description": "High-performance FPGAs designed for demanding applications requiring programmability and flexibility.",
+        "layers": [
+          "Operations Devices",
+          "Operations Devices"
+        ]
+      },
+      "Intel Vision Products": {
+        "name": "Intel Vision Products",
+        "color": "#0000ff",
+        "description": "Domain-specific products designed for AI and machine learning applications, providing advanced analytics.",
+        "layers": [
+          "Dynamic Edge Devices",
+          "Dynamic Edge Devices"
+        ]
+      },
+      "Intel Wireless Networking Products": {
+        "name": "Intel Wireless Networking Products",
+        "color": "#0000ff",
+        "description": "Includes Wi-Fi and Bluetooth products that enhance wireless connectivity in devices.",
+        "layers": [
+          "Communications"
+        ]
+      }
+    }
+  }
+}

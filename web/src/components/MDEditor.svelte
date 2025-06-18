@@ -4,6 +4,9 @@
     let editorContainer; // Container for the editor
     let editorInstance; // Toast UI Editor instance
     export let genai = null;
+    export let saveDoc;
+    export let closeEditor;
+
 
     export let md = ""; // Markdown string as a prop
     const dispatch = createEventDispatcher(); // Used for emitting events like `update`
@@ -21,6 +24,10 @@
             }
         }
     }
+    async function saveText() {
+        const content = editorInstance.getMarkdown();
+        saveDoc(content);
+    }
 
     // Import Toast UI Editor dynamically
     onMount(async () => {
@@ -33,8 +40,16 @@
             initialValue: md || "",
             initialEditType: "markdown", // Can be "markdown" or "wysiwyg"
             previewStyle: "vertical", // Can also be "tab" or "horizontal"
-            height: "500px",
+            height: "100%",
             toolbarItems: [
+                [
+                    { el: createCustomButton("Save", saveText),
+                        command: 'save',
+                        className: "toasetui-editor-custom-clear",
+                        tooltip: "Save Changes"
+                    },
+
+                ],
                 ['heading', 'bold', 'italic', 'strike'],
                 ['hr', 'quote'],
                 ['ul', 'ol', 'task', 'indent', 'outdent'],
@@ -42,11 +57,16 @@
                 ['code', 'codeblock'],
                 // Using Option: Customize the last button
                 [{
-                    el: createCustomButton(),
-                    command: 'bold',
+                    el: createAIButton(),
+                    command: 'ai',
                     className: "toastui-editor-custom-clear", // for styling
-                    tooltip: "Clear all content",
-                }]
+                    tooltip: "GenAI Documentation ",
+                }],
+                [
+                    { el: createCustomButton("Close", closeEditor), command: 'close',
+                        className: "toastui-editor-custom-clear", // for styling
+                        tooltip: "Close Editor" },
+                ]
             ],
             events: {
                 change: () => {
@@ -73,8 +93,17 @@
             editorInstance.setMarkdown(md);
         }
     }
-
-    function createCustomButton(label) {
+    function createCustomButton(label, callback) {
+        const button = document.createElement('button');
+        button.textContent = label;
+        button.classList.add('custom-button'); // Add custom styling
+        button.addEventListener("click", async () => {
+            console.log("Clicked", label);
+            callback();
+        });
+        return button;
+    }
+    function createAIButton(label) {
         const button = document.createElement("div");
         button.textContent = label;
         button.classList.add("ailtire-genai");

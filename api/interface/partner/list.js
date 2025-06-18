@@ -21,7 +21,7 @@ module.exports = {
         let retval = {};
         for(let i in partners) {
             let partner = partners[i];
-            retval[partner.name] = partner.convertJSON();
+            retval[partner.name] = partner.convertDJSON();
         }
         return retval;
     }

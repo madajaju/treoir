@@ -34,7 +34,7 @@
 
     let menuItems = [
         { label: 'Graph', action: () => { showGraphView(); } },
-        { label: 'Documentation', action: () => { showDocumentationView(); } },
+        { label: 'Edit', action: () => { showDocumentationView(); } },
         { label: 'Todo', action: () => {console.log('TODO')} },
     ];
     if(menu) {
@@ -46,7 +46,7 @@
     }
 </script>
 
-<Menu {menuItems} {handleMenuClick} ></Menu>
+<Menu {menuItems} {handleMenuClick} />
 <div class="flex items-center justify-center h-full bg-gray-100 rounded">
     <ResizableLayout
             TopPanel={{ component: DetailView, props: { id: "preview", height: 200 } }}

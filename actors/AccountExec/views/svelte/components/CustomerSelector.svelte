@@ -1,5 +1,4 @@
 <script>
-    import {API_BASE_URL} from "../../../../../web/src/config.js";
     import {setCurrentCustomer, customers, fetchCustomers} from "../../../../../web/src/stores/customerStore.js"; // Assuming you have a store file where the customer is managed
     import {onMount} from 'svelte';
 
@@ -46,7 +45,7 @@
         const formData = new FormData();
         formData.append('file', selectedFile);
         formData.append('type', 'Customer');
-        const response = await fetch(`${API_BASE_URL}/customer/upload`, {
+        const response = await fetch(`/api/customer/upload`, {
             method: 'POST',
             body: formData
         });
@@ -69,7 +68,7 @@
         const formData = new FormData();
         formData.append('name', newCustomerName);
         formData.append('description', newCustomerDescription);
-        const response = await fetch(`${API_BASE_URL}/customer/create?name=${newCustomerName}&description=${newCustomerDescription}`, {
+        const response = await fetch(`/api/customer/create?name=${newCustomerName}&description=${newCustomerDescription}`, {
             method: 'POST',
             body: formData,
         });

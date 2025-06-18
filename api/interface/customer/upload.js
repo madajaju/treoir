@@ -1,12 +1,12 @@
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'import',
-    description: 'Import Partner file',
+    friendlyName: 'upload',
+    description: 'Upload customer file',
     static: true, // True is for Class methods. False is for object based.
     inputs: {
         file: {
-            description: 'File to import',
+            description: 'File to upload',
             type: 'file',
             required: true
         }

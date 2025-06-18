@@ -3,7 +3,8 @@
 
     let { children } = $props();
     import { goto } from '$app/navigation';
-
+    import {writable} from "svelte/store";
+    import {marked} from "marked";
     import { onMount } from "svelte";
     import ArchitectureTreeView from "../../../../../web/src/components/ArchitectureTreeView.svelte";
     import CustomerTreeView from "../../../../../web/src/components/CustomerTreeView.svelte";
@@ -11,16 +12,27 @@
     import ResizableLayout from "../../../../../web/src/components/ResizableLayout.svelte";
 
     import { selectedNode, theme, selectedCustomer } from "../../../../../web/src/stores/store.js";
-    import { currentCustomer } from "../../../../../web/src/stores/customerStore.js";
-    import {API_BASE_URL} from "../../../../../web/src/config";
+    import { currentCustomer} from "../../../../../web/src/stores/customerStore.js";
+    import { exportState, exportText, exportItem } from "../../../../../web/src/stores/exportStore.js";
+    import {watchEvents} from "../../../../../web/src/stores/eventsStore";
+    import ExportViewer from "../../../../../web/src/components/ExportViewer.svelte";
+
+    let showExporting = writable(false);
 
     onMount(() => {
         document.documentElement.setAttribute("data-theme", $theme);
     });
 
-    function changeTheme(newTheme) {
-        theme.set(newTheme);
-        document.documentElement.setAttribute("data-theme", newTheme);
+    function handleExportEvent(event) {
+        if(event.status === 'svg') {
+            exportText.update(current => current + '\n' + event.text);
+        } else if(event.status === 'complete') {
+            exportText.set(event.text);
+            exportState.set("complete");
+        }
+        else {
+            exportText.update(current => current + '\n' + event.text);
+        }
     }
     async function saveFile(data, fileName = "customer.json") {
         try {
@@ -52,11 +64,11 @@
         }
     }
 
-    async function exportCustomer() {
+    async function saveCustomer() {
         try {
             // Fetch JSON data from the server
             const customerID = $currentCustomer.id;
-            const response = await fetch(`${API_BASE_URL}/customer/export?id=${customerID}`);
+            const response = await fetch(`/api/customer/save?id=${customerID}`);
 
             if (!response.ok) {
                 throw new Error('Failed to fetch file');
@@ -71,21 +83,101 @@
             console.error(error.message);
         }
     }
+    async function analyzeExport() {
+        try {
+            exportState.set("analyzing");
+            exportText.set('');
+            exportItem.set($currentCustomer);
+            const customerID = $currentCustomer.id;
+            const response = await fetch(`/api/customer/export?id=${customerID}&force=true`);
+
+            if (!response.ok) {
+                throw new Error('Failed to fetch file');
+            }
+
+            // Get the JSON data
+            let data = await response.text();
+            // Do not tak the data and set it to the exportText
+            // The complete event will take care of that.
+            // exportText.set(data);
+            exportState.set("complete");
+        } catch (error) {
+            console.error(error.message);
+        }
+    }
+    async function exportCustomer() {
+        try {
+            showExporting.set(true);
+            // Fetch JSON data from the server
+            watchEvents('customer', handleExportEvent);
+            exportState.set("analyzing");
+            exportText.set('');
+            exportItem.set($currentCustomer);
+            const customerID = $currentCustomer.id;
+            const response = await fetch(`/api/customer/export?id=${customerID}`);
+
+            if (!response.ok) {
+                throw new Error('Failed to fetch file');
+            }
+
+            // Get the JSON data
+            let data = await response.text();
+            // Do not tak the data and set it to the exportText
+            // The complete event will take care of that.
+            // exportText.set(data);
+            exportState.set("complete");
+        } catch (error) {
+            console.error(error.message);
+        }
+    }
+
     function closeCustomer() {
         goto('/');
         currentCustomer.set(null);
     }
     let menu = [
+        { label: 'Save', action: () => { saveCustomer(); } },
         { label: 'Export', action: () => { exportCustomer(); } },
         { label: 'Close', action: () => { closeCustomer(); } },
     ];
+    function closeExportViewer() {
+        showExporting.set(false);
+    }
+    async function updateExport() {
+        const customerID = $currentCustomer.id;
+        const content = $exportText;
+        const response = await fetch(`/api/customer/updateExport?id=${customerID}`, {
+            method: 'POST',
+            mode: 'cors',
+            body: JSON.stringify({text: content}),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+        });
+        if (!response.ok) {
+            throw new Error('Failed to fetch file');
+        }
+        alert('Saved successfully!');
+    }
+    function stopExport() {
+
+    }
 </script>
 
-<ResizableLayout
-        LeftPanel={{component: ArchitectureTreeView, props: {selectedNode}}}
-        ContentPanel={{component:MainView, props: {menu} }}
-        RightPanel={{component:CustomerTreeView, props: {selectedCustomer}}}
-/>
+{#if !$showExporting}
+    <ResizableLayout
+            LeftPanel={{component: ArchitectureTreeView, props: {selectedNode}}}
+            ContentPanel={{component:MainView, props: {menu} }}
+            RightPanel={{component:CustomerTreeView, props: {selectedCustomer}}}
+    />
+{:else}
+    <ResizableLayout
+            LeftPanel={{component: ArchitectureTreeView, props: {selectedNode}}}
+            ContentPanel={{component:ExportViewer, props: {onClose: closeExportViewer, onAnalyze: analyzeExport, onStop: stopExport, onSave: updateExport} }}
+            RightPanel={{component:CustomerTreeView, props: {selectedCustomer}}}
+    />
+{/if}
 
 <style>
     html, body {

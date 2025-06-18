@@ -9,7 +9,7 @@ class Layer {
                 description: "Name of the layer",
             },
             description: {
-                type: "description",
+                type: "text",
                 description: "Description of the layer"
             },
             position: {
@@ -17,7 +17,7 @@ class Layer {
                 description: "Position in the architecture row,col,rowspan, colspan"
             },
             color: {
-                type: "string",
+                type: "color",
                 description: "Color of the layer in the architecture."
             },
             orientation: {

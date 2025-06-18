@@ -1,5 +1,4 @@
 import {writable, get, derived} from "svelte/store";
-import {API_BASE_URL} from "../config";
 import {Actor} from "../components/elements/Actor";
 import {UseCase} from "../components/elements/UseCase";
 import {Scenario} from "../components/elements/Scenario";
@@ -56,7 +55,7 @@ export const actorNodes = derived(actors, ($actors) => {
 export async function fetchActors() {
     // usecases.update((state) => ({ ...state, isLoading: true, error: null }));
     try {
-        const res = await fetch(`${API_BASE_URL}/actor/list`); // Replace with your API URL
+        const res = await fetch(`/api/actor/list`); // Replace with your API URL
         if (!res.ok) {
             throw new Error(`API Error: ${res.statusText}`);
         }

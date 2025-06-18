@@ -1,11 +1,10 @@
 <script>
     import {selectedValue} from "../stores/store.js";
-    import ToolTip from "./ToolTip.svelte";
     export let cls = "";
 
-    import {Object} from "./elements/Object";
+    import {BaseObject} from "./elements/BaseObject";
 
-    let elementView = Object.Detail;
+    let elementView = BaseObject.Detail;
     $: if($selectedValue) {
         if($selectedValue.view) {
             elementView = $selectedValue.view;

@@ -1,7 +1,7 @@
 import { writable, get, derived } from "svelte/store";
 import { Layer } from "../components/elements/Layer";
+import { Element } from "../components/elements/Element";
 import { Partner } from "../components/elements/Partner";
-import { API_BASE_URL } from "../config.js";
 
 // Writable stores
 export const currentPartner = writable(null);
@@ -11,7 +11,6 @@ export const partners = writable({}); // Ensure this is an object to match any a
  * Derived store to create partner nodes from the `partners` store.
  */
 export const partnerNodes = derived(partners, ($partners) => {
-    console.log("partnerNodes derived function called:", $partners);
 
     if (!$partners || Object.keys($partners).length === 0) {
         console.warn("partners store is empty or undefined.");
@@ -53,7 +52,7 @@ export const partnerNodes = derived(partners, ($partners) => {
             name: element.name,
             type: "Element",
             _children: [],
-            _view: Layer, // Assuming Layer is the appropriate view here
+            _view: Element,
         };
 
         partner._children.push(idMap[id]);
@@ -72,7 +71,7 @@ export const partnerNodes = derived(partners, ($partners) => {
             id,
             type: "Layer",
             name: layer,
-            _view: "Layer", // Placeholder for layer rendering
+            _view: Layer,
         };
 
         element._children.push(idMap[id]);
@@ -84,7 +83,6 @@ export const partnerNodes = derived(partners, ($partners) => {
         result.push(idMap[partner.name]);
     });
 
-    console.log("Derived partnerNodes result:", result);
     return result;
 });
 
@@ -93,6 +91,14 @@ export const partnerNodes = derived(partners, ($partners) => {
  */
 export async function fetchCurrentPartner() {
     await fetchPartners(); // Ensure we have the latest partner data
+    const partnerList = get(partners);
+    const currentPartnerID = get(currentPartner)?.name;
+    const currentPartnerFound = partnerList[currentPartnerID];
+    if (currentPartnerFound) {
+        currentPartner.set(currentPartnerFound);
+    } else {
+        console.error(`Current partner not found with id "${currentPartnerID}".`);
+    }
 }
 
 /**
@@ -100,11 +106,10 @@ export async function fetchCurrentPartner() {
  */
 export async function fetchPartners() {
     try {
-        const response = await fetch(`${API_BASE_URL}/partner/list`);
+        const response = await fetch(`/api/partner/list`);
         if (!response.ok) throw new Error("Failed to fetch partners from the server");
 
         const partnerObjects = await response.json();
-        console.log("Fetched partners:", partnerObjects); // Log API response for debugging
         partners.set(partnerObjects || {}); // Always set `partners` to an object to avoid breaking assumptions
     } catch (error) {
         console.error("Error fetching partners:", error);
@@ -134,8 +139,6 @@ export const currentPartnerNodes = derived(currentPartner, ($currentPartner) => 
         console.warn("currentPartner is null or undefined.");
         return [];
     }
-
-    console.log("Processing currentPartnerNodes:", $currentPartner);
 
     const idMap = {};
 
@@ -172,7 +175,7 @@ export const currentPartnerNodes = derived(currentPartner, ($currentPartner) => 
             name: element.name,
             type: "Element",
             _children: [],
-            _view: Layer, // Assuming Layer is correct here
+            _view: Element,
         };
 
         partner._children.push(idMap[id]);
@@ -191,7 +194,7 @@ export const currentPartnerNodes = derived(currentPartner, ($currentPartner) => 
             id,
             type: "Layer",
             name: layer,
-            _view: "Layer",
+            _view: Layer
         };
 
         element._children.push(idMap[id]);
@@ -200,6 +203,5 @@ export const currentPartnerNodes = derived(currentPartner, ($currentPartner) => 
     processPartner($currentPartner);
 
     const result = [idMap[$currentPartner.name]];
-    console.log("Derived currentPartnerNodes result:", result);
     return result;
 });

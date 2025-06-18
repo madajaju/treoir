@@ -1,4 +1,4 @@
-const AIHelper = require('ailtire/src/server/AIHelper');
+const AIHelper = require('ailtire/src/Server/AIHelper');
 
 module.exports = {
     friendlyName: 'verifyObjective',

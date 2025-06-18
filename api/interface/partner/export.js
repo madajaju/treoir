@@ -1,3 +1,6 @@
+const AIHelper = require("ailtire/src/Server/AIHelper");
+const AEvent = require("ailtire/src/Server/AEvent");
+const path = require('path');
 const fs = require('fs');
 
 module.exports = {
@@ -18,36 +21,23 @@ module.exports = {
         }
     },
 
-    fn: function (obj, inputs, env) {
+    fn: async function (inputs, env) {
         let partner = Partner.find(inputs.id);
         if(!partner) {
-            return {status: 404, message: "Partner not found"};
+            return {status: 404, message: `Customer ${inputs.id} not found`};
         }
-        let retObj = {
-        };
-        retObj[partner.name] = {
-            name: partner.name,
-            color: partner.color,
-            description: partner.description,
-            elements: {},
+        fs.mkdirSync(path.resolve(__dirname, "../../../.uploads"), {recursive: true});
+        let filename =  path.resolve(__dirname, "../../../.uploads",`${partner.name.replaceAll(' ','')}.md`);
+        if(fs.existsSync(filename)) {
+            let retString = fs.readFileSync(filename, 'utf8');
+            AEvent.emit('partner.export.complete', {status: 'complete', text: retString});
+            return retString;
+        } else {
+            let results = await partner.producePDF(inputs);
+            fs.writeFileSync(filename, results);
+            let retString = results;
+            env.res.end(retString);
+            return results;
         }
-        for(let ename in partner.elements) {
-            let element = partner.elements[ename];
-            retObj[partner.name].elements[ename] = {
-                name: element.name,
-                color: element.color,
-                description: element.description,
-                layers: [],
-            };
-            for(let lname in element.layers) {
-                let layer = element.layers[lname];
-                retObj[partner.name].elements[ename].layers.push(layer.name);
-            }
-        }
-        const retStr = JSON.stringify(retObj, null, 4);
-        const filename = `${partner.name.replaceAll(' ','')}.json`;
-        env.res.setHeader('Content-disposition', 'attachment; filename=' + filename);
-        env.res.setHeader('Content-type', 'application/json');
-        env.res.end(retStr);
     }
 };

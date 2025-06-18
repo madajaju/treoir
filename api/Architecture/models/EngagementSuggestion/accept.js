@@ -39,10 +39,12 @@ module.exports = {
         let mySelfSupplier = null;
         for(let i in myPhase.suppliers) {
             let supplier = myPhase.suppliers[i];
-            for (let j in obj.element.partners) {
-                let partner = obj.element.partners[j];
-                if (supplier.partner.name === partner.name) {
-                    mySupplier = supplier;
+            if(obj.element) {
+                for (let j in obj.element.partners) {
+                    let partner = obj.element.partners[j];
+                    if (supplier.partner.name === partner.name) {
+                        mySupplier = supplier;
+                    }
                 }
             }
             if(supplier.name === "Self") {
@@ -50,11 +52,8 @@ module.exports = {
             }
         }
         if(!mySupplier) {
-            if(obj.element.partners.length > 0) {
-                mySupplier = myPhase.addToSuppliers({
-                    partner: obj.element.partners[0],
-                    name: obj.element.partners[0].name
-                });
+            if(obj.supplier) {
+                mySupplier = myPhase.addToSuppliers(obj.supplier);
             }
         }
         if(!mySupplier) {
@@ -73,10 +72,19 @@ module.exports = {
                 newEngagement = engagement;
             }
         }
+        let layer = Layer.find(obj.layer);
+        if(!obj.element) {
+            obj.element = new Element({name: obj.name, description: obj.description});
+            obj.element.addToLayers(layer);
+            if(mySupplier.partner) {
+                obj.element.addToPartners(mySupplier.partner);
+                mySupplier.partner.addToElements(obj.element);
+            }
+        }
         if(!newEngagement) {
             newEngagement = mySupplier.addToEngagements({name: obj.name, description: obj.description, element: obj.element});
         }
-        newEngagement.addToLayers(obj.layer);
+        newEngagement.addToLayers(layer);
         obj.artifact = newEngagement;
         obj.save();
         customer.save();

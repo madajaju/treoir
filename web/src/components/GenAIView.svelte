@@ -1,6 +1,5 @@
 <script>
 
-    import {API_BASE_URL} from "../config.js";
     import {marked} from 'marked';
     import {currentCustomer} from "../stores/customerStore.js";
     import {currentPartner} from "../stores/partnerStore.js";
@@ -36,7 +35,7 @@
 
         isLoading = true;
         prompt = 'Waiting...';
-        let url = API_BASE_URL;
+        let url = '/api';
         if($currentCustomer) {
             let customerID = $currentCustomer.id;
             url += `/customer/askAndMap?prompt=${promptValue}`;

@@ -1,7 +1,6 @@
 import {writable, get, derived} from "svelte/store";
 import {Layer} from "../components/elements/Layer";
 import fs from 'fs';
-import {API_BASE_URL} from "../config.js";
 
 // The main store to hold the entire architecture
 export const layers = writable({});
@@ -27,7 +26,7 @@ export const layerNodes = derived(layers, ($layers) => {
 				mapLayer(idMap[id], layer.layers[cname]);
 			}
 			return idMap[layer.name];
-		}
+    }
     for (let lname in $layers) {
         let layer = $layers[lname];
         layer.name = layer.name || lname;
@@ -42,7 +41,7 @@ export const layerNodes = derived(layers, ($layers) => {
 export async function fetchLayers() {
     try {
         // Fetch the hosted JSON file
-        const response = await fetch(`${API_BASE_URL}/layer/list`); // Update with your hosting URL if necessary
+        const response = await fetch(`/api/layer/list`); // Update with your hosting URL if necessary
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }

@@ -24,6 +24,7 @@ module.exports = {
         if(pObj) {
             newElement.addToPartners(pObj);
             pObj.addToElements(newElement);
+            newElement.color = pObj.color;
         } else {
             console.error("Partner Not Found");
         }

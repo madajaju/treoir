@@ -12,7 +12,6 @@
 
     import { selectedNode, theme, selectedPartner } from "../../../../../web/src/stores/store.js";
     import { currentPartner } from "../../../../../web/src/stores/partnerStore.js";
-    import {API_BASE_URL} from "../../../../../web/src/config";
 
     onMount(() => {
         document.documentElement.setAttribute("data-theme", $theme);
@@ -56,7 +55,7 @@
         try {
             // Fetch JSON data from the server
             const partnerID = $currentPartner.id;
-            const response = await fetch(`${API_BASE_URL}/partner/export?id=${partnerID}`);
+            const response = await fetch(`/api/partner/export?id=${partnerID}`);
 
             if (!response.ok) {
                 throw new Error('Failed to fetch file');

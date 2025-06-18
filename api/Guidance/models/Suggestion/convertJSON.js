@@ -33,6 +33,7 @@ module.exports = {
             }
         }
         retval.type = obj.definition.name;
+        retval.state = obj._state;
         return retval;
     }
 };

@@ -1,5 +1,4 @@
 import {writable, get, derived} from "svelte/store";
-import {API_BASE_URL} from "../config";
 import {UseCase} from "../components/elements/UseCase";
 import {Scenario} from "../components/elements/Scenario";
 
@@ -38,7 +37,7 @@ export const usecaseNodes = derived(usecases, ($usecases) => {
 export async function fetchUsecases() {
     // usecases.update((state) => ({ ...state, isLoading: true, error: null }));
     try {
-        const res = await fetch(`${API_BASE_URL}/usecase/list`); // Replace with your API URL
+        const res = await fetch(`/api/usecase/list`); // Replace with your API URL
         if (!res.ok) {
             throw new Error(`API Error: ${res.statusText}`);
         }

@@ -5,7 +5,7 @@
 
     import {onMount,tick} from "svelte";
     import {graph} from "../stores/store.js"
-    import {selectedNode, selectedNodeInfo, selectedClass, selectedClassList} from "../stores/store.js"
+    import {highlightedLayer, selectedNode, selectedNodeInfo, selectedClass, selectedClassList} from "../stores/store.js"
     import {getLayer} from "../stores/layerStore.js"
     import Menu from "./Menu.svelte";
     import {GraphThree} from '../lib/ailtire/GraphThree';
@@ -39,6 +39,9 @@
     }
     $: if ($selectedClass) {
         updateGraphDataWithList($selectedNode, $selectedClassList);
+    }
+    $: if ($highlightedLayer) {
+        updateGraphHighlight($highlightedLayer);
     }
     $: if(graphView === '2D') {
         waitForPreview2DAndUpdateGraph();
@@ -85,7 +88,55 @@
             }
         }
     }
+    async function updateGraphHighlight(node) {
 
+        totalMenu = [];
+        if(node) {
+            if (node._view?.hasOwnProperty('getMenu')) {
+                let menu = node._view.getMenu();
+                for (let i in menu) {
+                    totalMenu.push(menu[i]);
+                }
+            }
+        }
+        if (graphView === '3D') {
+            totalMenu = [];
+            for (let i in menu3DItems) {
+                totalMenu.push(menu3DItems[i]);
+            }
+            if(node) {
+                if (node._view?.hasOwnProperty('get3DView')) {
+                    let data = node._view.get3DView(node);
+                    graphObj?.setData(data.nodes, data.links);
+                } else {
+                    let data = {nodes: {}, links: []};
+                    data.nodes[node.id] = {id: node.id, name: node.name, color: node.color};
+                    data.links.push({source: node.id, target: node.id});
+                    graphObj?.setData(data.nodes, data.links);
+                }
+            } else {
+                defaultView.default3DView(graphObj, level);
+            }
+        } else {
+            totalMenu = [];
+            for (let i in menu2DItems) {
+                totalMenu.push(menu2DItems[i]);
+            }
+            if(node) {
+                if (node._view?.hasOwnProperty('get2DView')) {
+                    graph2D = 'Generating the diagram';
+                    let graph2DDiv = document.getElementById('preview2d');
+                    node._view.selectLayer(graph2DDiv, node, selectNode);
+                } else {
+                    graph2D = "Not Available!";
+                }
+            } else {
+                graph2D = 'Generating the diagram';
+                let graph2DDiv = document.getElementById('preview2d');
+                defaultView.selectLayer(graph2DDiv, selectNode);
+            }
+        }
+    }
     async function updateGraphData(node, level=2) {
 
         totalMenu = [];

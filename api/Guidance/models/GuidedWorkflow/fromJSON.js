@@ -1,4 +1,4 @@
-const AClass = require('ailtire/src/server/AClass.js');
+const AClass = require('ailtire/src/Server/AClass.js');
 
 module.exports = {
     friendlyName: 'fromJSON',

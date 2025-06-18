@@ -9,11 +9,11 @@ class Element {
                 description: 'Name of the element'
             },
             description: {
-                type: "string",
+                type: "text",
                 description: "Description of the element. This gives more details about the element in the architecture.",
             },
             color: {
-                type: "string",
+                type: "color",
                 description: "Color of the element in the architecture."
             }
         },

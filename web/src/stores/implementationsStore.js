@@ -1,5 +1,4 @@
 import {writable, get, derived} from "svelte/store";
-import {API_BASE_URL} from "../config";
 
 // The main store to hold the entire architecture
 export const images = writable({});
@@ -44,7 +43,7 @@ export async function fetchImplementations() {
 export async function fetchComponents() {
     // usecases.update((state) => ({ ...state, isLoading: true, error: null }));
     try {
-        const res = await fetch(`${API_BASE_URL}/implementation/thirdparty`); // Replace with your API URL
+        const res = await fetch(`/api/implementation/thirdparty`); // Replace with your API URL
         if (!res.ok) {
             throw new Error(`API Error: ${res.statusText}`);
         }
@@ -59,7 +58,7 @@ export async function fetchComponents() {
 export async function fetchImages() {
     // usecases.update((state) => ({ ...state, isLoading: true, error: null }));
     try {
-        const res = await fetch(`${API_BASE_URL}/implementation/images`); // Replace with your API URL
+        const res = await fetch(`/api/implementation/images`); // Replace with your API URL
         if (!res.ok) {
             throw new Error(`API Error: ${res.statusText}`);
         }

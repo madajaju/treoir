@@ -1,16 +1,32 @@
 <script>
     import {selectedNode} from "../stores/store.js"
-    import {Element} from "./elements/Element";
+    import {Generic} from "./elements/Generic";
     import MDEditor from "./MDEditor.svelte";
     import {writable} from "svelte/store";
+    import {API_BASE_URL} from "../config.js";
     export let currentView;
 
-    const elementView = Element.Detail;
+    const elementView = Generic.Form;
 
     let markdownContent = writable("TBD");
+    let defaultSchema = {
+        attributes: {
+            name: {
+                type: "string",
+                required: true,
+                description: "Name of the element"
+            },
+            description: {
+                type: "text",
+                required: false,
+                description: "Description of the element"
+            }
+        }
+    };
 
     $: if(currentView === "Documentation" && $selectedNode) {
         fetchDocumentation($selectedNode);
+        fetchSchema($selectedNode);
     }
     async function fetchDocumentation(node) {
         if (!node || !node.expandLink) return;
@@ -26,13 +42,28 @@
             console.error(error);
         }
     }
+    async function fetchSchema(node) {
+        if(node._schema) {
+            return
+        }
+        try {
+            const response = await fetch(`/api/class/definition?name=${node._type}`); // AJAX call for documentation
+            if(response.status !== 200) throw new Error( response.statusText);
+            let data = await response.json();
+            node._schema = data;
+            $selectedNode = {...node};
+        }
+        catch(error) {
+            console.error(error);
+        }
+    }
     async function fetchGenAI() {
         let node = $selectedNode;
-        if (!node || !node.expandLink) return;
-        let genLink = node.expandLink.replace("get", "generate") + "&target=Documentation";
+        if (!node || !node.type) return;
+        let genLink = `/api/${node.type.toLowerCase()}/generate?id=${node.id}&target=Documentation`;
         const response = await fetch(genLink); // AJAX call for documentation
         if(response.status !== 200) throw new Error( response.statusText)
-        let data = await response.json();
+        let data = await response.text();
         markdownContent.set(data); // Update content
     }
     function handleUpdate(event) {
@@ -46,12 +77,17 @@
         {#if $selectedNode}
             <p>Details about node ID: <strong>{$selectedNode.name}</strong></p>
             <div class="mt-4 space-y-2">
-                {#if $selectedNode?._view?.hasOwnProperty("Detail")}
-                    <svelte:component this={$selectedNode._view.Detail} element={$selectedNode} />
+                {#if $selectedNode?._view?.hasOwnProperty("Form")}
+                    <svelte:component this={$selectedNode._view.Form} data={$selectedNode} />
                 {:else}
-                    <svelte:component this={elementView} element={$selectedNode} />
+                    {#if $selectedNode?._schema}
+                        <svelte:component this={elementView} element={$selectedNode} schema={$selectedNode._schema} />
+                    {:else}
+                        <svelte:component this={elementView} element={$selectedNode} schema={defaultSchema } />
+                    {/if}
                 {/if}
             </div>
+            <label for="details">Details</label>
             <MDEditor bind:md={$markdownContent}
                       on:update={handleUpdate}
                       genai={fetchGenAI}

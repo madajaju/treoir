@@ -9,11 +9,11 @@ class Customer {
                 description: 'Name of the customer',
             },
             description: {
-                type: "string",
+                type: "text",
                 description: "Description of the customer"
             },
             color: {
-                type: "string",
+                type: "color",
                 description: "Color of the customer in the architecture."
             },
             details: {

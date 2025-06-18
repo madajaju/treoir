@@ -12,6 +12,10 @@ class ElementSuggestion {
             partner: {
                 type: 'string',
                 description: 'This is the name of the partner of the element.'
+            },
+            customer: {
+                type: 'string',
+                description: 'This is the name of the customer of the element.'
             }
         },
         associations: {

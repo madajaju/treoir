@@ -9,7 +9,7 @@ class Engagement {
                 description: 'The name of the engagement, such as Laptops.'
             },
             description: {
-                type: 'string',
+                type: 'text',
                 description: 'A description of the engagement, e.g., Using laptops.'
             },
             details: {

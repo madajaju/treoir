@@ -36,7 +36,7 @@ module.exports = {
             customerObj.save();
         }
         for(let ename in customer.suggestions) {
-            let sugg = Suggestion.fromJSON({element: customer.elements[ename], owner: customerObj});
+            let sugg = Suggestion.fromJSON({suggestion: customer.suggestions[ename]});
             sugg.save();
             customerObj.addToSuggestions(sugg);
             customerObj.save();

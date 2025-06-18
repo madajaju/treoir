@@ -8,13 +8,13 @@ class Asset {
                 type: 'string',
                 description: 'Name of the asset.'
             },
+            description: {
+                type: 'text',
+                description: 'Description of the asset.'
+            },
             url: {
                 type: 'string',
                 description: 'URL of the asset.'
-            },
-            description: {
-                type: 'string',
-                description: 'Description of the asset.'
             },
         },
         associations: {

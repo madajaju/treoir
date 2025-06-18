@@ -8,17 +8,17 @@ class EngagementSuggestion {
             details: {
                 type: "json",
                 description: "details about the engagement."
+            },
+            layer: {
+                type: "string",
+                description: "Layer of the engagement"
             }
+
         },
         associations: {
             element: {
                 type: "Element",
                 description: "Element of the engagement",
-                cardinality: 1
-            },
-            layer: {
-                type: "Layer",
-                description: "Layer of the engagement",
                 cardinality: 1
             },
             customer: {
@@ -32,6 +32,12 @@ class EngagementSuggestion {
                 composition: false,
                 owner: false,
             },
+            supplier: {
+                type: 'Supplier',
+                cardinality: 1,
+                composition: false,
+                owner: false,
+            }
         },
     }
 }

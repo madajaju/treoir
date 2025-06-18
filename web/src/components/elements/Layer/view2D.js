@@ -4,6 +4,15 @@ import {currentPartner} from '../../../stores/partnerStore.js';
 import {Customer} from '../Customer/index.js';
 import {Partner} from '../Partner/index.js';
 
+export function selectLayer(graph2DDiv, layer) {
+    const group = graph2DDiv.querySelector(`[data-layer-id="${layer.id}"]`);
+    const rect = group.querySelector('rect'); // Get the rect inside the <g>
+    const layerId = group?.getAttribute('data-layer-name');
+    const text = group?.querySelector('text');
+    if (layerId) {
+        _selectLayer(graph2DDiv, layerId, rect,text, null);
+    }
+}
 export function create2D(graph2DDiv, element, selectNodeCallback = null, level = 2) {
     // Utility function to break text into multiple lines
     function wrapText(text, maxWidth, fontSize) {
@@ -55,11 +64,11 @@ export function create2D(graph2DDiv, element, selectNodeCallback = null, level =
             const numChildren = Object.keys(childLayers).length;
             let labelHeight;
             if (numChildren === 0) {
-                labelHeight = Math.min(availableHeight / 3); // No sublayers - use 1/3
+                labelHeight = Math.min(availableHeight / 3, peerFontSize); // No sublayers - use 1/3
             } else if (numChildren <= 5) {
-                labelHeight = Math.min(availableHeight / 20, 20); // Few sublayers - use 1/5
+                labelHeight = Math.min(availableHeight / 20, peerFontSize); // Few sublayers - use 1/5
             } else {
-                labelHeight = Math.min(availableHeight / 10, 20); // Many sublayers - use 1/10
+                labelHeight = Math.min(availableHeight / 10, peerFontSize); // Many sublayers - use 1/10
             }
             labelHeight = Math.max(labelHeight, baseFontSize);
             // Ensure labelHeight doesn't exceed available height
@@ -130,7 +139,7 @@ export function create2D(graph2DDiv, element, selectNodeCallback = null, level =
 
                         childLayer.depth = (parentLayer.depth || 0) + 1;
                         // Recursive call to render child layers
-                        svgString += drawLayer(childLayer, childX, childY, childWidth, childHeight, depth, currentDepth + 1);
+                        svgString += drawLayer(childLayer, childX, childY, childWidth, childHeight, depth, currentDepth + 1, fontSize);
                     }
                 }
             }
@@ -170,7 +179,7 @@ export function create2D(graph2DDiv, element, selectNodeCallback = null, level =
                 const layerId = group?.getAttribute('data-layer-name');
                 const text = group?.querySelector('text');
                 if (layerId) {
-                    selectLayer(graph2DDiv, layerId, rect,text, selectNodeCallback);
+                    _selectLayer(graph2DDiv, layerId, rect,text, selectNodeCallback);
                 }
             });
         });
@@ -180,7 +189,7 @@ export function create2D(graph2DDiv, element, selectNodeCallback = null, level =
 }
 
 
-function selectLayer(container, id, rect, text, selectNodeCallback = null) {
+function _selectLayer(container, id, rect, text, selectNodeCallback = null) {
     // Deselect previous layer if any
     const rects = container.querySelectorAll('rect');
     rects.forEach((rect) => {
@@ -205,6 +214,9 @@ function selectLayer(container, id, rect, text, selectNodeCallback = null) {
 }
 
 function _getFontColor(hexColor) {
+    if(!hexColor) {
+        hexColor = '#0000ff';
+    }
     hexColor = hexColor.replace('#', '');
     // Parse the RGB values
     const r = parseInt(hexColor.substr(0, 2), 16);

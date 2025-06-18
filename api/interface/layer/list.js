@@ -18,7 +18,7 @@ module.exports = {
             if(!lname.includes('-')) {
                 let subLayer = layers[lname];
 
-                retval[lname] = subLayer.convertJSON();
+                retval[lname] = subLayer.convertDJSON();
             }
         }
         return retval;

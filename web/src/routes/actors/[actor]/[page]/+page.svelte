@@ -8,7 +8,6 @@
     // Dynamically import .svelte files based on [actor] and [page]
     import(`../../../../../../actors/${data.actor}/views/svelte/pages/${data.page}.svelte`)
         .then((module) => {
-            console.log("Loaded component:", module.default);
             MyComponent.set(module.default);
         })
         .catch((error) => {

@@ -1,5 +1,4 @@
 import {writable, get, derived} from "svelte/store";
-import {API_BASE_URL} from "../config";
 
 // The main store to hold the entire architecture
 export const environments = writable({});
@@ -102,7 +101,7 @@ export async function fetchDeployments() {
 export async function fetchEnvironments() {
     // usecases.update((state) => ({ ...state, isLoading: true, error: null }));
     try {
-        const res = await fetch(`${API_BASE_URL}/deployment/list`); // Replace with your API URL
+        const res = await fetch(`/api/deployment/list`); // Replace with your API URL
         if (!res.ok) {
             throw new Error(`API Error: ${res.statusText}`);
         }
@@ -121,7 +120,7 @@ export async function fetchEnvironments() {
 export async function fetchPhysicals() {
     // usecases.update((state) => ({ ...state, isLoading: true, error: null }));
     try {
-        const res = await fetch(`${API_BASE_URL}/deployment/physical`); // Replace with your API URL
+        const res = await fetch(`/api/deployment/physical`); // Replace with your API URL
         if (!res.ok) {
             throw new Error(`API Error: ${res.statusText}`);
         }

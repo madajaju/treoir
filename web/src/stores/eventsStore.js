@@ -1,8 +1,6 @@
 import {writable, get, derived} from "svelte/store";
 import {io} from 'socket.io-client';
 
-import {API_BASE_URL} from "../config";
-
 // The main store to hold the entire architecture
 export const events = writable({});
 export const eventNodes = writable([]);
@@ -17,14 +15,7 @@ export function fetchEvents() {
     if(socket) return;
 
     socket = io();
-    /*
-    let socket = io(window.location.origin,
-        {path: `${API_BASE_URL}/socket.io`}
-    );
-
-     */
     socket.on('connect', () => {
-        console.log("Connected");
         eventNodes.update(msgs => [ {
             type: 'status', data: 'Connected', timestamp: new Date().toISOString()}, ...msgs
         ]);
@@ -33,7 +24,6 @@ export function fetchEvents() {
         console.log("Connection error", err);
     });
     socket.onAny((event, data) => {
-        console.log(event, data);
         let currentEvent = event;
         while (currentEvent) {
             if (eventMap.hasOwnProperty(currentEvent)) {
@@ -50,7 +40,6 @@ export function fetchEvents() {
         ])
     });
     socket.on('disconnect', () => {
-        console.log("Disconnected");
         eventNodes.update(msgs => [ {
             type: 'status', data: 'Disconnected', timestamp: new Date().toISOString()}, ...msgs
         ]);

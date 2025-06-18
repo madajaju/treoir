@@ -19,7 +19,7 @@ module.exports = {
             retval[aname] = attr;
         }
         if(obj.element) {
-            retval.element = obj.element.id;
+            retval.element = obj.element.name;
         }
         retval.layers = [];
         for(let sname in obj.layers) {

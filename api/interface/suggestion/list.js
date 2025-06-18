@@ -11,12 +11,12 @@ module.exports = {
         json: (obj) => { return obj; },
     },
 
-    fn: async function (obj, inputs, env) {
+    fn: async function (inputs, env) {
         let suggs = await Suggestion.instances();
-        let retval = {};
-        for(let name in suggs) {
-            let sugg = suggs[name];
-            retval[name] = sugg;
+        let retval = [];
+        for(let i in suggs) {
+            let value = suggs[i].convertJSON();
+            retval.push(value);
         }
         return retval;
     }

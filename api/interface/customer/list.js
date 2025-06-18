@@ -21,7 +21,7 @@ module.exports = {
         let retval = {};
         for(let i in customers) {
             let customer = customers[i];
-            retval[customer.name] = customer.convertJSON();
+            retval[customer.name] = customer.convertDJSON();
         }
         return retval;
     }

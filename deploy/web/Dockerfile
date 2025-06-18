@@ -3,14 +3,15 @@ FROM node:alpine
 # Create app directory
 WORKDIR /usr/src/app
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
+COPY . .
 
 RUN npm install
 
-COPY . .
+WORKDIR /usr/src/app/web
 
-EXPOSE 8080
-CMD [ "node", "server.js" ]
+RUN npm install
+
+EXPOSE 5173
+
+# Run SvelteKit app in development mode
+CMD ["npm", "run", "dev", "--", "--host"]

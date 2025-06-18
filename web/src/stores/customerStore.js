@@ -1,11 +1,12 @@
 import {writable, get, derived} from "svelte/store";
 import {Layer} from "../components/elements/Layer";
 import {Customer} from "../components/elements/Customer";
-import {API_BASE_URL} from "../config.js";
+import {currentPartner} from "./partnerStore.js";
 
 // The main store to hold the entire architecture
 export const currentCustomer = writable(null);
 export const customers = writable({});
+export const customerExport = writable(null);
 export const customerLayers = derived(customers, ($customers) => {
 	const idMap = {};
 	function processCustomer(customer) {
@@ -67,13 +68,23 @@ export const currentCustomerNodes = derived(currentCustomer, ($currentCustomer) 
 
 export async function fetchCurrentCustomer() {
 	await fetchCustomers();
+	const customerList = get(customers);
+	if(currentCustomer) {
+		const customerID = get(currentCustomer).id;
+		const customerFound = customerList[customerID];
+		if (customerFound && customerFound.id === customerID) {
+			currentCustomer.set(customerFound);
+		} else {
+			console.error(`Customer not found with ${customerID}`);
+		}
+	}
 }
 // Fetch the architecture from the backend REST API
 // layerStore.js
 export async function fetchCustomers() {
     try {
         // Fetch the hosted JSON file
-        const response = await fetch(`${API_BASE_URL}/customer/list`); // Update with your hosting URL if necessary
+        const response = await fetch(`/api/customer/list`); // Update with your hosting URL if necessary
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }

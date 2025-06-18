@@ -12,8 +12,12 @@ class Phase {
                 type: 'number',
                 description: 'Order number',
             },
+            color: {
+                type: 'color',
+                description: 'Color of the phase',
+            },
             description: {
-                type: 'string',
+                type: 'text',
                 description: 'Description of the phase',
             },
             targetDate: {

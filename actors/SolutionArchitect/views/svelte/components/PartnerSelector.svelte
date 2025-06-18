@@ -1,5 +1,4 @@
 <script>
-    import {API_BASE_URL} from "../../../../../web/src/config.js";
     import {setCurrentPartner, partners, fetchPartners} from "../../../../../web/src/stores/partnerStore.js"; // Assuming you have a store file where the partner is managed
     import {onMount} from 'svelte';
 
@@ -12,7 +11,6 @@
     onMount(() => {
         fetchPartners();
         partners.subscribe(value => {
-            console.log('Partners:', value);
             let junkArray = [];
             for(let i in value) {
                 junkArray.push(value[i]);
@@ -46,7 +44,7 @@
         const formData = new FormData();
         formData.append('file', selectedFile);
         formData.append('type', 'Partner');
-        const response = await fetch(`${API_BASE_URL}/partner/upload`, {
+        const response = await fetch(`/api/partner/upload`, {
             method: 'POST',
             body: formData
         });
@@ -69,7 +67,7 @@
         const formData = new FormData();
         formData.append('name', newPartnerName);
         formData.append('description', newPartnerDescription);
-        const response = await fetch(`${API_BASE_URL}/partner/create?name=${newPartnerName}&description=${newPartnerDescription}`, {
+        const response = await fetch(`/api/partner/create?name=${newPartnerName}&description=${newPartnerDescription}`, {
             method: 'POST',
             body: formData,
         });

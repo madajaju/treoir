@@ -1,5 +1,4 @@
 import {writable, get, derived} from "svelte/store";
-import {API_BASE_URL} from "../config";
 import {Package} from "../components/elements/Package";
 import {Model} from "../components/elements/Model";
 
@@ -20,7 +19,7 @@ export const packageNodes = derived(packages, ($packages) => {
             type: "Package",
             _children: [],
             _view: Package,
-            expandLink: `${API_BASE_URL}/package/get?id=${pkg.name}`
+            expandLink: `/api/package/get?id=${pkg.name}`
         };
         if (parent) {
             idMap[pkg.name].parent = parent;
@@ -32,8 +31,8 @@ export const packageNodes = derived(packages, ($packages) => {
                 id: cname,
                 name: cname,
                 type: "Class",
-                link: `${API_BASE_URL}/${cname}/list`,
-                expandLink: `${API_BASE_URL}/model/get?id=${cname}`,
+                link: `/api/${cname}/list`,
+                expandLink: `/api/model/get?id=${cname}`,
                 _view: Model
             };
             idMap[cname].parent = pkg.name;
@@ -58,8 +57,8 @@ export const modelNodes = derived(models, ($models) => {
         idMap[cname] = {
             ...$models[cname],
             id: cname,
-            expandLink: `${API_BASE_URL}/model/get?id=${cname}`,
-            link: `${API_BASE_URL}/${cname}/list`,
+            expandLink: `/api/model/get?id=${cname}`,
+            link: `/api/${cname}/list`,
             name: cname,
             type: "Class",
             _view: Model
@@ -77,7 +76,7 @@ export const modelNodes = derived(models, ($models) => {
 export async function fetchPackages() {
     // usecases.update((state) => ({ ...state, isLoading: true, error: null }));
     try {
-        const res = await fetch(`${API_BASE_URL}/package/list`); // Replace with your API URL
+        const res = await fetch(`/api/package/list`); // Replace with your API URL
         if (!res.ok) {
             throw new Error(`API Error: ${res.statusText}`);
         }
@@ -89,7 +88,7 @@ export async function fetchPackages() {
         console.error("Error fetching usecases: ", err);
     }
     try {
-        const res = await fetch(`${API_BASE_URL}/model/list`); // Replace with your API URL
+        const res = await fetch(`/api/model/list`); // Replace with your API URL
         if (!res.ok) {
             throw new Error(`API Error: ${res.statusText}`);
         }

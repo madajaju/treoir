@@ -105,16 +105,33 @@ async function _mapElements(prompt, customer) {
         // First look if the element exists
         let result = results[i];
         let suppliers = await Supplier.fuzzyFind({query:result.suppliers});
+        if(suppliers.length === 0) {
+            let supplier = new Supplier({name: result.suppliers});
+            suppliers.push(supplier);
+        }
         let elements = await Element.fuzzyFind({query: result.name, suppliers: suppliers});
         if(elements.length === 0) {
+            // Ok there is not an element that exists for this tool in the system.
+            // We should allow the user to create one and when they do an engagement will be created automatically.
+            // The Supplier should be set accordingly.
             let layers = result.layers.split(',');
             for(let i in layers) {
-                result.layer = layers[i];
-                let suggestion = new ElementSuggestion(result);
-                customer.addToSuggestions(suggestion);
+
+                let layer = Layer.find({id: layers[i]});
+                if(layer) {
+                    let sugg = new EngagementSuggestion({
+                        name: result.name,
+                        description: result.description,
+                        layer: layers[i],
+                        supplier: suppliers[0]
+                    });
+                    sugg.customer = customer;
+                    customer.addToSuggestions(sugg);
+                    console.log("Engagement suggestion created:", sugg.name);
+                }
             }
         } else {
-            for(let j in elements) {
+            for (let j in elements) {
                 let element = elements[j];
                 for (let k in element.layers) {
                     let layer = element.layers[k];
@@ -122,12 +139,12 @@ async function _mapElements(prompt, customer) {
                         name: result.name,
                         description: result.description,
                         element: element,
-                        layer: layer
+                        layer: layer.name,
+                        supplier: suppliers[0]
                     });
                     sugg.customer = customer;
                     customer.addToSuggestions(sugg);
                     console.log("Engagement suggestion created:", sugg.name);
-
                 }
             }
         }

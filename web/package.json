@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
-		"preview": "vite preview",
+		"preview": "vite preview --host",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
@@ -46,6 +46,7 @@
 		"daisyui": "^5.0.9",
 		"jquery": "^3.7.1",
 		"marked": "^15.0.11",
+		"pagedjs": "^0.4.3",
 		"three": "^0.174.0"
 	}
 }
