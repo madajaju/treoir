@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const AOVMS = require('ailtire/src/AI/AOVMS.js');
+// const AOVMS = require('ailtire/src/AI/AOVMS.js');
 const AOpenAI = require('ailtire/src/AI/AOpenAI.js');
 const AOLlama = require('ailtire/src/AI/AOLlama.js');
 // Check for node_modules directory. If it exists then continue. If not ask to run npm install.
@@ -11,7 +11,7 @@ if(!fs.existsSync('./node_modules')) {
 const server = require('ailtire');
 
 let host = process.env.AILTIRE_HOST || 'localhost';
-let port = process.env.AILTIRE_PORT || 3000;
+let port = process.env.AILTIRE_PORT || 3001;
 let urlPrefix = process.env.AITIRE_BASEURL || '/web';
 let config = {
     baseDir: '.',
@@ -28,18 +28,17 @@ let config = {
 
          */
 
+        /*
         adaptor: AOVMS,
         model: 'model0',
         url: 'http://localhost:8000',
         apiKey: ''
+        */
 
-        /*
         adaptor: AOLlama,
         model: 'gemma3',
         url: 'http://ollama:11434',
         apiKey: ''
-
-         */
     },
     post: (config) => {
         config.dbDir = config.dbDir || config.baseDir + '/database';

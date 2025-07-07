@@ -1,4 +1,4 @@
-FROM ollama_gemma3
+FROM madajaju/ollama_gemma3
 
 # Create app directory
 WORKDIR /

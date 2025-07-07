@@ -11,26 +11,55 @@ class GuidedWorkflow {
                 type: 'string',
                 description: 'What this workflow is intended to accomplish.',
             },
+            objective: {
+                type: 'string',
+                description: 'What is the objective of the guidance based on the inputs and the desired outputs'
+            },
+            context: {
+                type: 'json',
+                description: 'Context for this workflow. This could be things generated during the workflow. This is used to ' +
+                    'see if  the objective has been met. This can also create a thread of thought through the workflow. ' +
+                    'Because this is attached to the to the workflow this gives the ability to see the context for each workflow independantly.',
+            },
             status: {
                 type: 'string',
                 description: 'Current state of the workflow (e.g., initiated, in-progress, completed).',
-            }
+            },
         },
         associations: {
+            inputs: {
+                unique: (obj) => { return obj.name},
+                type: "GuidanceParameter",
+                description: "These are the input parameters of the GuidedWorkflow",
+                composite: true,
+                owner: true,
+            },
+            outputs: {
+                unique: (obj) => { return obj.name},
+                type: "GuidanceParameter",
+                description: "These are the outputs parameters of the GuidedWorkflow. The outputs can be required or optional. If the required flag is set to true then the parameter is required otherwise it is optional.",
+                composite: true,
+                owner: true,
+            },
             tasks: {
                 type: 'TaskInstance',
                 cardinality: 'n',
                 description: 'Tasks instantiated as part of this workflow.',
+                owner: true,
             },
             templates: {
                 type: 'TaskTemplate',
                 cardinality: 'n',
                 description: 'Task templates available in this workflow.',
+                composite: true,
+                owner: true,
             },
             stages: {
                 type: 'WorkflowStage',
                 cardinality: 'n',
                 description: 'Stages of the workflow covering specific sets of tasks.',
+                composite: true,
+                owner: true,
             }
         },
         statenet: {

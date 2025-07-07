@@ -25,7 +25,7 @@ class TaskTemplate {
             }
         },
         associations: {
-            workflow: {
+            owner: {
                 type: 'GuidedWorkflow',
                 cardinality: 1,
                 description: 'The workflow that this template belongs to.',

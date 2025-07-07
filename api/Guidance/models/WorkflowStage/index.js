@@ -15,22 +15,34 @@ class WorkflowStage {
                 type: 'string',
                 description: 'What this stage is intended to accomplish. It will use the context to determine if the objective has been met.',
             },
-            inputs: {
-                type: 'json',
-                description: 'Inputs provided for this stage.',
-            },
             context: {
                 type: 'json',
-                description: 'Context for this stage. This could be things generated during the stage. This is used to see if  the objective has been met.',
+                description: 'Context for this stage. This could be things generated during the stage. This is used to ' +
+                    'see if  the objective has been met. This can also create a thread of thought through the workflow. ' +
+                    'Because this is attached to the to the stage this gives the ability to see the context for each stage independantly.',
             }
         },
         associations: {
+            inputs: {
+                unique: (obj) => { return obj.name},
+                type: "GuidanceParameter",
+                description: "These are the input parameters of the GuidedWorkflow",
+                composite: true,
+                owner: true,
+            },
+            outputs: {
+                unique: (obj) => { return obj.name},
+                type: "GuidanceParameter",
+                description: "These are the outputs parameters of the GuidedWorkflow. The outputs can be required or optional. If the required flag is set to true then the parameter is required otherwise it is optional.",
+                composite: true,
+                owner: true,
+            },
             tasks: {
                 type: 'TaskInstance',
                 cardinality: 'n',
                 description: 'Tasks that are part of this workflow stage.',
             },
-            workflow: {
+            owner: {
                 type: 'GuidedWorkflow',
                 cardinality: 1,
                 description: 'The workflow that this stage belongs to.',
@@ -124,7 +136,7 @@ class WorkflowStage {
                 },
                 actions: {
                     entry: {
-                        notifyWorkflow: function (obj) { obj.workflow.completeStage({stage:obj}); }
+                        notifyWorkflow: function (obj) { obj.owner.completeStage({stage:obj}); }
                     }
                 }
             },
@@ -137,7 +149,7 @@ class WorkflowStage {
                 },
                 actions: {
                     entry: {
-                        notifyWorkflow: function (obj) { obj.workflow.failedStage({stage:obj}); }
+                        notifyWorkflow: function (obj) { obj.owner.failedStage({stage:obj}); }
                     }
                 }
             }

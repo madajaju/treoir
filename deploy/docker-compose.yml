@@ -1,26 +1,26 @@
 services:
   backend:
-    image: gear_backend
+    image: paidar/gear_backend
     environment:
       - AILTIRE_HOST=backend
-      - AILTIRE_PORT=3000
+      - AILTIRE_PORT=4000
       - AILTIRE_OPENAI_KEY=sk-proj-...
     ports:
-      - "3000:3000"
+      - "4000:4000"
     networks:
       sibling:
         aliases:
           - backend
   web:
-    image: gear_web
+    image: paidar/gear_web
     ports:
       - '5173:5173'
     environment:
-      - BACKEND_URL=http://backend:3000/web
+      - BACKEND_URL=http://backend:4000/web
     networks:
       - sibling
   ollama:
-    image: gear_ollama
+    image: paidar/gear_ollama
     ports:
       - '11434:11434'
     networks:
@@ -31,3 +31,4 @@ services:
 networks:
   sibling:
     driver: overlay
+    attachable: true
