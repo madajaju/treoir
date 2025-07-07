@@ -24,6 +24,8 @@ if %errorlevel% equ 0 (
     exit /b 0
 )
 
+echo Getting the LLM Model
+docker pull paidar/gear_ollama
 
 REM Deploy the Docker stack
 echo Deploying Docker stack from ../deploy/docker-compose.yml...
