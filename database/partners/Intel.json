@@ -166,7 +166,6 @@
         "description": "Pocket-sized devices that convert any display into a full computer, enhancing portability.",
         "layers": [
           "Operations Devices",
-          "Operations Devices"
         ]
       },
       "Intel Iris and Intel UHD Graphics": {
@@ -175,7 +174,6 @@
         "description": "Integrated graphics solutions that provide enhanced visual experiences for both gaming and professional applications.",
         "layers": [
           "Operations Devices",
-          "Operations Devices"
         ]
       },
       "Intel IoT Gateways": {

@@ -24,7 +24,7 @@
               "element": "Core",
               "description": "Using laptops",
               "layers": [
-                "Physical Architecture-Devices-Enterprise Devices"
+                "Physical Domain-Devices-Enterprise Devices"
               ]
             }
           ]
@@ -35,10 +35,10 @@
             {
               "name": "ailtire",
               "element": "ailtire",
-              "description": "AI driven Sysstem Architecture",
+              "description": "AI driven System Architecture",
               "layers": [
-                "Digital Architecture-Application Layer-Developer Services",
-                "Process Architecture-Innovation New Capability"
+                "Digital Domain-Application Layer-Developer Services",
+                "Process Domain-Innovation New Capability"
               ]
             },
             {
@@ -46,8 +46,8 @@
               "element": "guthan",
               "description": "Podcast Production Tool",
               "layers": [
-                "Digital Architecture-Application Layer",
-                "Process Architecture-Operational and Delivery"
+                "Digital Domain-Application Layer",
+                "Process Domain-Operational and Delivery"
               ]
             }
           ]
@@ -63,8 +63,8 @@
               "element": "intellij",
               "description": "Used for development",
               "layers": [
-                "Digital Architecture-Application Layer-Developer Services",
-                "Process Architecture-Innovation New Capability"
+                "Digital Domain-Application Layer-Developer Services",
+                "Process Domain-Innovation New Capability"
               ]
             }
           ]
@@ -88,7 +88,7 @@
               "element": "Core",
               "description": "Using laptops",
               "layers": [
-                "Physical Architecture-Devices-Enterprise Devices"
+                "Physical Domain-Devices-Enterprise Devices"
               ]
             },
             {
@@ -96,7 +96,7 @@
               "element": "Xeon",
               "description": "High powered workstations",
               "layers": [
-                "Physical Architecture-Devices-Enterprise Devices"
+                "Physical Domain-Devices-Enterprise Devices"
               ]
             }
           ]
@@ -107,10 +107,10 @@
             {
               "name": "ailtire",
               "element": "ailtire",
-              "description": "AI driven Sysstem Architecture",
+              "description": "AI driven System Architecture",
               "layers": [
-                "Digital Architecture-Application Layer-Developer Services",
-                "Process Architecture-Innovation New Capability"
+                "Digital Domain-Application Layer-Developer Services",
+                "Process Domain-Innovation New Capability"
               ]
             },
             {
@@ -118,8 +118,8 @@
               "element": "guthan",
               "description": "Podcast Production Tool",
               "layers": [
-                "Digital Architecture-Application Layer",
-                "Process Architecture-Operational and Delivery"
+                "Digital Domain-Application Layer",
+                "Process Domain-Operational and Delivery"
               ]
             },
             {
@@ -127,9 +127,9 @@
               "element": "tuig",
               "description": "Tacit Knowledge Capture",
               "layers": [
-                "Digital Architecture-Application Layer",
-                "Process Architecture-Innovation New Capability",
-                "Process Architecture-Operational and Delivery"
+                "Digital Domain-Application Layer",
+                "Process Domain-Innovation New Capability",
+                "Process Domain-Operational and Delivery"
               ]
             }
           ]
@@ -145,8 +145,8 @@
               "element": "intellij",
               "description": "Used for development",
               "layers": [
-                "Digital Architecture-Application Layer-Developer Services",
-                "Process Architecture-Innovation New Capability"
+                "Digital Domain-Application Layer-Developer Services",
+                "Process Domain-Innovation New Capability"
               ]
             }
           ]

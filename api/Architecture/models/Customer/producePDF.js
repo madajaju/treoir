@@ -202,8 +202,8 @@ async function _generateLayerDocument(customerJSON, layer) {
     // # Make any suggestions on how to fill in the gaps.
     const prompt = `Please generate a Markdown-formatted document that includes the following:
 
-1. **${layer.name} Architecture Overview**:
-   - Extract the **${layer.name} Architecture from the \`gearJSON\`.
+1. **${layer.name} Domain Overview**:
+   - Extract the **${layer.name} Domain from the \`gearJSON\`.
    - Provide a high-level **description** of the Layer structure, as outlined in \`gearJSON\`, and how it is relevant to the customer, based on data in \`customerJSON\`.
 
 2. **Customer Environment Mapping to GEAR**:
@@ -273,11 +273,11 @@ async function _generateConclusion(intro, body) {
 
 1. Summary of Key Findings:
    - Summarize the strengths and gaps identified in the layer analysis for each of the four GEAR architecture components:
-     - **Strategic Architecture**
-     - **Organizational Architecture**
-     - **Process Architecture**
-     - **Digital Architecture**
-     - **Physical Architecture**
+     - **Strategic Domain**
+     - **Organizational Domain**
+     - **Process Domain**
+     - **Digital Domain**
+     - **Physical Domain**
    - Highlight any overarching patterns or successes in the customer’s alignment with GEAR.
 
 2. Importance of GEAR Alignment:

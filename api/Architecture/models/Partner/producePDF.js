@@ -293,11 +293,11 @@ async function _generateConclusion(intro, body) {
 
 1. Summary of Key Findings:
    - Summarize the strengths and gaps identified in the layer analysis for each of the four GEAR architecture components:
-     - **Strategic Architecture**
-     - **Organizational Architecture**
-     - **Process Architecture**
-     - **Digital Architecture**
-     - **Physical Architecture**
+     - **Strategic Domain**
+     - **Organizational Domain**
+     - **Process Domain**
+     - **Digital Domain**
+     - **Physical Domain**
    - Highlight any overarching patterns or successes in the partner’s alignment with GEAR.
 
 2. Importance of GEAR Alignment:

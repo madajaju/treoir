@@ -2,7 +2,7 @@ import tailwindcss from '@tailwindcss/vite';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
-const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:3000/web';
+const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:3001/web';
 
 export default defineConfig({
 	plugins: [tailwindcss(), sveltekit() ],

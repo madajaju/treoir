@@ -42,7 +42,7 @@ export function create2D(graphContainer, partner, selectNodeCallback = null) {
 				        { ...element, layer: trimmedLayerID, partner: partner },
 				        selectElement,
 				        selectNodeCallback,
-				        { fill: partner.color || "#0000ff" }
+				        { fill: partner.color || "#ff00ff" }
 				    );
 				}
 				element.partner = partner;
@@ -65,7 +65,7 @@ function selectElement(container, circle, node, selectNode = null) {
 			circle.setAttribute("fill", originalFill);
 		}
 	});
-	circle.setAttribute("fill", "yellow");
+	circle.setAttribute("fill", "url(#pinGradient)");
 	if(selectNode) {
 		selectNode(node);
 	}
@@ -101,8 +101,8 @@ function addInteractiveCircle(container, groupElement, node, selectEngagement, s
     circle.setAttribute("cx", cx);
     circle.setAttribute("cy", cy);
     circle.setAttribute("r", radius);
-    circle.setAttribute("fill", circleOptions.fill || "yellow");
-    circle.setAttribute("fill-original", circleOptions.fill || "yellow");
+    circle.setAttribute("fill", circleOptions.fill || "url(#pinGradient)");
+    circle.setAttribute("fill-original", circleOptions.fill || "url(#pinGradient)");
     circle.setAttribute("class", circleOptions.class || "interactive-circle");
 
     // Add a <title> element for hover-over tooltip

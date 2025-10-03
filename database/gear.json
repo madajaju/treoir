@@ -1,7 +1,7 @@
 {
-  "Strategic Architecture": {
-    "name": "Strategic Architecture",
-    "description": "The Strategic Architecture layer focuses on aligning the organization's direction, priorities, capabilities, and risk posture to achieve its mission and vision.",
+  "Strategic Domain": {
+    "name": "Strategic Domain",
+    "description": "The Strategic Domain layer focuses on aligning the organization's direction, priorities, capabilities, and risk posture to achieve its mission and vision.",
     "orientation": "front",
     "position": {
       "row": 1,
@@ -349,9 +349,9 @@
       }
     }
   },
-  "Physical Architecture": {
-    "name": "Physical Architecture",
-    "description": "Physical Architecture contains all of the devices, locations, and connectivity in the system.",
+  "Physical Domain": {
+    "name": "Physical Domain",
+    "description": "Physical Domain contains all of the devices, locations, and connectivity in the system.",
     "orientation": "right",
     "position": {
       "row": 3,
@@ -539,8 +539,8 @@
       }
     }
   },
-  "Digital Architecture": {
-    "name": "Digital Architecture",
+  "Digital Domain": {
+    "name": "Digital Domain",
     "description": "Software stack of the system, including the middleware, software and applications.",
     "orientation": "front",
     "color": "#6a0dad",
@@ -1049,8 +1049,8 @@
       }
     }
   },
-  "Process Architecture": {
-    "name": "Process Architecture",
+  "Process Domain": {
+    "name": "Process Domain",
     "description": "Processes of the system including supporting, strategic and operational processes.",
     "orientation": "back",
     "color": "#ff6f00",
@@ -1354,8 +1354,8 @@
       }
     }
   },
-  "Organizational Architecture": {
-    "name": "Organizational Architecture",
+  "Organizational Domain": {
+    "name": "Organizational Domain",
     "description": "People centric organizational structure of the system.",
     "orientation": "left",
     "color": "#228B22",

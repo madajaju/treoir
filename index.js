@@ -21,24 +21,23 @@ let config = {
     internalURL: `${host}:${port}${urlPrefix}`,
     routes: {},
     ai: {
-        /*
        adaptor: AOpenAI,
         model: 'gpt-4o-mini',
        apiKey: process.env.AILTIRE_OPENAI_KEY,
 
-         */
 
         /*
         adaptor: AOVMS,
         model: 'model0',
         url: 'http://localhost:8000',
         apiKey: ''
-        */
 
         adaptor: AOLlama,
         model: 'gemma3',
         url: 'http://ollama:11434',
         apiKey: ''
+
+         */
     },
     post: (config) => {
         config.dbDir = config.dbDir || config.baseDir + '/database';
