@@ -15,7 +15,7 @@ export function selectLayer(graph2DDiv, layerName) {
         _selectLayer(graph2DDiv, layerId, rect,text, null);
     }
 }
-export function create2DDefault(graph2DDiv, selectNodeCallback = null, level=2) {
+export function create2DDefault(graph2DDiv, selectNodeCallback = null, drillDownCallback = null, level=2) {
     // Utility function to break text into multiple lines
 
     // Function to generate the SVG
@@ -57,6 +57,13 @@ export function create2DDefault(graph2DDiv, selectNodeCallback = null, level=2) 
 
                     if (layerId) {
                         _selectLayer(graph2DDiv, layerId, rect, text, selectNodeCallback);
+                    }
+                });
+                group.addEventListener('dblclick', (event) => {
+                    event.stopPropagation();
+                    const layerId = group?.getAttribute('data-layer-id');
+                    if (layerId && drillDownCallback) {
+                        drillDownCallback(layerId);
                     }
                 });
             });

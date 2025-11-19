@@ -33,6 +33,9 @@ module.exports = {
             }
         }
         retval.type = obj.definition.name;
+        if(retval.referring) {
+            retval.referring = retval.referring.id;
+        }
         retval.state = obj._state;
         return retval;
     }

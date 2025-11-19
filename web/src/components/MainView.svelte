@@ -1,4 +1,6 @@
 <script>
+    import SuggestionsView from "./SuggestionsView.svelte";
+
     export let menu = [];
     import { selectedNode } from "../stores/store.js";
     import ResizableLayout from "./ResizableLayout.svelte";
@@ -51,6 +53,6 @@
     <ResizableLayout
             TopPanel={{ component: DetailView, props: { id: "preview", height: 200 } }}
             ContentPanel = {myPanel}
-            BottomPanel = {{component: GenAISuggestionView, props: { id:'genai', height: 300}}}
+            BottomPanel = {{component: SuggestionsView, props: { id:'suggestion', width: "100%", height: 300}}}
     />
 </div>

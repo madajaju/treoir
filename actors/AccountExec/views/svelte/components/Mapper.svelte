@@ -16,6 +16,8 @@
     import { exportState, exportText, exportItem } from "../../../../../web/src/stores/exportStore.js";
     import {watchEvents} from "../../../../../web/src/stores/eventsStore";
     import ExportViewer from "../../../../../web/src/components/ExportViewer.svelte";
+    import GenAIView from "../../../../../web/src/components/GenAIView.svelte";
+    import ArchCustTreeView from "../../../../../web/src/components/ArchCustTreeView.svelte";
 
     let showExporting = writable(false);
 
@@ -167,15 +169,15 @@
 
 {#if !$showExporting}
     <ResizableLayout
-            LeftPanel={{component: ArchitectureTreeView, props: {selectedNode}}}
+            LeftPanel={{component: ArchCustTreeView, props: {selectedNode, width: 300 }}}
             ContentPanel={{component:MainView, props: {menu} }}
-            RightPanel={{component:CustomerTreeView, props: {selectedCustomer}}}
+            RightPanel={{component:GenAIView, props: {width:300}}}
     />
 {:else}
     <ResizableLayout
-            LeftPanel={{component: ArchitectureTreeView, props: {selectedNode}}}
+            LeftPanel={{component: ArchCustTreeView, props: {selectedNode, width: 300 }}}
             ContentPanel={{component:ExportViewer, props: {onClose: closeExportViewer, onAnalyze: analyzeExport, onStop: stopExport, onSave: updateExport} }}
-            RightPanel={{component:CustomerTreeView, props: {selectedCustomer}}}
+            RightPanel={{component:GenAIView, props: {}}}
     />
 {/if}
 

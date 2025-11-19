@@ -21,7 +21,9 @@ module.exports = {
 
         const filePath = file.path;
         const fileContent = fs.readFileSync(filePath, 'utf-8');
-
-
+        const doc = new TDocument({
+            name: file.originalname,
+            filename: file.path});
+        return doc.id;
     }
 };

@@ -13,7 +13,7 @@ export function selectLayer(graph2DDiv, layer) {
         _selectLayer(graph2DDiv, layerId, rect,text, null);
     }
 }
-export function create2D(graph2DDiv, element, selectNodeCallback = null, level = 2) {
+export function create2D(graph2DDiv, element, selectNodeCallback = null, drillDownCallback = null, level = 2) {
     // Utility function to break text into multiple lines
     function wrapText(text, maxWidth, fontSize) {
         const words = text.split(' ');
@@ -193,13 +193,22 @@ export function create2D(graph2DDiv, element, selectNodeCallback = null, level =
                     _selectLayer(graph2DDiv, layerId, rect,text, selectNodeCallback);
                 }
             });
+            group.addEventListener('dblclick', (event) => {
+                event.stopPropagation();
+                const layerId = group?.getAttribute('data-layer-id');
+                if (layerId) {
+                    drillDownCallback(layerId);
+                }
+            });
         });
         drawcustomer(graph2DDiv);
         drawpartner(graph2DDiv);
     }
 }
 
+function _drillDown(container, id, rect, text, selectNodeCallback = null) {
 
+}
 function _selectLayer(container, id, rect, text, selectNodeCallback = null) {
     // Deselect previous layer if any
     const rects = container.querySelectorAll('rect');

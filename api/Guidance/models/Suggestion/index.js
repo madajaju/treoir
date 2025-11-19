@@ -14,8 +14,14 @@ class Suggestion {
             }
         },
         associations: {
+            referring: {
+                type: 'Suggestion',
+                description: 'The suggestion that this suggestion is based on.',
+                cardinality: 1,
+                composite: false,
+            },
             task: {
-                tyoe: 'TaskInstance',
+                type: 'TaskInstance',
                 cardinality: 1,
                 description: 'The task that this suggestion is for.',
             }

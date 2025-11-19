@@ -41,7 +41,7 @@ module.exports = {
             };
             for(let lname in element.layers) {
                 let layer = element.layers[lname];
-                retObj[partner.name].elements[element.name].layers.push(layer.name);
+                retObj[partner.name].elements[element.name].layers.push(layer.id);
             }
         }
         const retStr = JSON.stringify(retObj, null, 4);

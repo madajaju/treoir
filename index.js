@@ -9,11 +9,13 @@ if(!fs.existsSync('./node_modules')) {
     return;
 }
 const server = require('ailtire');
+const aiModels = require('./.ai.js');
 
 let host = process.env.AILTIRE_HOST || 'localhost';
 let port = process.env.AILTIRE_PORT || 3001;
 let urlPrefix = process.env.AITIRE_BASEURL || '/web';
 let config = {
+    aiModels: aiModels,
     baseDir: '.',
     host: host,
     urlPrefix: urlPrefix,

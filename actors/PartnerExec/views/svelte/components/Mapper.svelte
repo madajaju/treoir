@@ -6,6 +6,7 @@
     import { goto } from '$app/navigation';
 
     import { onMount } from "svelte";
+    import ArchPartnerTreeView from "../../../../../web/src/components/ArchPartnerTreeView.svelte";
     import ArchitectureTreeView from "../../../../../web/src/components/ArchitectureTreeView.svelte";
     import PartnerTreeView from "../../../../../web/src/components/PartnerTreeView.svelte";
     import MainView from "../../../../../web/src/components/MainView.svelte";
@@ -17,6 +18,8 @@
     import { exportState, exportText, exportItem } from "../../../../../web/src/stores/exportStore.js";
     import {watchEvents} from "../../../../../web/src/stores/eventsStore";
     import ExportViewer from "../../../../../web/src/components/ExportViewer.svelte";
+    import ArchPartnersTreeView from "../../../../../web/src/components/ArchPartnersTreeView.svelte";
+    import GenAIView from "../../../../../web/src/components/GenAIView.svelte";
 
     let showExporting = writable(false);
 
@@ -165,15 +168,15 @@
 
 {#if !$showExporting}
     <ResizableLayout
-            LeftPanel={{component: ArchitectureTreeView, props: {selectedNode}}}
+            LeftPanel={{component: ArchPartnerTreeView, props: {selectedNode, selectedPartner}}}
             ContentPanel={{component:MainView, props: {menu} }}
-            RightPanel={{component:PartnerTreeView, props: {selectedPartner}}}
+            RightPanel={{component:GenAIView, props: {width:300}}}
     />
 {:else}
     <ResizableLayout
-            LeftPanel={{component: ArchitectureTreeView, props: {selectedNode}}}
+            LeftPanel={{component: ArchPartnersTreeView, props: {selectedNode, selectedPartner}}}
             ContentPanel={{component:ExportViewer, props: {onClose: closeExportViewer, onAnalyze: analyzeExport, onStop: stopExport, onSave: updateExport} }}
-            RightPanel={{component:PartnerTreeView, props: {selectedPartner}}}
+            RightPanel={{component:GenAIView, props: {width:300}}}
     />
 {/if}
 

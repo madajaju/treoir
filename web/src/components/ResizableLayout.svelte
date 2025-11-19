@@ -91,7 +91,7 @@
         {/if}
 
         <!-- CONTENT AREA -->
-        <main class="content-panel flex-grow overflow-auto bg-base-100 p-2">
+        <main class="content-panel flex-grow overflow-x-hidden overflow-y-hidden bg-base-100 p-2">
             {#if ContentPanel.component}
                 <svelte:component this={ContentPanel.component} {...ContentPanel.props} />
             {/if}

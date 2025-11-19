@@ -2,6 +2,8 @@ const phaseColor = {
 	"Current": "#0000ff",
 	"Future": "#00ff00"
 }
+import { tint, shade } from "./pinUtils";
+
 export function create2D(graphContainer, partner, selectNodeCallback = null) {
 
 	// Find all of the layers to the partner
@@ -71,6 +73,44 @@ function selectElement(container, circle, node, selectNode = null) {
 	}
 }
 
+function ensurePinGradient(svgEl, gradId, baseColor) {
+    let defs = svgEl.querySelector('defs');
+    if (!defs) {
+        defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+        svgEl.prepend(defs);
+    }
+    let grad = svgEl.querySelector('#' + CSS.escape(gradId));
+    if (grad) return 'url(#' + gradId + ')';
+
+    const center = tint(baseColor, 0.65); // much lighter center for contrast
+    const mid = tint(baseColor, 0.20); // near the original
+    const edge = shade(baseColor, 0.40); // darker rim
+
+    grad = document.createElementNS('http://www.w3.org/2000/svg', 'radialGradient');
+    grad.setAttribute('id', gradId);
+    grad.setAttribute('cx', '35%');
+    grad.setAttribute('cy', '30%');
+    grad.setAttribute('r', '80%');
+
+    const s0 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+    s0.setAttribute('offset', '0%');
+    s0.setAttribute('stop-color', center);
+
+    const s1 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+    s1.setAttribute('offset', '60%');
+    s1.setAttribute('stop-color', mid);
+
+    const s2 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+    s2.setAttribute('offset', '100%');
+    s2.setAttribute('stop-color', edge);
+
+    grad.appendChild(s0);
+    grad.appendChild(s1);
+    grad.appendChild(s2);
+    defs.appendChild(grad);
+    return 'url(#' + gradId + ')';
+}
+
 function addInteractiveCircle(container, groupElement, node, selectEngagement, selectNodeCallback, circleOptions = {}) {
 	// First check that the node-id is not already present.
 	const checkNodeID = groupElement.querySelector(`circle[node-id="${node.id}"]`);
@@ -96,12 +136,17 @@ function addInteractiveCircle(container, groupElement, node, selectEngagement, s
     const cy = groupElement.getBBox().y + row * adjustedDiameter + radius + margin; // Y position with margin
 
     // Create the circle element
+    const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+    g.setAttribute('class', 'overlay-pin');
+    g.setAttribute("filter", "url(#pinFlowShadow)");
+
     const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    let fill = ensurePinGradient(container, `grad-${node.id.replace(/\s/g,'')}`, circleOptions.fill || "#ff00ff");
 	circle.setAttribute("node-id", node.id);
     circle.setAttribute("cx", cx);
     circle.setAttribute("cy", cy);
     circle.setAttribute("r", radius);
-    circle.setAttribute("fill", circleOptions.fill || "url(#pinGradient)");
+    circle.setAttribute("fill", fill);
     circle.setAttribute("fill-original", circleOptions.fill || "url(#pinGradient)");
     circle.setAttribute("class", circleOptions.class || "interactive-circle");
 
@@ -109,6 +154,22 @@ function addInteractiveCircle(container, groupElement, node, selectEngagement, s
     const title = document.createElementNS("http://www.w3.org/2000/svg", "title");
     title.textContent = node.name; // Tooltip content
     circle.appendChild(title);
+    g.appendChild(circle);
+
+    // pointer triangle
+    const b = 5;
+    const tipH = 8;
+    const left = `${cx - b},${cy + radius - 2}`;
+    const mid  = `${cx},${cy + radius + 2}`;
+    const right= `${cx + b},${cy + radius - 2}`;
+    const tip  = `${cx},${cy + radius + tipH}`;
+    const stroke = shade(fill, 0.5);
+    const path = document.createElementNS(circle.namespaceURI, 'path');
+    path.setAttribute('d', `M ${left} L ${mid} L ${right} L ${tip} Z`);
+    path.setAttribute('fill', shade(fill, 0.45));
+    path.setAttribute('stroke', stroke);
+    path.setAttribute('stroke-width', '1');
+    g.appendChild(path);
 
     // Add a click event to call the selectedEngagement function
     circle.addEventListener("click", (event) => {

@@ -27,7 +27,21 @@ module.exports = {
             let result = results[i];
             if(result !== sugg.layer) {
                 flag = true;
-                let newSugg = new ElementSuggestion({name:sugg.name, description:sugg.description, layer:result, partner: sugg.partner})
+                let newSugg = null;
+                switch(sugg.definition.name) {
+                    case "ElementSuggestion":
+                        newSugg = new ElementSuggestion({name:sugg.name, description:sugg.description, layer:result, partner: sugg.partner,referring:sugg})
+                        break;
+                    case "EngagementSuggestion":
+                        newSugg = new EngagementSuggestion({name:sugg.name, description:sugg.description, layer:result, partner: sugg.partner, referring:sugg})
+                        break;
+                    case "SupplierSuggestion":
+                        newSugg = new SupplierSuggestion({name:sugg.name, description:sugg.description, layer:result, partner: sugg.partner, referring:sugg})
+                        break;
+                    default:
+                        newSugg = new Suggestion({name:sugg.name, description:sugg.description, layer:result, partner: sugg.partner, referring:sugg})
+                        break;
+                }
             }
         }
         if(flag) {

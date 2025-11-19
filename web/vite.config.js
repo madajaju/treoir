@@ -2,7 +2,7 @@ import tailwindcss from '@tailwindcss/vite';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
-const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:3001/web';
+const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:3001';
 
 export default defineConfig({
 	plugins: [tailwindcss(), sveltekit() ],
@@ -13,13 +13,14 @@ export default defineConfig({
 		strictPort: true,
 		proxy: {
 			'/api': {
-				target: `${BACKEND_URL}`,
+				target: `${BACKEND_URL}/web`,
 				changeOrigin: true,
 				rewrite: (path) => path.replace(/^\/api/, '')
 			},
 			'/socket.io': {
-				target: `${BACKEND_URL}/socket.io`,
-				ws: true
+				target: BACKEND_URL,
+				ws: true,
+                changeOrigin: true,
 			},
 		}
 	},

@@ -1,0 +1,219 @@
+{
+  "Oracle": {
+    "name": "Oracle",
+    "color": null,
+    "description": "Oracle is our partner",
+    "elements": {
+      "Oracle Cloud Infrastructure (OCI) Hardware": {
+        "name": "Oracle Cloud Infrastructure (OCI) Hardware",
+        "color": null,
+        "description": "Hardware used in Oracle's cloud services, including compute, storage, and networking components.",
+        "layers": []
+      },
+      "Oracle Engineered Systems": {
+        "name": "Oracle Engineered Systems",
+        "color": null,
+        "description": "Integrated hardware and software systems optimized for specific workloads, including Oracle Database and Oracle Fusion Middleware.",
+        "layers": [
+          "Machines"
+        ]
+      },
+      "Oracle Exadata Database Machine": {
+        "name": "Oracle Exadata Database Machine",
+        "color": null,
+        "description": "A massively scalable database machine designed for Oracle databases that delivers high performance and availability.",
+        "layers": [
+          "Machines"
+        ]
+      },
+      "Oracle Exalink": {
+        "name": "Oracle Exalink",
+        "color": null,
+        "description": "A set of connectivity solutions for connecting Oracle hardware with other systems and networks.",
+        "layers": [
+          "Communications"
+        ]
+      },
+      "Oracle SPARC Servers": {
+        "name": "Oracle SPARC Servers",
+        "color": null,
+        "description": "High-performance servers powered by Oracle's SPARC processors, optimized for enterprise applications and cloud environments.",
+        "layers": [
+          "Machines"
+        ]
+      },
+      "Oracle StorageTek Tape Solutions": {
+        "name": "Oracle StorageTek Tape Solutions",
+        "color": null,
+        "description": "Tape libraries and storage solutions designed for data backup and archiving.",
+        "layers": [
+          "Machines"
+        ]
+      },
+      "Oracle Sun Servers": {
+        "name": "Oracle Sun Servers",
+        "color": null,
+        "description": "A line of servers that includes Sun Blade and Sun Rack servers, providing flexible deployment options for various workloads.",
+        "layers": [
+          "Machines"
+        ]
+      },
+      "Oracle Virtual Machine (OVM) for SPARC": {
+        "name": "Oracle Virtual Machine (OVM) for SPARC",
+        "color": null,
+        "description": "A virtualization solution that allows users to create and manage virtual machines on SPARC hardware.",
+        "layers": [
+          "Software Defined Infrastructure"
+        ]
+      },
+      "Oracle ZFS Storage Appliances": {
+        "name": "Oracle ZFS Storage Appliances",
+        "color": null,
+        "description": "High-performance, scalable storage solutions that provide data management capabilities for various workloads.",
+        "layers": [
+          "Machines"
+        ]
+      },
+      "Application Developers": {
+        "name": "Application Developers",
+        "color": null,
+        "description": "Developers responsible for creating applications using Oracle technologies.",
+        "layers": []
+      },
+      "Database Administrators": {
+        "name": "Database Administrators",
+        "color": null,
+        "description": "Users focused on managing Oracle databases.",
+        "layers": [
+          "Personas"
+        ]
+      },
+      "IT Managers": {
+        "name": "IT Managers",
+        "color": null,
+        "description": "Users overseeing Oracle’s integrated applications.",
+        "layers": [
+          "Personas"
+        ]
+      },
+      "Oracle Advanced Security": {
+        "name": "Oracle Advanced Security",
+        "color": null,
+        "description": "Implements encryption and security measures across the applications and databases.",
+        "layers": []
+      },
+      "Oracle Analytics Cloud": {
+        "name": "Oracle Analytics Cloud",
+        "color": null,
+        "description": "Tool for innovative data analytics and reporting.",
+        "layers": [
+          "Innovation Management"
+        ]
+      },
+      "Oracle Certified Professionals": {
+        "name": "Oracle Certified Professionals",
+        "color": null,
+        "description": "Skilled professionals trained in Oracle products.",
+        "layers": [
+          "Skills & Competencies"
+        ]
+      },
+      "Oracle Cloud Applications": {
+        "name": "Oracle Cloud Applications",
+        "color": null,
+        "description": "Suite of applications offered as a service including ERP, HCM, and CRM solutions.",
+        "layers": [
+          "Application Layer"
+        ]
+      },
+      "Oracle Financial Services Analytical Applications": {
+        "name": "Oracle Financial Services Analytical Applications",
+        "color": null,
+        "description": "Risk management tools for financial institutions.",
+        "layers": [
+          "Risk Management"
+        ]
+      },
+      "Oracle Fusion Cloud": {
+        "name": "Oracle Fusion Cloud",
+        "color": null,
+        "description": "Covers operational processes related to various business functions.",
+        "layers": [
+          "Operational and Delivery"
+        ]
+      },
+      "Oracle Governance, Risk, and Compliance (GRC)": {
+        "name": "Oracle Governance, Risk, and Compliance (GRC)",
+        "color": null,
+        "description": "A solution for managing governance processes, related policies, and compliance management.",
+        "layers": [
+          "Governance"
+        ]
+      },
+      "Oracle Identity Cloud Service": {
+        "name": "Oracle Identity Cloud Service",
+        "color": null,
+        "description": "Manages authentication, identity, and access management.",
+        "layers": [
+          "Identity Aspect"
+        ]
+      },
+      "Oracle Support Services": {
+        "name": "Oracle Support Services",
+        "color": null,
+        "description": "Supporting actions including troubleshooting and customer assistance.",
+        "layers": [
+          "Support"
+        ]
+      },
+      "Oracle Community and Partners": {
+        "name": "Oracle Community and Partners",
+        "color": null,
+        "description": "Various stakeholders involved in Oracle’s ecosystem.",
+        "layers": [
+          "Stakeholders"
+        ]
+      },
+      "Oracle Culture": {
+        "name": "Oracle Culture",
+        "color": null,
+        "description": "Oracle promotes a culture of innovation, customer focus, and continuous improvement in technology.",
+        "layers": [
+          "Culture & Values"
+        ]
+      },
+      "Oracle Data Integrator": {
+        "name": "Oracle Data Integrator",
+        "color": null,
+        "description": "Ensures coordinated access and integration of data across modules.",
+        "layers": [
+          "Distributed Information Management Layer"
+        ]
+      },
+      "Oracle Database": {
+        "name": "Oracle Database",
+        "color": null,
+        "description": "User-facing database applications and interfaces.",
+        "layers": [
+          "Application Layer"
+        ]
+      },
+      "Oracle E-Business Suite": {
+        "name": "Oracle E-Business Suite",
+        "color": null,
+        "description": "Comprehensive suite of business applications for enterprise resource planning.",
+        "layers": [
+          "Application Layer"
+        ]
+      },
+      "Oracle Enterprise Manager": {
+        "name": "Oracle Enterprise Manager",
+        "color": null,
+        "description": "Monitors and manages Oracle services' health and performance.",
+        "layers": [
+          "Service Management Layer"
+        ]
+      }
+    }
+  }
+}
