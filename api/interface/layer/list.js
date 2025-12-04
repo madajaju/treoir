@@ -22,16 +22,5 @@ module.exports = {
             }
         }
         return retval;
-        /*
-        let gearStr =  fs.readFileSync('./gear.json', 'utf-8');
-        try {
-            let gear = JSON.parse(gearStr);
-            return gear;
-        }
-        catch(e) {
-            console.error("Gear.json parse error!", e);
-        }
-
-         */
     }
 };

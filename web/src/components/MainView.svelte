@@ -7,16 +7,24 @@
     import MetadataDetail from "./MetadataDetail.svelte";
     import DetailView from "./DetailView.svelte";
     import GraphView from "./GraphView.svelte";
+    import BothGraph from "./BothGraph.svelte";
     import DocumentationView from "./DocumentationView.svelte";
     import Menu from "./Menu.svelte";
     import GenAIView from "./GenAIView.svelte";
     import GenAISuggestionView from "./GenAISuggestionView.svelte";
     import {Layer} from "./elements/Layer/index.js";
+    import {Relationship} from "./elements/Relationship/index.js";
 
     let currentView = "Graph";
 
     function showGraphView() {
         currentView = "Graph";
+    }
+    function showRelationshipView   () {
+        currentView = "Relationship";
+    }
+    function showBothView() {
+        currentView = "Both";
     }
     function showDocumentationView() {
         currentView = "Documentation";
@@ -26,16 +34,28 @@
         currentView = "GenAI";
     }
 
-        $: myPanel =
-            currentView === "Graph"
-                ? { component: GraphView, props: { id: "mainWindow", currentView, defaultView: Layer } }
-            : currentView === "Documentation"
-                ? { component: DocumentationView, props: { id: "mainWindow", currentView } }
-                : { component: GenAIView, props: { id: "mainWindow", currentView } }; // Default to GenAIView if no match
+    $: myPanel = (() => {
+        switch(currentView) {
+            case "Graph":
+                return { component: GraphView, props: { id: "mainWindow", currentView, defaultView: Layer } };
+            case "Relationship":
+                return { component: GraphView, props: { id: "mainWindow", currentView, defaultView: Relationship } };
+            case "Both":
+                return { component: BothGraph, props: { id: "mainWindow", layerView:Layer, relationshipView: Relationship } };
+            case "Documentation":
+                return { component: DocumentationView, props: { id: "mainWindow", currentView } };
+            case "GenAI":
+                return { component: GenAIView, props: { id: "mainWindow", currentView } };
+            default:
+                return { component: GenAIView, props: { id: "mainWindow", currentView } };
+        }
+    })();
 
 
     let menuItems = [
         { label: 'Graph', action: () => { showGraphView(); } },
+        { label: 'Relationship', action: () => { showRelationshipView(); } },
+        { label: 'Both', action: () => { showBothView(); } },
         { label: 'Edit', action: () => { showDocumentationView(); } },
         { label: 'Todo', action: () => {console.log('TODO')} },
     ];

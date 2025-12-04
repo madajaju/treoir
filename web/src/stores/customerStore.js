@@ -1,6 +1,7 @@
 import {writable, get, derived} from "svelte/store";
 import {Layer} from "../components/elements/Layer";
 import {Customer} from "../components/elements/Customer";
+import {Phase} from "../components/elements/Phase";
 import {currentPartner} from "./partnerStore.js";
 
 // The main store to hold the entire architecture
@@ -143,7 +144,7 @@ function mapState(customer, phase) {
 		id: id,
 		type: "State",
 		_children: [],
-		_view: Element,
+		_view: Phase,
 	}
 	customer._children.push(idMap[id]);
 	for(let sname in phase.suppliers) {

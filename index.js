@@ -46,7 +46,17 @@ let config = {
         let dbDir = config.dbDir;
         const gearStr = fs.readFileSync(path.resolve(dbDir, 'gear.json'), 'utf8');
         const gearJSON = JSON.parse(gearStr);
-        Layer.fromJSON({layers:gearJSON});
+        const shStr = fs.readFileSync(path.resolve(dbDir, 'stakeholders.json'), 'utf8');
+        const shJSON = JSON.parse(shStr);
+
+        let layerObjects = Layer.fromJSON({layers:gearJSON});
+        let shObjects = Stakeholder.fromJSON({stakeholders:shJSON});
+
+        for(let i in layerObjects) {
+            let layerObject = layerObjects[i];
+            layerObject.resolveStakeholders();
+            layerObject.resolveRelationships();
+        }
 
         let partnerDir = path.resolve(dbDir, 'partners');
         let pdir = fs.readdirSync(partnerDir);

@@ -1,0 +1,80 @@
+{
+  "name": "<Layer Name>",
+  "description": "<Short description of what this layer represents>",
+  "purpose": "<Why this layer exists / what it is intended to achieve>",
+  "stakeholders": [
+    "<Primary stakeholder group 1>",
+    "<Primary stakeholder group 2>"
+  ],
+  "guidingQuestions": [
+    "<Key question 1 this layer should help answer>",
+    "<Key question 2 this layer should help answer>"
+  ],
+  "orientation": "<front|back|internal|other>",
+  "position": {
+    "row": 0,
+    "col": 0,
+    "rowspan": 1,
+    "colspan": 1
+  },
+  "relationships": [
+    {
+      "name": "<relationship type, e.g., influences|depends_on|contains|enables>",
+      "to": "<Target layer/domain name>",
+      "from": "<Optional: source layer/domain name (if you want it explicit)>",
+      "description": "<Narrative explanation of the relationship>"
+    }
+  ],
+  "layers": {
+    "<Sub-layer Key 1>": {
+      "name": "<Sub-layer Name 1>",
+      "description": "<Description of sub-layer 1>",
+      "purpose": "<Purpose of sub-layer 1>",
+      "stakeholders": [
+        "<Stakeholder for sub-layer 1>"
+      ],
+      "guidingQuestions": [
+        "<Guiding question relevant to sub-layer 1>"
+      ],
+      "orientation": "<front|back|internal|other>",
+      "position": {
+        "row": 0,
+        "col": 0,
+        "rowspan": 1,
+        "colspan": 1
+      },
+      "relationships": [
+        {
+          "name": "<relationship type>",
+          "to": "<Target layer/domain name>",
+          "from": "<Optional source>",
+          "description": "<Explanation>"
+        }
+      ],
+      "layers": {
+        "<Nested Sub-layer Key>": {
+          "name": "<Nested sub-layer name>",
+          "description": "<Nested sub-layer description>",
+          "purpose": "<Nested sub-layer purpose>",
+          "stakeholders": [],
+          "guidingQuestions": [],
+          "orientation": "<front|back|internal|other>",
+          "position": {
+            "row": 0,
+            "col": 0,
+            "rowspan": 1,
+            "colspan": 1
+          },
+          "relationships": [],
+          "layers": {
+            /* ... further recursion as needed ... */
+          }
+        }
+      }
+    },
+
+    "<Sub-layer Key 2>": {
+      /* Same structure as above */
+    }
+  }
+}

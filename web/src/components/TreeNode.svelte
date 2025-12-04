@@ -26,22 +26,26 @@
         <div class="flex items-center">
             <!-- Expand/Collapse toggle icon for folders -->
             {#if node._children?.length > 0}
-                    <span class="mr-2">
+                    <span class="mr-1">
                         {#if $isExpanded}
-                            <span class="mr-2 ailtire-collapsed"></span>
+                            <span class="ailtire-collapsed"></span>
                         {:else}
-                            <span class="mr-2 ailtire-expanded"></span>
+                            <span class="ailtire-expanded"></span>
                         {/if}
                     </span>
             {:else}
-                <span class="mr-2">&nbsp;</span> <!-- Placeholder for alignment -->
+                <span class="mr-1">&nbsp;</span> <!-- Placeholder for alignment -->
             {/if}
 
             <!-- Icon based on node type -->
-            <span class="mr-2 icon ailtire-{node.type.toLowerCase()}"></span>
+            <span class="mr-1 icon ailtire-{node.type.toLowerCase()}"></span>
 
             <!-- Node name -->
-            <span>{node.name}</span>
+            {#if node._view && node._view.hasOwnProperty("getTreeNode") }
+                <span>{@html node._view.getTreeNode(node)}</span>
+            {:else}
+                <span>{node.name}</span>
+            {/if}
         </div>
 
         <!-- Display number of children in a circle if there are children -->

@@ -1,127 +1,261 @@
 const phaseColor = {
-	"Current": "#0000ff",
-	"Future": "#00ff00"
+    "Current": "#000088",
+    "Future": "#008800"
+};
+
+// ... existing selectEngagement, addInteractiveCircle ...
+
+// Build an index of phases -> layers -> aggregated engagements
+function buildCustomerOverlayIndex(customer) {
+    // Result shape:
+    // [
+    //   {
+    //     name: phase.name,
+    //     phase,
+    //     layers: {
+    //       [layerPath]: {
+    //         name: layerPath,
+    //         count,
+    //         elements: [engagements...],
+    //         phase,
+    //         customer
+    //       }
+    //     }
+    //   },
+    //   ...
+    // ]
+    const phasesIndex = {};
+
+    if (!customer?.phases) return [];
+
+    for (const phase of Object.values(customer.phases)) {
+        if (!phase?.suppliers) continue;
+
+        const phaseKey = phase.name || 'phase';
+        if (!phasesIndex[phaseKey]) {
+            phasesIndex[phaseKey] = {
+                name: phaseKey,
+                phase,
+                customer,
+                layers: {}
+            };
+        }
+        const phaseEntry = phasesIndex[phaseKey];
+
+        for (const supplier of Object.values(phase.suppliers)) {
+            if (!supplier?.engagements) continue;
+
+            for (const engagement of Object.values(supplier.engagements)) {
+                if (!engagement.layers) continue;
+
+                // ensure engagement knows its phase and supplier
+                if (!engagement.phase) engagement.phase = phase;
+                if (!engagement.supplier) engagement.supplier = supplier;
+                if (!engagement.customer) engagement.customer = customer;
+
+                for (const layerPath of engagement.layers) {
+                    const layerName = String(layerPath).trim();
+                    if (!layerName) continue;
+
+                    if (!phaseEntry.layers[layerName]) {
+                        phaseEntry.layers[layerName] = {
+                            name: layerName,
+                            count: 0,
+                            elements: [],
+                            phase,
+                            customer
+                        };
+                    }
+                    const layerItem = phaseEntry.layers[layerName];
+                    layerItem.count++;
+                    layerItem.elements.push(engagement);
+                }
+            }
+        }
+    }
+
+    return Object.values(phasesIndex);
 }
+
+// helper: keep only alphanumeric chars, optionally collapsing empties
+function toSafeIdPart(value) {
+    if (!value) return 'x';
+    const cleaned = String(value).replace(/[^a-zA-Z0-9]/g, '');
+    return cleaned || 'x';
+}
+
+// draw one small DOM pin inside the cell header, one per phase+layer
+function renderPin(graph2DDiv, cell, item, callback) {
+    if (!cell) return;
+
+    const titleBox = cell.querySelector('.gear-layer-title');
+    if (!titleBox) return;
+
+    let pinContainer = titleBox.querySelector('.pin-container');
+    if (!pinContainer) {
+        pinContainer = document.createElement('div');
+        pinContainer.className = 'pin-container';
+        Object.assign(pinContainer.style, {
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '4px',
+            padding: '0 4px',
+            boxSizing: 'border-box',
+            overflowY: 'auto',
+            flexGrow: '1'
+        });
+        titleBox.appendChild(pinContainer);
+    }
+
+    const safePhase = toSafeIdPart(item.phase?.name || 'phase');
+    const safeLayer = toSafeIdPart(item.name || 'layer');
+    const pinId = `custpin${safePhase}${safeLayer}`;
+    if (graph2DDiv.querySelector(`#${pinId}`)) {
+        return;
+    }
+
+    const baseColor = phaseColor[item.phase?.name] || '#bb7700';
+
+    const pin = document.createElement('div');
+    pin.id = pinId;
+    pin.setAttribute('phase-id', safePhase); // used for phase toggling
+    pin.className = 'gear-pin';
+    pin.textContent = item.count;
+    Object.assign(pin.style, {
+        width: '18px',
+        height: '18px',
+        borderRadius: '50%',
+        background: baseColor,
+        color: '#fff',
+        fontSize: '11px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxShadow: '0 1px 3px rgba(0,0,0,0.4)',
+        cursor: 'pointer',
+        flexShrink: '0'
+    });
+
+    const lines = item.elements.map(e => e.name).filter(Boolean);
+    pin.title = lines.join('\n');
+
+    pin.addEventListener('click', ev => {
+        ev.stopPropagation();
+        if (typeof callback === 'function') {
+            callback(item);
+        }
+    });
+
+    pinContainer.appendChild(pin);
+}
+
+// main overlay builder for customer: show all phases by default
+export function applyCustomerOverlay(svgEl, customer, callback) {
+    if (!customer) return;
+    const phases = buildCustomerOverlayIndex(customer);
+    if (!phases.length) return;
+
+    // Remove any previous pins
+    svgEl.querySelectorAll('.gear-pin').forEach(n => n.remove());
+
+    // Aggregate by (phase, resolvedLayerName)
+    const aggregated = {};
+
+    for (const phaseEntry of phases) {
+        const phaseName = phaseEntry.phase?.name || phaseEntry.name || 'phase';
+        for (const layerName in phaseEntry.layers) {
+            if (!Object.prototype.hasOwnProperty.call(phaseEntry.layers, layerName)) continue;
+
+            const item = phaseEntry.layers[layerName];
+
+            // Try full layer path first, then walk up by trimming at '-'
+            let searchName = item.name;
+            let cell = null;
+
+            while (searchName && !cell) {
+                cell = svgEl.querySelector(`.gear-layer-cell[data-layer-id="${searchName}"]`);
+                if (cell) break;
+
+                const idx = searchName.lastIndexOf('-');
+                if (idx === -1) break; // no more parents
+                searchName = searchName.substring(0, idx);
+            }
+
+            if (!cell) continue;
+            const resolvedLayerName = searchName || item.name;
+
+            // Keyed by phase + resolved layer
+            const phaseKey = toSafeIdPart(phaseName);
+            const aggKey = `${phaseKey}::${resolvedLayerName}`;
+
+            if (!aggregated[aggKey]) {
+                aggregated[aggKey] = {
+                    cell,
+                    name: resolvedLayerName,
+                    phase: phaseEntry.phase,
+                    customer: phaseEntry.customer,
+                    count: 0,
+                    elements: []
+                };
+            }
+
+            aggregated[aggKey].count += item.count || 0;
+            if (item.elements && item.elements.length) {
+                aggregated[aggKey].elements.push(...item.elements);
+            }
+        }
+    }
+
+    // Render one pin per aggregated (phase, layer)
+    for (const key in aggregated) {
+        if (!Object.prototype.hasOwnProperty.call(aggregated, key)) continue;
+        const agg = aggregated[key];
+        renderPin(svgEl, agg.cell, agg, callback);
+    }
+}
+
+// entrypoint: draw pins and wire phase toggles
 export function create2D(graphContainer, customer, selectNodeCallback = null) {
+    // Show all phases by default
+    applyCustomerOverlay(graphContainer, customer, selectNodeCallback);
 
-	// Find all of the layers to the customer
-	// Find the layers in the current graph container.
-	// Place a circle in the rectangle of the layer.
-	function processCustomer(customer) {
-		for (let cname in customer.phases) {
-			processState(customer, customer.phases[cname]);
-		}
-	}
+    // Toggle per phase via .phase-color-circle elements
+    const circles = document.querySelectorAll(`.phase-color-circle[data-phase-id]`);
 
-	function processState(customer, phase) {
-		let id = customer.name + '-' + phase.name;
-		for(let sname in phase.suppliers) {
-			processSupplier(customer, phase, phase.suppliers[sname]);
-		}
-	}
-	function processSupplier(customer, phase, supplier) {
-		for(let sname in supplier.engagements) {
-			mapEngagement(customer, phase, supplier, supplier.engagements[sname]);
-		}
-	}
+    circles.forEach(circle => {
+        circle.style.cursor = 'pointer';
 
-	function mapEngagement(customer,phase,supplier,engagement) {
-			for (let j in engagement.layers) {
-				const layerID = engagement.layers[j];
-				const groupElement = graphContainer.querySelector(`g[data-layer-id="${layerID}"]`);
-				engagement.phase = phase;
-				engagement.customer = customer;
-				engagement.supplier = supplier;
+        if (circle._phaseClickHandler) {
+            circle.removeEventListener('click', circle._phaseClickHandler);
+        }
 
-				if(groupElement) {
-					addInteractiveCircle(graphContainer,
-						groupElement,
-						{...engagement, layer: layerID, phase:phase, customer:customer, supplier: supplier},
-						selectEngagement,
-						selectNodeCallback,
-						{fill: phaseColor[phase.name]}
-					);
-				}
-			}
-	}
-	processCustomer(customer);
-}
+        const handler = event => {
+            event.stopPropagation();
 
-function selectEngagement(container, circle, node, selectNode = null) {
+            const rawPhaseId = circle.getAttribute('data-phase-id');
+            if (!rawPhaseId) return;
+            const phaseId = toSafeIdPart(rawPhaseId);
 
-	const circles = container.querySelectorAll("circle");
+            const wasActive = circle.dataset.active === 'true';
+            const nowActive = !wasActive;
+            circle.dataset.active = nowActive.toString();
 
-	// Loop through each circle
-	circles.forEach((circle) => {
-		// Get the original fill color from the custom attribute
-		const originalFill = circle.getAttribute("fill-orginal");
+            const pins = graphContainer.querySelectorAll(`.gear-pin[phase-id="${phaseId}"]`);
 
-		// If the attribute exists, restore the fill color
-		if (originalFill) {
-			circle.setAttribute("fill", originalFill);
-		}
-	});
-	circle.setAttribute("fill", "yellow");
-	if(selectNode) {
-		selectNode(node);
-	}
-}
+            if (nowActive) {
+                pins.forEach(p => (p.style.display = ''));
+                circle.classList.add('is-active');
+            } else {
+                pins.forEach(p => (p.style.display = 'none'));
+                circle.classList.remove('is-active');
+            }
+        };
 
-function addInteractiveCircle(container, groupElement, node, selectEngagement, selectNodeCallback, circleOptions = {}) {
-	// Count existing circles in the group (same as before)
+        circle.addEventListener('click', handler);
+        circle._phaseClickHandler = handler;
 
-
-	const existingCircles = groupElement.querySelectorAll("circle");
-	const checkCircle = groupElement.querySelector(`circle[node-id="${node.id}"]`);
-	if(checkCircle) {
-		return;
-	}
-	const numCircles = existingCircles.length;
-
-	// Get the group's bounding box
-	const bbox = groupElement.getBBox();
-	const groupWidth = bbox.width || 500; // Default width
-	const groupHeight = bbox.height || 500; // Default height
-
-	// Calculate the new circle's position
-	const numRows = Math.round(Math.sqrt(numCircles + 1)); // Row count
-	const numCols = Math.ceil((numCircles + 1) / numRows); // Column count
-	const row = Math.floor(numCircles / numCols);
-	const col = numCircles % numCols;
-	const cellWidth = groupWidth / numCols;
-	const cellHeight = groupHeight / numRows;
-
-	const cx = bbox.x + col * cellWidth + cellWidth / 2; // Center X
-	const cy = bbox.y + row * cellHeight + cellHeight / 2; // Center Y
-
-	// Create the circle element
-	const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-	circle.setAttribute("node-id", node.id);
-	circle.setAttribute("cx", cx);
-	circle.setAttribute("cy", cy);
-	circle.setAttribute("r", circleOptions.radius || 20);
-	circle.setAttribute("fill", circleOptions.fill || "yellow");
-	circle.setAttribute("fill-orginal", circleOptions.fill || "yellow");
-	circle.setAttribute("class", circleOptions.class || "interactive-circle");
-
-	// Add a <title> element for hover-over tooltip
-	const title = document.createElementNS("http://www.w3.org/2000/svg", "title");
-	title.textContent = node.name; // Tooltip content
-	circle.appendChild(title);
-
-	// Add a click event to call the selectedEngagement function
-	circle.addEventListener("click", (event) => {
-		// Call the selectedEngagement function where required
-		if (typeof selectEngagement === "function") {
-			selectEngagement(container, circle, node, selectNodeCallback);
-		} else {
-			console.error("selectedEngagement function not provided.");
-		}
-
-		// Example: Stop event propagation if necessary
-		event.stopPropagation();
-	});
-
-	// Append the circle to the group
-	groupElement.appendChild(circle);
+        if (!circle.dataset.active) {
+            circle.dataset.active = 'true'; // all phases visible by default
+        }
+    });
 }

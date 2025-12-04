@@ -27,13 +27,13 @@
 
     function handleExportEvent(event) {
         if(event.status === 'svg') {
-            exportText.update(current => current + '\n' + event.text);
+            exportText.update(current => current + '\n' + event.data.text);
         } else if(event.status === 'complete') {
-            exportText.set(event.text);
+            exportText.set(event.data.text);
             exportState.set("complete");
         }
         else {
-            exportText.update(current => current + '\n' + event.text);
+            exportText.update(current => current + '\n' + event.data.text);
         }
     }
     async function saveFile(data, fileName = "customer.json") {

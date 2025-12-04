@@ -123,7 +123,7 @@
         "color": null,
         "description": "Suite of applications offered as a service including ERP, HCM, and CRM solutions.",
         "layers": [
-          "Application Layer"
+          "Application"
         ]
       },
       "Oracle Financial Services Analytical Applications": {
@@ -187,7 +187,7 @@
         "color": null,
         "description": "Ensures coordinated access and integration of data across modules.",
         "layers": [
-          "Distributed Information Management Layer"
+          "Distributed Information Management"
         ]
       },
       "Oracle Database": {
@@ -195,7 +195,7 @@
         "color": null,
         "description": "User-facing database applications and interfaces.",
         "layers": [
-          "Application Layer"
+          "Application"
         ]
       },
       "Oracle E-Business Suite": {
@@ -203,7 +203,7 @@
         "color": null,
         "description": "Comprehensive suite of business applications for enterprise resource planning.",
         "layers": [
-          "Application Layer"
+          "Application"
         ]
       },
       "Oracle Enterprise Manager": {
@@ -211,7 +211,7 @@
         "color": null,
         "description": "Monitors and manages Oracle services' health and performance.",
         "layers": [
-          "Service Management Layer"
+          "Service Management"
         ]
       }
     }
