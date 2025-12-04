@@ -1,0 +1,2139 @@
+{
+  "Strategic Domain": {
+    "name": "Strategic Domain",
+    "description": "The Strategic Domain (see <a href=\"fig-{doc-chap-number}.1\">fig-{doc-chap-number}.1</a>) focuses on aligning an organization's direction, priorities, capabilities, and risk posture with its core mission and vision.\nIt translates leadership aspirations, community needs, and long-term goals into actionable strategies.\nThis includes elements such as strategic objectives, organizational priorities, performance indicators, and value streams, ensuring that every part of the enterprise is purpose-driven and outcome-focused.",
+    "purpose": "The purpose of the Strategic Domain is to align an organization's direction, priorities, capabilities, and risk posture with its core mission and vision. It translates leadership aspirations, community needs, and long-term goals into actionable strategies, including strategic objectives, organizational priorities, performance indicators, and value streams, ensuring that every part of the enterprise is purpose-driven and focused on delivering meaningful outcomes.",
+    "stakeholders": [
+      "Advocacy and interest groups",
+      "Community members and constituents",
+      "Department and agency heads",
+      "Employees and internal teams",
+      "Industry and sector experts",
+      "Organizational leadership and executives",
+      "Partner organizations and collaborators",
+      "Policy makers and legislators"
+    ],
+    "orientation": "front",
+    "position": {
+      "row": 1,
+      "col": 1,
+      "colspan": 2
+    },
+    "color": "#003366",
+    "relationships": [
+      {
+        "name": "influences",
+        "to": "Organizational Domain",
+        "description": "Strategic direction shapes organizational structure, roles and governance models."
+      },
+      {
+        "name": "influences",
+        "to": "Process Domain",
+        "description": "Strategic direction shapes organizational structure, roles and governance models."
+      }
+    ],
+    "layers": {
+      "Mission & Vision": {
+        "name": "Mission & Vision",
+        "description": "Defines the organization's aspirational long-term goals and core purpose, providing the foundation for the Strategic Domain. It articulates why the organization exists, what public value it aims to create, and how its long-term intent aligns with national development objectives, community needs, and legislative mandates.",
+        "purpose": "To establish a clear and inspiring foundation that aligns the organization’s long-term aspirations, core purpose, legal mandate, and community expectations—guiding all transformation activities and ensuring continuity across departments, partners, and stakeholders.",
+        "stakeholders": [
+          "Advocacy and interest groups",
+          "Community members and constituents",
+          "Department and agency heads",
+          "Employees and internal teams",
+          "Industry and sector experts",
+          "Organizational leadership and executives",
+          "Partner organizations and collaborators",
+          "Policy makers and legislators"
+        ],
+        "guidingQuestions": [
+          "What is the organization’s fundamental reason for existence and who does it serve?",
+          "What long-term societal impact or future state does the organization aspire to create?",
+          "How does the mission and vision reflect the needs and values of communities?",
+          "How can these foundational elements guide decision-making and resource prioritization?",
+          "How should the mission and vision evolve amid societal, policy, or technological changes?"
+        ],
+        "orientation": "front",
+        "position": {
+          "row": 1,
+          "col": 1,
+          "rowspan": 1,
+          "colspan": 3
+        },
+        "relationships": [],
+        "layers": {
+          "Community and Constituent Input": {
+            "name": "Community and Constituent Input",
+            "description": "Reflects the needs, expectations, and feedback from communities and constituents served by the organization, ensuring mission and vision remain relevant, responsive, and people-centered.",
+            "purpose": "To integrate public needs and feedback into strategic foundations, ensuring trust, legitimacy, and inclusive design of mission and vision.",
+            "stakeholders": [],
+            "guidingQuestions": [
+              "What are the primary needs and expectations of our communities?",
+              "How is feedback collected, evaluated, and acted upon?",
+              "How is inclusivity and representation ensured?",
+              "How does constituent input drive strategic decisions?",
+              "How do we maintain meaningful and ongoing engagement?"
+            ],
+            "orientation": "front",
+            "position": {
+              "row": 3,
+              "col": 1,
+              "rowspan": 1,
+              "colspan": 1
+            },
+            "relationships": [
+              {
+                "name": "influences",
+                "to": "Leadership Aspirations",
+                "description": "Shapes leadership direction."
+              },
+              {
+                "name": "enables",
+                "to": "Mission Statement",
+                "description": "Ensures mission is people-centered."
+              }
+            ],
+            "layers": {}
+          },
+          "Leadership Aspirations": {
+            "name": "Leadership Aspirations",
+            "description": "Captures the strategic priorities, values, and transformational ambitions expressed by executives and leaders, reflecting the intentional direction of the organization.",
+            "purpose": "To ensure leadership’s values and priorities guide mission, vision, culture, and strategic commitments.",
+            "stakeholders": [],
+            "guidingQuestions": [
+              "What priorities and ambitions has leadership established?",
+              "How do leadership values influence culture and decisions?",
+              "What transformational goals guide organizational evolution?",
+              "How do these aspirations align with government or community needs?",
+              "How are these ambitions communicated and embedded?"
+            ],
+            "orientation": "front",
+            "position": {
+              "row": 2,
+              "col": 1,
+              "rowspan": 1,
+              "colspan": 1
+            },
+            "relationships": [
+              {
+                "name": "influences",
+                "to": "Vision Statement",
+                "description": "Shapes long-term aspiration."
+              },
+              {
+                "name": "influences",
+                "to": "Mission Statement",
+                "description": "Refines mission direction."
+              },
+              {
+                "name": "flows_to",
+                "to": "Community and Constituent Input",
+                "description": "Engages and interacts with community perspectives."
+              }
+            ],
+            "layers": {}
+          },
+          "Legislative Authority": {
+            "name": "Legislative Authority",
+            "description": "The legal authority and mandate defining what the organization is permitted and required to do, including oversight bodies, enabling legislation, and regulatory obligations.",
+            "purpose": "To ensure the mission and vision operate within the legal framework that governs authority, accountability, and public responsibility.",
+            "stakeholders": [],
+            "guidingQuestions": [
+              "What laws and mandates define our organizational purpose?",
+              "What legal constraints must operations comply with?",
+              "How do policies affect our mission or vision?",
+              "What legislative changes may impact future direction?",
+              "How does legislation define service obligations?"
+            ],
+            "orientation": "front",
+            "position": {
+              "row": 1,
+              "col": 3,
+              "rowspan": 1,
+              "colspan": 1
+            },
+            "relationships": [
+              {
+                "name": "enables",
+                "to": "Mission Statement",
+                "description": "Mission must comply with authority."
+              },
+              {
+                "name": "influences",
+                "to": "Vision Statement",
+                "description": "Mandates shape long-term aspirations."
+              },
+              {
+                "name": "complies_with",
+                "to": "Policy & Compliance",
+                "description": "Authority is framed by policy."
+              }
+            ],
+            "layers": {}
+          },
+          "Mission Statement": {
+            "name": "Mission Statement",
+            "description": "A declaration of the organization’s core purpose—what it does, who it serves, and why it matters—reflecting an operational commitment to efficient, transparent, citizen-centric public service.",
+            "purpose": "To anchor initiatives around a clear and consistent mandate connecting service delivery, governance, and public value.",
+            "stakeholders": [],
+            "guidingQuestions": [
+              "Who are the primary beneficiaries?",
+              "What functions or services are provided?",
+              "Why is the organization’s work important?",
+              "How does the mission distinguish the organization?",
+              "How should the mission guide operations and strategic choices?"
+            ],
+            "orientation": "front",
+            "position": {
+              "row": 2,
+              "col": 2,
+              "rowspan": 2,
+              "colspan": 2
+            },
+            "relationships": [
+              {
+                "name": "influences",
+                "to": "Narrative of Action",
+                "description": "Mission shapes evolution over time."
+              },
+              {
+                "name": "depends_on",
+                "to": "Leadership Aspirations",
+                "description": "Refined by leadership priorities."
+              },
+              {
+                "name": "depends_on",
+                "to": "Community and Constituent Input",
+                "description": "Shaped by community needs."
+              }
+            ],
+            "layers": {}
+          },
+          "Narrative of Action": {
+            "name": "Narrative of Action",
+            "description": "Explains how the mission and vision adapt over time to address evolving societal needs, emerging technologies, and environmental changes.",
+            "purpose": "To provide a living, evolving framework that ensures mission and vision remain relevant, adaptive, and aligned to real-world dynamics.",
+            "stakeholders": [],
+            "guidingQuestions": [
+              "How do societal and technological trends shape mission and vision?",
+              "What processes ensure adaptability?",
+              "How does the organization maintain continuity while evolving?",
+              "How is change communicated to the public?",
+              "What mechanisms ensure long-term relevance?"
+            ],
+            "orientation": "front",
+            "position": {
+              "row": 4,
+              "col": 1,
+              "rowspan": 1,
+              "colspan": 3
+            },
+            "relationships": [
+              {
+                "name": "depends_on",
+                "to": "Vision Statement",
+                "description": "Shaped by aspirational vision."
+              },
+              {
+                "name": "depends_on",
+                "to": "Mission Statement",
+                "description": "Evolves from core mission."
+              }
+            ],
+            "layers": {}
+          },
+          "Vision Statement": {
+            "name": "Vision Statement",
+            "description": "A concise, inspiring statement describing the long-term future the organization aims to achieve—emphasizing societal outcomes, inclusivity, and innovation.",
+            "purpose": "To provide an aspirational north star guiding all transformation activities, decisions, and investments.",
+            "stakeholders": [],
+            "guidingQuestions": [
+              "What does a digitally empowered society look like in 10–15 years?",
+              "How does digital transformation improve service experience?",
+              "What future state should all entities aim toward?",
+              "Are all agencies aligned to a unified long-term vision?"
+            ],
+            "orientation": "front",
+            "position": {
+              "row": 1,
+              "col": 1,
+              "rowspan": 1,
+              "colspan": 2
+            },
+            "relationships": [
+              {
+                "name": "influences",
+                "to": "Leadership Aspirations",
+                "description": "Shapes leadership direction."
+              },
+              {
+                "name": "influences",
+                "to": "Narrative of Action",
+                "description": "Frames long-term evolution."
+              }
+            ],
+            "layers": {}
+          }
+        }
+      },
+      "Policy & Compliance": {
+        "domain": "Strategic Domain",
+        "name": "Policy & Compliance",
+        "description": "Defines the legal foundations, policy mandates, regulatory requirements, and compliance frameworks that govern how the organization operates and delivers public value. It establishes the mandatory and strategic guardrails within which transformation, capability development, and service delivery must occur, ensuring alignment with national laws, ethical standards, sector regulations, and cross-government directives.",
+        "purpose": "To define the binding legal, regulatory, and policy environment within which the organization must operate, and to establish the frameworks, standards, and governance mechanisms that ensure compliant, ethical, and accountable transformation and service delivery.",
+        "stakeholders": [
+          "Audit & Oversight Bodies",
+          "Business Unit & Agency Leaders",
+          "Compliance & Risk Officers",
+          "Data Protection & Security Officers",
+          "Legal Counsel & Policy Owners",
+          "Regulators & Supervisory Authorities",
+          "Strategic Leadership & Executive Sponsors"
+        ],
+        "guidingQuestions": [
+          "What binding laws, regulations, and directives govern the organization’s activities?",
+          "What policies and standards must be in place to ensure compliant operations and transformation?",
+          "How is policy and compliance managed, monitored, and updated over time?",
+          "How do legal and regulatory requirements shape strategic priorities and risk appetite?",
+          "How does this layer constrain and enable value streams, capabilities, and governance?"
+        ],
+        "relationships": [
+          {
+            "name": "influences",
+            "to": "Risk & Resilience",
+            "description": "Policy & Compliance influences the organization's risk management and resilience planning."
+          }
+        ],
+        "position": {
+          "row": 3,
+          "col": 2,
+          "rowspan": 1
+        },
+        "layers": {
+          "Regulatory Context": {
+            "name": "Regulatory Context",
+            "description": "The broader regulatory environment that shapes how the organization must operate, including national standards, sector regulations, supervisory mechanisms, and external enforcement expectations.",
+            "position": {
+              "row": 3,
+              "col": 1
+            },
+            "purpose": "To ensure full alignment with regulatory authorities and oversight bodies, enabling compliant, transparent, and accountable operations across all relevant domains.",
+            "guidingQuestions": [
+              "What regulatory requirements and sector-specific mandates apply to the organization?",
+              "How do regulatory obligations influence operational practices or transformation priorities?",
+              "What external enforcement mechanisms must be monitored or adhered to?"
+            ],
+            "stakeholders": []
+          },
+          "Strategic Directives": {
+            "name": "Strategic Directives",
+            "description": "Top-down reform initiatives, executive decisions, leadership mandates, or government-wide transformation instructions that directly guide organizational change.",
+            "position": {
+              "row": 3,
+              "col": 2
+            },
+            "purpose": "To translate leadership intent into actionable mandates that shape policy development, strategic alignment, and prioritization across the organization.",
+            "guidingQuestions": [
+              "What directives or reform programs have been issued by leadership or government authorities?",
+              "How do these directives influence strategic priorities and organizational transformation?",
+              "What responsibilities or expectations arise from these directives?"
+            ],
+            "stakeholders": []
+          },
+          "Compliance Frameworks & Standards": {
+            "name": "Compliance Frameworks",
+            "description": "Operational standards, detailed requirements, and control mechanisms derived from policies and regulations. Includes areas such as privacy, information security, retention, accessibility, and service integrity.",
+            "position": {
+              "row": 2,
+              "col": 1
+            },
+            "purpose": "To ensure organizational practices, systems, and processes comply with mandated standards, reducing operational, legal, and regulatory risk and supporting auditability.",
+            "guidingQuestions": [
+              "What compliance frameworks and standards must be followed across the organization?",
+              "How are these standards enforced within systems, processes, and services?",
+              "How do compliance frameworks support auditability and risk reduction?"
+            ],
+            "stakeholders": []
+          },
+          "Compliance Monitoring & Reporting": {
+            "name": "Compliance Monitoring & Reporting",
+            "purpose": "To enable ongoing oversight of compliance adherence, support corrective actions, and maintain transparency and accountability toward internal leadership and external regulators.",
+            "description": "Methods and tools used to evaluate compliance performance, detect gaps, report findings, and escalate issues to leadership or regulatory authorities.",
+            "position": {
+              "row": 2,
+              "col": 2
+            },
+            "guidingQuestions": [
+              "How is compliance tracked, monitored, and validated across the organization?",
+              "What reporting mechanisms document compliance status and gaps?",
+              "How are non-compliance issues escalated and addressed?"
+            ],
+            "stakeholders": []
+          },
+          "Legal & Statutory Foundations": {
+            "name": "Legal & Statutory Foundations",
+            "purpose": "To establish the binding legal basis for organizational operations, ensuring adherence to national legislative expectations and protecting institutional integrity.",
+            "description": "Formal laws, executive orders, statutory provisions, and government-mandated requirements that define non-negotiable obligations the organization must comply with.",
+            "position": {
+              "row": 1,
+              "col": 1
+            },
+            "guidingQuestions": [
+              "What laws, legal mandates, or statutory obligations govern the organization’s activities?",
+              "Which legal requirements must be integrated into policies, processes, and systems?",
+              "How do legal foundations influence strategic decisions and risk exposure?"
+            ],
+            "stakeholders": []
+          },
+          "Policy Framework": {
+            "name": "Policy Framework",
+            "purpose": "To provide a unified and coherent policy foundation that directs decision-making, ensures consistency, and aligns the organization with national or governmental priorities.",
+            "description": "A structured set of organizational policies that define principles, rules, and thematic priorities guiding operational and strategic activities. Includes strategic policy themes and overarching guiding policies.",
+            "position": {
+              "row": 1,
+              "col": 2
+            },
+            "guidingQuestions": [
+              "What policies must exist to support the organization’s mission and strategy?",
+              "How are policies structured, categorized, and integrated into organizational operations?",
+              "How do strategic themes and guiding policies influence decision-making?"
+            ],
+            "stakeholders": []
+          },
+          "Policy Governance & Lifecycle": {
+            "name": "Policy Governance & Lifecycle",
+            "purpose": "To maintain policy relevance, consistency, and accuracy through structured governance and lifecycle management, ensuring that policies remain aligned with legal, regulatory, and strategic requirements.",
+            "description": "The processes and responsibilities for drafting, approving, reviewing, updating, and retiring policies in a controlled and governed manner.",
+            "position": {
+              "row": 4,
+              "col": 1
+            },
+            "guidingQuestions": [
+              "Who is responsible for creating, approving, and owning policies?",
+              "What mechanisms ensure regular policy review and alignment with changing requirements?",
+              "How is policy governance enforced across departments and agencies?"
+            ],
+            "stakeholders": []
+          }
+        }
+      },
+      "Risk & Resilience": {
+        "name": "Risk & Resilience",
+        "description": "The Risk & Resilience Layer addresses the organization’s ability to anticipate, mitigate, withstand, and recover from risks while sustaining operational continuity and strategic momentum. This layer ensures that the enterprise can continue functioning during crises, absorb shocks, adapt to new threats, and maintain trust with stakeholders. It provides enterprise-wide visibility into risks, prepares the organization for disruption, and aligns resilience capabilities with strategic and operational priorities.",
+        "purpose": "To establish the structures, capabilities, assessments, and governance mechanisms that ensure the organization can predict threats, withstand disruptions, recover effectively, and adapt to changing conditions.",
+        "stakeholders": [
+          "Business Continuity Teams",
+          "Cybersecurity & Security Operations",
+          "Enterprise Architecture & Strategy Teams",
+          "Executive Leadership & Crisis Committees",
+          "Operational Teams & Agency Leadership",
+          "Regulators & Oversight Authorities",
+          "Risk Management & Compliance Offices"
+        ],
+        "guidingQuestions": [
+          "What risks threaten continuity, mission delivery, or stakeholder trust?",
+          "What capabilities and assets ensure resilience, recovery, and adaptability?",
+          "How are risks analyzed, prioritized, and escalated?",
+          "How resilient is the organization today, and what should the target posture be?",
+          "How do resilience and risk management influence strategy, capabilities, and value streams?",
+          "What contingency plans must exist to sustain operations during disruptions?"
+        ],
+        "relationships": [
+          {
+            "name": "enables",
+            "to": "Mission & Vision",
+            "description": "Risk & Resilience enables the sustained pursuit of the mission and vision despite disruptions."
+          },
+          {
+            "name": "enables",
+            "to": "Roadmap",
+            "description": "Risk & Resilience enables the effective planning and execution of transformation roadmaps."
+          }
+        ],
+        "position": {
+          "row": 2,
+          "col": 2
+        },
+        "layers": {
+          "Risk Identification & Prioritization": {
+            "name": "Risk Identification & Prioritization",
+            "description": "Systematic identification, evaluation, and ranking of mission-critical risks, including strategic, operational, cyber, environmental, and geopolitical threats.",
+            "position": {
+              "row": 1,
+              "col": 1
+            },
+            "purpose": "To provide enterprise-wide visibility into risks and to prioritize risk mitigation and resilience investments.",
+            "guidingQuestions": [
+              "What risks threaten mission, operations, or strategic outcomes?",
+              "Which risks represent the greatest likelihood and impact?",
+              "How are risks categorized and prioritized?",
+              "How is risk information shared across the organization?"
+            ],
+            "stakeholders": []
+          },
+          "Resilience Capabilities": {
+            "name": "Resilience Capabilities",
+            "description": "Organizational abilities, investments, and systems that enable continuity, rapid recovery, and sustained mission delivery during disruptions.",
+            "position": {
+              "row": 1,
+              "col": 2
+            },
+            "purpose": "To equip the organization with the necessary abilities—technical, organizational, and procedural—to withstand and recover from disruptions.",
+            "guidingQuestions": [
+              "What capabilities ensure continuity and recovery?",
+              "What infrastructure, workforce, and processes are required?",
+              "How do resilience capabilities integrate with value streams and core operations?",
+              "What maturity levels are required?"
+            ],
+            "stakeholders": []
+          },
+          "Adaptive Governance": {
+            "name": "Adaptive Governance",
+            "description": "Structures, authorities, and decision-making processes that allow the organization to rapidly respond to crises, adjust operations, reallocate resources, and update policies in real time.",
+            "position": {
+              "row": 2,
+              "col": 1
+            },
+            "purpose": "To provide agility in governance, enabling the organization to respond quickly to emerging risks, changing conditions, and disruptions while maintaining alignment with mission and compliance obligations.",
+            "guidingQuestions": [
+              "What governance structures support rapid decisions during crises?",
+              "How are roles, escalation paths, and authorities defined?",
+              "How are policies and operations adjusted dynamically during disruptions?",
+              "How do decisions link to risk assessments and resilience posture?"
+            ],
+            "stakeholders": []
+          },
+          "Strategic Risk Assessment": {
+            "name": "Strategic Risk Assessment",
+            "description": "Comprehensive evaluation of risks affecting strategic goals, national missions, and systemic operations, including emerging, long-horizon, and systemic threats.",
+            "position": {
+              "row": 2,
+              "col": 2
+            },
+            "purpose": "To assess strategic vulnerability, identify long-term risk patterns, and guide strategic planning and capability development.",
+            "guidingQuestions": [
+              "What risks threaten strategic objectives or national outcomes?",
+              "What long-term or emerging risks require leadership attention?",
+              "What systemic or enterprise-wide vulnerabilities must be addressed?",
+              "How does this assessment inform governance and resilience planning?"
+            ],
+            "stakeholders": []
+          },
+          "Resilience Posture": {
+            "name": "Resilience Posture",
+            "description": "A measurable assessment of the organization’s readiness, adaptability, continuity strength, and recovery capability.",
+            "position": {
+              "row": 3,
+              "col": 1
+            },
+            "purpose": "To provide a maturity-based understanding of current resilience, identify gaps, and guide investment and capability development.",
+            "guidingQuestions": [
+              "How resilient is the organization today?",
+              "What metrics and maturity models define resilience?",
+              "What gaps exist between current and target posture?",
+              "How should resilience be improved?"
+            ],
+            "stakeholders": []
+          },
+          "Contingency Plans": {
+            "name": "Contingency Plans",
+            "description": "Actionable frameworks, response plans, and operational playbooks that define how the organization prepares for, responds to, and recovers from disruptions.",
+            "position": {
+              "row": 3,
+              "col": 2
+            },
+            "purpose": "To ensure operational continuity by outlining clear steps, roles, communication flows, and actions during crises.",
+            "guidingQuestions": [
+              "What scenarios require contingency plans?",
+              "What actions must be taken to sustain mission-critical operations?",
+              "Who is responsible for activating and executing plans?",
+              "How are plans tested, validated, and improved?"
+            ],
+            "stakeholders": []
+          }
+        }
+      },
+      "Roadmap": {
+        "name": "Roadmap",
+        "description": "The Roadmap Layer defines how the organization progresses from current state → target state through structured planning, prioritization, and sequencing. It provides clarity on timing, dependencies, strategic pacing, and transformation outcomes. This layer ensures that strategy is not only defined but delivered in a measurable, phased, and governable manner.",
+        "purpose": "To define a coherent, sequenced transformation path that connects strategy to execution, ensuring that the organization moves from its current state to its future-state vision through planned initiatives, dependencies, and time horizons.",
+        "stakeholders": [
+          "Business and Mission Executives",
+          "Enterprise Architecture and Strategy Teams",
+          "External Partners & Vendors",
+          "Operations & Line Agencies",
+          "Program & Portfolio Management Offices",
+          "Risk & Compliance Offices",
+          "Technology Leadership (CIO/CDO/CTO)"
+        ],
+        "guidingQuestions": [
+          "What is the current baseline for capabilities, systems, and workforce readiness?",
+          "What future state must the organization achieve?",
+          "What initiatives bridge the gap between current and future states?",
+          "How should sequencing account for dependencies, constraints, and risks?",
+          "What milestones must be achieved in each time horizon?",
+          "How do foresight insights influence long-term planning and adaptability?"
+        ],
+        "relationships": [
+          {
+            "name": "realizes",
+            "to": "Strategy & Priorities",
+            "description": "The Roadmap realizes strategic objectives through the implementation of programs and projects."
+          },
+          {
+            "name": "depends_on",
+            "to": "Policy & Compliance",
+            "description": "Roadmap development depends on clear policy, regulatory guidance, and compliance constraints."
+          }
+        ],
+        "position": {
+          "row": 4,
+          "col": 2
+        },
+        "layers": {
+          "Current-State Assessments": {
+            "name": "Current-State Assessments",
+            "description": "In-depth diagnostic activities that evaluate systems, capabilities, workforce readiness, governance, processes, and technology landscapes. These assessments form the baseline for transformation.",
+            "position": {
+              "row": 1,
+              "col": 1
+            },
+            "purpose": "To provide an evidence-based understanding of where the organization stands today, enabling accurate planning and prioritization.",
+            "guidingQuestions": [
+              "What are our current strengths, weaknesses, and constraints?",
+              "What capabilities or systems are outdated, underperforming, or missing?",
+              "What workforce or process gaps limit transformation?",
+              "What risks or compliance issues must be addressed before moving forward?"
+            ],
+            "stakeholders": []
+          },
+          "Transformation Roadmaps": {
+            "name": "Transformation Roadmaps",
+            "description": "Integrated, sequenced, dependency-aware plans that coordinate transformation efforts across people, processes, technology, and policy.",
+            "position": {
+              "row": 1,
+              "col": 2
+            },
+            "purpose": "To provide a visual and temporal structure for transformation execution, ensuring alignment, coordination, and traceability.",
+            "guidingQuestions": [
+              "What sequence enables the most impactful, feasible transformation path?",
+              "How do dependencies shape the order of initiatives?",
+              "What milestones track progress across horizons?",
+              "How does the roadmap link strategy to implementation?"
+            ],
+            "stakeholders": []
+          },
+          "Strategic Foresight Activities": {
+            "name": "Strategic Foresight Activities",
+            "description": "Scenario planning, horizon scanning, emerging trend tracking, and risk anticipation activities that shape long-term transformation planning.",
+            "position": {
+              "row": 2,
+              "col": 1
+            },
+            "purpose": "To ensure the organization is prepared for multiple plausible futures and builds resilience into its target operating model.",
+            "guidingQuestions": [
+              "What external forces may reshape future conditions?",
+              "Which uncertainties or trends must be monitored?",
+              "What future scenarios challenge or support strategic assumptions?",
+              "How does foresight shape long-term investments and sequencing?"
+            ],
+            "stakeholders": []
+          },
+          "Current-State Description": {
+            "name": "Current-State Description",
+            "description": "A consolidated view of the organization’s existing operating model, including capabilities, structures, technology, and pain points.",
+            "position": {
+              "row": 2,
+              "col": 2
+            },
+            "purpose": "To establish a shared understanding of the baseline from which the organization is transforming.",
+            "guidingQuestions": [
+              "What is the organization’s current operating environment?",
+              "What constraints or inefficiencies exist today?",
+              "Which capabilities and systems perform well or poorly?",
+              "How does the current state hinder strategic objectives?"
+            ],
+            "stakeholders": []
+          },
+          "Future-State Vision": {
+            "name": "Future-State Vision",
+            "description": "A description of the desired future operating model, including capabilities, structures, technologies, and service experiences.",
+            "position": {
+              "row": 3,
+              "col": 1
+            },
+            "purpose": "To define a clear, measurable, and strategically aligned target that guides transformation initiatives.",
+            "guidingQuestions": [
+              "What desired capabilities and services should the organization deliver?",
+              "What structures, technologies, and processes are required?",
+              "How does this vision align with the mission and strategic outcomes?",
+              "What improvements must be realized for success?"
+            ],
+            "stakeholders": []
+          },
+          "Transformation Initiatives": {
+            "name": "Transformation Initiatives",
+            "description": "A portfolio of projects, programs, and investments needed to transition the organization from the current state to the future state.",
+            "position": {
+              "row": 3,
+              "col": 2
+            },
+            "purpose": "To drive step-by-step change through prioritized, sequenced, and funded efforts aligned with strategy.",
+            "guidingQuestions": [
+              "What initiatives close the gap between current and future state?",
+              "What investments are required to modernize systems, processes, and capabilities?",
+              "How should initiatives be prioritized?",
+              "What risks and dependencies shape sequencing?"
+            ],
+            "stakeholders": []
+          },
+          "Time Horizons": {
+            "name": "Time Horizons",
+            "description": "Short-, medium-, and long-term planning phases that structure transformation pacing and prioritize initiative sequencing.",
+            "position": {
+              "row": 4,
+              "col": 1
+            },
+            "purpose": "To provide clarity on when initiatives should start, how dependencies unfold, and how transformation is paced over time.",
+            "guidingQuestions": [
+              "What should be achieved in the next 12 months?",
+              "What requires a 3-year modernization horizon?",
+              "What long-term investments shape the 5+ year view?",
+              "How do dependencies influence horizon placement?"
+            ],
+            "stakeholders": []
+          }
+        }
+      },
+      "Strategy & Priorities": {
+        "name": "Strategy & Priorities",
+        "description": "Identifies the medium to long-term outcomes and key focus areas required to achieve the mission and vision. It defines how strategic intent is expressed, operationalized, governed, and measured to guide coherent, value-driven digital transformation across government.",
+        "purpose": "To define and operationalize the strategic direction of digital transformation by clarifying the objectives, intended outcomes, priorities, governance structures, decision rights, and performance indicators that guide government action. This layer ensures alignment, coherence, accountability, and value-driven transformation across the public sector.",
+        "stakeholders": [
+          "Agency CIOs, CDOs, and Strategy Officers",
+          "Audit, Oversight, and Regulatory Bodies",
+          "Enterprise Architecture & Strategy Offices",
+          "Executive Leadership",
+          "Finance and Budget Authorities",
+          "Inter-Ministerial Governance Bodies",
+          "Program and Portfolio Management Offices"
+        ],
+        "guidingQuestions": [
+          "What major goals must digital transformation achieve?",
+          "What societal and operational improvements should result from transformation?",
+          "What strategic priorities must guide programs and investments?",
+          "Who holds authority over digital decision-making and governance?",
+          "How will success and public value be measured and used to adjust strategy?"
+        ],
+        "relationships": [
+          {
+            "name": "depends_on",
+            "to": "Policy & Compliance",
+            "description": "Strategic priorities depend on compliant policy and regulatory frameworks to be effective."
+          },
+          {
+            "name": "enables",
+            "to": "Value Streams & Capabilities",
+            "description": "Strategy & Priorities enables the planning and operation of organizational capabilities and value streams."
+          }
+        ],
+        "position": {
+          "row": 2,
+          "col": 1,
+          "rowspan": 3
+        },
+        "layers": {
+          "Strategic Objectives": {
+            "name": "Strategic Objectives",
+            "description": "Strategic objectives are clear, high-level statements that define the government's intended direction and transformation goals. They articulate what must be achieved to fulfill the mission and move toward the long-term vision.",
+            "position": {
+              "row": 1,
+              "col": 1
+            },
+            "purpose": "To translate strategic intent into actionable direction. Strategic objectives anchor decision-making, guide prioritization of initiatives, and ensure coherence across ministries, agencies, and programs.",
+            "guidingQuestions": [
+              "What are the key goals that digital transformation must accomplish?",
+              "How should government performance and service delivery improve over time?",
+              "Which objectives reflect national ambition (e.g., inclusion, efficiency, innovation, trust)?",
+              "What strategic targets must all public sector entities align to?"
+            ],
+            "stakeholders": []
+          },
+          "Decision Rights & Escalation Mechanisms": {
+            "name": "Decision Rights & Escalation Mechanisms",
+            "purpose": "To establish transparent, structured decision processes that prevent duplication, inconsistency, and cross-agency conflict, ensuring clarity and governance assurance for digital transformation.",
+            "description": "Decision Rights & Escalation Mechanisms define who has authority to make strategic, financial, architectural, or operational decisions — and how conflicts, risks, or exceptions are escalated and resolved.",
+            "position": {
+              "row": 1,
+              "col": 2
+            },
+            "guidingQuestions": [
+              "Who approves major investments, policies, or technology standards?",
+              "What decisions are made centrally versus by individual agencies?",
+              "How are conflicts between agencies or strategic priorities escalated and resolved?",
+              "How are exceptions handled while maintaining alignment with principles and strategy?"
+            ],
+            "stakeholders": []
+          },
+          "Governance Model & Decision Bodies": {
+            "name": "Governance Model & Decision Bodies",
+            "purpose": "To ensure consistent, high-integrity decisions across government entities. Principles guide prioritization, solution design, risk mitigation, and stakeholder engagement.",
+            "position": {
+              "row": 2,
+              "col": 1
+            },
+            "description": "Defines the formal structures, councils, committees, or authorities responsible for steering digital transformation strategy and overseeing cross-government alignment.",
+            "guidingQuestions": [
+              "What values must guide all digital government initiatives (e.g., openness, security, inclusion)?",
+              "How should trade-offs be made between innovation, cost, and risk?",
+              "What principles ensure fairness, sustainability, and public trust?"
+            ],
+            "stakeholders": []
+          },
+          "KPI and Measures": {
+            "name": "KPI and Measures",
+            "purpose": "To ensure transparency, accountability, and continuous improvement through evidence-based performance evaluation that supports strategic decision-making and adjustment.",
+            "description": "KPIs and Measures define how progress toward strategic objectives and outcomes is evaluated. They translate strategy into measurable indicators of success, alignment, and impact.",
+            "position": {
+              "row": 2,
+              "col": 2
+            },
+            "guidingQuestions": [
+              "How will we measure success against our strategic objectives?",
+              "What indicators reflect real improvement in citizen experience, efficiency, trust, or innovation?",
+              "How frequently should performance be reviewed, and by whom?",
+              "How do we align tactical performance (projects, services) with strategic outcomes?"
+            ],
+            "stakeholders": []
+          },
+          "Roles & Responsibilities": {
+            "name": "Roles & Responsibilities",
+            "purpose": "To establish clear accountability and delegation of authority so that every strategic decision has an owner, every initiative has a sponsor, and every policy has an enforcing authority.",
+            "description": "Roles & Responsibilities define the individuals and organizational functions accountable for executing strategic direction, ensuring compliance with governance, and managing cross-agency alignment.",
+            "position": {
+              "row": 3,
+              "col": 1
+            },
+            "guidingQuestions": [
+              "Who is accountable for implementing strategic priorities?",
+              "Who approves, sponsors, or oversees transformation initiatives?",
+              "What are the roles of strategic leaders (e.g., CIO, CDO, Agency Heads) versus operational managers?",
+              "How are responsibilities distributed across ministries, agencies, or enterprise units?"
+            ],
+            "stakeholders": []
+          },
+          "Strategic Outcomes": {
+            "name": "Strategic Outcomes",
+            "purpose": "To link strategic intent to measurable impact, ensuring transformation delivers value rather than just activity. Outcomes support accountability, public trust, and long-term evaluation of digital success.",
+            "description": "Strategic outcomes represent the intended societal, economic, or institutional impact produced by achieving strategic objectives. They describe the public value or transformation results expected from digital initiatives.",
+            "position": {
+              "row": 3,
+              "col": 2
+            },
+            "guidingQuestions": [
+              "What changes should citizens, businesses, and government institutions experience?",
+              "How will strategic objectives translate into tangible improvements in society or operations?",
+              "What public value should digital transformation generate (e.g., accessibility, innovation, trust)?",
+              "How will we recognize that transformation has succeeded?"
+            ],
+            "stakeholders": []
+          },
+          "Strategic Priorities & Themes": {
+            "name": "Strategic Priorities & Themes",
+            "purpose": "To ensure strategy becomes actionable by defining clear focus areas for planning and investment and by directing limited resources to the areas of highest strategic importance.",
+            "description": "Strategic priorities and themes are defined focus areas that translate strategic objectives into practical directions for action. They represent major pillars or investment themes shaping programs, initiatives, and resource allocation.",
+            "position": {
+              "row": 4,
+              "col": 1
+            },
+            "guidingQuestions": [
+              "What key areas must receive focused strategic attention to achieve our objectives?",
+              "Which themes or pillars should guide transformation programs across government?",
+              "How do we balance near-term service improvements with long-term innovation?",
+              "What areas require cross-agency collaboration or national alignment?"
+            ],
+            "stakeholders": []
+          }
+        }
+      },
+      "Value Streams & Capabilities": {
+        "name": "Value Streams & Capabilities",
+        "description": "Defines how strategic value is created, who participates in its creation and delivery, and what organizational capabilities enable it. It connects strategy → stakeholder needs → value streams → enabling capabilities.",
+        "purpose": "To model how value is created and how organizational capabilities enable that value delivery, ensuring traceability from strategy to execution and alignment between stakeholder needs, value flows, and enabling abilities.",
+        "stakeholders": [
+          "Business Units & Agencies",
+          "Enterprise Architecture Offices",
+          "External Partners & Citizens",
+          "Program & Portfolio Management",
+          "Strategic Leadership"
+        ],
+        "guidingQuestions": [
+          "How is value created, delivered, and recognized across the organization?",
+          "Which stakeholders influence, trigger, or validate value creation?",
+          "What capabilities are required to support and sustain value delivery?",
+          "How does capability maturity affect value realization and performance?",
+          "How do value streams and capabilities align with strategic objectives and outcomes?"
+        ],
+        "relationships": [],
+        "position": {
+          "row": 2,
+          "col": 3,
+          "rowspan": 3
+        },
+        "layers": {
+          "Capabilities": {
+            "name": "Capabilities",
+            "purpose": "To clarify what the organization must be able to do in order to deliver value and realize strategy, enabling alignment between strategy, value streams, and operational activities.",
+            "description": "Capabilities represent stable business abilities required to execute value streams and achieve strategic goals. They describe what the organization must be able to do — independent of structure, process, or technology — and serve as a foundation for aligning resources, planning transformation initiatives, and measuring institutional readiness.",
+            "position": {
+              "row": 1,
+              "col": 1
+            },
+            "guidingQuestions": [
+              "What capabilities are required to enable key value streams?",
+              "How do capabilities support strategic intent and outcomes?",
+              "What is the current and target maturity of each capability?",
+              "What systems, processes, and data enable each capability?",
+              "Where are the critical capability gaps or overlaps?"
+            ],
+            "stakeholders": []
+          },
+          "Capability Definition": {
+            "name": "Capability Definition",
+            "purpose": "To ensure consistent interpretation of capabilities, avoiding overlap, ambiguity, and misalignment across the enterprise.",
+            "description": "Formal descriptions specifying the boundaries, purpose, and value of each capability.",
+            "position": {
+              "row": 1,
+              "col": 2
+            },
+            "guidingQuestions": [
+              "How is each capability defined and delimited in scope?",
+              "What value does the capability provide to stakeholders or value streams?",
+              "How does each capability support strategic objectives?",
+              "What metrics or indicators describe capability performance?"
+            ],
+            "stakeholders": []
+          },
+          "Capability Instance": {
+            "name": "Capability Instance",
+            "purpose": "To capture local ownership, maturity, and performance differences across the organization, while maintaining coherence with the enterprise capability model.",
+            "description": "Represents the implementation of a capability within a specific unit, agency, or partner organization. It reflects how the capability is practiced, managed, and enabled within its local context.",
+            "position": {
+              "row": 2,
+              "col": 1
+            },
+            "guidingQuestions": [
+              "Which units or partners operate instances of this capability?",
+              "Who owns each instance, and what resources or systems enable it?",
+              "What is the current maturity of each instance, and how does it compare to target?",
+              "How do cross-agency or cross-partner dependencies affect capability performance?"
+            ],
+            "stakeholders": []
+          },
+          "Capability Mapping": {
+            "name": "Capability Map",
+            "purpose": "To visualize how capabilities connect, overlap, and depend on each other and on other disciplines, revealing gaps and integration opportunities and guiding investment and design decisions.",
+            "description": "Shows how capabilities relate to value streams, processes, data, systems, and organizational entities. It visualizes dependencies and alignments across the architecture.",
+            "position": {
+              "row": 2,
+              "col": 2
+            },
+            "guidingQuestions": [
+              "How do capabilities depend on or support each other?",
+              "Which capabilities directly enable which value streams?",
+              "Which capabilities are shared across agencies or partners?",
+              "Where are gaps, overlaps, or inefficiencies in the capability landscape?"
+            ],
+            "stakeholders": []
+          },
+          "Stakeholder Mapping": {
+            "name": "Stakeholder Mapping",
+            "purpose": "To ensure all stakeholder interactions are understood, traced, and considered in the design, governance, and improvement of value streams.",
+            "description": "Identifies and classifies internal and external stakeholders who initiate, participate in, or validate value streams.",
+            "position": {
+              "row": 3,
+              "col": 1
+            },
+            "guidingQuestions": [
+              "Who influences or triggers each value stream?",
+              "Who participates in value creation and delivery?",
+              "How do stakeholders interact with different stages of the value stream?",
+              "Which partnerships or inter-agency collaborations are essential?"
+            ],
+            "stakeholders": []
+          },
+          "Value Proposition": {
+            "name": "Value Proposition",
+            "purpose": "To define measurable value outcomes aligned to stakeholder expectations and strategic objectives, and to link KPIs directly to value delivered.",
+            "description": "The final tangible or intangible results delivered to stakeholders at the end of a value stream, representing perceived and measurable value.",
+            "position": {
+              "row": 3,
+              "col": 2
+            },
+            "guidingQuestions": [
+              "What outcomes reflect successful value delivery for each stream?",
+              "How do stakeholders validate and recognize the value delivered?",
+              "How do these outcomes support strategic objectives and public impact?",
+              "How do KPIs and measures reflect value realization?"
+            ],
+            "stakeholders": []
+          },
+          "Value Stream Stages": {
+            "name": "Value Stream Stages",
+            "purpose": "To visualize value creation, identifying transition criteria, value items, stakeholder touchpoints, and performance improvement opportunities across stages.",
+            "description": "Represent the sequential flow through which value is created, transformed, and delivered across a value stream, from initiation to completion.",
+            "position": {
+              "row": 4,
+              "col": 1
+            },
+            "guidingQuestions": [
+              "What stages define each value stream from trigger to outcome?",
+              "How does value flow from initiation to completion?",
+              "Where do stakeholders interact along the stages?",
+              "Which capabilities enable each stage?",
+              "Where are bottlenecks, risks, or improvement opportunities?"
+            ],
+            "stakeholders": []
+          },
+          "Value Streams": {
+            "name": "Value Streams",
+            "purpose": "To provide a comprehensive understanding of how value is produced, where stakeholders, capabilities, and systems interact, and how streams contribute to strategic objectives and outcomes.",
+            "description": "A structured inventory showing how the organization creates and delivers value across all stakeholder groups, describing end-to-end flows from stakeholder trigger to outcomes.",
+            "position": {
+              "row": 4,
+              "col": 2
+            },
+            "guidingQuestions": [
+              "What value streams define organizational value delivery?",
+              "How are streams categorized (e.g., core, enabling, supporting)?",
+              "What stages represent value progression within each stream?",
+              "Who influences or participates in each stream?",
+              "What outcomes and value propositions define success?"
+            ],
+            "stakeholders": []
+          }
+        }
+      }
+    }
+  },
+  "Physical Domain": {
+    "name": "Physical Domain",
+    "description": "Physical Domain contains all of the devices, locations, and connectivity in the system.",
+    "orientation": "right",
+    "position": {
+      "row": 3,
+      "col": 1
+    },
+    "relationships": [
+      {
+        "name": "enables",
+        "to": "Digital Domain",
+        "description": "Infrastructure enables stable and resilient digital platforms."
+      },
+      {
+        "name": "enables",
+        "to": "Process Domain",
+        "description": "Physical infrastructure enables process automation and operations."
+      }
+    ],
+    "color": "#708090",
+    "assets": {
+      "GEAR1": {
+        "name": "GEAR Architecture document",
+        "url": "https://www.intel.com/content/www/us/en/content-details/790385/government-conceptual-enterprise-architecture-gear.html?wapkw=Government%20Enterprise%20Architecture",
+        "description": "Overview of the GEAR architecture and its uses."
+      },
+      "GEAR2": {
+        "name": "GEAR Security Architecture document",
+        "url": "https://www.intel.com/content/www/us/en/content-details/790385/government-conceptual-enterprise-architecture-gear.html?wapkw=Government%20Enterprise%20Architecture",
+        "description": "The Security Aspect of the Government Enterprise Architecture Reference (GEAR) Logical View integrates protection mechanisms such as encryption, intrusion detection, and threat mitigation across all layers of the architecture. It ensures that all parts of the enterprise are safeguarded against evolving threats by embedding security measures into the Organizational, Process, and Physical Layers. This approach enables a resilient, policy driven environment capable of addressing diverse threats across every architecture layer"
+      },
+      "GEARVideo": {
+        "name": "Video: Government Enterprise Architecture Basics: A Simple Explanation",
+        "url": "https://www.youtube.com/watch?v=Ou9FHodTamk",
+        "description": "In this episode, we delve into the world of leveraging enterprise architecture in government settings, specifically focusing on the benefits and strategies involved. From understanding the fundamentals of enterprise architecture frameworks to embracing digital transformation, we explore how organizations can drive value and efficiency through proper architectural planning. Join us as we discuss the significance of architecture in government operations and the role it plays in achieving organizational goals. If you are interested in learning more about enterprise architecture and its impact on government entities, this insightful discussion is for you."
+      }
+    },
+    "layers": {
+      "Machines": {
+        "name": "Machines",
+        "description": "Machines include non digital and digital machines that interact with the physical world.",
+        "position": {
+          "row": 1,
+          "col": 1,
+          "rowspan": 2
+        },
+        "layers": {
+          "Manual Input Devices": {
+            "name": "Manual Input Machines",
+            "description": "Machines operated by humans to provide direct input to the system.\n\nPush buttons\n\nSelector switches\n\nFoot pedals\n\nEmergency stop switches\n\nHandwheels and levers with feedback",
+            "position": {
+              "row": 1,
+              "col": 1,
+              "colspan": 3
+            }
+          },
+          "Sensors": {
+            "name": "Sensors",
+            "description": "Machines that measure physical parameters from the process. Temperature sensors (RTDs, thermocouples)\n\nPressure transducers\n\nFlow meters\n\nLevel sensors (ultrasonic, float)\n\nProximity and position sensors (inductive, optical)\n\nSpeed/rotation sensors (encoders, tachometers)\n\nChemical/gas sensors (pH, CO₂, VOCs)",
+            "position": {
+              "row": 1,
+              "col": 4,
+              "colspan": 3
+            }
+          },
+          "Composite Machines": {
+            "name": "Composite Machines",
+            "description": "Assemblies that combine sensors, actuators, controllers, and logic into an integrated device.\n\nRobotic arms (with encoders, motors, force sensors)\n\nCNC machines\n\nAutonomous guided vehicles (AGVs)\n\nSmart conveyor modules\n\nPackaging machines with embedded control\n\nPick-and-place machines",
+            "position": {
+              "row": 2,
+              "col": 1,
+              "colspan": 6
+            }
+          },
+          "Motion Acuators": {
+            "name": "Motion Acuators",
+            "description": "Machines that cause linear or rotary movement in mechanical systems.\n\nElectric motors (AC, DC, servo, stepper)\n\nPneumatic or hydraulic cylinders\n\nLinear actuators\n\nRotary actuators\n\nDrives and motor controllers",
+            "position": {
+              "row": 3,
+              "col": 1,
+              "colspan": 2
+            }
+          },
+          "Flow Acuators": {
+            "name": "Flow Acuators",
+            "description": "Machines that regulate flow of liquids, gases, or materials in the process.\n\nSolenoid valves\n\nControl valves (pneumatic, electric)\n\nDosing pumps\n\nDampers and gates\n\nHeaters (used to control thermal flow)",
+            "position": {
+              "row": 3,
+              "col": 3,
+              "colspan": 2
+            }
+          },
+          "Signal and Power Switching": {
+            "name": "Signal and Power Switching",
+            "description": "Machines that switch electrical signals or power to machines.\n\nRelays\n\nContactors\n\nSolid-state switches\n\nCircuit breakers (with signaling)\n\nInterposing relays",
+            "position": {
+              "row": 3,
+              "col": 5,
+              "colspan": 2
+            }
+          }
+        }
+      },
+      "Devices": {
+        "name": "Devices",
+        "description": "Devices represent all physical devices involved in the system's operation, such as sensors and hardware endpoints.",
+        "position": {
+          "row": 1,
+          "col": 2
+        },
+        "layers": {
+          "Dynamic Edge Devices": {
+            "name": "Dynamic Edge Devices",
+            "description": "Dynamic Edge Devices are adaptive, location-dependent devices connecting users to systems.",
+            "position": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          "Operations Devices": {
+            "name": "Operations Devices",
+            "description": "Devices used for operational workflows, ensuring smooth day-to-day system functioning.",
+            "position": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          "Enterprise Devices": {
+            "name": "Enterprise Devices",
+            "description": "Enterprise-level devices supporting organizational goals, such as servers and high-performance hardware.",
+            "position": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "Multi-Hybrid Cloud": {
+            "name": "Multi-Hybrid Cloud",
+            "description": "Multi-Hybrid Cloud systems represent cloud environments supporting connectivity and scaling across devices.",
+            "position": {
+              "row": 1,
+              "col": 4
+            }
+          }
+        }
+      },
+      "Communications": {
+        "name": "Communications",
+        "description": "Communication represents the physical network and protocols connecting devices within locations.",
+        "position": {
+          "row": 2,
+          "col": 2
+        }
+      },
+      "Locations": {
+        "description": "Locations define geographic and logical places in the system where resources are located.",
+        "position": {
+          "row": 3,
+          "col": 1,
+          "colspan": 2
+        },
+        "layers": {
+          "Dynamic Locations": {
+            "description": "Dynamic Locations are movable and adaptive spaces, such as temporary work areas or mobile units.",
+            "position": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          "Operations Locations": {
+            "description": "Locations used for managing and monitoring operational tasks in the system.",
+            "position": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          "Hybrid Offices": {
+            "description": "Merged work and home environments supporting hybrid work practices.",
+            "position": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "Datacenters": {
+            "description": "Dedicated locations that store and manage system-critical data and applications.",
+            "position": {
+              "row": 1,
+              "col": 4
+            }
+          },
+          "Outsourced Locations": {
+            "description": "Third-party-managed spaces where some system operations are handled.",
+            "position": {
+              "row": 1,
+              "col": 5
+            }
+          }
+        }
+      }
+    }
+  },
+  "Digital Domain": {
+    "name": "Digital Domain",
+    "description": "Software stack of the system, including the middleware, software and applications.",
+    "orientation": "front",
+    "color": "#6a0dad",
+    "position": {
+      "row": 3,
+      "col": 2
+    },
+    "relationships": [
+      {
+        "name": "depends_on",
+        "to": "Physical Domain",
+        "description": "Digital platforms depend on underlying physical infrastructure."
+      },
+      {
+        "name": "enables",
+        "to": "Organizational Domain",
+        "description": "Technology ecosystems enable organizational collaboration and service delivery."
+      }
+    ],
+    "assets": {
+      "GEAR4": {
+        "name": "GEAR Architecture document",
+        "url": "https://www.intel.com/content/www/us/en/content-details/790385/government-conceptual-enterprise-architecture-gear.html?wapkw=Government%20Enterprise%20Architecture",
+        "description": "Overview of the GEAR architecture and its uses."
+      },
+      "GEARVideo": {
+        "name": "Video: Government Enterprise Architecture Basics: A Simple Explanation",
+        "url": "https://www.youtube.com/watch?v=Ou9FHodTamk",
+        "description": "In this episode, we delve into the world of leveraging enterprise architecture in government settings, specifically focusing on the benefits and strategies involved. From understanding the fundamentals of enterprise architecture frameworks to embracing digital transformation, we explore how organizations can drive value and efficiency through proper architectural planning. Join us as we discuss the significance of architecture in government operations and the role it plays in achieving organizational goals. If you are interested in learning more about enterprise architecture and its impact on government entities, this insightful discussion is for you."
+      }
+    },
+    "layers": {
+      "Application": {
+        "description": "Handles user-facing applications, ensuring interaction between system and users.",
+        "position": {
+          "row": 1,
+          "col": 2,
+          "colspan": 2
+        },
+        "layers": {
+          "Analytics Services": {
+            "position": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          "AI ML Services": {
+            "position": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          "Workflow Services": {
+            "position": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "Developer Services": {
+            "position": {
+              "row": 2,
+              "col": 1,
+              "colspan": 3
+            }
+          }
+        }
+      },
+      "Distributed Information Management": {
+        "description": "Oversees the efficient distribution and access of system data across modules.",
+        "position": {
+          "row": 2,
+          "col": 2,
+          "colspan": 1
+        },
+        "layers": {
+          "Data Definition Framework": {
+            "position": {
+              "row": 1,
+              "col": 1,
+              "rowspan": 2
+            }
+          },
+          "Data Management": {
+            "position": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          "Common Data Services": {
+            "position": {
+              "row": 2,
+              "col": 2
+            }
+          }
+        }
+      },
+      "Service Management": {
+        "description": "Monitors and controls services for smooth operation and functionality.",
+        "position": {
+          "row": 2,
+          "col": 3
+        },
+        "layers": {
+          "Service Repository": {
+            "position": {
+              "row": 2,
+              "col": 1
+            }
+          },
+          "Environment Manager": {
+            "position": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          "Service Orchestration": {
+            "position": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "Common Data Services": {
+            "position": {
+              "row": 2,
+              "col": 2,
+              "colspan": 2
+            }
+          }
+        }
+      },
+      "Software Defined Infrastructure": {
+        "description": "Focuses on abstract control over underlying hardware through software.",
+        "position": {
+          "row": 3,
+          "col": 2,
+          "colspan": 2
+        },
+        "layers": {
+          "Orchestration": {
+            "position": {
+              "row": 1,
+              "col": 1,
+              "colspan": 5
+            }
+          },
+          "Compute": {
+            "position": {
+              "row": 2,
+              "col": 1,
+              "colspan": 1
+            }
+          },
+          "Storage": {
+            "position": {
+              "row": 2,
+              "col": 2,
+              "colspan": 1
+            }
+          },
+          "Network": {
+            "position": {
+              "row": 2,
+              "col": 3,
+              "colspan": 1
+            }
+          },
+          "Accelerators": {
+            "position": {
+              "row": 2,
+              "col": 4,
+              "colspan": 1
+            }
+          },
+          "Security": {
+            "position": {
+              "row": 2,
+              "col": 5,
+              "colspan": 1
+            }
+          }
+        }
+      },
+      "Physical Layer": {
+        "description": "Acts as the logical representation of the lower physical layer.",
+        "position": {
+          "row": 4,
+          "col": 2,
+          "colspan": 2
+        },
+        "layers": {
+          "Edge Devices": {
+            "position": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          "OT Devices": {
+            "position": {
+              "row": 1,
+              "col": 2,
+              "colspan": 1
+            }
+          },
+          "Mobile Devices": {
+            "position": {
+              "row": 1,
+              "col": 3,
+              "colspan": 1
+            }
+          },
+          "Labtops and Desktops": {
+            "position": {
+              "row": 1,
+              "col": 4,
+              "colspan": 1
+            }
+          },
+          "Datacenter Devices": {
+            "position": {
+              "row": 2,
+              "col": 1,
+              "colspan": 1
+            }
+          },
+          "Private Cloud": {
+            "position": {
+              "row": 2,
+              "col": 2,
+              "colspan": 1
+            }
+          },
+          "Public Cloud": {
+            "position": {
+              "row": 2,
+              "col": 3,
+              "colspan": 1
+            }
+          }
+        }
+      },
+      "Identity Aspect": {
+        "description": "Manages all identity-related elements like authentication and user properties.",
+        "position": {
+          "row": 1,
+          "col": 1,
+          "rowspan": 4
+        },
+        "layers": {
+          "Access": {
+            "position": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          "Authorization": {
+            "position": {
+              "row": 2,
+              "col": 1
+            }
+          },
+          "Authentication": {
+            "position": {
+              "row": 3,
+              "col": 1
+            }
+          },
+          "Key Management": {
+            "position": {
+              "row": 4,
+              "col": 1
+            }
+          }
+        }
+      },
+      "Security Aspect": {
+        "name": "Security Aspect",
+        "description": "Manages all identity-related elements like authentication and user properties.",
+        "position": {
+          "row": 1,
+          "col": 4,
+          "rowspan": 4
+        },
+        "assets": {
+          "GEAR3": {
+            "name": "GEAR Security Architecture document",
+            "url": "https://www.intel.com/content/www/us/en/content-details/790385/government-conceptual-enterprise-architecture-gear.html?wapkw=Government%20Enterprise%20Architecture",
+            "description": "The Security Aspect of the Government Enterprise Architecture Reference (GEAR) Logical View integrates protection mechanisms such as encryption, intrusion detection, and threat mitigation across all layers of the architecture. It ensures that all parts of the enterprise are safeguarded against evolving threats by embedding security measures into the Organizational, Process, and Physical Layers. This approach enables a resilient, policy driven environment capable of addressing diverse threats across every architecture layer"
+          }
+        },
+        "layers": {
+          "Architecture & Trust Foundations": {
+            "description": "Establishes principles of security by design and zero-trust architecture, defining core building blocks like product assurance, secure boot, attestation, and trusted execution environments.",
+            "position": {
+              "row": 4,
+              "col": 1,
+              "colspan": 3
+            },
+            "layers": {
+              "Product Security Assurance & Secure Supply Chain": {
+                "description": "Ensures hardware and firmware integrity through proactive issue remediation and secure supply chain practices.",
+                "position": {
+                  "row": 1,
+                  "col": 1
+                }
+              },
+              "Zero Trust Architecture": {
+                "description": "Assumes all computing operates in a hostile environment, enforcing strict identity-based authentication and authorization.",
+                "position": {
+                  "row": 2,
+                  "col": 1
+                }
+              },
+              "Root of Trust": {
+                "description": "Incorporates hardware-based security technologies to establish a foundation of trust within the execution environment.",
+                "position": {
+                  "row": 3,
+                  "col": 1
+                }
+              },
+              "Secure Boot & Attestation": {
+                "description": "Ensures systems start and operate only with verified and authorized code, preventing execution of malicious or tampered code.",
+                "position": {
+                  "row": 4,
+                  "col": 1
+                }
+              }
+            },
+            "Trusted Execution Environments (TEE) / Confidential Computing": {
+              "description": "Protects data in use in shared environments, ensuring only authorized users have access and preventing tampering, viewing, or theft.",
+              "position": {
+                "row": 5,
+                "col": 1
+              }
+            }
+          },
+          "Infrastructure & Host Security": {
+            "description": "Enforces hardening and protective measures across servers, containers, and edge devices, including runtime protections, host-based firewalls, and endpoint detection and response.",
+            "position": {
+              "row": 2,
+              "col": 1
+            },
+            "layers": {
+              "System Hardening": {
+                "description": "Reduces the attack surface by configuring and securing software components to minimize vulnerabilities.",
+                "position": {
+                  "row": 1,
+                  "col": 1
+                }
+              },
+              "Runtime Protection": {
+                "description": "Maintains secure execution environments for applications, containers, and virtual machines during runtime.",
+                "position": {
+                  "row": 2,
+                  "col": 1
+                }
+              },
+              "Host-based Firewalls & EDR": {
+                "description": "Safeguards individual systems and endpoints by filtering network traffic and detecting potential threats.",
+                "position": {
+                  "row": 3,
+                  "col": 1
+                }
+              },
+              "Edge Security": {
+                "description": "Ensures devices and systems operating at the network's edge are protected against physical and cyber threats.",
+                "position": {
+                  "row": 4,
+                  "col": 1
+                }
+              }
+            }
+          },
+          "Network & Communications Security": {
+            "description": "Protects the confidentiality and integrity of data in motion, leveraging technologies like microsegmentation, SDN-based controls, and pervasive encryption.",
+            "position": {
+              "row": 3,
+              "col": 1,
+              "colspan": 2
+            },
+            "layers": {
+              "East-West & North-South Encryption": {
+                "description": "Secures traffic entering, exiting, and moving laterally within a network to maintain data confidentiality and integrity.",
+                "position": {
+                  "row": 1,
+                  "col": 1
+                }
+              },
+              "Microsegmentation": {
+                "description": "Divides networks into granular, isolated segments with tailored security policies to prevent lateral movement of threats.",
+                "position": {
+                  "row": 2,
+                  "col": 1
+                }
+              },
+              "SDN Security": {
+                "description": "Applies dynamic security policies and monitors traffic flows in real time using a centralized controller.",
+                "position": {
+                  "row": 3,
+                  "col": 1
+                }
+              },
+              "DDoS Protection": {
+                "description": "Protects against large-scale attacks that aim to overwhelm network resources and disrupt service availability.",
+                "position": {
+                  "row": 4,
+                  "col": 1
+                }
+              }
+            }
+          },
+          "Data & Application Security": {
+            "description": "Embeds security into the application lifecycle and data handling practices, including encryption across all data states, robust secrets management, and secure development practices.",
+            "position": {
+              "row": 2,
+              "col": 2
+            },
+            "layers": {
+              "Encryption": {
+                "description": "Protects data in storage and on the network using strong encryption algorithms.",
+                "position": {
+                  "row": 1,
+                  "col": 1
+                }
+              },
+              "Secure Software Supply Chain": {
+                "description": "Ensures the integrity and trustworthiness of all components within the software stack.",
+                "position": {
+                  "row": 2,
+                  "col": 1
+                }
+              },
+              "DevSecOps & CI/CD Security": {
+                "description": "Integrates security into the CI/CD pipeline, ensuring secure coding practices and automated vulnerability scanning.",
+                "position": {
+                  "row": 3,
+                  "col": 1
+                }
+              }
+            }
+          },
+          "Threat Detection & Response": {
+            "description": "Provides real-time monitoring and analysis of system behavior to combat evolving threats, including tools like EDR/XDR, user and entity behavior analytics, and deception technologies.",
+            "position": {
+              "row": 2,
+              "col": 3,
+              "rowspan": 2
+            },
+            "layers": {
+              "EDR/XDR": {
+                "description": "Monitors endpoints for suspicious behavior and aggregates data across multiple domains for centralized threat correlation.",
+                "position": {
+                  "row": 1,
+                  "col": 1
+                }
+              },
+              "Threat Intelligence & Analytics": {
+                "description": "Integrates real-time threat intelligence feeds and machine learning-based analytics to detect anomalies and emerging threats.",
+                "position": {
+                  "row": 2,
+                  "col": 1
+                }
+              },
+              "UEBA & Insider Threat Detection": {
+                "description": "Profiles users and entities to detect deviations from established behavior and uncover insider threats.",
+                "position": {
+                  "row": 3,
+                  "col": 1
+                }
+              },
+              "Deception Technologies": {
+                "description": "Uses deception tools to lure adversaries into controlled traps, triggering immediate investigation or automated containment.",
+                "position": {
+                  "row": 4,
+                  "col": 1
+                }
+              }
+            }
+          },
+          "Resilience, Remediation & Compliance": {
+            "description": "Ensures systems can recover from compromise while meeting regulatory and operational mandates, covering automated recovery playbooks, audit logging, security chaos engineering, and SBOMs.",
+            "position": {
+              "row": 1,
+              "col": 1,
+              "colspan": 3
+            },
+            "layers": {
+              "Remediation & Recovery Playbooks": {
+                "description": "Predefined, tested incident response and recovery playbooks embedded into orchestration layers.",
+                "position": {
+                  "row": 1,
+                  "col": 1
+                }
+              },
+              "Security Chaos Engineering": {
+                "description": "Deliberately injects faults, attacks, or misconfigurations into systems to test their resilience.",
+                "position": {
+                  "row": 2,
+                  "col": 1
+                }
+              },
+              "Audit Logging & Compliance": {
+                "description": "Captures security-relevant events across the stack, ensuring integrity for forensic analysis, compliance audits, and incident reviews.",
+                "position": {
+                  "row": 3,
+                  "col": 1
+                }
+              },
+              "Supply Chain Security & SBOM": {
+                "description": "Generates and maintains a complete and traceable Software Bill of Materials for every build artifact.",
+                "position": {
+                  "row": 4,
+                  "col": 1
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "Process Domain": {
+    "name": "Process Domain",
+    "description": "Processes of the system including supporting, strategic and operational processes.",
+    "orientation": "back",
+    "color": "#ff6f00",
+    "position": {
+      "row": 2,
+      "col": 2
+    },
+    "relationships": [
+      {
+        "name": "depends_on",
+        "to": "Digital Domain",
+        "description": "Physical infrastructure enables process automation and operations."
+      }
+    ],
+    "layers": {
+      "Governance": {
+        "description": "Defines rules, policies, and mechanisms established at a higher level.",
+        "position": {
+          "row": 1,
+          "col": 1,
+          "colspan": 2
+        },
+        "layers": {
+          "Policy Development": {
+            "description": "Formulating policies and regulations. Including ESG.",
+            "position": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          "Legislative Compliance": {
+            "description": "Ensuring adherence to laws and regulations.",
+            "position": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          "Ethics and Integrity": {
+            "description": "Maintaining ethical standards and preventing corruption.",
+            "position": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "Audit and Oversight": {
+            "description": "Internal and external audits, reviews, and evaluations.",
+            "position": {
+              "row": 2,
+              "col": 1
+            }
+          },
+          "Transparency and Accountability": {
+            "description": "Public reporting, disclosure, and citizen engagement.",
+            "position": {
+              "row": 2,
+              "col": 2
+            }
+          },
+          "Data Governance": {
+            "description": "Governance of data through out the system.",
+            "position": {
+              "row": 2,
+              "col": 3
+            }
+          },
+          "Legal Services": {
+            "description": "Managing legal issues and compliance",
+            "position": {
+              "row": 3,
+              "col": 1
+            }
+          }
+        }
+      },
+      "Innovation Management": {
+        "description": "Focuses on exploring innovative improvements to system capabilities.",
+        "position": {
+          "row": 2,
+          "col": 1
+        },
+        "layers": {
+          "Ideation Processes": {
+            "description": "",
+            "position": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          "Research and Development": {
+            "description": "Developing new technologies and methodologies.",
+            "position": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          "Develop Digital Services Process": {
+            "description": "Implementing digital government services. DevSecOps, scaling and deployment.",
+            "position": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "Process Improvement": {
+            "description": "Enhancing efficiency and effectiveness of government processes.",
+            "position": {
+              "row": 2,
+              "col": 1
+            }
+          },
+          "Partnerships Processes": {
+            "description": "Collaborating with private sector for innovation. Including private sector, inter-agencies, and governments.",
+            "position": {
+              "row": 2,
+              "col": 2
+            }
+          },
+          "Citizen Engagement": {
+            "description": "Leveraging new technologies to engage and serve citizens better with built-in feedback loops.",
+            "position": {
+              "row": 2,
+              "col": 3
+            }
+          },
+          "PR and Marketing": {
+            "description": "Social Media, Websites, Publicity",
+            "position": {
+              "row": 3,
+              "col": 1
+            }
+          },
+          "Revenue Acceleration": {
+            "description": "",
+            "position": {
+              "row": 3,
+              "col": 2
+            }
+          }
+        }
+      },
+      "Operational and Delivery": {
+        "description": "Covers routine activities and day-to-day procedures within the organization.",
+        "position": {
+          "row": 2,
+          "col": 2
+        },
+        "layers": {
+          "Service Delivery": {
+            "description": "Providing public services to citizens and businesses efficiently and effectively.",
+            "position": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          "Monitoring Processes": {
+            "description": "Tracking and reviewing various operational and service metrics for better performance.",
+            "position": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          "Service Maintenance": {
+            "description": "Ensuring consistent maintenance and functionality of public services.",
+            "position": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "Operational Technology Management": {
+            "description": "Managing and maintaining technology systems that support operations and services.",
+            "position": {
+              "row": 2,
+              "col": 1
+            }
+          },
+          "Manufacturing Processes": {
+            "description": "Overseeing production processes to ensure quality and efficiency in service-related goods.",
+            "position": {
+              "row": 2,
+              "col": 2
+            }
+          },
+          "Business Continuity Disaster Recovery": {
+            "description": "Developing and maintaining plans to ensure critical business functions during emergencies.",
+            "position": {
+              "row": 2,
+              "col": 3
+            }
+          },
+          "Data Operations Management": {
+            "description": "Managing the storage, processing, and usage of data to ensure its availability and reliability.",
+            "position": {
+              "row": 3,
+              "col": 1
+            }
+          }
+        }
+      },
+      "Risk Management": {
+        "description": "Manages identification, analysis, and mitigation of risks in various operations.",
+        "position": {
+          "row": 3,
+          "col": 1,
+          "colspan": 2
+        },
+        "layers": {
+          "Risk Identification": {
+            "description": "Identifying potential risks to operations and services.",
+            "position": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          "Risk Analysis": {
+            "description": "Assessing the impact and likelihood of risks.",
+            "position": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          "Mitigation Planning": {
+            "description": "Developing strategies to mitigate identified risks.",
+            "position": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "Emergency Preparedness": {
+            "description": "Planning and preparation for emergencies and disasters.",
+            "position": {
+              "row": 2,
+              "col": 1
+            }
+          },
+          "Compliance Management": {
+            "description": "Ensuring ongoing adherence to risk-related regulations.",
+            "position": {
+              "row": 2,
+              "col": 2
+            }
+          },
+          "Cybersecurity": {
+            "description": "",
+            "position": {
+              "row": 2,
+              "col": 3
+            }
+          }
+        }
+      },
+      "Support": {
+        "description": "Includes supporting actions like troubleshooting and external/internal assistance.",
+        "position": {
+          "row": 4,
+          "col": 1,
+          "colspan": 2
+        },
+        "layers": {
+          "Human Resources": {
+            "description": "Recruiting, hiring, training employees, and managing employee relations to build a productive workforce.",
+            "position": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          "Information Technology (IT)": {
+            "description": "Managing IT infrastructure, systems, and services to support organizational goals.",
+            "position": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          "Infrastructure Management": {
+            "description": "Monitoring, maintaining, and developing public infrastructure for efficient operations.",
+            "position": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "Network Communications Processes": {
+            "description": "Managing systems and processes for seamless and secure network communications.",
+            "position": {
+              "row": 2,
+              "col": 1
+            }
+          },
+          "Facilities Management": {
+            "description": "Overseeing the maintenance, functionality, and safety of physical facilities and buildings.",
+            "position": {
+              "row": 2,
+              "col": 2
+            }
+          },
+          "Financial Management": {
+            "description": "Handling budgeting, financial reporting, and ensuring compliance with financial regulations.",
+            "position": {
+              "row": 2,
+              "col": 3
+            }
+          },
+          "Procurement and Supply Chain": {
+            "description": "Acquiring goods and services necessary to support operations and manage supply chains effectively.",
+            "position": {
+              "row": 3,
+              "col": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "Organizational Domain": {
+    "name": "Organizational Domain",
+    "description": "People centric organizational structure of the system.",
+    "orientation": "left",
+    "color": "#228B22",
+    "position": {
+      "row": 2,
+      "col": 1
+    },
+    "relationships": [
+      {
+        "name": "enables",
+        "to": "Process Domain",
+        "description": "Organizational capabilities and governance enable effective process execution."
+      }
+    ],
+    "assets": {
+      "GEAR1": {
+        "name": "GEAR Architecture document",
+        "url": "https://www.intel.com/content/www/us/en/content-details/790385/government-conceptual-enterprise-architecture-gear.html?wapkw=Government%20Enterprise%20Architecture",
+        "description": "Overview of the GEAR architecture and its uses."
+      },
+      "GEARVideo": {
+        "name": "Video: Government Enterprise Architecture Basics: A Simple Explanation",
+        "url": "https://www.youtube.com/watch?v=Ou9FHodTamk",
+        "description": "In this episode, we delve into the world of leveraging enterprise architecture in government settings, specifically focusing on the benefits and strategies involved. From understanding the fundamentals of enterprise architecture frameworks to embracing digital transformation, we explore how organizations can drive value and efficiency through proper architectural planning. Join us as we discuss the significance of architecture in government operations and the role it plays in achieving organizational goals. If you are interested in learning more about enterprise architecture and its impact on government entities, this insightful discussion is for you."
+      }
+    },
+    "layers": {
+      "Stakeholders": {
+        "description": "All stakeholders involved in decision-making and system requirements.",
+        "position": {
+          "row": 1,
+          "col": 1,
+          "colspan": 4
+        }
+      },
+      "Personas": {
+        "description": "Different personas representing user groups interacting with the system.",
+        "position": {
+          "row": 2,
+          "col": 1,
+          "colspan": 3
+        }
+      },
+      "Communication Channels": {
+        "description": "Channels of communication between system users, stakeholders, and decision-makers.",
+        "position": {
+          "row": 2,
+          "col": 4,
+          "rowspan": 2
+        }
+      },
+      "Roles & Responsibilities": {
+        "description": "Defines specific tasks and duties assigned to different entities.",
+        "position": {
+          "row": 3,
+          "col": 1
+        }
+      },
+      "Skills & Competencies": {
+        "description": "Profiles skills and abilities required for system operations.",
+        "position": {
+          "row": 3,
+          "col": 2
+        }
+      },
+      "Structure": {
+        "description": "Maps the hierarchical structure of the organization supporting the system.",
+        "position": {
+          "row": 3,
+          "col": 3
+        }
+      },
+      "Culture & Values": {
+        "description": "Refers to the organizational culture, values, and principles guiding how operations are conducted.",
+        "position": {
+          "row": 4,
+          "col": 1,
+          "colspan": 4
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Organizational leadership and executives",
+    "description": "Senior leaders responsible for setting strategic direction and making high-level decisions."
+  },
+  {
+    "name": "Department and agency heads",
+    "description": "Managers who oversee operational execution and align departmental goals with organizational vision."
+  },
+  {
+    "name": "Policy makers and legislators",
+    "description": "Individuals who create and enforce laws and policies that impact the organization’s mandate and activities."
+  },
+  {
+    "name": "Employees and internal teams",
+    "description": "Staff members who implement strategies and deliver services aligned with organizational goals."
+  },
+  {
+    "name": "Community members and constituents",
+    "description": "The public and groups served by the organization, whose needs and feedback shape strategic relevance."
+  },
+  {
+    "name": "Partner organizations and collaborators",
+    "description": "External entities that work collaboratively with the organization to achieve shared objectives."
+  },
+  {
+    "name": "Industry and sector experts",
+    "description": "Specialists providing domain knowledge, technical insights, and guidance relevant to the organization's mission."
+  },
+  {
+    "name": "Advocacy and interest groups",
+    "description": "Organizations representing specific causes or constituencies that influence strategic priorities and decision-making."
+  }
+]
