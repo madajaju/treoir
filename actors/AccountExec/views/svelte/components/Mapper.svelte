@@ -165,19 +165,22 @@
     function stopExport() {
 
     }
+    function buildAskURL() {
+       return `/api/customer/askAndMap?${$currentCustomer.id}`;
+    }
 </script>
 
 {#if !$showExporting}
     <ResizableLayout
             LeftPanel={{component: ArchCustTreeView, props: {selectedNode, width: 300 }}}
             ContentPanel={{component:MainView, props: {menu} }}
-            RightPanel={{component:GenAIView, props: {width:300}}}
+            RightPanel={{component:GenAIView, props: {width:300, askURL: buildAskURL}}}
     />
 {:else}
     <ResizableLayout
             LeftPanel={{component: ArchCustTreeView, props: {selectedNode, width: 300 }}}
             ContentPanel={{component:ExportViewer, props: {onClose: closeExportViewer, onAnalyze: analyzeExport, onStop: stopExport, onSave: updateExport} }}
-            RightPanel={{component:GenAIView, props: {}}}
+            RightPanel={{component:GenAIView, props: {width:300, askURL: buildAskURL}}}
     />
 {/if}
 

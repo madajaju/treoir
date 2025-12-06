@@ -164,19 +164,22 @@
         { label: 'Export', action: () => { exportPartner(); } },
         { label: 'Close', action: () => { closePartner(); } },
     ];
+    function buildAskURL() {
+        return `/api/partner/askAndMap?partner=${$currentPartner.id}`;
+    }
 </script>
 
 {#if !$showExporting}
     <ResizableLayout
             LeftPanel={{component: ArchPartnerTreeView, props: {selectedNode, selectedPartner}}}
             ContentPanel={{component:MainView, props: {menu} }}
-            RightPanel={{component:GenAIView, props: {width:300}}}
+            RightPanel={{component:GenAIView, props: {width:300, askURL: buildAskURL}}}
     />
 {:else}
     <ResizableLayout
             LeftPanel={{component: ArchPartnersTreeView, props: {selectedNode, selectedPartner}}}
             ContentPanel={{component:ExportViewer, props: {onClose: closeExportViewer, onAnalyze: analyzeExport, onStop: stopExport, onSave: updateExport} }}
-            RightPanel={{component:GenAIView, props: {width:300}}}
+            RightPanel={{component:GenAIView, props: {width:300, askURL: buildAskURL}}}
     />
 {/if}
 

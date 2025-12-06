@@ -1,8 +1,8 @@
 <script lang="ts">
 
+    export let askURL = null;
+
     import {marked} from 'marked';
-    import {currentCustomer} from "../stores/customerStore.js";
-    import {currentPartner} from "../stores/partnerStore.js";
     import {currentModel, llmModels, fetchLLMModels} from "../stores/modelStore.js";
     import {watchEvents} from '../stores/eventsStore.js';
     import VoiceChat from "./VoiceChat.svelte";
@@ -172,21 +172,21 @@
 
         isLoading = true;
         prompt = 'Waiting...';
-        let url = '/api';
-        if ($currentCustomer) {
-            let customerID = $currentCustomer.id;
-            url += `/customer/askAndMap?prompt=${promptValue}`;
-            url += "&customer=" + customerID;
+        let url = '/api/ai/ask';
+        if(askURL) {
+            url = askURL() + '&';
+        } else {
+           url += '?' ;
+        }
+        url += `prompt=${promptValue}`;
+        if(documents && documents.length > 0) {
+            url += '&documents=';
             for (let i in documents) {
-                console.log(documents[i]);
-                url += `&documents=${documents[i].result},`;
+                url += `${documents[i].result},`;
             }
             documents = [];
-        } else if ($currentPartner) {
-            let partnerID = $currentPartner.id;
-            url += `/partner/askAndMap?prompt=${promptValue}`;
-            url += "&partner=" + partnerID;
         }
+
         fetch(url, {
             method: 'POST',
             mode: 'cors',
@@ -204,14 +204,7 @@
                 return response.text();
             })
             .then((responseText) => {
-                /*
-                responses = responses.map(r =>
-                    r.id === uid
-                        ? {...r, content: responseText}
-                        : r
-                );
-                 */
-                prompt = "Ask The Cartographer a question..";
+                prompt = "Ask a question..";
                 error = null;
                 isLoading = false;
             })
