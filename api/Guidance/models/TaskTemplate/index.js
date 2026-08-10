@@ -1,9 +1,9 @@
 class TaskTemplate {
     static definition = {
-        name: 'TaskTemplate',
+        "name": 'TaskTemplate',
         description: 'Generalized template for a task that can be instantiated dynamically.',
         attributes: {
-            name: {
+            "name": {
                 type: 'string',
                 description: 'Name of the task template (e.g., Validate Layer Definitions).',
             },

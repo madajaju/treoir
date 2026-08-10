@@ -7,7 +7,7 @@ const hierarchyData = JSON.parse(rawData);
 
 // Utility function to break text into multiple lines
 function wrapText(text, maxWidth, fontSize) {
-    if(text === "Digital Architecture") {
+    if(text === "Digital Domain") {
        console.error("Error: text is undefined");
     }
     const words = text.split(" ");

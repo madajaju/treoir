@@ -1,11 +1,11 @@
 const AClass = require('ailtire/src/Server/AClass');
 
 module.exports = {
-    friendlyName: 'definition',
+    friendlyname: 'definition',
     description: 'Return the definition of a class',
     static: true, // True is for Class methods. False is for object based.
     inputs: {
-        name: {
+        "name": {
             type: 'string',
             required: true,
             description: 'Name of the class'

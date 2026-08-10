@@ -1,9 +1,9 @@
 module.exports = {
-    friendlyName: 'create',
+    friendlyname: 'create',
     description: 'Create a new partner',
     static: true, // True is for Class methods. False is for object based.
     inputs: {
-        name: {
+        "name": {
             description: 'File to import',
             type: 'file',
             required: true
@@ -25,7 +25,7 @@ module.exports = {
 
         let partner = Partner.find(name);
         if(!partner) {
-            partner = new Partner({id: name, name: name});
+            partner = new Partner({id: name, "name": name});
         }
         partner.description = description;
 

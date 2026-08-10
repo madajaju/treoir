@@ -8,7 +8,7 @@
 </script>
 
 <h1>
-<span style="display: inline-block; width: 1em; height: 1em; background-color: {phase.color || '#ffff00'}; margin-right: 0.5em;"></span>
+<span style="display: inline-block; width: 1em; height: 1em; background-color: {element.color || '#ffff00'}; margin-right: 0.5em;"></span>
 {element.name}</h1>
 <ToolTip item="{{key:'Description', value:element.description}}">
     <span class="ellipsed-text">{element.description}</span>

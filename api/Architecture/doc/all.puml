@@ -1,0 +1,38 @@
+@startuml
+left to right direction
+
+hide circle
+hide empty  members
+
+abstract class Element {
+    +name : string
+    +description : string
+}
+
+class Domain extends Element
+class Layer extends Element
+class SubLayer extends Element
+class Component extends Element
+
+abstract class Relationship {
+    +description: string
+}
+
+class Contains
+class Enables
+class Realizes
+class CompliesWith
+class Influences
+
+Relationship --> Element : source
+Relationship --> Element : target
+
+Contains ==|> Relationship
+DepnedsOn ==|> Relationship
+Enables ==|> Relationship
+Realizes ==|> Relationship
+CompliesWith ==|> Relationship
+FlowsTo ==|> Relationship
+Influences ==|> Relationship
+
+@enduml

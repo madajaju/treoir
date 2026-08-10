@@ -1,16 +1,27 @@
 
 class Layer {
     static definition = {
-        name: 'Layer',
+        "name": 'Layer',
         description: 'Layer of the Architecture',
         attributes: {
-            name: {
+            "name": {
                 type: 'string',
                 description: "Name of the layer",
             },
             description: {
                 type: "text",
                 description: "Description of the layer"
+            },
+            purpose: {
+                type: "string",
+                description: "Purpose of the layer"
+            },
+            questions: {
+                type: "array",
+                description: "Questions an Architect would ask about the layer to get a better understanding of the layer from the customer or partner.",
+                properties: {
+                    type: "string"
+                }
             },
             position: {
                 type: "json",
@@ -26,6 +37,19 @@ class Layer {
             },
         },
         associations: {
+            stakeholders: {
+                type: 'Stakeholder',
+                cardinality: 'n',
+                composition: false,
+                unique: (obj) => { return obj.name; }
+            },
+            relationships: {
+                type: 'LayerRelationship',
+                description: "Relationships between layers",
+                cardinality: 'n',
+                composition: true,
+                owner: true,
+            },
             layers: {
                 description: "This represents the sublayers of the layer. This allows for n levels of aggregation.",
                 type: 'Layer',

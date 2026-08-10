@@ -13,7 +13,7 @@ export function selectLayer(graph2DDiv, layer) {
         _selectLayer(graph2DDiv, layerId, rect,text, null);
     }
 }
-export function create2D(graph2DDiv, element, selectNodeCallback = null, level = 2) {
+export function create2D(graph2DDiv, element, selectNodeCallback = null, drillDownCallback = null, level = 2) {
     // Utility function to break text into multiple lines
     function wrapText(text, maxWidth, fontSize) {
         const words = text.split(' ');
@@ -44,6 +44,17 @@ export function create2D(graph2DDiv, element, selectNodeCallback = null, level =
     function generateSVG(layer, width = 3000, height = 1500, depth = 2) {
         // Start the SVG container
         let svgContent = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" style="font-family: Arial, sans-serif;">`;
+        svgContent += `
+<defs>
+    <radialGradient id="selectedPin" cx="30%" cy="30%" r="80%">
+        <stop offset="0%" stop-color="#ff0" stop-opacity="1.0"/>
+        <stop offset="100%" stop-color="#aa0"/>
+    </radialGradient>
+    <filter id="pinShadow" x="-20%" y="-20%" width="440%" height="440%">
+        <feDropShadow dx="9" dy="9" stdDeviation="5" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+</defs>
+        `;
         svgContent += `<rect width="100%" height="100%" fill="white"/>`; // Background
         let totalHeight = height;
         const boxPadding = 10; // Padding between grid cells and edge inside rectangles
@@ -182,13 +193,22 @@ export function create2D(graph2DDiv, element, selectNodeCallback = null, level =
                     _selectLayer(graph2DDiv, layerId, rect,text, selectNodeCallback);
                 }
             });
+            group.addEventListener('dblclick', (event) => {
+                event.stopPropagation();
+                const layerId = group?.getAttribute('data-layer-id');
+                if (layerId) {
+                    drillDownCallback(layerId);
+                }
+            });
         });
         drawcustomer(graph2DDiv);
         drawpartner(graph2DDiv);
     }
 }
 
+function _drillDown(container, id, rect, text, selectNodeCallback = null) {
 
+}
 function _selectLayer(container, id, rect, text, selectNodeCallback = null) {
     // Deselect previous layer if any
     const rects = container.querySelectorAll('rect');

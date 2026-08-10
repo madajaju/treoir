@@ -2,7 +2,7 @@ const fs = require('fs');
 const AIHelper = require('ailtire/src/Server/AIHelper.js');
 
 module.exports = {
-    friendlyName: 'ask',
+    friendlyname: 'ask',
     description: 'Asks Gear AI something',
     static: true, // True is for Class methods. False is for object based.
     inputs: {

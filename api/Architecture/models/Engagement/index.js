@@ -1,10 +1,10 @@
 
 class Engagement {
     static definition = {
-        name: 'Engagement',
+        "name": 'Engagement',
         description: "This is a mapping from the customer to the elements provided by the supplier and to the layers of the architecture.",
         attributes: {
-            name: {
+            "name": {
                 type: 'string',
                 description: 'The name of the engagement, such as Laptops.'
             },

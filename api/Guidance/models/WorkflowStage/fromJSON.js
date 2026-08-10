@@ -1,6 +1,6 @@
 const AClass = require("ailtire/src/Server/AClass");
 module.exports = {
-    friendlyName: 'fromJSON',
+    friendlyname: 'fromJSON',
     description: 'Create a WorkflowStage from a JSON object',
     static: true,
     inputs: {

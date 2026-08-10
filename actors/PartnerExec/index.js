@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'Partner Exec',
+    "name": 'Partner Exec',
     shortname: 'partnerexec',
     description: 'Long description'
 };

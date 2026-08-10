@@ -15,7 +15,6 @@ export const layerNodes = derived(layers, ($layers) => {
 				id: id,
 				type: 'Layer',
 				_children: [],
-				_view: Layer
 			};
 			if (parent) {
 				idMap[id].parent = parent;

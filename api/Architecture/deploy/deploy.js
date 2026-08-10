@@ -1,6 +1,6 @@
 
 module.exports = {
-    name: '_a',
+    "name": '_a',
     contexts: {
         local: {
             type: 'swarm',

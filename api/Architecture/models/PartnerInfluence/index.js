@@ -1,7 +1,7 @@
 
 class PartnerInfluence {
     static definition = {
-        name: 'PartnerInfluence',
+        "name": 'PartnerInfluence',
         description: 'How much influence a partner has in a region',
         attributes: {
             level: {

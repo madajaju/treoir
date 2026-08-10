@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'upload',
+    friendlyname: 'upload',
     description: 'Upload a document to be used by the AI',
     static: true, // True is for Class methods. False is for object based.
     inputs: {
@@ -21,7 +21,9 @@ module.exports = {
 
         const filePath = file.path;
         const fileContent = fs.readFileSync(filePath, 'utf-8');
-
-
+        const doc = new TDocument({
+            "name": file.originalname,
+            filename: file.path});
+        return doc.id;
     }
 };

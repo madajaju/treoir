@@ -1,0 +1,926 @@
+[
+  {
+    "from": "Mission & Vision Layer",
+    "to": "Strategy & Priorities Layer",
+    "name": "contains",
+    "description": "The Mission & Vision Layer contains the strategic objectives and priorities derived from its purpose and direction."
+  },
+  {
+    "from": "Mission & Vision Layer",
+    "to": "Value Streams & Capabilities Layer",
+    "name": "influences",
+    "description": "The vision shapes and influences the design of value streams and capabilities."
+  },
+  {
+    "from": "Policy & Compliance Layer",
+    "to": "Risk & Resilience Layer",
+    "name": "influences",
+    "description": "Policy and compliance frameworks influence the organization's risk management and resilience planning."
+  },
+  {
+    "from": "Policy & Compliance Layer",
+    "to": "Roadmap Layer",
+    "name": "depends_on",
+    "description": "Roadmap development depends on clear policy and regulatory guidance."
+  },
+  {
+    "from": "Risk & Resilience Layer",
+    "to": "Mission & Vision Layer",
+    "name": "enables",
+    "description": "Resilience capabilities enable sustained pursuit of the mission and vision despite disruptions."
+  },
+  {
+    "from": "Risk & Resilience Layer",
+    "to": "Roadmap Layer",
+    "name": "enables",
+    "description": "Risk and resilience capabilities enable the effective planning and execution of transformation roadmaps."
+  },
+  {
+    "from": "Roadmap Layer",
+    "to": "Strategy & Priorities Layer",
+    "name": "realizes",
+    "description": "The Roadmap layer realizes strategic objectives through implementation of initiatives."
+  },
+  {
+    "from": "Strategy & Priorities Layer",
+    "to": "Policy & Compliance Layer",
+    "name": "depends_on",
+    "description": "Strategic priorities depend on compliant policy frameworks to be effective."
+  },
+  {
+    "from": "Strategy & Priorities Layer",
+    "to": "Value Streams & Capabilities Layer",
+    "name": "enables",
+    "description": "Strategy & Priorities enable the development and operation of organizational capabilities and value streams."
+  },
+  {
+    "from": "Community and Constituent Input",
+    "to": "Leadership Aspirations",
+    "name": "influences",
+    "description": "Community expectations shape leadership priorities."
+  },
+  {
+    "from": "Leadership Aspirations",
+    "to": "Mission Statement",
+    "name": "enables",
+    "description": "Leadership values and direction guide the mission."
+  },
+  {
+    "from": "Leadership Aspirations",
+    "to": "Community and Constituent Input",
+    "name": "flows_to",
+    "description": "Aspirations are shared with the community, informing engagement."
+  },
+  {
+    "from": "Leadership Aspirations",
+    "to": "Strategic Imperatives",
+    "name": "influences",
+    "description": "Leadership direction shapes strategic priorities."
+  },
+  {
+    "from": "Legislative Authority",
+    "to": "Mission Statement",
+    "name": "enables",
+    "description": "The mission is authorized and bounded by legislative mandate."
+  },
+  {
+    "from": "Mission Statement",
+    "to": "Narrative of Action",
+    "name": "realizes",
+    "description": "The mission evolves into ongoing adaptive actions and messages."
+  },
+  {
+    "from": "Vision Statement",
+    "to": "Leadership Aspirations",
+    "name": "influences",
+    "description": "The vision shapes leadership’s transformational ambitions."
+  },
+  {
+    "from": "Vision Statement",
+    "to": "Narrative of Action",
+    "name": "influences",
+    "description": "The vision frames how the mission and story evolve."
+  },
+  {
+    "from": "Community and Constituent Input",
+    "to": "Leadership Aspirations",
+    "name": "influences",
+    "description": "Shapes leadership direction."
+  },
+  {
+    "from": "Community and Constituent Input",
+    "to": "Mission Statement",
+    "name": "enables",
+    "description": "Ensures mission is people-centered."
+  },
+  {
+    "from": "Community and Constituent Input",
+    "to": "Public Value and Stakeholder Insights",
+    "name": "enables",
+    "description": "Drives understanding of public value."
+  },
+  {
+    "from": "Leadership Aspirations",
+    "to": "Vision Statement",
+    "name": "influences",
+    "description": "Shapes long-term aspiration."
+  },
+  {
+    "from": "Leadership Aspirations",
+    "to": "Mission Statement",
+    "name": "influences",
+    "description": "Refines mission direction."
+  },
+  {
+    "from": "Leadership Aspirations",
+    "to": "Strategic Imperatives",
+    "name": "influences",
+    "description": "Guides high-level priorities."
+  },
+  {
+    "from": "Leadership Aspirations",
+    "to": "Community and Constituent Input",
+    "name": "flows_to",
+    "description": "Engages and interacts with community perspectives."
+  },
+  {
+    "from": "Legislative Authority",
+    "to": "Mission Statement",
+    "name": "enables",
+    "description": "Mission must comply with authority."
+  },
+  {
+    "from": "Legislative Authority",
+    "to": "Vision Statement",
+    "name": "influences",
+    "description": "Mandates shape long-term aspirations."
+  },
+  {
+    "from": "Legislative Authority",
+    "to": "Policy & Compliance",
+    "name": "complies_with",
+    "description": "Authority is framed by policy."
+  },
+  {
+    "from": "Mission Statement",
+    "to": "Public Value and Stakeholder Insights",
+    "name": "enables",
+    "description": "Mission drives engagement."
+  },
+  {
+    "from": "Mission Statement",
+    "to": "Narrative of Action",
+    "name": "influences",
+    "description": "Mission shapes evolution over time."
+  },
+  {
+    "from": "Mission Statement",
+    "to": "Strategic Imperatives",
+    "name": "realizes",
+    "description": "Drives actionable priorities."
+  },
+  {
+    "from": "Mission Statement",
+    "to": "Leadership Aspirations",
+    "name": "depends_on",
+    "description": "Refined by leadership priorities."
+  },
+  {
+    "from": "Mission Statement",
+    "to": "Community and Constituent Input",
+    "name": "depends_on",
+    "description": "Shaped by community needs."
+  },
+  {
+    "from": "Narrative of Action",
+    "to": "Mission and Vision Evolution",
+    "name": "realizes",
+    "description": "Drives ongoing adaptation."
+  },
+  {
+    "from": "Narrative of Action",
+    "to": "Vision Statement",
+    "name": "depends_on",
+    "description": "Shaped by aspirational vision."
+  },
+  {
+    "from": "Narrative of Action",
+    "to": "Mission Statement",
+    "name": "depends_on",
+    "description": "Evolves from core mission."
+  },
+  {
+    "from": "Vision Statement",
+    "to": "Leadership Aspirations",
+    "name": "influences",
+    "description": "Shapes leadership direction."
+  },
+  {
+    "from": "Vision Statement",
+    "to": "Strategic Imperatives",
+    "name": "influences",
+    "description": "Guides high-level priorities."
+  },
+  {
+    "from": "Vision Statement",
+    "to": "Narrative of Action",
+    "name": "influences",
+    "description": "Frames long-term evolution."
+  },
+  {
+    "from": "Legal & Statutory Foundations",
+    "to": "Policy Framework",
+    "name": "influences",
+    "description": "Policies must be created within the boundaries of laws and statutory obligations."
+  },
+  {
+    "from": "Legal & Statutory Foundations",
+    "to": "Compliance Frameworks & Standards",
+    "name": "influences",
+    "description": "Compliance standards reflect mandatory legal requirements."
+  },
+  {
+    "from": "Regulatory Context",
+    "to": "Policy Framework",
+    "name": "influences",
+    "description": "Policies must reflect sector-specific and regulatory expectations."
+  },
+  {
+    "from": "Regulatory Context",
+    "to": "Compliance Monitoring & Reporting",
+    "name": "influences",
+    "description": "Monitoring practices must align with regulator expectations and reporting formats."
+  },
+  {
+    "from": "Strategic Directives",
+    "to": "Policy Framework",
+    "name": "influences",
+    "description": "Leadership directives guide the creation and prioritization of policies."
+  },
+  {
+    "from": "Strategic Directives",
+    "to": "Policy Governance & Lifecycle",
+    "name": "influences",
+    "description": "New directives trigger policy updates, creation, or retirement."
+  },
+  {
+    "from": "Policy Framework",
+    "to": "Compliance Frameworks & Standards",
+    "name": "influences",
+    "description": "Compliance frameworks operationalize what policies mandate."
+  },
+  {
+    "from": "Policy Framework",
+    "to": "Compliance Monitoring & Reporting",
+    "name": "influences",
+    "description": "Monitoring ensures policies are followed across operations."
+  },
+  {
+    "from": "Policy Governance & Lifecycle",
+    "to": "Policy Framework",
+    "name": "influences",
+    "description": "Governs policy creation, updates, approvals, and retirement."
+  },
+  {
+    "from": "Policy Governance & Lifecycle",
+    "to": "Legal & Statutory Foundations",
+    "name": "depends_on",
+    "description": "Governance must stay aligned with binding legal obligations."
+  },
+  {
+    "from": "Policy Governance & Lifecycle",
+    "to": "Regulatory Context",
+    "name": "depends_on",
+    "description": "Governance must reflect evolving regulatory expectations."
+  },
+  {
+    "from": "Policy Governance & Lifecycle",
+    "to": "Strategic Directives",
+    "name": "depends_on",
+    "description": "Governance must respond to leadership direction."
+  },
+  {
+    "from": "Compliance Frameworks & Standards",
+    "to": "Compliance Monitoring & Reporting",
+    "name": "influences",
+    "description": "Monitoring assesses adherence to defined standards and controls."
+  },
+  {
+    "from": "Compliance Monitoring & Reporting",
+    "to": "Strategic Directives",
+    "name": "flows_to",
+    "description": "Findings and escalations inform leadership action."
+  },
+  {
+    "from": "Compliance Monitoring & Reporting",
+    "to": "Regulatory Context",
+    "name": "flows_to",
+    "description": "Compliance reports and disclosures flow to regulators."
+  },
+  {
+    "from": "Policy & Compliance Layer",
+    "to": "Value Streams & Capabilities Layer",
+    "name": "influences",
+    "description": "Value streams and capabilities must operate within policy, legal, and compliance boundaries."
+  },
+  {
+    "from": "Policy & Compliance Layer",
+    "to": "Governance Sub-Layer (Strategy & Priorities)",
+    "name": "enables",
+    "description": "Provides policy and compliance information that enables effective governance."
+  },
+  {
+    "from": "Compliance Frameworks & Standards",
+    "to": "Policy Framework",
+    "name": "depends_on",
+    "description": "Standards operationalize what policies mandate."
+  },
+  {
+    "from": "Compliance Frameworks & Standards",
+    "to": "Legal & Statutory Foundations",
+    "name": "depends_on",
+    "description": "Standards must reflect binding legal obligations."
+  },
+  {
+    "from": "Compliance Frameworks & Standards",
+    "to": "Regulatory Context",
+    "name": "depends_on",
+    "description": "Standards must align with sector regulations and expectations."
+  },
+  {
+    "from": "Compliance Monitoring & Reporting",
+    "to": "Compliance Frameworks & Standards",
+    "name": "depends_on",
+    "description": "Monitoring criteria are based on defined standards and controls."
+  },
+  {
+    "from": "Compliance Monitoring & Reporting",
+    "to": "Policy Framework",
+    "name": "depends_on",
+    "description": "Monitoring checks whether policies are being followed."
+  },
+  {
+    "from": "Compliance Monitoring & Reporting",
+    "to": "Regulatory Context",
+    "name": "depends_on",
+    "description": "Monitoring practices must align with regulator expectations and formats."
+  },
+  {
+    "from": "Compliance Monitoring & Reporting",
+    "to": "Strategic Directives",
+    "name": "flows_to",
+    "description": "Escalated issues and reports inform leadership action and directives."
+  },
+  {
+    "from": "Compliance Monitoring & Reporting",
+    "to": "Regulatory Context",
+    "name": "flows_to",
+    "description": "Reports and disclosures are provided to regulators and oversight bodies."
+  },
+  {
+    "from": "Legal & Statutory Foundations",
+    "to": "Policy Framework",
+    "name": "influences",
+    "description": "Policies must comply with and reflect legal obligations."
+  },
+  {
+    "from": "Legal & Statutory Foundations",
+    "to": "Compliance Frameworks & Standards",
+    "name": "influences",
+    "description": "Compliance standards must incorporate legal requirements."
+  },
+  {
+    "from": "Legal & Statutory Foundations",
+    "to": "Policy Governance & Lifecycle",
+    "name": "influences",
+    "description": "Policy governance must ensure ongoing alignment with law."
+  },
+  {
+    "from": "Regulatory Context",
+    "to": "Policy Framework",
+    "name": "influences",
+    "description": "Policies must incorporate regulatory expectations."
+  },
+  {
+    "from": "Regulatory Context",
+    "to": "Compliance Frameworks & Standards",
+    "name": "influences",
+    "description": "Standards must reflect applicable regulations."
+  },
+  {
+    "from": "Regulatory Context",
+    "to": "Compliance Monitoring & Reporting",
+    "name": "influences",
+    "description": "Monitoring and reporting practices must align with regulator expectations."
+  },
+  {
+    "from": "Regulatory Context",
+    "to": "Compliance Monitoring & Reporting",
+    "name": "flows_to",
+    "description": "Regulatory changes and requirements feed into monitoring and reporting adjustments."
+  },
+  {
+    "from": "Strategic Directives",
+    "to": "Policy Framework",
+    "name": "influences",
+    "description": "Directives guide the creation and prioritization of policies."
+  },
+  {
+    "from": "Strategic Directives",
+    "to": "Policy Governance & Lifecycle",
+    "name": "influences",
+    "description": "Directives trigger policy updates, creation, or retirement."
+  },
+  {
+    "from": "Strategic Directives",
+    "to": "Compliance Monitoring & Reporting",
+    "name": "depends_on",
+    "description": "Escalated compliance issues may require new directives or changes in direction."
+  },
+  {
+    "from": "Risk Identification & Prioritization",
+    "to": "Strategic Risk Assessment",
+    "name": "influences",
+    "description": "Prioritized risks inform strategic evaluation."
+  },
+  {
+    "from": "Risk Identification & Prioritization",
+    "to": "Contingency Plans",
+    "name": "influences",
+    "description": "Identified risks shape contingency scenarios."
+  },
+  {
+    "from": "Risk Identification & Prioritization",
+    "to": "Resilience Capabilities",
+    "name": "influences",
+    "description": "Risk insights guide capability investment."
+  },
+  {
+    "from": "Strategic Risk Assessment",
+    "to": "Adaptive Governance",
+    "name": "influences",
+    "description": "Assessment informs rapid decision criteria."
+  },
+  {
+    "from": "Strategic Risk Assessment",
+    "to": "Resilience Posture",
+    "name": "influences",
+    "description": "Assessment identifies posture gaps."
+  },
+  {
+    "from": "Resilience Capabilities",
+    "to": "Contingency Plans",
+    "name": "enables",
+    "description": "Capabilities support execution of contingency actions."
+  },
+  {
+    "from": "Resilience Capabilities",
+    "to": "Resilience Posture",
+    "name": "enables",
+    "description": "Capabilities form the basis of measured resilience readiness."
+  },
+  {
+    "from": "Resilience Posture",
+    "to": "Adaptive Governance",
+    "name": "influences",
+    "description": "Posture maturity informs governance thresholds."
+  },
+  {
+    "from": "Resilience Posture",
+    "to": "Strategic Risk Assessment",
+    "name": "influences",
+    "description": "Posture data helps contextualize strategic impact."
+  },
+  {
+    "from": "Adaptive Governance",
+    "to": "Contingency Plans",
+    "name": "enables",
+    "description": "Governance enables rapid activation and adjustment of plans."
+  },
+  {
+    "from": "Adaptive Governance",
+    "to": "Resilience Capabilities",
+    "name": "influences",
+    "description": "Governance decisions influence investment and deployment."
+  },
+  {
+    "from": "Contingency Plans",
+    "to": "Operational Continuity (TBD)",
+    "name": "flows_to",
+    "description": "Plans directly support continuity during disruptions."
+  },
+  {
+    "from": "Risk & Resilience Layer",
+    "to": "Value Streams & Capabilities Layer",
+    "name": "influences",
+    "description": "Value streams and capabilities must operate within resilience requirements."
+  },
+  {
+    "from": "Risk & Resilience Layer",
+    "to": "Policy & Compliance Layer",
+    "name": "depends_on",
+    "description": "Resilience must comply with regulations, policies, and legal mandates."
+  },
+  {
+    "from": "Adaptive Governance",
+    "to": "Strategic Risk Assessment",
+    "name": "depends_on",
+    "description": "Risk assessments inform governance triggers."
+  },
+  {
+    "from": "Adaptive Governance",
+    "to": "Resilience Posture",
+    "name": "depends_on",
+    "description": "Readiness metrics determine governance thresholds."
+  },
+  {
+    "from": "Contingency Plans",
+    "to": "Risk Identification & Prioritization",
+    "name": "depends_on",
+    "description": "Plans respond to identified high-priority risks."
+  },
+  {
+    "from": "Contingency Plans",
+    "to": "Adaptive Governance",
+    "name": "depends_on",
+    "description": "Plans require governance to activate and adjust."
+  },
+  {
+    "from": "Contingency Plans",
+    "to": "Resilience Capabilities",
+    "name": "depends_on",
+    "description": "Capabilities are needed to execute plans."
+  },
+  {
+    "from": "Resilience Capabilities",
+    "to": "Risk Identification & Prioritization",
+    "name": "depends_on",
+    "description": "Risk analysis informs capability investment."
+  },
+  {
+    "from": "Resilience Capabilities",
+    "to": "Adaptive Governance",
+    "name": "depends_on",
+    "description": "Governance allocates resources and sets priorities."
+  },
+  {
+    "from": "Resilience Posture",
+    "to": "Resilience Capabilities",
+    "name": "depends_on",
+    "description": "Posture reflects capability maturity."
+  },
+  {
+    "from": "Strategic Risk Assessment",
+    "to": "Risk Identification & Prioritization",
+    "name": "depends_on",
+    "description": "Strategic assessments require risk inputs."
+  },
+  {
+    "from": "Transformation Roadmaps",
+    "to": "Time Horizons",
+    "name": "depends_on",
+    "description": "Roadmaps rely on horizon structuring for pacing."
+  },
+  {
+    "from": "Transformation Roadmaps",
+    "to": "Future-State Vision",
+    "name": "realizes",
+    "description": "Roadmaps deliver the steps to achieve the target future."
+  },
+  {
+    "from": "Transformation Initiatives",
+    "to": "Strategic Objectives (TBD)",
+    "name": "flows_to",
+    "description": "Initiatives deliver outcomes aligned with strategy."
+  },
+  {
+    "from": "Strategic Foresight Activities",
+    "to": "Future-State Vision",
+    "name": "influences",
+    "description": "Scenarios inform the viability of the target model."
+  },
+  {
+    "from": "Strategic Foresight Activities",
+    "to": "Time Horizons",
+    "name": "influences",
+    "description": "Foresight guides horizon planning and adjustments."
+  },
+  {
+    "from": "Current-State Description",
+    "to": "Future-State Vision",
+    "name": "influences",
+    "description": "Current pain points and strengths shape the target state."
+  },
+  {
+    "from": "Current-State Assessments",
+    "to": "Current-State Description",
+    "name": "influences",
+    "description": "Assessments produce the formal current-state narrative."
+  },
+  {
+    "from": "Future-State Vision",
+    "to": "Transformation Initiatives",
+    "name": "influences",
+    "description": "The target model determines required initiatives."
+  },
+  {
+    "from": "Roadmap Layer",
+    "to": "Strategy & Priorities Layer",
+    "name": "depends_on",
+    "description": "Roadmaps rely on strategic objectives and priorities."
+  },
+  {
+    "from": "Roadmap Layer",
+    "to": "Value Streams & Capabilities Layer",
+    "name": "influences",
+    "description": "Roadmaps drive capability uplift and value stream evolution."
+  },
+  {
+    "from": "Strategic Objectives",
+    "to": "Strategic Outcomes",
+    "name": "influences",
+    "description": "Objectives define intent; outcomes reflect the realized impact."
+  },
+  {
+    "from": "Strategic Objectives",
+    "to": "Strategic Priorities & Themes",
+    "name": "influences",
+    "description": "Priorities are derived from core strategic objectives."
+  },
+  {
+    "from": "Strategic Outcomes",
+    "to": "KPI and Measures",
+    "name": "influences",
+    "description": "Outcomes determine what must be measured."
+  },
+  {
+    "from": "Strategic Priorities & Themes",
+    "to": "Governance Model & Decision Bodies",
+    "name": "influences",
+    "description": "Priorities determine focus areas for governance structures."
+  },
+  {
+    "from": "Strategic Priorities & Themes",
+    "to": "Roles & Responsibilities",
+    "name": "influences",
+    "description": "Priorities define who must lead critical focus areas."
+  },
+  {
+    "from": "Governance Model & Decision Bodies",
+    "to": "Roles & Responsibilities",
+    "name": "enables",
+    "description": "Governance structures formally define and enable role ownership."
+  },
+  {
+    "from": "Guiding Principles",
+    "to": "Decision Rights & Escalation Mechanisms",
+    "name": "influences",
+    "description": "Principles shape the rules by which decisions are made."
+  },
+  {
+    "from": "Decision Rights & Escalation Mechanisms",
+    "to": "KPI and Measures",
+    "name": "influences",
+    "description": "Decision pathways influence how performance is monitored and enforced."
+  },
+  {
+    "from": "KPI and Measures",
+    "to": "Strategic Objectives",
+    "name": "influences",
+    "description": "Performance metrics assess achievement and inform adjustment of objectives."
+  },
+  {
+    "from": "KPI and Measures",
+    "to": "Strategic Outcomes",
+    "name": "influences",
+    "description": "KPIs confirm whether intended outcomes have been realized."
+  },
+  {
+    "from": "Decision Rights & Escalation Mechanisms",
+    "to": "Guiding Principles",
+    "name": "depends_on",
+    "description": "Decision rules depend on the principles they must uphold."
+  },
+  {
+    "from": "Decision Rights & Escalation Mechanisms",
+    "to": "Governance Model & Decision Bodies",
+    "name": "depends_on",
+    "description": "Decision authorities are assigned through governance structures."
+  },
+  {
+    "from": "KPI and Measures",
+    "to": "Decision Rights & Escalation Mechanisms",
+    "name": "depends_on",
+    "description": "Accountability for metrics depends on decision pathways."
+  },
+  {
+    "from": "Governance Model & Decision Bodies",
+    "to": "Strategic Priorities & Themes",
+    "name": "depends_on",
+    "description": "Governance focuses on areas identified as strategic priorities."
+  },
+  {
+    "from": "Governance Model & Decision Bodies",
+    "to": "Strategic Objectives",
+    "name": "depends_on",
+    "description": "Governance is aligned to the objectives to be achieved."
+  },
+  {
+    "from": "Roles & Responsibilities",
+    "to": "Governance Model & Decision Bodies",
+    "name": "depends_on",
+    "description": "Roles are defined and assigned through governance structures."
+  },
+  {
+    "from": "Roles & Responsibilities",
+    "to": "Strategic Priorities & Themes",
+    "name": "depends_on",
+    "description": "Responsibilities reflect the areas identified as priorities."
+  },
+  {
+    "from": "Roles & Responsibilities",
+    "to": "Strategic Objectives",
+    "name": "enables",
+    "description": "Clear accountability enables effective execution of objectives."
+  },
+  {
+    "from": "Capability Definition",
+    "to": "Capability Instance",
+    "name": "influences",
+    "description": "Definitions shape how instances are implemented."
+  },
+  {
+    "from": "Capability Definition",
+    "to": "Capability Map",
+    "name": "influences",
+    "description": "Clear definitions support accurate capability mapping."
+  },
+  {
+    "from": "Capabilities",
+    "to": "Capability Instances",
+    "name": "realizes",
+    "description": "Capabilities are implemented as specific local instances."
+  },
+  {
+    "from": "Capabilities",
+    "to": "Processes, Data, Applications",
+    "name": "depends_on",
+    "description": "Capabilities require supporting architecture and assets."
+  },
+  {
+    "from": "Capabilities",
+    "to": "Value Streams",
+    "name": "depends_on",
+    "description": "Capabilities are shaped and prioritized based on value stream needs."
+  },
+  {
+    "from": "Capability Instances",
+    "to": "Business Units / Agencies",
+    "name": "realizes",
+    "description": "Instances exist within specific organizational entities."
+  },
+  {
+    "from": "Capability Instance",
+    "to": "Value Stream Performance",
+    "name": "enables",
+    "description": "Instance quality and maturity affect value stream performance."
+  },
+  {
+    "from": "Capabilities",
+    "to": "Capability Instances",
+    "name": "realizes",
+    "description": "Capabilities take concrete form as instances."
+  },
+  {
+    "from": "Capability Map",
+    "to": "Strategic Objectives",
+    "name": "influences",
+    "description": "Capabilities inform which objectives are feasible or need support."
+  },
+  {
+    "from": "Capability Map",
+    "to": "Transformation Planning",
+    "name": "influences",
+    "description": "Mapped capabilities guide where to invest and improve."
+  },
+  {
+    "from": "Capabilities",
+    "to": "Value Streams",
+    "name": "depends_on",
+    "description": "Capabilities are aligned to support value delivery needs."
+  },
+  {
+    "from": "Capabilities",
+    "to": "Processes, Data, Applications",
+    "name": "depends_on",
+    "description": "Mapping reveals the enabling process, data, and system assets."
+  },
+  {
+    "from": "Capability Mapping",
+    "to": "Other Layers",
+    "name": "depends_on",
+    "description": "Mapping links capabilities to other architecture layers."
+  },
+  {
+    "from": "Capability Mapping",
+    "to": "Transformation Planning",
+    "name": "influences",
+    "description": "Mapping guides prioritization and investment decisions."
+  },
+  {
+    "from": "Stakeholder Mapping",
+    "to": "Value Streams",
+    "name": "influences",
+    "description": "Stakeholders trigger or shape value creation and delivery."
+  },
+  {
+    "from": "Value Streams",
+    "to": "Value Outcomes",
+    "name": "flows_to",
+    "description": "Value streams produce stakeholder outcomes and results."
+  },
+  {
+    "from": "Value Streams",
+    "to": "Capabilities",
+    "name": "depends_on",
+    "description": "Execution of streams relies on enabling capabilities."
+  },
+  {
+    "from": "Capabilities",
+    "to": "Capability Instances",
+    "name": "realizes",
+    "description": "Capabilities are implemented as local instances in units."
+  },
+  {
+    "from": "Capability Instances",
+    "to": "Business Units / Agencies",
+    "name": "realizes",
+    "description": "Instances are realized within specific organizational entities."
+  },
+  {
+    "from": "Capabilities",
+    "to": "Value Streams",
+    "name": "depends_on",
+    "description": "Capabilities are aligned and refined based on value needs."
+  },
+  {
+    "from": "Capabilities",
+    "to": "Processes, Data, Applications",
+    "name": "depends_on",
+    "description": "Capabilities require supporting process, data, and systems."
+  },
+  {
+    "from": "Value Streams",
+    "to": "Strategic Objectives & Outcomes",
+    "name": "influences",
+    "description": "Value delivery is the mechanism through which strategy is realized and measured."
+  },
+  {
+    "from": "Capability Mapping",
+    "to": "Other Layers",
+    "name": "depends_on",
+    "description": "Mapping connects capabilities to underlying architecture layers."
+  },
+  {
+    "from": "Value Stream Governance",
+    "to": "Value Stream Performance",
+    "name": "influences",
+    "description": "Governance and ownership affect stream performance."
+  },
+  {
+    "from": "Capability Ownership",
+    "to": "Value Stream Performance",
+    "name": "enables",
+    "description": "Capability owners improve capability effectiveness and outcomes."
+  },
+  {
+    "from": "Capability Maturity Assessment",
+    "to": "Transformation Planning",
+    "name": "influences",
+    "description": "Maturity levels guide prioritization, investments, and roadmaps."
+  },
+  {
+    "from": "Stakeholder Mapping",
+    "to": "Value Streams",
+    "name": "influences",
+    "description": "Stakeholders shape stream triggers and participation."
+  },
+  {
+    "from": "Value Streams",
+    "to": "Capabilities",
+    "name": "depends_on",
+    "description": "Streams require capabilities to operate effectively."
+  },
+  {
+    "from": "Value Streams",
+    "to": "Value Outcomes / Value Proposition",
+    "name": "flows_to",
+    "description": "Streams produce measurable outcomes and value propositions."
+  },
+  {
+    "from": "Value Streams",
+    "to": "Strategic Objectives & Outcomes",
+    "name": "influences",
+    "description": "Streams operationalize strategic direction and influence results."
+  }
+]

@@ -1,10 +1,10 @@
 
 class GuidanceParameter {
     static definition = {
-        name: 'GuidanceParameter',
+        "name": 'GuidanceParameter',
         description: 'This is the parameter class for guidance elements primarily for inputs and outputs.',
         attributes: {
-            name: {
+            "name": {
                 type: 'string',
                 description: 'Name of the parameter',
             },

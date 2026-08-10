@@ -1,10 +1,10 @@
 
 class Suggestion {
     static definition = {
-        name: 'Suggestion',
+        "name": 'Suggestion',
         description: 'A Suggestion is a Suggestion to create something in the system from the AI.',
         attributes: {
-           name: {
+           "name": {
                 type: 'string',
                 description: 'Name of the suggestion.',
             },
@@ -14,8 +14,14 @@ class Suggestion {
             }
         },
         associations: {
+            referring: {
+                type: 'Suggestion',
+                description: 'The suggestion that this suggestion is based on.',
+                cardinality: 1,
+                composite: false,
+            },
             task: {
-                tyoe: 'TaskInstance',
+                type: 'TaskInstance',
                 cardinality: 1,
                 description: 'The task that this suggestion is for.',
             }

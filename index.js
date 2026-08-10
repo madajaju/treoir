@@ -9,11 +9,13 @@ if(!fs.existsSync('./node_modules')) {
     return;
 }
 const server = require('ailtire');
+const aiModels = require('./.ai.js');
 
 let host = process.env.AILTIRE_HOST || 'localhost';
 let port = process.env.AILTIRE_PORT || 3001;
 let urlPrefix = process.env.AITIRE_BASEURL || '/web';
 let config = {
+    aiModels: aiModels,
     baseDir: '.',
     host: host,
     urlPrefix: urlPrefix,
@@ -21,31 +23,40 @@ let config = {
     internalURL: `${host}:${port}${urlPrefix}`,
     routes: {},
     ai: {
-        /*
        adaptor: AOpenAI,
         model: 'gpt-4o-mini',
        apiKey: process.env.AILTIRE_OPENAI_KEY,
 
-         */
 
         /*
         adaptor: AOVMS,
         model: 'model0',
         url: 'http://localhost:8000',
         apiKey: ''
-        */
 
         adaptor: AOLlama,
         model: 'gemma3',
         url: 'http://ollama:11434',
         apiKey: ''
+
+         */
     },
     post: (config) => {
         config.dbDir = config.dbDir || config.baseDir + '/database';
         let dbDir = config.dbDir;
         const gearStr = fs.readFileSync(path.resolve(dbDir, 'gear.json'), 'utf8');
         const gearJSON = JSON.parse(gearStr);
-        Layer.fromJSON({layers:gearJSON});
+        const shStr = fs.readFileSync(path.resolve(dbDir, 'stakeholders.json'), 'utf8');
+        const shJSON = JSON.parse(shStr);
+
+        let layerObjects = Layer.fromJSON({layers:gearJSON});
+        let shObjects = Stakeholder.fromJSON({stakeholders:shJSON});
+
+        for(let i in layerObjects) {
+            let layerObject = layerObjects[i];
+            layerObject.resolveStakeholders();
+            layerObject.resolveRelationships();
+        }
 
         let partnerDir = path.resolve(dbDir, 'partners');
         let pdir = fs.readdirSync(partnerDir);

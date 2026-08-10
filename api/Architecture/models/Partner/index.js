@@ -1,10 +1,10 @@
 
 class Partner {
     static definition = {
-        name: 'Partner',
+        "name": 'Partner',
         description: 'This represents the partner in the architecture.',
         attributes: {
-            name: {
+            "name": {
                 type: 'string',
                 description: 'Description of the partner.'
             },

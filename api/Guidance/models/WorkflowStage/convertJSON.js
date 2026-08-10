@@ -1,5 +1,5 @@
 module.exports = {
-    friendlyName: 'convertJSON',
+    friendlyname: 'convertJSON',
     description: 'Convert the workflow stage to JSON',
     static: false,
     inputs: {

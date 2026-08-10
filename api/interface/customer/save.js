@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'save',
+    friendlyname: 'save',
     description: 'Save the customer file',
     static: true, // True is for Class methods. False is for object based.
     inputs: {

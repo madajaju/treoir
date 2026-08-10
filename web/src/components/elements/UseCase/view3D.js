@@ -64,14 +64,14 @@ export function view3D(element) {
     let data = {nodes: {}, links: []};
 
     data.nodes[element.id] = {
-        id: element.id, name: element.name, fx: 0, fy: 0, fz: 0,
+        id: element.id, "name": element.name, fx: 0, fy: 0, fz: 0,
         view: create3D,
     };
     for (let j in element.scenarios) {
         let scenario =element.scenarios[j];
         let id = scenario.uid;
         data.nodes[id] = {
-            id: id, name: scenario.name,
+            id: id, "name": scenario.name,
             view: Scenario.get3DObject,
             // rbox: {parent: element.id, z: {max: -200, min: -3000}}
         };
@@ -85,7 +85,7 @@ export function view3D(element) {
     for (let j in element.extended) {
         let suc = element.extended[j];
         data.nodes[j] = {
-            id: j, name: suc.name, view: create3D,
+            id: j, "name": suc.name, view: create3D,
             color: '#aaaaaa',
             // rbox: {parent: element.id, z: {max: 400, min: -200}}
         };
@@ -96,7 +96,7 @@ export function view3D(element) {
         let sucname = element.extends[j];
         let sucid = sucname.replace(/\s/g, '');
         data.nodes[sucid] = {
-            id: sucid, name: sucname,
+            id: sucid, "name": sucname,
             view: create3D,
             color: '#aaaaff',
             // rbox: {parent: element.id, z: {max: 400, min: -200}}
@@ -108,7 +108,7 @@ export function view3D(element) {
         let sucname = element.includes[j];
         let sucid = sucname.replace(/\s/g, '');
         data.nodes[sucid] = {
-            id: sucid, name: sucname,
+            id: sucid, "name": sucname,
             view: create3D,
             color: '#aaffff',
             // rbox: {parent: element.id, z: {max: 400, min: -200}}
@@ -118,7 +118,7 @@ export function view3D(element) {
     for (let j in element.included) {
         let suc = element.included[j];
         data.nodes[j] = {
-            id: j, name: suc.name,
+            id: j, "name": suc.name,
             view: create3D,
             color: '#aaffaa',
             // rbox: {parent: element.id, z: {max: 400, min: -200}}
@@ -129,7 +129,7 @@ export function view3D(element) {
     for (let actor in element.actors) {
         let aname = actor.replace(/\s/g, '').toLowerCase();
         data.nodes[aname] = {
-            id: aname, name: aname, view: Actor.get3DObject,
+            id: aname, "name": aname, view: Actor.get3DObject,
             // rbox: {parent: element.id, z: {max: 3000, min: 400}}
         };
         data.links.push({source: aname, target: element.id, value: 1, width: 3, color: '#ffffff'});

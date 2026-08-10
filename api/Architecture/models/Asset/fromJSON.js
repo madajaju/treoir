@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'convertJSON',
+    friendlyname: 'convertJSON',
     description: 'Convert Asset JSON',
     static: true, // True is for Class methods. False is for object based.
     inputs: {
@@ -29,7 +29,7 @@ module.exports = {
         let eid = inputs.owner.id + "-" + asset.name;
         let assetObj = Asset.find(eid);
         if (!assetObj) {
-            assetObj = new Asset({id: eid, name: asset.name});
+            assetObj = new Asset({id: eid, "name": asset.name});
         }
         assetObj.description = asset.description;
         assetObj.url = asset.url;

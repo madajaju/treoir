@@ -101,8 +101,8 @@
       }
     }
   },
-  "Digital Architecture": {
-    "name": "Digital Architecture",
+  "Digital Domain": {
+    "name": "Digital Domain",
     "description": "Software stack of the system, including the middleware, software and applications.",
     "orientation": "front",
     "color": "#008800",
@@ -591,8 +591,8 @@
       }
     }
   },
-  "Process Architecture": {
-    "name": "Process Architecture",
+  "Process Domain": {
+    "name": "Process Domain",
     "description": "Processes of the system including supporting, strategic and operational processes.",
     "orientation": "back",
     "color": "#000088",
@@ -1032,8 +1032,8 @@
       }
     }
   },
-  "Organizational Architecture": {
-    "name": "Organizational Architecture",
+  "Organizational Domain": {
+    "name": "Organizational Domain",
     "description": "People centric organizational structure of the system.",
     "orientation": "left",
     "color": "#884400",

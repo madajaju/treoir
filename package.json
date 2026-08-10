@@ -17,12 +17,14 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "ailtire": "^0.20.6",
+    "@llamaindex/readers": "^3.1.21",
+    "ailtire": "^0.18.0",
     "commander": "^4.1.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
+    "llamaindex": "^0.12.0",
     "marked": "^15.0.6",
-    "mocha": "^7.0.0",
+    "mocha": "^11.7.5",
     "openai": "^4.76.3"
   },
   "devDependencies": {

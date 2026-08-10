@@ -1,7 +1,7 @@
 
 class SupplierSuggestion {
     static definition = {
-        name: 'SupplierSuggestion',
+        "name": 'SupplierSuggestion',
         description: 'Suggestion to create a Supplier in the architecture.',
         extends: 'Suggestion',
         attributes: {

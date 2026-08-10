@@ -5,7 +5,7 @@ const path = require('path');
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'producePDF',
+    friendlyname: 'producePDF',
     description: 'producePDF file of the customer',
     static: false, // True is for Class methods. False is for object based.
     inputs: {
@@ -106,7 +106,7 @@ async function _generateHeading(customerJSON, gearJSON) {
     // # Customer Name, Description based on the customer JSON file.
     // Outline of the high level architecture of GEAR and how the customer maps to it.
     let retval = {
-        name: customerJSON.name,
+        "name": customerJSON.name,
         description: customerJSON.description,
         customerJSON: customerJSON,
         gear: gearJSON,
@@ -165,7 +165,7 @@ async function _generateHighlevelMap(customerJSON, gearJSON) {
 
     // Outline of the high level architecture of GEAR and how the customer maps to it.
     let retval = {
-        name: customerJSON.name,
+        "name": customerJSON.name,
         description: customerJSON.description,
         customerJSON: customerJSON,
         gearJSON: gearJSON,
@@ -202,8 +202,8 @@ async function _generateLayerDocument(customerJSON, layer) {
     // # Make any suggestions on how to fill in the gaps.
     const prompt = `Please generate a Markdown-formatted document that includes the following:
 
-1. **${layer.name} Architecture Overview**:
-   - Extract the **${layer.name} Architecture from the \`gearJSON\`.
+1. **${layer.name} Domain Overview**:
+   - Extract the **${layer.name} Domain from the \`gearJSON\`.
    - Provide a high-level **description** of the Layer structure, as outlined in \`gearJSON\`, and how it is relevant to the customer, based on data in \`customerJSON\`.
 
 2. **Customer Environment Mapping to GEAR**:
@@ -273,11 +273,11 @@ async function _generateConclusion(intro, body) {
 
 1. Summary of Key Findings:
    - Summarize the strengths and gaps identified in the layer analysis for each of the four GEAR architecture components:
-     - **Strategic Architecture**
-     - **Organizational Architecture**
-     - **Process Architecture**
-     - **Digital Architecture**
-     - **Physical Architecture**
+     - **Strategic Domain**
+     - **Organizational Domain**
+     - **Process Domain**
+     - **Digital Domain**
+     - **Physical Domain**
    - Highlight any overarching patterns or successes in the customer’s alignment with GEAR.
 
 2. Importance of GEAR Alignment:
@@ -361,7 +361,7 @@ async function _generateHighLevelSVG(customerJSON, layerJSON) {
         retval.push(mapLayer(null, layer));
     }
     let topParent = {
-        name: "GEAR",
+        "name": "GEAR",
         id: "GEAR",
         color: "#ffffff",
         type: 'Layer',
@@ -611,7 +611,7 @@ function _mapCustomerToLayers(customer, layers) {
                                 if(!currentLayers[layerKeys[j]].engagements) {
                                     currentLayers[layerKeys[j]].engagements = [];
                                 }
-                                let engage = {...engagement, phase:{name:phase.name,color:phase.color}, supplier: {name:supplier.name}};
+                                let engage = {...engagement, phase:{"name":phase.name,color:phase.color}, supplier: {"name":supplier.name}};
                                 engage.customer ={};
                                 currentLayers[layerKeys[j]].engagements.push(engage);
                                 currentLayers = currentLayers[layerKeys[j]].layers;

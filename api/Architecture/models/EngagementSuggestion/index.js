@@ -1,7 +1,7 @@
 
 class EngagementSuggestion {
     static definition = {
-        name: 'EngagementSuggestion',
+        "name": 'EngagementSuggestion',
         description: 'Suggestion to create an engagement for the customer fomr the AI.',
         extends: 'Suggestion',
         attributes: {

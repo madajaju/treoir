@@ -16,7 +16,7 @@ export const workflowNodes = derived(workflows, ($workflows) => {
         mapCategory(null, subcategory);
     }
     function mapCategory(parent, category) {
-        idMap[category.prefix] = {...category, id: category.prefix, name:category.prefix, type: "Category", _children: []};
+        idMap[category.prefix] = {...category, id: category.prefix, "name":category.prefix, type: "Category", _children: []};
         if (parent) {
             idMap[category.prefix].parent = parent;
             idMap[parent]._children.push(idMap[category.prefix]);

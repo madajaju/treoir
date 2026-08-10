@@ -2,7 +2,7 @@ const fs = require('fs');
 const Layer = require("./index");
 
 module.exports = {
-    friendlyName: 'convertJSON',
+    friendlyname: 'convertJSON',
     description: 'Convert the layer to JSON',
     static: false, // True is for Class methods. False is for object based.
     inputs: {
@@ -24,6 +24,19 @@ module.exports = {
             let attr = obj._attributes[aname];
             retval[aname] = attr;
         }
+        retval.stakeholders = [];
+        for(let i in obj.stakeholders) {
+            retval.stakeholders.push(obj.stakeholders[i].name);
+        }
+        retval.relationships = [];
+        for(let i in obj.relationships) {
+            retval.relationships.push({
+                "name": obj.relationships[i].name,
+                description: obj.relationships[i].description,
+                from: obj.id,
+                to: obj.relationships[i].to.id
+            });
+        }
         let currentDepth = 1;
         if(currentDepth < depth) {
             retval = _processSubLayers(currentDepth+1,depth, retval, obj);
@@ -44,6 +57,19 @@ function _processSubLayers(currentDepth, targetDepth, retval, layer) {
         let subLayer = layer.layers[lname];
         for (let aname in subLayer._attributes) {
             tempLayer[aname] = subLayer._attributes[aname];
+        }
+        tempLayer.stakeholders = [];
+        for(let i in layer.stakeholders) {
+            tempLayer.stakeholders.push(layer.stakeholders[i].name);
+        }
+        tempLayer.relationships = [];
+        for(let i in layer.relationships) {
+            tempLayer.relationships.push({
+                "name": layer.relationships[i].name,
+                description: layer.relationships[i].description,
+                from: layer.id,
+                to: layer.relationships[i].to.id
+            });
         }
         retval.layers[tempLayer.name] = tempLayer;
         if(subLayer.layers) {

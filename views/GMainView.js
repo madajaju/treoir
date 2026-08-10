@@ -96,7 +96,7 @@ export default class GMainView {
             }
         }
         $().w2grid({
-            name: "ErrorList",
+            "name": "ErrorList",
             columns: [
                 {field: 'type', size: "20%", resizable: true, caption: 'Type', sortable: true},
                 {field: 'message', size: "20%", resizable: true, caption: 'Message', sortable: true},
@@ -140,7 +140,7 @@ export default class GMainView {
         let me = this;
         let config = {
             layout: {
-                name: 'layout',
+                "name": 'layout',
                 padding: 0,
                 panels: [
                     {
@@ -307,7 +307,7 @@ export default class GMainView {
                 ]
             },
             rightbar: {
-                name: 'rightbar',
+                "name": 'rightbar',
                 nodes: [],
                 onClick: function (event) {
                     if (event.object.id) {
@@ -317,7 +317,7 @@ export default class GMainView {
                 }
             },
             sidebar: {
-                name: 'sidebar',
+                "name": 'sidebar',
                 img: null,
                 nodes: [],
                 onExpand: (event) => {
@@ -398,7 +398,7 @@ export default class GMainView {
     setupUI() {
         // Bottom Layout is three Panels. WorkflowInstances, Workflows, and Events
         $("#bottomLayout").w2layout({
-            name: 'bottomLayout',
+            "name": 'bottomLayout',
             panels: [
                 {
                     type: 'left',
@@ -665,7 +665,7 @@ export default class GMainView {
         // Initialize the grid if it doesn't exist
         if (!w2ui.hasOwnProperty('taskList')) {
             $().w2grid({
-                name: 'taskList',
+                "name": 'taskList',
                 show: {
                     toolbar: true,
                     footer: true

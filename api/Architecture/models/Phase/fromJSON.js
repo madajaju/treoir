@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'convert',
+    friendlyname: 'convert',
     description: 'Convert Layer file',
     static: true, // True is for Class methods. False is for object based.
     inputs: {
@@ -22,7 +22,7 @@ module.exports = {
         let phase = inputs.phase;
         let phaseObj = Phase.find(phase.name);
         if (!phaseObj) {
-            phaseObj = new Phase({id: phase.name, name: phase.name});
+            phaseObj = new Phase({id: phase.name, "name": phase.name});
         }
         phaseObj.name = phase.name;
         phaseObj.description = phase.description;

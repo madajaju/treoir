@@ -1,6 +1,6 @@
 
 module.exports = {
-    name: 'gear',
+    "name": 'gear',
     contexts: {
         dev: {
             type: 'swarm',

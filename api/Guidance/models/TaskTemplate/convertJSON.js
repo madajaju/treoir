@@ -1,5 +1,5 @@
 module.exports = {
-    friendlyName: 'convertJSON',
+    friendlyname: 'convertJSON',
     description: 'Convert the task template to JSON',
     static: false, // Object-based method
     inputs: {

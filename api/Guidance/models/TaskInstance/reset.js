@@ -1,5 +1,5 @@
 module.exports = {
-    friendlyName: 'reset',
+    friendlyname: 'reset',
     description: 'Reset the task to its Init state.',
     static: false, // This is an object-based method
     inputs: {},

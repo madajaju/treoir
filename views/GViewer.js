@@ -21,7 +21,7 @@ export default class GViewer {
         let data = {nodes: {}, links: []};
         data.nodes["Logical"] = {
             id: "Logical",
-            name: "Digital Architecture",
+            "name": "Digital Domain",
             view: GLayerView.view3D,
             color: "#118844",
             fx: 0,
@@ -33,7 +33,7 @@ export default class GViewer {
 
             data.nodes["Process"] = {
                 id: "Process",
-                name: "Process Architecture",
+                "name": "Process Domain",
                 view: GLayerView.view3D,
                 color: "#115588",
                 fx: 0,
@@ -45,7 +45,7 @@ export default class GViewer {
             },
             data.nodes["Physical"] = {
                 id: "Physical",
-                name: "Physical Layer",
+                "name": "Physical Layer",
                 view: GLayerView.view3D,
                 color: "#441188",
                 fx: GLayerView.default.width / 2,
@@ -62,7 +62,7 @@ export default class GViewer {
     static loadOrganizationalNodes(data) {
         data.nodes["Organizational"] = {
             id: "Organizational",
-            name: "Organizational Architecture",
+            "name": "Organizational Domain",
             color: "#884411",
             view: GLayerView.view3D,
             fx: -GLayerView.default.width/2,
@@ -75,7 +75,7 @@ export default class GViewer {
         let heightFactor = (GLayerView.default.height/4)
         data.nodes["Organizational-Stakeholders"] = {
             id: "Organizational-Stakeholders",
-            name: "Stakeholders",
+            "name": "Stakeholders",
             color: "#bb7744",
             opacity: 1,
             view: GLayerView.view3D,
@@ -91,7 +91,7 @@ export default class GViewer {
         };
         data.nodes["Organizational-Culture"] = {
             id: "Organizational-Culture",
-            name: "Culture and Values",
+            "name": "Culture and Values",
             color: "#bb7744",
             view: GLayerView.view3D,
             rotate: { y: -Math.PI/2 },
@@ -107,7 +107,7 @@ export default class GViewer {
         }
         data.nodes["Organizational-Personas"] = {
             id: "Organizational-Personas",
-            name: "Personas",
+            "name": "Personas",
             color: "#bb7744",
             view: GLayerView.view3D,
             rotate: { y: -Math.PI/2 },
@@ -123,7 +123,7 @@ export default class GViewer {
         }
         data.nodes["Organizational-Channels"] = {
             id: "Organizational-Channels",
-            name: "Communication Channels",
+            "name": "Communication Channels",
             color: "#bb7744",
             view: GLayerView.view3D,
             rotate: { y: -Math.PI/2 },

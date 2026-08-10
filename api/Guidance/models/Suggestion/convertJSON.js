@@ -1,5 +1,5 @@
 module.exports = {
-    friendlyName: 'convertJSON',
+    friendlyname: 'convertJSON',
     description: 'Convert the suggestion to JSON',
     static: false, // True is for Class methods. False is for object based.
     inputs: {
@@ -33,6 +33,9 @@ module.exports = {
             }
         }
         retval.type = obj.definition.name;
+        if(retval.referring) {
+            retval.referring = retval.referring.id;
+        }
         retval.state = obj._state;
         return retval;
     }

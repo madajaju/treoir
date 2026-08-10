@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'convertJSON',
+    friendlyname: 'convertJSON',
     description: 'Convert Element JSON',
     static: true, // True is for Class methods. False is for object based.
     inputs: {
@@ -29,7 +29,7 @@ module.exports = {
         let eid = inputs.owner.id + "-" + element.name;
         let elementObj = Element.find(eid);
         if (!elementObj) {
-            elementObj = new Element({id: eid, name: element.name});
+            elementObj = new Element({id: eid, "name": element.name});
         }
         elementObj.description = element.description;
         elementObj.color = element.color;

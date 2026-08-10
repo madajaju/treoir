@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'Solution Architect',
+    "name": 'Solution Architect',
     shortname: 'solutionarchitect',
     description: 'Long description'
 };

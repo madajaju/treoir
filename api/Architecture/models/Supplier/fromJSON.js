@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'convert',
+    friendlyname: 'convert',
     description: 'Convert Supplier JSON String',
     static: true, // True is for Class methods. False is for object based.
     inputs: {
@@ -22,7 +22,7 @@ module.exports = {
         let supplier = inputs.supplier;
         let supplierObj = Supplier.find(supplier.name);
         if (!supplierObj) {
-            supplierObj = new Supplier({id: supplier.name, name: supplier.name});
+            supplierObj = new Supplier({id: supplier.name, "name": supplier.name});
         }
         supplierObj.name = supplier.name;
         supplierObj.contact = supplier.contact;

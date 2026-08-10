@@ -5,7 +5,7 @@ const path = require('path');
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'producePDF',
+    friendlyname: 'producePDF',
     description: 'producePDF file of the partner',
     static: false, // True is for Class methods. False is for object based.
     inputs: {},
@@ -125,7 +125,7 @@ async function _generateHeading(partnerJSON, gearJSON) {
     // # Partner Name, Description based on the partner JSON file.
     // Outline of the high level architecture of GEAR and how the partner maps to it.
     let retval = {
-        name: partnerJSON.name,
+        "name": partnerJSON.name,
         description: partnerJSON.description,
         partnerJSON: partnerJSON,
         gear: gearJSON,
@@ -184,7 +184,7 @@ async function _generateHighlevelMap(partnerJSON, gearJSON) {
 
     // Outline of the high level architecture of GEAR and how the partner maps to it.
     let retval = {
-        name: partnerJSON.name,
+        "name": partnerJSON.name,
         description: partnerJSON.description,
         partnerJSON: partnerJSON,
         gearJSON: gearJSON,
@@ -293,11 +293,11 @@ async function _generateConclusion(intro, body) {
 
 1. Summary of Key Findings:
    - Summarize the strengths and gaps identified in the layer analysis for each of the four GEAR architecture components:
-     - **Strategic Architecture**
-     - **Organizational Architecture**
-     - **Process Architecture**
-     - **Digital Architecture**
-     - **Physical Architecture**
+     - **Strategic Domain**
+     - **Organizational Domain**
+     - **Process Domain**
+     - **Digital Domain**
+     - **Physical Domain**
    - Highlight any overarching patterns or successes in the partner’s alignment with GEAR.
 
 2. Importance of GEAR Alignment:
@@ -385,7 +385,7 @@ async function _generateHighLevelSVG(partnerJSON, layerJSON) {
         retval.push(mapLayer(null, layer));
     }
     let topParent = {
-        name: "GEAR",
+        "name": "GEAR",
         id: "GEAR",
         color: "#ffffff",
         type: 'Layer',

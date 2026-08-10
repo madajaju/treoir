@@ -4024,7 +4024,7 @@
 
 	var _const = {
 	    TYPE: TYPE$H,
-	    NAME: NAME$3
+	    "name": NAME$3
 	};
 
 	var EOF$1 = 0;
@@ -4264,7 +4264,7 @@
 	    isLetter: isLetter,
 	    isNonAscii: isNonAscii,
 	    isNameStart: isNameStart,
-	    isName: isName$2,
+	    isname: isName$2,
 	    isNonPrintable: isNonPrintable,
 	    isNewline: isNewline$1,
 	    isWhiteSpace: isWhiteSpace$2,
@@ -4508,7 +4508,7 @@
 
 	var utils$2 = {
 	    consumeEscaped: consumeEscaped$1,
-	    consumeName: consumeName$1,
+	    consumename: consumeName$1,
 	    consumeNumber: consumeNumber$5,
 	    consumeBadUrlRemnants: consumeBadUrlRemnants$1,
 
@@ -5047,7 +5047,7 @@
 
 	    return keywords$1[keyword] = Object.freeze({
 	        basename: name.substr(vendor.length),
-	        name: name,
+	        "name": name,
 	        vendor: vendor,
 	        prefix: vendor,
 	        custom: custom
@@ -5088,7 +5088,7 @@
 
 	    return properties$1[property] = Object.freeze({
 	        basename: name.substr(prefix.length),
-	        name: name.substr(hack.length),
+	        "name": name.substr(hack.length),
 	        hack: hack,
 	        vendor: vendor,
 	        prefix: prefix,
@@ -6984,7 +6984,7 @@
 
 	    return maybeMultiplied(tokenizer, {
 	        type: 'Property',
-	        name: name
+	        "name": name
 	    });
 	}
 
@@ -7068,7 +7068,7 @@
 
 	    return maybeMultiplied(tokenizer, {
 	        type: 'Type',
-	        name: name,
+	        "name": name,
 	        opts: opts
 	    });
 	}
@@ -7083,13 +7083,13 @@
 
 	        return {
 	            type: 'Function',
-	            name: name
+	            "name": name
 	        };
 	    }
 
 	    return maybeMultiplied(tokenizer, {
 	        type: 'Keyword',
-	        name: name
+	        "name": name
 	    });
 	}
 
@@ -7276,7 +7276,7 @@
 	                tokenizer.pos++;
 	                return {
 	                    type: 'AtKeyword',
-	                    name: scanWord(tokenizer)
+	                    "name": scanWord(tokenizer)
 	                };
 	            }
 
@@ -7829,28 +7829,28 @@
 	        case 'Property':
 	            return {
 	                type: node.type,
-	                name: node.name,
+	                "name": node.name,
 	                syntax: node
 	            };
 
 	        case 'Keyword':
 	            return {
 	                type: node.type,
-	                name: node.name.toLowerCase(),
+	                "name": node.name.toLowerCase(),
 	                syntax: node
 	            };
 
 	        case 'AtKeyword':
 	            return {
 	                type: node.type,
-	                name: '@' + node.name.toLowerCase(),
+	                "name": '@' + node.name.toLowerCase(),
 	                syntax: node
 	            };
 
 	        case 'Function':
 	            return {
 	                type: node.type,
-	                name: node.name.toLowerCase() + '(',
+	                "name": node.name.toLowerCase() + '(',
 	                syntax: node
 	            };
 
@@ -9016,11 +9016,11 @@
 	    createDescriptor: function(syntax, type, name, parent = null) {
 	        var ref = {
 	            type: type,
-	            name: name
+	            "name": name
 	        };
 	        var descriptor = {
 	            type: type,
-	            name: name,
+	            "name": name,
 	            parent: parent,
 	            syntax: null,
 	            match: null
@@ -9065,7 +9065,7 @@
 
 	        this.atrules[name] = {
 	            type: 'Atrule',
-	            name: name,
+	            "name": name,
 	            prelude: syntax.prelude ? this.createDescriptor(syntax.prelude, 'AtrulePrelude', name) : null,
 	            descriptors: syntax.descriptors
 	                ? Object.keys(syntax.descriptors).reduce((res, descName) => {
@@ -9094,7 +9094,7 @@
 	        }
 	    },
 
-	    checkAtruleName: function(atruleName) {
+	    checkAtrulename: function(atruleName) {
 	        if (!this.getAtrule(atruleName)) {
 	            return new SyntaxReferenceError('Unknown at-rule', '@' + atruleName);
 	        }
@@ -9116,7 +9116,7 @@
 	            return new SyntaxError('At-rule `@' + atruleName + '` should contain a prelude');
 	        }
 	    },
-	    checkAtruleDescriptorName: function(atruleName, descriptorName) {
+	    checkAtruleDescriptorname: function(atruleName, descriptorName) {
 	        let error = this.checkAtruleName(atruleName);
 
 	        if (error) {
@@ -9135,7 +9135,7 @@
 	            return new SyntaxReferenceError('Unknown at-rule descriptor', descriptorName);
 	        }
 	    },
-	    checkPropertyName: function(propertyName) {
+	    checkPropertyname: function(propertyName) {
 	        var property = names$1.property(propertyName);
 
 	        // don't match syntax for a custom property
@@ -9677,7 +9677,7 @@
 
 	            return value;
 	        },
-	        consumeFunctionName: function() {
+	        consumeFunctionname: function() {
 	            var name = this.scanner.source.substring(this.scanner.tokenStart, this.scanner.tokenEnd - 1);
 
 	            this.eat(FUNCTION$6);
@@ -10802,7 +10802,7 @@
 	 *   - generated: An object with the generated line and column positions.
 	 *   - original: An object with the original line and column positions.
 	 *   - source: The original source file (relative to the sourceRoot).
-	 *   - name: An optional original token name for this mapping.
+	 *   - "name": An optional original token name for this mapping.
 	 */
 	SourceMapGenerator$1.prototype.addMapping =
 	  function SourceMapGenerator_addMapping(aArgs) {
@@ -10835,7 +10835,7 @@
 	      originalLine: original != null && original.line,
 	      originalColumn: original != null && original.column,
 	      source: source,
-	      name: name
+	      "name": name
 	    });
 	  };
 
@@ -11004,7 +11004,7 @@
 	        generated: aGenerated,
 	        source: aSource,
 	        original: aOriginal,
-	        name: aName
+	        "name": aName
 	      }));
 	    }
 	  };
@@ -11347,7 +11347,7 @@
 
 	        var fieldTypes = structure[key];
 	        var walker = {
-	            name: key,
+	            "name": key,
 	            type: false,
 	            nullable: false
 	        };
@@ -23328,7 +23328,7 @@
 
 	// An+B microsyntax https://www.w3.org/TR/css-syntax-3/#anb
 	var AnPlusB = {
-	    name: 'AnPlusB',
+	    "name": 'AnPlusB',
 	    structure: {
 	        a: [String, null],
 	        b: [String, null]
@@ -23577,7 +23577,7 @@
 	}
 
 	var Raw = {
-	    name: 'Raw',
+	    "name": 'Raw',
 	    structure: {
 	        value: String
 	    },
@@ -23642,9 +23642,9 @@
 	}
 
 	var Atrule = {
-	    name: 'Atrule',
+	    "name": 'Atrule',
 	    structure: {
-	        name: String,
+	        "name": String,
 	        prelude: ['AtrulePrelude', 'Raw', null],
 	        block: ['Block', null]
 	    },
@@ -23699,7 +23699,7 @@
 	        return {
 	            type: 'Atrule',
 	            loc: this.getLocation(start, this.scanner.tokenStart),
-	            name: name,
+	            "name": name,
 	            prelude: prelude,
 	            block: block
 	        };
@@ -23728,7 +23728,7 @@
 	var LEFTCURLYBRACKET$2 = TYPE$v.LeftCurlyBracket;
 
 	var AtrulePrelude = {
-	    name: 'AtrulePrelude',
+	    "name": 'AtrulePrelude',
 	    structure: {
 	        children: [[]]
 	    },
@@ -23824,7 +23824,7 @@
 	    return {
 	        type: 'Identifier',
 	        loc: this.getLocation(start, this.scanner.tokenStart),
-	        name: this.scanner.substrToCursor(start)
+	        "name": this.scanner.substrToCursor(start)
 	    };
 	}
 
@@ -23858,9 +23858,9 @@
 	// '[' <wq-name> ']'
 	// '[' <wq-name> <attr-matcher> [ <string-token> | <ident-token> ] <attr-modifier>? ']'
 	var AttributeSelector = {
-	    name: 'AttributeSelector',
+	    "name": 'AttributeSelector',
 	    structure: {
-	        name: 'Identifier',
+	        "name": 'Identifier',
 	        matcher: [String, null],
 	        value: ['String', 'Identifier', null],
 	        flags: [String, null]
@@ -23906,7 +23906,7 @@
 	        return {
 	            type: 'AttributeSelector',
 	            loc: this.getLocation(start, this.scanner.tokenStart),
-	            name: name,
+	            "name": name,
 	            matcher: matcher,
 	            value: value,
 	            flags: flags
@@ -23974,7 +23974,7 @@
 	}
 
 	var Block = {
-	    name: 'Block',
+	    "name": 'Block',
 	    structure: {
 	        children: [[
 	            'Atrule',
@@ -24038,7 +24038,7 @@
 	var RIGHTSQUAREBRACKET = TYPE$s.RightSquareBracket;
 
 	var Brackets = {
-	    name: 'Brackets',
+	    "name": 'Brackets',
 	    structure: {
 	        children: [[]]
 	    },
@@ -24070,7 +24070,7 @@
 	var CDC$1 = tokenizer$3.TYPE.CDC;
 
 	var CDC_1 = {
-	    name: 'CDC',
+	    "name": 'CDC',
 	    structure: [],
 	    parse: function() {
 	        var start = this.scanner.tokenStart;
@@ -24090,7 +24090,7 @@
 	var CDO$1 = tokenizer$3.TYPE.CDO;
 
 	var CDO_1 = {
-	    name: 'CDO',
+	    "name": 'CDO',
 	    structure: [],
 	    parse: function() {
 	        var start = this.scanner.tokenStart;
@@ -24114,9 +24114,9 @@
 
 	// '.' ident
 	var ClassSelector = {
-	    name: 'ClassSelector',
+	    "name": 'ClassSelector',
 	    structure: {
-	        name: String
+	        "name": String
 	    },
 	    parse: function() {
 	        if (!this.scanner.isDelim(FULLSTOP$2)) {
@@ -24128,7 +24128,7 @@
 	        return {
 	            type: 'ClassSelector',
 	            loc: this.getLocation(this.scanner.tokenStart - 1, this.scanner.tokenEnd),
-	            name: this.consume(IDENT$d)
+	            "name": this.consume(IDENT$d)
 	        };
 	    },
 	    generate: function(node) {
@@ -24147,9 +24147,9 @@
 
 	// + | > | ~ | /deep/
 	var Combinator = {
-	    name: 'Combinator',
+	    "name": 'Combinator',
 	    structure: {
-	        name: String
+	        "name": String
 	    },
 	    parse: function() {
 	        var start = this.scanner.tokenStart;
@@ -24185,7 +24185,7 @@
 	        return {
 	            type: 'Combinator',
 	            loc: this.getLocation(start, this.scanner.tokenStart),
-	            name: this.scanner.substrToCursor(start)
+	            "name": this.scanner.substrToCursor(start)
 	        };
 	    },
 	    generate: function(node) {
@@ -24201,7 +24201,7 @@
 
 	// '/*' .* '*/'
 	var Comment = {
-	    name: 'Comment',
+	    "name": 'Comment',
 	    structure: {
 	        value: String
 	    },
@@ -24272,7 +24272,7 @@
 	}
 
 	var Declaration = {
-	    name: 'Declaration',
+	    "name": 'Declaration',
 	    structure: {
 	        important: [Boolean, String],
 	        property: String,
@@ -24407,7 +24407,7 @@
 	}
 
 	var DeclarationList = {
-	    name: 'DeclarationList',
+	    "name": 'DeclarationList',
 	    structure: {
 	        children: [[
 	            'Declaration'
@@ -24450,7 +24450,7 @@
 	var DIMENSION$4 = TYPE$m.Dimension;
 
 	var Dimension = {
-	    name: 'Dimension',
+	    "name": 'Dimension',
 	    structure: {
 	        value: String,
 	        unit: String
@@ -24480,9 +24480,9 @@
 
 	// <function-token> <sequence> )
 	var _Function = {
-	    name: 'Function',
+	    "name": 'Function',
 	    structure: {
-	        name: String,
+	        "name": String,
 	        children: [[]]
 	    },
 	    parse: function(readSequence, recognizer) {
@@ -24502,7 +24502,7 @@
 	        return {
 	            type: 'Function',
 	            loc: this.getLocation(start, this.scanner.tokenStart),
-	            name: name,
+	            "name": name,
 	            children: children
 	        };
 	    },
@@ -24521,7 +24521,7 @@
 
 	// '#' ident
 	var Hash = {
-	    name: 'Hash',
+	    "name": 'Hash',
 	    structure: {
 	        value: String
 	    },
@@ -24547,15 +24547,15 @@
 	var IDENT$a = TYPE$j.Ident;
 
 	var Identifier = {
-	    name: 'Identifier',
+	    "name": 'Identifier',
 	    structure: {
-	        name: String
+	        "name": String
 	    },
 	    parse: function() {
 	        return {
 	            type: 'Identifier',
 	            loc: this.getLocation(this.scanner.tokenStart, this.scanner.tokenEnd),
-	            name: this.consume(IDENT$a)
+	            "name": this.consume(IDENT$a)
 	        };
 	    },
 	    generate: function(node) {
@@ -24569,9 +24569,9 @@
 
 	// <hash-token>
 	var IdSelector = {
-	    name: 'IdSelector',
+	    "name": 'IdSelector',
 	    structure: {
-	        name: String
+	        "name": String
 	    },
 	    parse: function() {
 	        var start = this.scanner.tokenStart;
@@ -24582,7 +24582,7 @@
 	        return {
 	            type: 'IdSelector',
 	            loc: this.getLocation(start, this.scanner.tokenStart),
-	            name: this.scanner.substrToCursor(start + 1)
+	            "name": this.scanner.substrToCursor(start + 1)
 	        };
 	    },
 	    generate: function(node) {
@@ -24602,9 +24602,9 @@
 	var DELIM$3 = TYPE$h.Delim;
 
 	var MediaFeature = {
-	    name: 'MediaFeature',
+	    "name": 'MediaFeature',
 	    structure: {
-	        name: String,
+	        "name": String,
 	        value: ['Identifier', 'Number', 'Dimension', 'Ratio', null]
 	    },
 	    parse: function() {
@@ -24653,7 +24653,7 @@
 	        return {
 	            type: 'MediaFeature',
 	            loc: this.getLocation(start, this.scanner.tokenStart),
-	            name: name,
+	            "name": name,
 	            value: value
 	        };
 	    },
@@ -24676,7 +24676,7 @@
 	var LEFTPARENTHESIS$4 = TYPE$g.LeftParenthesis;
 
 	var MediaQuery = {
-	    name: 'MediaQuery',
+	    "name": 'MediaQuery',
 	    structure: {
 	        children: [[
 	            'Identifier',
@@ -24740,7 +24740,7 @@
 	var COMMA$3 = tokenizer$3.TYPE.Comma;
 
 	var MediaQueryList = {
-	    name: 'MediaQueryList',
+	    "name": 'MediaQueryList',
 	    structure: {
 	        children: [[
 	            'MediaQuery'
@@ -24775,7 +24775,7 @@
 	};
 
 	var Nth = {
-	    name: 'Nth',
+	    "name": 'Nth',
 	    structure: {
 	        nth: ['AnPlusB', 'Identifier'],
 	        selector: ['SelectorList', null]
@@ -24829,7 +24829,7 @@
 	var NUMBER$4 = tokenizer$3.TYPE.Number;
 
 	var _Number = {
-	    name: 'Number',
+	    "name": 'Number',
 	    structure: {
 	        value: String
 	    },
@@ -24847,7 +24847,7 @@
 
 	// '/' | '*' | ',' | ':' | '+' | '-'
 	var Operator = {
-	    name: 'Operator',
+	    "name": 'Operator',
 	    structure: {
 	        value: String
 	    },
@@ -24873,7 +24873,7 @@
 	var RIGHTPARENTHESIS$3 = TYPE$f.RightParenthesis;
 
 	var Parentheses = {
-	    name: 'Parentheses',
+	    "name": 'Parentheses',
 	    structure: {
 	        children: [[]]
 	    },
@@ -24908,7 +24908,7 @@
 	var PERCENTAGE$2 = TYPE$e.Percentage;
 
 	var Percentage = {
-	    name: 'Percentage',
+	    "name": 'Percentage',
 	    structure: {
 	        value: String
 	    },
@@ -24939,9 +24939,9 @@
 
 	// : [ <ident> | <function-token> <any-value>? ) ]
 	var PseudoClassSelector = {
-	    name: 'PseudoClassSelector',
+	    "name": 'PseudoClassSelector',
 	    structure: {
-	        name: String,
+	        "name": String,
 	        children: [['Raw'], null]
 	    },
 	    parse: function() {
@@ -24975,7 +24975,7 @@
 	        return {
 	            type: 'PseudoClassSelector',
 	            loc: this.getLocation(start, this.scanner.tokenStart),
-	            name: name,
+	            "name": name,
 	            children: children
 	        };
 	    },
@@ -25001,9 +25001,9 @@
 
 	// :: [ <ident> | <function-token> <any-value>? ) ]
 	var PseudoElementSelector = {
-	    name: 'PseudoElementSelector',
+	    "name": 'PseudoElementSelector',
 	    structure: {
-	        name: String,
+	        "name": String,
 	        children: [['Raw'], null]
 	    },
 	    parse: function() {
@@ -25038,7 +25038,7 @@
 	        return {
 	            type: 'PseudoElementSelector',
 	            loc: this.getLocation(start, this.scanner.tokenStart),
-	            name: name,
+	            "name": name,
 	            children: children
 	        };
 	    },
@@ -25090,7 +25090,7 @@
 
 	// <positive-integer> S* '/' S* <positive-integer>
 	var Ratio = {
-	    name: 'Ratio',
+	    "name": 'Ratio',
 	    structure: {
 	        left: String,
 	        right: String
@@ -25144,7 +25144,7 @@
 	}
 
 	var Rule = {
-	    name: 'Rule',
+	    "name": 'Rule',
 	    structure: {
 	        prelude: ['SelectorList', 'Raw'],
 	        block: ['Block']
@@ -25178,7 +25178,7 @@
 	};
 
 	var Selector = {
-	    name: 'Selector',
+	    "name": 'Selector',
 	    structure: {
 	        children: [[
 	            'TypeSelector',
@@ -25215,7 +25215,7 @@
 	var COMMA$2 = TYPE$9.Comma;
 
 	var SelectorList = {
-	    name: 'SelectorList',
+	    "name": 'SelectorList',
 	    structure: {
 	        children: [[
 	            'Selector',
@@ -25253,7 +25253,7 @@
 	var STRING$2 = tokenizer$3.TYPE.String;
 
 	var _String = {
-	    name: 'String',
+	    "name": 'String',
 	    structure: {
 	        value: String
 	    },
@@ -25283,7 +25283,7 @@
 	}
 
 	var StyleSheet = {
-	    name: 'StyleSheet',
+	    "name": 'StyleSheet',
 	    structure: {
 	        children: [[
 	            'Comment',
@@ -25374,9 +25374,9 @@
 	// |ident
 	// |*
 	var TypeSelector = {
-	    name: 'TypeSelector',
+	    "name": 'TypeSelector',
 	    structure: {
-	        name: String
+	        "name": String
 	    },
 	    parse: function() {
 	        var start = this.scanner.tokenStart;
@@ -25396,7 +25396,7 @@
 	        return {
 	            type: 'TypeSelector',
 	            loc: this.getLocation(start, this.scanner.tokenStart),
-	            name: this.scanner.substrToCursor(start)
+	            "name": this.scanner.substrToCursor(start)
 	        };
 	    },
 	    generate: function(node) {
@@ -25547,7 +25547,7 @@
 	}
 
 	var UnicodeRange = {
-	    name: 'UnicodeRange',
+	    "name": 'UnicodeRange',
 	    structure: {
 	        value: String
 	    },
@@ -25587,7 +25587,7 @@
 
 	// <url-token> | <function-token> <string> )
 	var Url = {
-	    name: 'Url',
+	    "name": 'Url',
 	    structure: {
 	        value: ['String', 'Raw']
 	    },
@@ -25648,7 +25648,7 @@
 	};
 
 	var Value = {
-	    name: 'Value',
+	    "name": 'Value',
 	    structure: {
 	        children: [[]]
 	    },
@@ -25675,7 +25675,7 @@
 	});
 
 	var WhiteSpace = {
-	    name: 'WhiteSpace',
+	    "name": 'WhiteSpace',
 	    structure: {
 	        value: String
 	    },
@@ -26289,8 +26289,8 @@
 		type: "version",
 		registry: true,
 		raw: "css-tree@1.1.3",
-		name: "css-tree",
-		escapedName: "css-tree",
+		"name": "css-tree",
+		escapedname: "css-tree",
 		rawSpec: "1.1.3",
 		saveSpec: null,
 		fetchSpec: "1.1.3"
@@ -26302,7 +26302,7 @@
 	var _spec = "1.1.3";
 	var _where = "/home/gitlab-runner/builds/BQJy2NwB/0/pagedjs/pagedjs";
 	var author = {
-		name: "Roman Dvornov",
+		"name": "Roman Dvornov",
 		email: "rdvornov@gmail.com",
 		url: "https://github.com/lahmatiy"
 	};
@@ -26395,7 +26395,7 @@
 		keywords: keywords,
 		license: license,
 		main: main,
-		name: name,
+		"name": name,
 		repository: repository,
 		scripts: scripts,
 		unpkg: unpkg,
@@ -26619,7 +26619,7 @@
 					}));
 					children.prepend(children.createItem({
 						type: "IdSelector",
-						name: id,
+						"name": id,
 						loc: null,
 						children: null
 					}));
@@ -26640,7 +26640,7 @@
 								let name = value.name;
 								let selector = csstree.generate(node.prelude);
 								namedPageSelectors[name] = {
-									name: name,
+									"name": name,
 									selector: selector
 								};
 
@@ -26670,7 +26670,7 @@
 							let name = idNode.name;
 							idNode.flags = null;
 							idNode.matcher = "=";
-							idNode.name = {type: "Identifier", loc: null, name: "data-id"};
+							idNode.name = {type: "Identifier", loc: null, "name": "data-id"};
 							idNode.type = "AttributeSelector";
 							idNode.value = {type: "String", loc: null, value: `"${name}"`};
 						}
@@ -27787,7 +27787,7 @@
 		pageModel(selector) {
 			return {
 				selector: selector,
-				name: undefined,
+				"name": undefined,
 				psuedo: undefined,
 				nth: undefined,
 				marginalia: {},
@@ -28690,22 +28690,22 @@
 
 				displaySelectors.insertData({
 					type: "Combinator",
-					name: ">"
+					"name": ">"
 				});
 
 				displaySelectors.insertData({
 					type: "ClassSelector",
-					name: "pagedjs_margin-content"
+					"name": "pagedjs_margin-content"
 				});
 
 				displaySelectors.insertData({
 					type: "Combinator",
-					name: ">"
+					"name": ">"
 				});
 
 				displaySelectors.insertData({
 					type: "TypeSelector",
-					name: "*"
+					"name": "*"
 				});
 
 				if (displayNone) {
@@ -28722,17 +28722,17 @@
 
 				contentSelectors.insertData({
 					type: "Combinator",
-					name: ">"
+					"name": ">"
 				});
 
 				contentSelectors.insertData({
 					type: "ClassSelector",
-					name: "pagedjs_margin-content"
+					"name": "pagedjs_margin-content"
 				});
 
 				contentSelectors.insertData({
 					type: "PseudoElementSelector",
-					name: "after",
+					"name": "after",
 					children: null
 				});
 
@@ -28746,7 +28746,7 @@
 			let selectors = new csstree.List();
 			selectors.insertData({
 				type: "PseudoClassSelector",
-				name: "root",
+				"name": "root",
 				children: null
 			});
 
@@ -28870,12 +28870,12 @@
 
 				selectors.insertData({
 					type: "Combinator",
-					name: " "
+					"name": " "
 				});
 
 				selectors.insertData({
 					type: "ClassSelector",
-					name: "pagedjs_" + note + "_content"
+					"name": "pagedjs_" + note + "_content"
 				});
 
 				let notesRule = this.createRule(selectors, notes[note]);
@@ -29005,7 +29005,7 @@
 
 				dimensions.appendData({
 					type: "Function",
-					name: "calc",
+					"name": "calc",
 					children: widthCalculations
 				});
 
@@ -29016,14 +29016,14 @@
 
 				dimensions.appendData({
 					type: "Function",
-					name: "calc",
+					"name": "calc",
 					children: heightCalculations
 				});
 
 			} else if (format) {
 				dimensions.appendData({
 					type: "Identifier",
-					name: format
+					"name": format
 				});
 
 				if (orientation) {
@@ -29034,7 +29034,7 @@
 
 					dimensions.appendData({
 						type: "Identifier",
-						name: orientation
+						"name": orientation
 					});
 				}
 			} else {
@@ -29111,7 +29111,7 @@
 			let rule = ast.children.createItem({
 				type: "Atrule",
 				prelude: null,
-				name: "page",
+				"name": "page",
 				block: {
 					type: "Block",
 					loc: null,
@@ -29225,7 +29225,7 @@
 
 				dimensionsLeft.appendData({
 					type: "Function",
-					name: "calc",
+					"name": "calc",
 					children: widthCalculationsLeft
 				});
 
@@ -29236,7 +29236,7 @@
 
 				dimensionsLeft.appendData({
 					type: "Function",
-					name: "calc",
+					"name": "calc",
 					children: heightCalculationsLeft
 				});
 
@@ -29253,7 +29253,7 @@
 				let ruleLeft = ast.children.createItem({
 					type: "Atrule",
 					prelude: null,
-					name: "page :left",
+					"name": "page :left",
 					block: {
 						type: "Block",
 						loc: null,
@@ -29369,7 +29369,7 @@
 
 				dimensionsRight.appendData({
 					type: "Function",
-					name: "calc",
+					"name": "calc",
 					children: widthCalculationsRight
 				});
 
@@ -29380,7 +29380,7 @@
 
 				dimensionsRight.appendData({
 					type: "Function",
-					name: "calc",
+					"name": "calc",
 					children: heightCalculationsRight
 				});
 
@@ -29397,7 +29397,7 @@
 				let ruleRight = ast.children.createItem({
 					type: "Atrule",
 					prelude: null,
-					name: "page :right",
+					"name": "page :right",
 					block: {
 						type: "Block",
 						loc: null,
@@ -29752,19 +29752,19 @@
 
 			selectors.insertData({
 				type: "ClassSelector",
-				name: "pagedjs_page"
+				"name": "pagedjs_page"
 			});
 
 			// Named page
 			if (page.name) {
 				selectors.insertData({
 					type: "ClassSelector",
-					name: "pagedjs_named_page"
+					"name": "pagedjs_named_page"
 				});
 
 				selectors.insertData({
 					type: "ClassSelector",
-					name: "pagedjs_" + page.name + "_page"
+					"name": "pagedjs_" + page.name + "_page"
 				});
 			}
 
@@ -29772,14 +29772,14 @@
 			if (page.psuedo && !(page.name && page.psuedo === "first")) {
 				selectors.insertData({
 					type: "ClassSelector",
-					name: "pagedjs_" + page.psuedo + "_page"
+					"name": "pagedjs_" + page.psuedo + "_page"
 				});
 			}
 
 			if (page.name && page.psuedo === "first") {
 				selectors.insertData({
 					type: "ClassSelector",
-					name: "pagedjs_" + page.name + "_" + page.psuedo + "_page"
+					"name": "pagedjs_" + page.name + "_" + page.psuedo + "_page"
 				});
 			}
 
@@ -29792,7 +29792,7 @@
 
 				selectors.insertData({
 					type: "PseudoClassSelector",
-					name: "nth-of-type",
+					"name": "nth-of-type",
 					children: nthlist
 				});
 			}
@@ -29805,12 +29805,12 @@
 
 			selectors.insertData({
 				type: "Combinator",
-				name: " "
+				"name": " "
 			});
 
 			selectors.insertData({
 				type: "ClassSelector",
-				name: "pagedjs_margin-" + margin
+				"name": "pagedjs_margin-" + margin
 			});
 
 			return selectors;
@@ -29822,7 +29822,7 @@
 			children.insertData({
 				type: "Identifier",
 				loc: null,
-				name: value
+				"name": value
 			});
 
 			return {
@@ -29882,7 +29882,7 @@
 			children.insertData({
 				type: "Function",
 				loc: null,
-				name: "calc",
+				"name": "calc",
 				children: calculations
 			});
 
@@ -29979,7 +29979,7 @@
 					property: property,
 					value: value,
 					selector: selector,
-					name: name
+					"name": name
 				};
 
 				selector.split(",").forEach((s) => {
@@ -30145,12 +30145,12 @@
 
 							rule.children.prependData({
 								type: "Combinator",
-								name: " "
+								"name": " "
 							});
 		
 							rule.children.prependData({
 								type: "ClassSelector",
-								name: "pagedjs_page"
+								"name": "pagedjs_page"
 							});
 						});	
 					}
@@ -30291,7 +30291,7 @@
 			}
 
 			this.counters[name] = {
-				name: name,
+				"name": name,
 				increments: {},
 				resets: {}
 			};
@@ -30562,7 +30562,7 @@
 
 			list.insertData({
 				type: "Identifier",
-				name: "footnote-marker"
+				"name": "footnote-marker"
 			});
 
 			list.insertData({
@@ -30722,7 +30722,7 @@
 
 			this.styleSheet = polisher.styleSheet;
 			this.pageCounter = {
-				name: "page",
+				"name": "page",
 				increments: {},
 				resets: {}
 			};
@@ -30950,9 +30950,9 @@
 				// Add our data call
 				newPrelude.appendData({
 					type: "AttributeSelector",
-					name: {
+					"name": {
 						type: "Identifier",
-						name: "data-footnote-marker",
+						"name": "data-footnote-marker",
 					},
 					flags: null,
 					loc: null,
@@ -30963,7 +30963,7 @@
 				// Add new pseudo element
 				newPrelude.appendData({
 					type: "PseudoElementSelector",
-					name: "marker",
+					"name": "marker",
 					loc: null,
 					children: null
 				});
@@ -30987,9 +30987,9 @@
 				// Add our data call
 				newPrelude.appendData({
 					type: "AttributeSelector",
-					name: {
+					"name": {
 						type: "Identifier",
-						name: "data-footnote-call",
+						"name": "data-footnote-call",
 					},
 					flags: null,
 					loc: null,
@@ -31000,7 +31000,7 @@
 				// Add new pseudo element
 				newPrelude.appendData({
 					type: "PseudoElementSelector",
-					name: "after",
+					"name": "after",
 					loc: null,
 					children: null
 				});
@@ -31743,7 +31743,7 @@
 						funcNode.children.createItem({
 							type: "Identifier",
 							loc: null,
-							name: "--pagedjs-string-" + this.type + "-" + identifier
+							"name": "--pagedjs-string-" + this.type + "-" + identifier
 						})
 					);
 				}else {
@@ -31751,7 +31751,7 @@
 						funcNode.children.createItem({
 							type: "Identifier",
 							loc: null,
-							name: "--pagedjs-string-first-" + identifier
+							"name": "--pagedjs-string-first-" + identifier
 						})
 					);
 				}
@@ -31915,7 +31915,7 @@
 				funcNode.children.appendData({
 					type: "Identifier",
 					loc: 0,
-					name: variable
+					"name": variable
 				});
 
 				if (styleIdentifier) {
@@ -32045,7 +32045,7 @@
 				funcNode.children.appendData({
 					type: "Identifier",
 					loc: 0,
-					name: variable
+					"name": variable
 				});
 			}
 		}

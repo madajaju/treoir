@@ -27,7 +27,7 @@ export function fetchEvents() {
         let currentEvent = event;
         while (currentEvent) {
             if (eventMap.hasOwnProperty(currentEvent)) {
-                eventMap[currentEvent](data);
+                eventMap[currentEvent]({event: event, data:data});
             }
 
             // Move up the hierarchy to check for more general events
@@ -45,4 +45,11 @@ export function fetchEvents() {
         ]);
     });
     return eventNodes;
+}
+export function emitEvent(eventName, data) {
+    if (socket) {
+        socket.emit(eventName, data);
+    } else {
+        console.log("Emit: ", eventName, data);
+    }
 }

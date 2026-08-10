@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'show',
+    friendlyname: 'show',
     description: 'Description of the method',
     static: true, // True is for Class methods. False is for object based.
     inputs: {
@@ -22,16 +22,5 @@ module.exports = {
             }
         }
         return retval;
-        /*
-        let gearStr =  fs.readFileSync('./gear.json', 'utf-8');
-        try {
-            let gear = JSON.parse(gearStr);
-            return gear;
-        }
-        catch(e) {
-            console.error("Gear.json parse error!", e);
-        }
-
-         */
     }
 };

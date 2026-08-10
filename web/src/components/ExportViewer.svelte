@@ -16,7 +16,7 @@
 
 
     let author = {
-        name: "Dr. Darren Pulsipher",
+        "name": "Dr. Darren Pulsipher",
         title: "Chief Solution Architect of Public Sector"
     };
     async function printToPDF() {
@@ -86,19 +86,38 @@
 
 <Menu {menuItems} />
 
-{#if state === 'Editing'}
-    <MDEditor bind:md={$exportText}
-              on:update={handleUpdate}
-              closeEditor={closeEditor}
-              saveDoc={saveDoc}
-    />
-{:else}
-    <div class="markdown-viewer">
-        {@html renderedHTML}
-    </div>
-{/if}
+<div class="markdown-wrapper">
+    {#if state === 'Editing'}
+        <MDEditor bind:md={$exportText}
+                  on:update={handleUpdate}
+                  closeEditor={closeEditor}
+                  saveDoc={saveDoc}
+        />
+    {:else}
+        <div class="markdown-viewer">
+            {@html renderedHTML}
+        </div>
+    {/if}
+</div>
 
 <style>
+    :global(.markdown-wrapper) {
+        /* take remaining space in its parent */
+        flex: 1 1 auto;
+        min-height: 0;           /* IMPORTANT: allows child to shrink & scroll */
+        height: 95%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    :global(.markdown-viewer) {
+  flex: 1 1 auto;    /* grow/shrink to fill wrapper */
+  min-height: 0;     /* VERY important to allow scrolling */
+  overflow-y: auto;  /* vertical scrollbar */
+  overflow-x: hidden;
+  padding: 1rem;
+  box-sizing: border-box;
+}
     /* General styling for Markdown */
 
     .menu-bar {
@@ -118,13 +137,6 @@
     .menu-button:hover {
         background: #e8e8e8;
     }
-    .markdown-viewer {
-        font-family: Georgia, sans-serif;
-        line-height: 1.6;
-        margin: 1em; /* General margin */
-        max-width: 800px; /* Limit width for readability */
-    }
-
     /* General font family for headings */
     :global(.markdown-viewer h1, h2, h3, h4, h5, h6) {
         font-family: 'Georgia', 'Times New Roman', serif;

@@ -1,5 +1,5 @@
 module.exports = {
-    friendlyName: 'fail',
+    friendlyname: 'fail',
     description: 'Transition the task to Failed from any valid state.',
     static: false, // This is an object-based method
     inputs: {},

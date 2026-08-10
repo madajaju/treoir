@@ -1,5 +1,5 @@
 module.exports = {
-    friendlyName: 'initialize',
+    friendlyname: 'initialize',
     description: 'Transition the task from Init to Ready.',
     static: false, // This is an object-based method
     inputs: {},

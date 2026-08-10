@@ -1,0 +1,15 @@
+@startuml
+left to right direction
+
+rectangle Domain
+rectangle Layer
+rectangle SubLayer
+rectangle Component
+
+Domain --> Layer : Contains
+Layer --> SubLayer : Contains
+SubLayer -> SubLayer : Contains
+SubLayer -> Component : Contains
+Layer --> Component : Contains
+
+@enduml

@@ -68,7 +68,7 @@ export function view3D(element) {
 
     let node = {
         id: element.shortname,
-        name: element.name.replace(/\s/g, '\n'),
+        "name": element.name.replace(/\s/g, '\n'),
         view: create3D,
         fx: 0,
         fy: 0,
@@ -81,7 +81,7 @@ export function view3D(element) {
         let scenario = element.scenarios[j];
         let node = {
             id: scenario.uid,
-            name: scenario.name.replace(/\s/g, '\n'),
+            "name": scenario.name.replace(/\s/g, '\n'),
         };
         data.nodes[node.id] = node;
         i++;
@@ -91,7 +91,7 @@ export function view3D(element) {
         let uc = element.usecases[j];
         let node = {
             id: j,
-            name: uc.name.replace(/\s/g, '\n'),
+            "name": uc.name.replace(/\s/g, '\n'),
             view: UseCase.get3DObject
         }
         data.nodes[j] = node;
@@ -109,7 +109,7 @@ export function view3D(element) {
         let wf = element.workflows[j];
         let node = {
             id: j,
-            name: wf.name.replace(/\s/g, '\n'),
+            "name": wf.name.replace(/\s/g, '\n'),
         }
         data.nodes[j] = node;
         i++;

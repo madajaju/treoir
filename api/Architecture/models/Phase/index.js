@@ -1,10 +1,10 @@
 
 class Phase {
     static definition = {
-        name: 'Phase',
+        "name": 'Phase',
         description: 'This is the phase of the customers current systems in the organization.',
         attributes: {
-            name: {
+            "name": {
                 type: 'string',
                 description: 'Name of the phase, there should be current and future phases',
             },

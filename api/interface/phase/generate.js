@@ -2,7 +2,7 @@ const fs = require('fs');
 const AIHelper = require('ailtire/src/Server/AIHelper.js');
 
 module.exports = {
-    friendlyName: 'generate',
+    friendlyname: 'generate',
     description: 'Ask AI to Generate documentation for the phase from the user prompt.',
     static: true, // True is for Class methods. False is for object based.
     inputs: {

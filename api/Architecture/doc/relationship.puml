@@ -1,0 +1,17 @@
+@startuml
+hide circle
+hide empty member
+
+abstract class Relationship {
+    +description: string
+}
+
+Contains =up=|> Relationship
+DepnedsOn =up=|> Relationship
+Enables =up=|> Relationship
+Realizes =up=|> Relationship
+CompliesWith =up=|> Relationship
+FlowsTo =up=|> Relationship
+Influences =up=|> Relationship
+
+@enduml

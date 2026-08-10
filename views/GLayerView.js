@@ -172,7 +172,7 @@ export default class GLayerView {
             let layer = objects[lname];
             data.nodes[lname] = {
                 id: lname,
-                name: lname,
+                "name": lname,
                 description: layer.description,
                 color: layer.color,
                 opacity: 0.5,
@@ -351,7 +351,7 @@ function _getLayerObjects(layer, data, config) {
         }
         data.nodes[lid] = {
             id: lid,
-            name: lname,
+            "name": lname,
             description: sublayer.description,
             color: sublayer.color || config.color,
             opacity: config.opacity,

@@ -2,7 +2,7 @@ const fs = require('fs');
 const Layer = require("./index");
 
 module.exports = {
-    friendlyName: 'convertDJSON',
+    friendlyname: 'convertDJSON',
     description: 'Convert the layer to Descriptive JSON',
     static: false, // True is for Class methods. False is for object based.
     inputs: {
@@ -25,6 +25,21 @@ module.exports = {
             retval[aname] = attr;
         }
         retval._type = "Layer";
+        retval.stakeholders = [];
+        for(let i in obj.stakeholders) {
+            retval.stakeholders.push(obj.stakeholders[i].name);
+        }
+        retval.relationships = [];
+        for(let i in obj.relationships) {
+            if(obj.relationships[i].to) {
+                retval.relationships.push({
+                    "name": obj.relationships[i].name,
+                    description: obj.relationships[i].description,
+                    from: obj.id,
+                    to: obj.relationships[i].to.id
+                });
+            }
+        }
         let currentDepth = 1;
         if(currentDepth < depth) {
             retval = _processSubLayers(currentDepth+1,depth, retval, obj);
@@ -46,6 +61,22 @@ function _processSubLayers(currentDepth, targetDepth, retval, layer) {
         for (let aname in subLayer._attributes) {
             tempLayer[aname] = subLayer._attributes[aname];
         }
+        tempLayer.stakeholders = [];
+        for(let i in subLayer.stakeholders) {
+            tempLayer.stakeholders.push(subLayer.stakeholders[i].name);
+        }
+        tempLayer.relationships = [];
+        for(let i in subLayer.relationships) {
+            if(subLayer.relationships[i].to) {
+                tempLayer.relationships.push({
+                    "name": subLayer.relationships[i].name,
+                    description: subLayer.relationships[i].description,
+                    from: subLayer.id,
+                    to: subLayer.relationships[i].to.id
+                });
+            }
+        }
+
         retval.layers[tempLayer.name] = tempLayer;
         retval.layers[tempLayer.name]._type = 'Layer';
         if(subLayer.layers) {

@@ -1,7 +1,5 @@
-const fs = require('fs');
-
 module.exports = {
-    friendlyName: 'fromJSON',
+    friendlyname: 'fromJSON',
     description: 'Convert Layer file to Objects',
     static: true, // True is for Class methods. False is for object based.
     inputs: {
@@ -17,6 +15,7 @@ module.exports = {
     },
 
     fn: function (obj, inputs, env) {
+        let layerObjects = [];
         let layers = inputs.layers;
         for(let lname in layers) {
             let layer = layers[lname];
@@ -26,17 +25,34 @@ module.exports = {
             }
             layerObj.name = layer.name || lname;
             layerObj.description = layer.description;
+            layerObj.purpose = layer.purpose || 'TBD';
             layerObj.color = layer.color;
             layerObj.orientation = layer.orientation;
             layerObj.position = layer.position;
+
+
             layerObj.save();
+            if(layer.stakeholders) {
+                layerObj._stakeholders = layer.stakeholders;
+            }
+            for(let i in layer.relationships) {
+                let rel = layer.relationships[i];
+                let relObj = new LayerRelationship( {
+                    "name": rel.name,
+                    description: rel.description,
+                    from: layerObj,
+                });
+                relObj._to = rel.to;
+                layerObj.addToRelationships(relObj);
+            }
             for(let ename in layer.assets) {
                 let asset = Asset.fromJSON({asset: layer.assets[ename], owner: layerObj});
                 layerObj.addToAssets(asset);
             }
             _processSubLayers(layerObj, layer);
+            layerObjects.push(layerObj);
         }
-        return;
+        return layerObjects;
     }
 };
 
@@ -50,19 +66,54 @@ function _processSubLayers(layerObj, layer) {
         }
         subLayerObj.name = subLayer.name || lname;
         subLayerObj.description = subLayer.description;
+        subLayerObj.purpose = subLayer.purpose;
         subLayerObj.color = subLayer.color || _lightenColor(layerObj.color, 20); // Inherit from parent.
         subLayerObj.orientation = subLayer.orientation || layerObj.orientation; // Inherit from parent.
         subLayerObj.position = subLayer.position;
         subLayerObj.save();
+        if(subLayer.stakeholders) {
+            subLayerObj._stakeholders = subLayer.stakeholders;
+        }
+        for(let i in subLayer.relationships) {
+            let rel = subLayer.relationships[i];
+            let relObj = new LayerRelationship( {
+                "name": rel.name,
+                description: rel.description,
+                from: subLayerObj,
+            });
+            relObj._to = rel.to;
+            subLayerObj.addToRelationships(relObj);
+        }
+        for(let ename in subLayer.assets) {
+            let asset = Asset.fromJSON({asset: subLayer.assets[ename], owner: subLayerObj});
+            subLayerObj.addToAssets(asset);
+        }
         layerObj.addToLayers(subLayerObj);
         layerObj.save();
         if(subLayer.layers) {
             _processSubLayers(subLayerObj, subLayer);
         }
     }
+    _fixPositions(layerObj);
     return layerObj;
 }
 
+function _fixPositions(layer) {
+    let total = layer.layers.length;
+    let cols = 2;
+    let rows = Math.round(total / 2);
+    let count = 1;
+    for(let i in layer.layers) {
+        let sublayer = layer.layers[i];
+        let row = Math.floor(count / cols) + 1;
+        let col = (count % cols) + 1;
+        if(!sublayer.position || !sublayer.position.hasOwnProperty('row')) {
+            sublayer.position = { row: row, col: col };
+        }
+        count++;
+    }
+    return;
+}
 function _lightenColor(hex, percent) {
     // Convert hex color to RGB
     const r = parseInt(hex.slice(1, 3), 16);

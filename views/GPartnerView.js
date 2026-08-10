@@ -23,13 +23,13 @@ export default class GPartnerView {
                 let element = partner.elements[ename];
                 eRecords.push({
                     recid: i++,
-                    name: element.name,
+                    "name": element.name,
                     description: element.description,
                 })
             }
             records.push({
                 recid: recid,
-                name: partner.name,
+                "name": partner.name,
                 description: partner.description,
                 w2ui: {
                     children: eRecords
@@ -40,7 +40,7 @@ export default class GPartnerView {
             w2ui['partnerList'].destroy();
         }
         $().w2grid({
-            name: 'partnerList',
+            "name": 'partnerList',
             columns: [
                 { field: 'name', text: 'Name', size: '30%', sortable: true },
                 { field: 'description', text: 'Description', size: '70%' }
@@ -85,7 +85,7 @@ export default class GPartnerView {
             let partner = objects[pname];
             data.nodes[pname] = {
                 id: pname,
-                name: pname,
+                "name": pname,
                 description: partner.description,
                 color: partner.color || '#888888',
                 opacity: 0.3,
@@ -104,7 +104,7 @@ export default class GPartnerView {
                 let eid = `${pname}-${ename}`;
                 data.nodes[eid] = {
                     id: eid,
-                    name: ename,
+                    "name": ename,
                     description: element.description,
                     color: element.color || partner.color,
                     opacity: 1,
@@ -121,7 +121,7 @@ export default class GPartnerView {
                     let peid = `${eid}-${i}`;
                     data.nodes[peid] = {
                         id: peid,
-                        name: ename,
+                        "name": ename,
                         description: element.description,
                         color: element.color || partner.color,
                         opacity: 1,

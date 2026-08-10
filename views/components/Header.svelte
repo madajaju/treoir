@@ -1,9 +1,9 @@
 <script>
     export let user = null; // Optional: User object to manage authentication-related views
     export let links = [
-        { name: "Home", path: "/" },
-        { name: "Profile", path: "/profile" },
-        { name: "Login", path: "/login" }
+        { "name": "Home", path: "/" },
+        { "name": "Profile", path: "/profile" },
+        { "name": "Login", path: "/login" }
     ];
 </script>
 

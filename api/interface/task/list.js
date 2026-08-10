@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'list',
+    friendlyname: 'list',
     description: 'List all of the tasks',
     static: true, // True is for Class methods. False is for object based.
     inputs: {

@@ -12,7 +12,7 @@ export const usecaseNodes = derived(usecases, ($usecases) => {
         idMap[uname] = {...usecase, id: uname, type: "UseCase", _view: UseCase, _children: []};
         if (usecase.package) {
             if (!idMap.hasOwnProperty(usecase.package)) {
-                idMap[usecase.package] = {id: usecase.package, name: usecase.package, type: "Package", _children: []};
+                idMap[usecase.package] = {id: usecase.package, "name": usecase.package, type: "Package", _children: []};
             }
             idMap[uname].parent = usecase.package;
             idMap[usecase.package]._children.push(idMap[uname]);

@@ -50,7 +50,7 @@
 
     // Handlers for adding or editing associated elements
     function handleAddElement() {
-        formElementProps = {data: {name: "", description: ""}};
+        formElementProps = {data: {"name": "", description: ""}};
         isEditingElement = false;
         isElementOpen = true;
     }
@@ -75,7 +75,7 @@
 
     // Handlers for adding or editing assets
     function handleAddAsset() {
-        formAssetProps = {data: {name: "", description: "", url: ""}};
+        formAssetProps = {data: {"name": "", description: "", url: ""}};
         isEditingAsset = false;
         isAssetOpen = true;
     }
@@ -241,7 +241,7 @@
         <form on:submit|preventDefault={handleSave}>
             <!-- Name -->
             <div class="form-row">
-                <label for="name">Name:</label>
+                <label for="name">"name":</label>
                 <input id="name" type="text" bind:value={name} placeholder="Enter partner name" required/>
             </div>
 

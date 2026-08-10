@@ -2,7 +2,7 @@ const fs = require('fs');
 const AIHelper = require('ailtire/src/Server/AIHelper.js');
 
 module.exports = {
-    friendlyName: 'askAndMap',
+    friendlyname: 'askAndMap',
     description: 'Ask AI to create new layers or augment the documentation and details to the GEAR Architecture.',
     static: true, // True is for Class methods. False is for object based.
     inputs: {
@@ -31,7 +31,7 @@ module.exports = {
             layer = Layer.find({id: partner});
         }
         if(!layer) {
-            layer = new Layer({id: layer, name: layer});
+            layer = new Layer({id: layer, "name": layer});
         }
         let systemPrompt = "You are a enterprise architect that is helping a partner map their current products and services to the GEAR Architecture. " +
             "The GEAR architecture is a " +

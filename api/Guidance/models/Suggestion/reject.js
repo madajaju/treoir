@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'reject',
+    friendlyname: 'reject',
     description: 'Accept the Suggestion for the context provided.',
     static: false, // True is for Class methods. False is for object based.
     inputs: {

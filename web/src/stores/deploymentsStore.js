@@ -8,10 +8,10 @@ export const environmentNodes = derived(environments, ($environments) => {
     
     for(let iname in $environments) {
         let env = $environments[iname];
-        idMap[iname] = {...env, id:iname, name:iname, type:"Environment", _children: [] };
+        idMap[iname] = {...env, id:iname, "name":iname, type:"Environment", _children: [] };
         for(let sname in env.stacks) {
             let stack = env.stacks[sname];
-            idMap[sname] = {...stack, id:sname, name:sname, type:"Stack"};
+            idMap[sname] = {...stack, id:sname, "name":sname, type:"Stack"};
             idMap[sname].parent = iname;
             idMap[iname]._children.push(idMap[sname]);
         }
@@ -42,45 +42,45 @@ export const physicalNodes = derived(physicals, ($physicals) => {
             let id = env.name + pname;
             let lid = env.name + "Locations";
             if(!idMap.hasOwnProperty(env.name + "Locations")) {
-                idMap[lid] = {id: lid, name: "Locations", type: "Location", _children: []};
+                idMap[lid] = {id: lid, "name": "Locations", type: "Location", _children: []};
                 idMap[lid].parent = env.name;
                 idMap[env.name]._children.push(idMap[lid]);
             }
             let location = env.physical.locations[pname];
-            idMap[id] = {...location, id: id, name: pname, type: "Location"};
+            idMap[id] = {...location, id: id, "name": pname, type: "Location"};
             idMap[id].parent = lid;
             idMap[lid]._children.push(idMap[id]);
         }
         for(let sname in env.physical?.compute) {
             let lid = env.name + "Compute";
             if(!idMap.hasOwnProperty(env.name + "Compute")) {
-                idMap[lid] = {id: lid, name: "Compute", type: "Compute", _children: []};
+                idMap[lid] = {id: lid, "name": "Compute", type: "Compute", _children: []};
                 idMap[lid].parent = env.name;
                 idMap[env.name]._children.push(idMap[lid]);
             }
-           idMap[sname] = {...env.physical.compute[sname], id: sname, name:sname, type: "Compute"};
+           idMap[sname] = {...env.physical.compute[sname], id: sname, "name":sname, type: "Compute"};
            idMap[sname].parent = lid;
            idMap[lid]._children.push(idMap[sname]);
         }
         for(let sname in env.physical?.storage) {
             let lid = env.name + "Storage";
             if(!idMap.hasOwnProperty(env.name + "Storage")) {
-                idMap[lid] = {id: lid, name: "Storage", type: "Storage", _children: []};
+                idMap[lid] = {id: lid, "name": "Storage", type: "Storage", _children: []};
                 idMap[lid].parent = env.name;
                 idMap[env.name]._children.push(idMap[lid]);
             }
-            idMap[sname] = {...env.physical.storage[sname], id: sname, name:sname, type: "Storage"};
+            idMap[sname] = {...env.physical.storage[sname], id: sname, "name":sname, type: "Storage"};
             idMap[sname].parent = lid;
             idMap[lid]._children.push(idMap[sname]);
         }
         for(let sname in env.physical?.network?.devices) {
             let lid = env.name + "Network";
             if(!idMap.hasOwnProperty(env.name + "Network")) {
-                idMap[lid] = {id: lid, name: "Network", type: "Network", _children: []};
+                idMap[lid] = {id: lid, "name": "Network", type: "Network", _children: []};
                 idMap[lid].parent = env.name;
                 idMap[env.name]._children.push(idMap[lid]);
             }
-            idMap[sname] = {...env.physical.network.devices[sname], id: sname, name:sname, type: "Network"};
+            idMap[sname] = {...env.physical.network.devices[sname], id: sname, "name":sname, type: "Network"};
             idMap[sname].parent = lid;
             idMap[lid]._children.push(idMap[sname]);
         }

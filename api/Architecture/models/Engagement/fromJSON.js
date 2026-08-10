@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'convert',
+    friendlyname: 'convert',
     description: 'Convert Engagement JSON String',
     static: true, // True is for Class methods. False is for object based.
     inputs: {
@@ -22,7 +22,7 @@ module.exports = {
         let engagement = inputs.engagement;
         let engagementObj = Engagement.find(engagement.name);
         if (!engagementObj) {
-            engagementObj = new Engagement({id: engagement.name, name: engagement.name});
+            engagementObj = new Engagement({id: engagement.name, "name": engagement.name});
         }
         engagementObj.name = engagement.name;
         engagementObj.description = engagement.description;

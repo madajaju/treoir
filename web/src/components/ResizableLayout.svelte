@@ -91,7 +91,7 @@
         {/if}
 
         <!-- CONTENT AREA -->
-        <main class="content-panel flex-grow overflow-auto bg-base-100 p-2">
+        <main class="content-panel flex-grow overflow-x-hidden overflow-y-hidden bg-base-100 p-2">
             {#if ContentPanel.component}
                 <svelte:component this={ContentPanel.component} {...ContentPanel.props} />
             {/if}
@@ -129,11 +129,27 @@
         background-color: var(--tw-bg-base-300);
     }
 
+    .main-layout-container {
+        display: flex;
+        flex-direction: row;     /* ensure L->R, never flips */
+        flex: 1 1 auto;
+        overflow: hidden;
+    }
+
     .left-panel,
     .right-panel {
         position: relative;
         background-color: var(--tw-bg-base-200);
         overflow: auto;
+        flex: 0 0 auto;          /* don't grow/shrink with content */
+    }
+
+    .content-panel {
+        flex: 1 1 auto;          /* only content grows/shrinks */
+        overflow-x: hidden;
+        overflow-y: hidden;
+        background-color: white;
+        padding: 0.5rem;         /* keep your p-2 equivalent here */
     }
 
     .divider-horizontal-bottom {

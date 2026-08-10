@@ -1,19 +1,25 @@
 
-class State {
+class TDocumentNode {
     static definition = {
-        name: 'State',
-        description: 'Description ' +
-            'long description',
+        "name": 'TDocumentNode',
+        description: 'This is the Node of a document and represents the chunking of a document to be used by an LLM',
         attributes: {
-            attr1: {
+            "name": {
                 type: 'string',
-                description: 'description' +
-                    ' long description'
-            }
+                description: 'Name of the document node'
+            },
+            metadata: {
+                type: 'json',
+                description: 'Metadata about the document node',
+            },
+            text: {
+                type: 'string',
+                description: 'Text of the document node',
+            },
         },
         associations: {
-            assoc1: {
-                type: 'ModelName',
+            owner: {
+                type: 'TDocument',
                 cardinality: 1,
                 composition: false,
                 owner: false,
@@ -25,15 +31,15 @@ class State {
                 description: "Initial State"
                 events: {
                     create: {
-                        StateName: { }
+                        Statename: { }
                     }
                 }
             },
-            StateName: {
+            Statename: {
                 description: "My Description of the state",
                 events: {
-                    eventName: {
-                        StateName: {
+                    eventname: {
+                        Statename: {
                             condition: function(obj) { ... },
                             action: function(obj) { ... },
                         }
@@ -50,5 +56,5 @@ class State {
     }
 }
 
-module.exports = State;
+module.exports = TDocumentNode;
 

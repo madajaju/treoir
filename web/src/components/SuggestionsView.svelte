@@ -26,9 +26,10 @@
             fetchCurrentPartner();
         }
     }
-    function handleSuggestion(data) {
+    function handleSuggestion(trigger) {
         // Step 1: Get the current value from the writable store
         let currentArray = [];
+        let data = trigger.data;
         suggestionList.subscribe(value => { currentArray = value; })();
 
         // Step 1b: Normalize the data.
@@ -100,8 +101,8 @@
             });
             suggestionList.set(myList);
         } catch (err) {
-            console.error("Error loading suggestions:", err);
-            error = err.message;
+            // console.error("Error loading suggestions:", err);
+            //error = err.message;
         }
     }
 
@@ -151,7 +152,7 @@
         );
     }
     async function refineSuggestion(button, id) {
-        setState(id, 'refined');
+        setState(id, 'refine');
         button.disabled = true;
         button.innerHTML = '_';
         try {
@@ -164,6 +165,7 @@
         } finally {
             button.disabled = false;
             button.innerHTML = '🔍';
+            setState(id, 'refined');
         }
     }
 
@@ -174,68 +176,26 @@
     }
 </script>
 
-<!-- HTML Structure -->
-<div class="suggestion-container">
-    {#if error}
-        <div class="error">{error}</div>
-    {/if}
-
-    <table class="suggestion-table">
-        <thead>
-        <tr>
-            <th class="update-column"></th>
-            <th class="layer-column">Layer</th>
-            <th class="suggestion-column">Suggestion</th>
-            <th class="description-column">Description</th>
-            <th class="actions-column">Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        {#each $suggestionList as suggestion}
-            <tr class="{suggestion.state}-state">
-                {#if suggestion.state === 'Selected'}
-                    <td title="Click to update Layer"
-                        on:click={() => handleUpdateLayer(suggestion)}
-                        class="layer-clickable"
-                    >➡️</td>
-                {:else}
-                    <td></td>
-                {/if}
-                <td title="{suggestion.layer}"
-                    on:click={() => handleLayerClick(suggestion, suggestion.layer)}
-                    class="layer-clickable"
-                >{suggestion.layer.split('-').slice(-1)}</td>
-                <td title="{suggestion.name}">{suggestion.name}</td>
-                <td title="{suggestion.description}">{suggestion.description}</td>
-                <td>
-                    {#if suggestion.state !== 'completed' && suggestion.state !== 'deleted' && suggestion.state !== 'Accepted' && suggestion.state !== 'Rejected'}
-                    <button on:click={() => markComplete(suggestion.id)} class="action-btn completed">✔</button>
-                    {/if}
-                    {#if suggestion.state !== 'completed' && suggestion.state !== 'deleted' && suggestion.state !== 'refined' && suggestion.state !== 'Accepted' && suggestion.state !== 'Rejected'}
-                    <button id="refine-{suggestion.id}"
-                            on:click={(event) => refineSuggestion(event.target, suggestion.id)}
-                            class="action-btn refine">🔍
-                    </button>
-
-                    {/if}
-                    {#if suggestion.state !== 'completed' && suggestion.state !== 'deleted' && suggestion.state !== 'Accepted' && suggestion.state !== 'Rejected'}
-                    <button on:click={(event) => deleteSuggestion(suggestion.id)} class="action-btn deleted">✖</button>
-                    {/if}
-                </td>
-            </tr>
-        {/each}
-        </tbody>
-    </table>
-</div>
-
 <style>
-    .suggestion-container {
-        padding: 8px;
-        font-family: Arial, sans-serif;
-        overflow-x: hidden; /* Prevent horizontal overflow */
-        max-width: 100%; /* Ensure the container stays within its parent size */
+
+    .table-container {
+        overflow-y: auto;         /* vertical scrollbar */
+        border: 1px solid #ccc;   /* optional */
+        overflow-x: hidden;       /* prevent horizontal scroll */
+    }
+    .table-container table {
+        width: 100vw;
+        border-collapse: collapse; /* optional but common */
+        table-layout: fixed;       /* optional: makes columns equal/controlled */
     }
 
+    /* Keep header visible while scrolling (optional but nice) */
+    .table-container thead th {
+        position: sticky;
+        top: 0;
+        background: white;        /* or your header bg */
+        z-index: 1;
+    }
     .error {
         color: red;
         margin-bottom: 1rem;
@@ -243,7 +203,7 @@
 
     /* Table styles */
     .suggestion-table {
-        width: 100%; /* Stretch the table to fit the container */
+        max-width: 100%;
         border-collapse: collapse; /* Remove gaps between cells */
         font-size: 0.8rem;
         table-layout: fixed; /* Ensure columns maintain fixed widths */
@@ -352,17 +312,82 @@
         background-color: lightblue;
     }
     .refined-state:hover {
-       background-color: darkblue;
+        background-color: darkblue;
     }
     .completed {
         color: green;
     }
 
-    .refine {
-        color: blue;
+    .refine-state {
+        background-color: blue;
+        color: white;
+        cursor: progress;
     }
 
     .deleted {
         color: red;
     }
 </style>
+<!-- HTML Structure -->
+<div id="suggestion-container" style="display: flex; flex-direction: column; height: 100%; border: 1px solid #ddd;">
+    {#if error}
+        <div class="error">{error}</div>
+    {/if}
+
+    <div class="table-container">
+    <table class="suggestion-table">
+        <thead>
+        <tr>
+            <th class="suggestion-column">Element Name</th>
+            <th class="layer-column">Layer</th>
+            <th class="description-column">Description</th>
+            <th class="actions-column">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {#each $suggestionList as suggestion}
+            <tr class="{suggestion.state}-state">
+                <td title="{suggestion.name}"
+                    on:click={() => handleLayerClick(suggestion, suggestion.layer)}
+                >
+                    {#if suggestion?._associations?.referring}
+                        <div>&nbsp;&nbsp;↳ {suggestion.name}</div>
+                    {:else}
+                        {suggestion.name}
+                    {/if}
+                </td>
+                <td title="{suggestion.layer}"
+                    on:click={() => handleLayerClick(suggestion, suggestion.layer)}
+                    class="layer-clickable"
+                >
+                    {#if suggestion.state === 'Selected'}
+                        <button title="Select Layer in diagram and click to update" style="cursor: pointer; color: blue;"
+                            on:click={() => handleUpdateLayer(suggestion)}
+                            class="layer-clickable"
+                        >➡️</button>
+                    {/if}
+                    {suggestion.layer.split('-').slice(-1)}</td>
+                <td title="{suggestion.description}"
+                    on:click={() => handleLayerClick(suggestion, suggestion.layer)}
+                >{suggestion.description}</td>
+                <td>
+                    {#if suggestion.state !== 'completed' && suggestion.state !== 'deleted' && suggestion.state !== 'Accepted' && suggestion.state !== 'Rejected'}
+                    <button on:click={() => markComplete(suggestion.id)} class="action-btn completed">✔</button>
+                    {/if}
+                    {#if suggestion.state !== 'completed' && suggestion.state !== 'deleted' && suggestion.state !== 'refined' && suggestion.state !== 'Accepted' && suggestion.state !== 'Rejected'}
+                    <button id="refine-{suggestion.id}"
+                            on:click={(event) => refineSuggestion(event.target, suggestion.id)}
+                            class="action-btn refine">🔍
+                    </button>
+
+                    {/if}
+                    {#if suggestion.state !== 'completed' && suggestion.state !== 'deleted' && suggestion.state !== 'Accepted' && suggestion.state !== 'Rejected'}
+                    <button on:click={(event) => deleteSuggestion(suggestion.id)} class="action-btn deleted">✖</button>
+                    {/if}
+                </td>
+            </tr>
+        {/each}
+        </tbody>
+    </table>
+   </div>
+</div>

@@ -17,6 +17,6 @@
 <div class="flex items-center justify-center h-full bg-gray-100 rounded">
     <ResizableLayout
             ContentPanel={{component:GenAIView, props: {}}}
-            RightPanel={{component:SuggestionsView, props: { width: 700}}}
+            RightPanel={{component:SuggestionsView, props: { }}}
     />
 </div>

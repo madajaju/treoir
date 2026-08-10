@@ -16,6 +16,8 @@
     import { exportState, exportText, exportItem } from "../../../../../web/src/stores/exportStore.js";
     import {watchEvents} from "../../../../../web/src/stores/eventsStore";
     import ExportViewer from "../../../../../web/src/components/ExportViewer.svelte";
+    import GenAIView from "../../../../../web/src/components/GenAIView.svelte";
+    import ArchCustTreeView from "../../../../../web/src/components/ArchCustTreeView.svelte";
 
     let showExporting = writable(false);
 
@@ -25,20 +27,20 @@
 
     function handleExportEvent(event) {
         if(event.status === 'svg') {
-            exportText.update(current => current + '\n' + event.text);
+            exportText.update(current => current + '\n' + event.data.text);
         } else if(event.status === 'complete') {
-            exportText.set(event.text);
+            exportText.set(event.data.text);
             exportState.set("complete");
         }
         else {
-            exportText.update(current => current + '\n' + event.text);
+            exportText.update(current => current + '\n' + event.data.text);
         }
     }
     async function saveFile(data, fileName = "customer.json") {
         try {
             // New file handle for creating/saving the file
             const options = {
-                suggestedName: fileName,
+                suggestedname: fileName,
                 types: [
                     {
                         description: 'JSON Files',
@@ -163,19 +165,22 @@
     function stopExport() {
 
     }
+    function buildAskURL() {
+       return `/api/customer/askAndMap?customer=${$currentCustomer.id}`;
+    }
 </script>
 
 {#if !$showExporting}
     <ResizableLayout
-            LeftPanel={{component: ArchitectureTreeView, props: {selectedNode}}}
+            LeftPanel={{component: ArchCustTreeView, props: {selectedNode, width: 300 }}}
             ContentPanel={{component:MainView, props: {menu} }}
-            RightPanel={{component:CustomerTreeView, props: {selectedCustomer}}}
+            RightPanel={{component:GenAIView, props: {width:300, askURL: buildAskURL}}}
     />
 {:else}
     <ResizableLayout
-            LeftPanel={{component: ArchitectureTreeView, props: {selectedNode}}}
+            LeftPanel={{component: ArchCustTreeView, props: {selectedNode, width: 300 }}}
             ContentPanel={{component:ExportViewer, props: {onClose: closeExportViewer, onAnalyze: analyzeExport, onStop: stopExport, onSave: updateExport} }}
-            RightPanel={{component:CustomerTreeView, props: {selectedCustomer}}}
+            RightPanel={{component:GenAIView, props: {width:300, askURL: buildAskURL}}}
     />
 {/if}
 
