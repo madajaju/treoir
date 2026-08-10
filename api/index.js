@@ -1,6 +1,6 @@
 
 module.exports = {
-    name: 'gear',
+    "name": 'gear',
     shortname: 'gear',
     description: 'Description needs to be written',
     color: 'lightgreen',

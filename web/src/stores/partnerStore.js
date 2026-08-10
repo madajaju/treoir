@@ -28,7 +28,7 @@ export const partnerNodes = derived(partners, ($partners) => {
         idMap[partner.name] = {
             ...partner,
             id: partner.name,
-            name: partner.name,
+            "name": partner.name,
             type: "Partner",
             _children: [],
             _view: Partner,
@@ -49,7 +49,7 @@ export const partnerNodes = derived(partners, ($partners) => {
         idMap[id] = {
             ...element,
             id,
-            name: element.name,
+            "name": element.name,
             type: "Element",
             _children: [],
             _view: Element,
@@ -70,7 +70,7 @@ export const partnerNodes = derived(partners, ($partners) => {
         idMap[id] = {
             id,
             type: "Layer",
-            name: layer,
+            "name": layer,
             _view: Layer,
         };
 
@@ -151,7 +151,7 @@ export const currentPartnerNodes = derived(currentPartner, ($currentPartner) => 
         idMap[partner.name] = {
             ...partner,
             id: partner.name,
-            name: partner.name,
+            "name": partner.name,
             type: "Partner",
             _children: [],
             _view: Partner,
@@ -172,7 +172,7 @@ export const currentPartnerNodes = derived(currentPartner, ($currentPartner) => 
         idMap[id] = {
             ...element,
             id,
-            name: element.name,
+            "name": element.name,
             type: "Element",
             _children: [],
             _view: Element,
@@ -193,7 +193,7 @@ export const currentPartnerNodes = derived(currentPartner, ($currentPartner) => 
         idMap[id] = {
             id,
             type: "Layer",
-            name: layer,
+            "name": layer,
             _view: Layer
         };
 
@@ -315,7 +315,7 @@ function create2DDefault(
         let root = {
             id: "GEAR",
             color: "#ffffff",
-            name: "GEAR",
+            "name": "GEAR",
             _children: nodes
         };
         if (node) {

@@ -1,9 +1,9 @@
 class WorkflowStage {
     static definition = {
-        name: 'WorkflowStage',
+        "name": 'WorkflowStage',
         description: 'A phase or milestone in the workflow process, grouping related tasks.',
         attributes: {
-            name: {
+            "name": {
                 type: 'string',
                 description: 'Name of the stage (e.g., Setup, Mapping, Validation).',
             },

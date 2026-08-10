@@ -2,7 +2,7 @@ const fs = require('fs');
 const AClass = require('ailtire/src/Server/AClass');
 
 module.exports = {
-    friendlyName: 'update',
+    friendlyname: 'update',
     description: 'Update the suggestion with the fields',
     static: true, // True is for Class methods. False is for object based.
     inputs: {
@@ -11,7 +11,7 @@ module.exports = {
             required: true,
             description: 'The id of the suggestion'
         },
-        name: {
+        "name": {
             type: 'string',
             required: false,
             description: 'The name of the suggestion'

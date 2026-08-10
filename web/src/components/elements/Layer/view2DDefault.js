@@ -302,7 +302,7 @@ export function create2DDefault(
         let root = {
             id: "GEAR",
             color: "#ffffff",
-            name: "GEAR",
+            "name": "GEAR",
             _children: nodes,
         };
         if (node) {

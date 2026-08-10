@@ -1,9 +1,9 @@
 module.exports = {
-    friendlyName: 'create',
+    friendlyname: 'create',
     description: 'Create a new customer',
     static: true, // True is for Class methods. False is for object based.
     inputs: {
-        name: {
+        "name": {
             description: 'File to import',
             type: 'file',
             required: true
@@ -25,7 +25,7 @@ module.exports = {
 
         let customer = Customer.find(name);
         if(!customer) {
-            customer = new Customer({id: name, name: name});
+            customer = new Customer({id: name, "name": name});
         }
         customer.description = description;
 

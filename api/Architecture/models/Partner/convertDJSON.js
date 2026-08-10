@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'convertDJSON',
+    friendlyname: 'convertDJSON',
     description: 'Convert the Partner to Descriptive JSON',
     static: false, // True is for Class methods. False is for object based.
     inputs: {

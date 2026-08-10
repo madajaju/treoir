@@ -103,7 +103,7 @@ export default class GSuggestionView {
         // Initialize the grid if it doesn't exist
         if (!w2ui.hasOwnProperty('suggestionList')) {
             $().w2grid({
-                name: 'suggestionList',
+                "name": 'suggestionList',
                 show: {
                     toolbar: true,
                     footer: true
@@ -183,7 +183,7 @@ export default class GSuggestionView {
         let sGrid = w2ui.suggestionList;
         let record = {
             recid: suggestion.id || suggestion._attributes.id,
-            name: suggestion._attributes.name,
+            "name": suggestion._attributes.name,
             description: suggestion._attributes.description,
             type: (suggestion.type || suggestion.definition.name).replace('Suggestion', ''),
             status: suggestion.state || suggestion._attributes.state,
@@ -210,7 +210,7 @@ export default class GSuggestionView {
                     let suggestion = results[name];
                     records.push({
                         recid: suggestion.id || suggestion._attributes?.id,
-                        name: suggestion.name,
+                        "name": suggestion.name,
                         description: suggestion.description,
                         type: suggestion.type.replace('Suggestion', ''),
                         layer: suggestion.layer,

@@ -1,10 +1,10 @@
 
 class Element {
     static definition = {
-        name: 'Element',
+        "name": 'Element',
         description: 'This represents a element in the architecture it could be software, service, process, device etc...',
         attributes: {
-            name: {
+            "name": {
                 type: 'string',
                 description: 'Name of the element'
             },

@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'create',
+    friendlyname: 'create',
     description: 'Create the TDocument into Memory',
     static: false,
     inputs: {

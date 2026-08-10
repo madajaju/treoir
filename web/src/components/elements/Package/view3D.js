@@ -68,7 +68,7 @@ export function view3D(element) {
 
     data.nodes[element.shortname] = {
         id: element.shortname,
-        name: element.name,
+        "name": element.name,
         description: element.description,
         fontSize: 30,
         fx: 0,
@@ -84,7 +84,7 @@ export function view3D(element) {
         let node = {
             location: {side: "top", parent: element.shortname},
             id: iname,
-            name: name,
+            "name": name,
             description: element.interface[iname].description,
             // view: AInterface.view3D,
             // orientation: {x: 0, y: 2, z: 0}
@@ -96,7 +96,7 @@ export function view3D(element) {
         let handler = element.handlers[hname];
         let node = {
             id: hname,
-            name: handler.name,
+            "name": handler.name,
             description: element.handlers[hname].description,
             location: {side: "right", parent: element.shortname},
             // view: AHandler.view3D,
@@ -116,7 +116,7 @@ export function view3D(element) {
         let uc = element.usecases[uname];
 
         let node = {
-            id: uname, name: uc.name,
+            id: uname, "name": uc.name,
             location: {side: "bottom", parent: element.shortname},
             description: uc.description,
             fontSize: 15,
@@ -139,7 +139,7 @@ export function view3D(element) {
     for (let cname in element.classes) {
         let cls = element.classes[cname];
         let node = {
-            id: cname, name: cls.name,
+            id: cname, "name": cls.name,
             description: cls.description,
             location: {side: "back", parent: element.shortname},
             view: Model.get3DObject,
@@ -152,7 +152,7 @@ export function view3D(element) {
         let node = {
             id: pname,
             location: {side: "left", parent: element.shortname},
-            name: selement.name,
+            "name": selement.name,
             description: selement.description,
             color: selement.color,
             view: create3D,
@@ -164,7 +164,7 @@ export function view3D(element) {
         let selement = element.depends[pname];
         let node = {
             id: pname,
-            name: selement.name,
+            "name": selement.name,
             description: selement.description,
             /*
             rbox: {
@@ -216,7 +216,7 @@ function _calculateGroupBox(items, fn) {
     };
 
     for (let aname in items) {
-        let size = fn({name: items[aname].name || aname});
+        let size = fn({"name": items[aname].name || aname});
         asize.set.push(size);
         asize.stats.w.sum += size.w;
         asize.stats.w.max = Math.max(size.w, asize.stats.w.max);

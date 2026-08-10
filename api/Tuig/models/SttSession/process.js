@@ -2,7 +2,7 @@ const AIHelper = require('ailtire/src/Server/AIHelper.js');
 const AEvent = require('ailtire/src/Server/AEvent.js');
 
 module.exports = {
-    friendlyName: 'process',
+    friendlyname: 'process',
     description: 'Process the Audio Chunk and send the text out on the websocket.',
     static: false,
     inputs: {

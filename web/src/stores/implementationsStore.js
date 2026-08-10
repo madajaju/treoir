@@ -5,7 +5,7 @@ export const images = writable({});
 export const imageNodes = derived(images, ($images) => {
     let rootNodes = [];
     for(let iname in $images) {
-        rootNodes.push({id:iname, name:iname, type:"Image"});
+        rootNodes.push({id:iname, "name":iname, type:"Image"});
     }
     return rootNodes;
 })

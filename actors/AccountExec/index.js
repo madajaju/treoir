@@ -1,5 +1,5 @@
 module.exports = {
-    name: "Account Exec", // The name of the actor role
+    "name": "Account Exec", // The name of the actor role
     shortname: 'accountexec',
     description: "The Account Executive works with customers to map their digital transformation journey, highlighting their current, next, and future states via Mapping to GEAR.",
     permissions: [
@@ -12,21 +12,21 @@ module.exports = {
     dashboard: {
         widgets: [
             {
-                name: "MappingToGEAR", // A widget to visualize and interact with the Mapping to GEAR
+                "name": "MappingToGEAR", // A widget to visualize and interact with the Mapping to GEAR
                 description: "View and customize the digital transformation map for customers.",
                 settings: {
                     defaultView: "customer_map", // Default view mode could be customer's transformation map
                 },
             },
             {
-                name: "CustomerPhaseTracker", // A widget for marking current, next, and future states
+                "name": "CustomerPhaseTracker", // A widget for marking current, next, and future states
                 description: "Identify the customer’s current state, next state, and future state for their journey.",
                 settings: {
                     showPreviousPhases: true, // Option to display previous state history
                 },
             },
             {
-                name: "RoadmapBuilder", // A widget to create customer roadmaps
+                "name": "RoadmapBuilder", // A widget to create customer roadmaps
                 description: "Create and maintain custom roadmaps for customers’ digital transformation.",
                 settings: {
                     allowMilestoneEdit: true, // Option to edit milestones in the roadmap

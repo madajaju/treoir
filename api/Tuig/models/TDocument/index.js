@@ -1,6 +1,6 @@
 class TDocument {
     static definition = {
-        name: 'TDocument',
+        "name": 'TDocument',
         description: 'The "TDocument" class in the "t" package provides methods for creating, updating, destroying, adding to, and removing from TDocuments',
         attributes: {
             id: {
@@ -46,7 +46,7 @@ class TDocument {
                 cardinality: "n",
                 composition: false,
                 owner: true,
-                name:  "nodes",
+                "name":  "nodes",
                 via: "owner"
             },
         },

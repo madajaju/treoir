@@ -3,9 +3,9 @@
 
     // Example menu structure based on roles
     const menuItems = {
-        default: [{ name: 'Home', path: '/' }, { name: 'Profile', path: '/profile' }],
-        AccountExec: [{ name: 'Dashboard', path: '/account-exec' }],
-        OtherActor: [{ name: 'Analytics', path: '/analytics' }],
+        default: [{ "name": 'Home', path: '/' }, { "name": 'Profile', path: '/profile' }],
+        AccountExec: [{ "name": 'Dashboard', path: '/account-exec' }],
+        OtherActor: [{ "name": 'Analytics', path: '/analytics' }],
     };
 
     const role = user.role || 'default';

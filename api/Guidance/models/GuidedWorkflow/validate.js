@@ -1,5 +1,5 @@
 module.exports = {
-    friendlyName: 'validate',
+    friendlyname: 'validate',
     description: 'Validate the workflow structure and integrity.',
     static: false, // Instance-based method
     inputs: {},

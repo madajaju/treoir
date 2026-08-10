@@ -83,7 +83,7 @@
 <form>
     <!-- Name -->
     <div class="form-row">
-        <label for="name">Name:</label>
+        <label for="name">"name":</label>
         <input id="name" type="text" placeholder="Enter name" bind:value={data.name} required />
     </div>
 

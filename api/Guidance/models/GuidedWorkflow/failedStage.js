@@ -1,5 +1,5 @@
 module.exports = {
-    friendlyName: 'failedStage',
+    friendlyname: 'failedStage',
     description: 'A Stage has failed.',
     static: false, // Instance-based method
     inputs: {

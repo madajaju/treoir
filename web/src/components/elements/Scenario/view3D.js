@@ -62,7 +62,7 @@ export function view3D(element, mode, parent) {
     let data = {nodes: {}, links: []};
     if (mode === "add" && parent) {
         data.nodes[element.id] = {
-            id: element.id, name: element.name,
+            id: element.id, "name": element.name,
             view: create3D,
             rbox: {
                 parent: parent.id,
@@ -72,7 +72,7 @@ export function view3D(element, mode, parent) {
         data.links.push({target: element.id, source: parent.id, width: 1, value: 40, color: "#aaffff"})
     } else {
         data.nodes[element.id] = {
-            id: element.id, name: element.name,
+            id: element.id, "name": element.name,
             view: create3D,
             fx: 0,
             fy: 0,
@@ -93,7 +93,7 @@ export function view3D(element, mode, parent) {
         }
         data.nodes[uid] = {
             id: uid,
-            name: step.action,
+            "name": step.action,
             description: description,
             view: createStep3D,
             rbox: rbox,
@@ -105,7 +105,7 @@ export function view3D(element, mode, parent) {
         if (!data.nodes.hasOwnProperty(action)) {
             data.nodes[action] = {
                 id: action,
-                name: action.replace(/\//, '\n'),
+                "name": action.replace(/\//, '\n'),
                 view: Action.get3DObject,
                 // w: 80, h: 30,
                 fontSize: 12,
@@ -122,7 +122,7 @@ export function view3D(element, mode, parent) {
             if (!data.nodes.hasOwnProperty(pkg.shortname)) {
                 data.nodes[pkg.shortname] = {
                     id: pkg.shortname,
-                    name: pkg.name,
+                    "name": pkg.name,
                     color: pkg.color,
                     // view: APackage.view3D,
                     // rbox: {
@@ -142,7 +142,7 @@ export function view3D(element, mode, parent) {
             let cls = action.cls;
             if (!data.nodes.hasOwnProperty(cls)) {
                 data.nodes[cls] = {
-                    id: cls, name: cls,
+                    id: cls, "name": cls,
                     // view: AModel.view3D,
                     // rbox: {
                     //     parent: scenario.id,

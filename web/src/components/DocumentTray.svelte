@@ -3,7 +3,7 @@
 
     export interface LoadedDocument {
         id: string;
-        name: string;
+        "name": string;
         sizeBytes?: number;
         status: DocumentStatus;
         progress?: number; // 0–100

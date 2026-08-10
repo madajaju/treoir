@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'image',
+    friendlyname: 'image',
     description: 'Serve and image generated from the export',
     static: true, // True is for Class methods. False is for object based.
     inputs: {

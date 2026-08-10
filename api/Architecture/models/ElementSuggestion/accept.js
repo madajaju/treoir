@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'accept',
+    friendlyname: 'accept',
     description: 'Accept the ElementSuggestion for the context provided.',
     static: false, // True is for Class methods. False is for object based.
     inputs: {
@@ -17,7 +17,7 @@ module.exports = {
 
         let newElement = Element.find(obj.name);
         if(!newElement) {
-            newElement = new Element({name: obj.name, description: obj.description});
+            newElement = new Element({"name": obj.name, description: obj.description});
         }
         let partner = obj.partner;
         let pObj = Partner.find(partner);

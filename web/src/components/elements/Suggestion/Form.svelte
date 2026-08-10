@@ -177,7 +177,7 @@
         <form on:submit|preventDefault={handleSave}>
             <!-- Name -->
             <div class="form-row">
-                <label for="name">Name:</label>
+                <label for="name">"name":</label>
                 <input id="name" type="text" bind:value={name} placeholder="Enter name" required/>
             </div>
 

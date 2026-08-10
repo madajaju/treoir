@@ -1,10 +1,10 @@
 
 class TDocumentNode {
     static definition = {
-        name: 'TDocumentNode',
+        "name": 'TDocumentNode',
         description: 'This is the Node of a document and represents the chunking of a document to be used by an LLM',
         attributes: {
-            name: {
+            "name": {
                 type: 'string',
                 description: 'Name of the document node'
             },
@@ -31,15 +31,15 @@ class TDocumentNode {
                 description: "Initial State"
                 events: {
                     create: {
-                        StateName: { }
+                        Statename: { }
                     }
                 }
             },
-            StateName: {
+            Statename: {
                 description: "My Description of the state",
                 events: {
-                    eventName: {
-                        StateName: {
+                    eventname: {
+                        Statename: {
                             condition: function(obj) { ... },
                             action: function(obj) { ... },
                         }

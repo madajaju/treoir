@@ -2,7 +2,7 @@ const AIHelper = require('ailtire/src/Server/AIHelper.js');
 const AEvent = require('ailtire/src/Server/AEvent.js');
 
 module.exports = {
-    friendlyName: 'end',
+    friendlyname: 'end',
     description: 'End the sttSession and return the text.',
     static: false,
     inputs: {

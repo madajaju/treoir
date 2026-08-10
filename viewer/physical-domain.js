@@ -144,7 +144,7 @@ const data = {
       }
     },
     "Locations": {
-        name: "Locations",
+        "name": "Locations",
       "description": "Locations define geographic and logical places in the system where resources are located.",
       "position": {
         "row": 3,
@@ -153,7 +153,7 @@ const data = {
       },
       "layers": {
         "Dynamic Locations": {
-            name: "Dynamic Locations",
+            "name": "Dynamic Locations",
           "description": "Dynamic Locations are movable and adaptive spaces, such as temporary work areas or mobile units.",
           "position": {
             "row": 1,
@@ -161,7 +161,7 @@ const data = {
           }
         },
         "Operations Locations": {
-            name: "Operations Locations",
+            "name": "Operations Locations",
           "description": "Locations used for managing and monitoring operational tasks in the system.",
           "position": {
             "row": 1,
@@ -169,7 +169,7 @@ const data = {
           }
         },
         "Hybrid Offices": {
-            name: "Hybrid Offices",
+            "name": "Hybrid Offices",
           "description": "Merged work and home environments supporting hybrid work practices.",
           "position": {
             "row": 1,
@@ -177,7 +177,7 @@ const data = {
           }
         },
         "Datacenters": {
-            name: "Datacenters",
+            "name": "Datacenters",
           "description": "Dedicated locations that store and manage system-critical data and applications.",
           "position": {
             "row": 1,
@@ -185,7 +185,7 @@ const data = {
           }
         },
         "Outsourced Locations": {
-            name: "Outsourced Locations",
+            "name": "Outsourced Locations",
           "description": "Third-party-managed spaces where some system operations are handled.",
           "position": {
             "row": 1,

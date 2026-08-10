@@ -6,7 +6,7 @@
 
     <!-- Display Name -->
     <div class="detail-item">
-        <label>Name:</label>
+        <label>"name":</label>
         <p>{element.name}</p>
     </div>
 

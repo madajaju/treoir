@@ -1,10 +1,10 @@
 
 class LayerRelationship {
     static definition = {
-        name: 'LayerRelationship',
+        "name": 'LayerRelationship',
         description: 'This represents a relationship between layers',
         attributes: {
-            name: {
+            "name": {
                 type: 'enum',
                 description: "Name of the layer, contains (composition)\n" +
                     "* depends_on (dependency)\n" +

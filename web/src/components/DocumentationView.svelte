@@ -11,7 +11,7 @@
     let markdownContent = writable("TBD");
     let defaultSchema = {
         attributes: {
-            name: {
+            "name": {
                 type: "string",
                 required: true,
                 description: "Name of the element"

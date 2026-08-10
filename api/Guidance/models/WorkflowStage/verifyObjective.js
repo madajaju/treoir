@@ -1,7 +1,7 @@
 const AIHelper = require('ailtire/src/Server/AIHelper');
 
 module.exports = {
-    friendlyName: 'verifyObjective',
+    friendlyname: 'verifyObjective',
     description: 'Verify that the objective has been satisfied.',
     static: false, // Instance-based method
     inputs: {},

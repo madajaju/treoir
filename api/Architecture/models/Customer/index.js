@@ -1,10 +1,10 @@
 
 class Customer {
     static definition = {
-        name: 'Customer',
+        "name": 'Customer',
         description: 'This is a customer of the system.',
         attributes: {
-            name: {
+            "name": {
                 type: 'string',
                 description: 'Name of the customer',
             },

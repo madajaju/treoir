@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'loadAll',
+    friendlyname: 'loadAll',
     description: 'Load all of the the documents from the database. This only loads the metadata. The DocumentNodes are loaded as when accessed',
     static: true,
     inputs: {

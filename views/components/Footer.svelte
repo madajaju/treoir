@@ -4,15 +4,15 @@
 
     // Optional: Social links (or other footer links)
     export let socialLinks = [
-        { name: "Facebook", url: "https://facebook.com", icon: "🌐" },
-        { name: "Twitter", url: "https://twitter.com", icon: "🐦" },
-        { name: "LinkedIn", url: "https://linkedin.com", icon: "💼" },
+        { "name": "Facebook", url: "https://facebook.com", icon: "🌐" },
+        { "name": "Twitter", url: "https://twitter.com", icon: "🐦" },
+        { "name": "LinkedIn", url: "https://linkedin.com", icon: "💼" },
     ];
 
     // Additional links (optional)
     export let footerLinks = [
-        { name: "Privacy Policy", url: "/privacy-policy" },
-        { name: "Terms of Service", url: "/terms-of-service" },
+        { "name": "Privacy Policy", url: "/privacy-policy" },
+        { "name": "Terms of Service", url: "/terms-of-service" },
     ];
 </script>
 

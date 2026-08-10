@@ -20,7 +20,7 @@ export default class GMainCustomerView extends GMainView {
         let me = this;
         let config = {
             layout: {
-                name: 'layout',
+                "name": 'layout',
                 padding: 0,
                 panels: [
                     {
@@ -30,7 +30,7 @@ export default class GMainCustomerView extends GMainView {
                         overflow: 'hidden',
                         style: 'border: 1px solid #0088ff; background-color:#4a96d3; color:white;',
                         toolbar: {
-                            name: 'main_toolbar',
+                            "name": 'main_toolbar',
                             style: `background-color: ${me.config.toolbar["background-color"]}; color: ${me.config.color};`,
                             items: [
                                 {
@@ -194,7 +194,7 @@ export default class GMainCustomerView extends GMainView {
                 ]
             },
             rightbar: {
-                name: 'rightbar',
+                "name": 'rightbar',
                 nodes: [],
                 onClick: function (event) {
                     if (event.object.id) {
@@ -204,7 +204,7 @@ export default class GMainCustomerView extends GMainView {
                 }
             },
             sidebar: {
-                name: 'sidebar',
+                "name": 'sidebar',
                 img: null,
                 nodes: [],
                 onExpand: (event) => {

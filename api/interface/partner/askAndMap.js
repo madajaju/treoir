@@ -12,7 +12,7 @@ const elementJSON = `
         }`;
 
 module.exports = {
-    friendlyName: 'askAndMap',
+    friendlyname: 'askAndMap',
     description: 'Ask AI to map elements from the partner to the elements from to the layers in the GEAR Architecture.',
     static: true, // True is for Class methods. False is for object based.
     inputs: {
@@ -57,7 +57,7 @@ module.exports = {
             partner = Partner.find({id: partner});
         }
         if(!partner) {
-            partner = new Partner({id: partner, name: partner});
+            partner = new Partner({id: partner, "name": partner});
         }
         if(documents) {
             // Then chunk the document and run the query on each of the junks.
@@ -128,18 +128,18 @@ Here are the available GEAR layers (first-layer only):
         messages.push({
             role: 'user',
             content: `Document to use to augment the user prompt: ${JSON.stringify(document)}`,
-            name: 'document'
+            "name": 'document'
         });
         messages.push({
             role: 'user',
             content: prompt,
-            name: 'prompt',
+            "name": 'prompt',
         });
     } else {
         messages.push({
             role: 'user',
             content: prompt,
-            name: 'prompt',
+            "name": 'prompt',
         });
     }
     let retval = await AIHelper.askForCode(messages);

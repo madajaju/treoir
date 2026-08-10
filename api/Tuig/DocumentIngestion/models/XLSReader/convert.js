@@ -3,7 +3,7 @@ const fs = require('fs');
 // const xlsx = require("xlsx");
 
 module.exports = {
-    friendlyName: 'convert',
+    friendlyname: 'convert',
     description: 'Convert the document into a set of DocumentNodes attached to the document specified',
     static: true,
     inputs: {
@@ -52,9 +52,9 @@ module.exports = {
             for(let j in jsonData) {
                 let node = document.addToNodes({
                     text: jsonData[j].join(','),
-                    name: `${sheetName}_${j}`,
+                    "name": `${sheetName}_${j}`,
                     metadataSeparator: '\n',
-                    metadata: {sheetName: sheetName, row: j, url: url}
+                    metadata: {sheetname: sheetName, row: j, url: url}
                 });
                 node.save();
             }

@@ -43,7 +43,7 @@
         try {
             // New file handle for creating/saving the file
             const options = {
-                suggestedName: fileName,
+                suggestedname: fileName,
                 types: [
                     {
                         description: 'JSON Files',

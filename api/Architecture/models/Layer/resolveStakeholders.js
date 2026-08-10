@@ -1,5 +1,5 @@
 module.exports = {
-    friendlyName: 'resolveStakeholders',
+    friendlyname: 'resolveStakeholders',
     description: 'Convert all of the stakeholders from ids to objects. The stakholders should be loaded before this function is called.',
     static: false, // True is for Class methods. False is for object based.
     inputs: {
@@ -15,7 +15,7 @@ module.exports = {
         for(let i in stakeholders) {
             let shID = stakeholders[i];
             if(!obj.stakeholders[shID]) {
-                let shObj = Stakeholder.find({name: shID});
+                let shObj = Stakeholder.find({"name": shID});
                 obj.addToStakeholders(shObj);
             }
         }

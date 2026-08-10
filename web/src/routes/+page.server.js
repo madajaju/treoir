@@ -13,7 +13,7 @@ export function load() {
             let destdir = path.resolve(`./static/actors/${actorDir}`);
             fs.mkdirSync(destdir, { recursive: true });
             fs.copyFileSync(`${adir}/${actorDir}/image.png`, `${destdir}/image.png`)
-            actorPanels.push({dir: actorDir, name: actor.name});
+            actorPanels.push({dir: actorDir, "name": actor.name});
         }
         return actorPanels;
     }

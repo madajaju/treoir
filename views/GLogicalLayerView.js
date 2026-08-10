@@ -10,7 +10,7 @@ export default class GLogicalLayerView {
     }
     static view3D(config) {
         let node = {
-            name: "Digital Domain",
+            "name": "Digital Domain",
             description: "Digital Domain consists of software stacks."
         }
         let shape = new THREE.BoxGeometry(GLogicalLayerView.default.width, GLogicalLayerView.default.height, GLogicalLayerView.default.depth);

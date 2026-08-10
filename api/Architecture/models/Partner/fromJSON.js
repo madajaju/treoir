@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'convert',
+    friendlyname: 'convert',
     description: 'Convert Layer file',
     static: true, // True is for Class methods. False is for object based.
     inputs: {
@@ -22,7 +22,7 @@ module.exports = {
             let partner = partners[pname];
             let partnerObj = Partner.find(pname);
             if(!partnerObj) {
-                partnerObj = new Partner({id: pname, name: pname});
+                partnerObj = new Partner({id: pname, "name": pname});
             }
             partnerObj.name = partner.name || pname;
             partnerObj.description = partner.description;
@@ -42,7 +42,7 @@ module.exports = {
             }
             for(let rname in partner.regions) {
                 let level = partner.regions[rname];
-                let regionObj = new Region({id: rname, name: rname});
+                let regionObj = new Region({id: rname, "name": rname});
                 let influence = new PartnerInfluence({level: level, partner:partnerObj, region:regionObj});
                 partnerObj.addToRegions(influence);
                 regionObj.addToPartners(influence);

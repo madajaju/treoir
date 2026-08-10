@@ -1,5 +1,5 @@
 module.exports = {
-    name: "ai.voice.end", handlers: [
+    "name": "ai.voice.end", handlers: [
         {
             description: 'Handle the starting of an audio conversation and converstion',
             fn: async (data) => {

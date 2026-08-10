@@ -1,7 +1,7 @@
 {
   "Strategic Domain": {
     "name": "Strategic Domain",
-    "description": "The Strategic Domain (see <a href=\"fig-{doc-chap-number}.1\">fig-{doc-chap-number}.1</a>) focuses on aligning an organization's direction, priorities, capabilities, and risk posture with its core mission and vision.\nIt translates leadership aspirations, community needs, and long-term goals into actionable strategies.\nThis includes elements such as strategic objectives, organizational priorities, performance indicators, and value streams, ensuring that every part of the enterprise is purpose-driven and outcome-focused.",
+    "description": "The Strategic Domain focuses on aligning an organization's direction, priorities, capabilities, and risk posture with its core mission and vision.\nIt translates leadership aspirations, community needs, and long-term goals into actionable strategies.\nThis includes elements such as strategic objectives, organizational priorities, performance indicators, and value streams, ensuring that every part of the enterprise is purpose-driven and outcome-focused.",
     "purpose": "The purpose of the Strategic Domain is to align an organization's direction, priorities, capabilities, and risk posture with its core mission and vision. It translates leadership aspirations, community needs, and long-term goals into actionable strategies, including strategic objectives, organizational priorities, performance indicators, and value streams, ensuring that every part of the enterprise is purpose-driven and focused on delivering meaningful outcomes.",
     "stakeholders": [
       "Advocacy and interest groups",
@@ -19,7 +19,7 @@
       "col": 1,
       "colspan": 2
     },
-    "color": "#003366",
+    "color": "#00667f",
     "relationships": [
       {
         "name": "influences",
@@ -1037,7 +1037,7 @@
         "description": "Physical infrastructure enables process automation and operations."
       }
     ],
-    "color": "#708090",
+    "color": "#c3c2c2",
     "assets": {
       "GEAR1": {
         "name": "GEAR Architecture document",
@@ -1227,18 +1227,6 @@
       "row": 3,
       "col": 2
     },
-    "relationships": [
-      {
-        "name": "depends_on",
-        "to": "Physical Domain",
-        "description": "Digital platforms depend on underlying physical infrastructure."
-      },
-      {
-        "name": "enables",
-        "to": "Organizational Domain",
-        "description": "Technology ecosystems enable organizational collaboration and service delivery."
-      }
-    ],
     "assets": {
       "GEAR4": {
         "name": "GEAR Architecture document",
@@ -1252,7 +1240,8 @@
       }
     },
     "layers": {
-      "Application": {
+      "Application Layer": {
+        "name": "Application Layer",
         "description": "Handles user-facing applications, ensuring interaction between system and users.",
         "position": {
           "row": 1,
@@ -1260,35 +1249,291 @@
           "colspan": 2
         },
         "layers": {
-          "Analytics Services": {
+          "Experience & Channels": {
+            "name": "Experience & Channels",
+            "description": "Delivers user-facing interfaces and consistent multi-channel experiences.",
             "position": {
               "row": 1,
               "col": 1
+            },
+            "layers": {
+              "Digital Channel Applications": {
+                "name": "Digital Channel Applications",
+                "description": "Web, mobile, desktop, and kiosk applications for service delivery.",
+                "position": {
+                  "row": 1,
+                  "col": 1
+                }
+              },
+              "Experience Delivery & Personalization": {
+                "name": "Experience Delivery & Personalization",
+                "description": "Ensures consistent UX, accessibility, and personalization across channels.",
+                "position": {
+                  "row": 2,
+                  "col": 1
+                }
+              }
             }
           },
-          "AI ML Services": {
+          "Business & Domain Applications": {
+            "name": "Business & Domain Applications",
+            "description": "Provides mission and line-of-business capabilities through domain applications.",
             "position": {
               "row": 1,
               "col": 2
+            },
+            "layers": {
+              "Line-of-Business Applications": {
+                "name": "Line-of-Business Applications",
+                "description": "Domain-specific systems that execute core missions and programs.",
+                "position": {
+                  "row": 1,
+                  "col": 1
+                }
+              },
+              "Case & Program Management": {
+                "name": "Case & Program Management",
+                "description": "Manages eligibility, cases, and end-to-end program delivery.",
+                "position": {
+                  "row": 1,
+                  "col": 2
+                }
+              },
+              "Enterprise Resource Applications": {
+                "name": "Enterprise Resource Applications",
+                "description": "Finance, HR, and procurement systems for internal operations.",
+                "position": {
+                  "row": 2,
+                  "col": 1
+                }
+              },
+              "Constituent Engagement Applications": {
+                "name": "Constituent Engagement Applications",
+                "description": "CRM and engagement platforms for outreach and service interactions.",
+                "position": {
+                  "row": 2,
+                  "col": 2
+                }
+              },
+              "User Services Composition": {
+                "name": "User Services Composition",
+                "description": "How application services are composed and packaged for users.",
+                "position": {
+                  "row": 3,
+                  "col": 1,
+                  "colspan": 2
+                },
+                "layers": {
+                  "Application (AI Model)": {
+                    "name": "Application (AI Model)",
+                    "description": "Applications centered on an AI model as the primary capability.",
+                    "position": {
+                      "row": 1,
+                      "col": 1
+                    }
+                  },
+                  "Application (Complex Service)": {
+                    "name": "Application (Complex Service)",
+                    "description": "Applications composed from a complex service aggregation.",
+                    "position": {
+                      "row": 1,
+                      "col": 2
+                    }
+                  },
+                  "Complex Service": {
+                    "name": "Complex Service",
+                    "description": "Services composed of multiple simple services.",
+                    "position": {
+                      "row": 2,
+                      "col": 1,
+                      "colspan": 2
+                    }
+                  }
+                }
+              }
             }
           },
-          "Workflow Services": {
+          "Workflow & Automation": {
+            "name": "Workflow & Automation",
+            "description": "Coordinates process execution and automation across services.",
             "position": {
               "row": 1,
               "col": 3
+            },
+            "layers": {
+              "Application/Workflow Layer Workloads": {
+                "name": "Application/Workflow Layer Workloads",
+                "description": "Workload types that feed automation and orchestration engines.",
+                "position": {
+                  "row": 1,
+                  "col": 1
+                },
+                "layers": {
+                  "Event-driven Workloads": {
+                    "name": "Event-driven Workloads",
+                    "description": "Automation triggered by events and streaming signals.",
+                    "position": {
+                      "row": 1,
+                      "col": 1
+                    }
+                  },
+                  "Procedural Workloads": {
+                    "name": "Procedural Workloads",
+                    "description": "Step-based processes driving automation flows.",
+                    "position": {
+                      "row": 1,
+                      "col": 2
+                    }
+                  },
+                  "GUI/UI Driven Workloads": {
+                    "name": "GUI/UI Driven Workloads",
+                    "description": "UI-driven tasks feeding robotic process automation.",
+                    "position": {
+                      "row": 2,
+                      "col": 1,
+                      "colspan": 2
+                    }
+                  }
+                }
+              },
+              "Workflow Services": {
+                "name": "Workflow Services",
+                "description": "Orchestrates workflows across applications and APIs.",
+                "position": {
+                  "row": 1,
+                  "col": 2
+                },
+                "layers": {
+                  "Service/Application Definitions": {
+                    "name": "Service/Application Definitions",
+                    "description": "Contracts and dependencies used by workflows.",
+                    "position": {
+                      "row": 1,
+                      "col": 1
+                    }
+                  },
+                  "Workflow Orchestrator": {
+                    "name": "Workflow Orchestrator",
+                    "description": "Coordinates execution, routing, and error handling.",
+                    "position": {
+                      "row": 2,
+                      "col": 1
+                    }
+                  }
+                }
+              }
             }
           },
-          "Developer Services": {
+          "Data, Analytics & AI": {
+            "name": "Data, Analytics & AI",
+            "description": "Enables analytics and intelligent automation for decisions.",
             "position": {
               "row": 2,
-              "col": 1,
-              "colspan": 3
+              "col": 1
+            },
+            "layers": {
+              "Analytics Services": {
+                "name": "Analytics Services",
+                "description": "Reporting and analytics capabilities for decision support.",
+                "position": {
+                  "row": 1,
+                  "col": 1
+                }
+              },
+              "AI/ML Services": {
+                "name": "AI/ML Services",
+                "description": "Machine learning services that augment workflows.",
+                "position": {
+                  "row": 1,
+                  "col": 2
+                }
+              }
+            }
+          },
+          "Integration & API Services": {
+            "name": "Integration & API Services",
+            "description": "Defines API products, contracts, and developer access.",
+            "position": {
+              "row": 2,
+              "col": 2
+            },
+            "layers": {
+              "API Product Management": {
+                "name": "API Product Management",
+                "description": "Defines API products, lifecycle, and versioning.",
+                "position": {
+                  "row": 1,
+                  "col": 1
+                }
+              },
+              "Developer Portal & Documentation": {
+                "name": "Developer Portal & Documentation",
+                "description": "Onboarding, reference materials, and usage guidance.",
+                "position": {
+                  "row": 2,
+                  "col": 1
+                }
+              },
+              "SDKs & Client Libraries": {
+                "name": "SDKs & Client Libraries",
+                "description": "Reusable client libraries for supported platforms.",
+                "position": {
+                  "row": 3,
+                  "col": 1
+                }
+              }
+            }
+          },
+          "Engineering & Platform Enablement": {
+            "name": "Engineering & Platform Enablement",
+            "description": "Provides tooling, CI/CD, and environments for delivery.",
+            "position": {
+              "row": 2,
+              "col": 3
+            },
+            "layers": {
+              "Developer Services": {
+                "name": "Developer Services",
+                "description": "Tooling and standards that accelerate delivery.",
+                "position": {
+                  "row": 1,
+                  "col": 1
+                },
+                "layers": {
+                  "Automation Frameworks": {
+                    "name": "Automation Frameworks",
+                    "description": "Test, build, and deployment automation tooling.",
+                    "position": {
+                      "row": 1,
+                      "col": 1
+                    }
+                  },
+                  "CICD Pipeline": {
+                    "name": "CICD Pipeline",
+                    "description": "Continuous integration and delivery stages.",
+                    "position": {
+                      "row": 1,
+                      "col": 2
+                    }
+                  },
+                  "Environments": {
+                    "name": "Environments",
+                    "description": "Standardized dev, test, staging, and prod runtimes.",
+                    "position": {
+                      "row": 2,
+                      "col": 1,
+                      "colspan": 2
+                    }
+                  }
+                }
+              }
             }
           }
         }
       },
-      "Distributed Information Management": {
+      "Distributed Information Management Layer": {
         "description": "Oversees the efficient distribution and access of system data across modules.",
+        "name": "Distributed Information Management Layer",
         "position": {
           "row": 2,
           "col": 2,
@@ -1296,19 +1541,22 @@
         },
         "layers": {
           "Data Definition Framework": {
+            "name": "Data Definition Framework",
             "position": {
               "row": 1,
               "col": 1,
               "rowspan": 2
             }
           },
-          "Data Management": {
+          "Data Management Layer": {
+            "name": "Data Management Layer",
             "position": {
               "row": 1,
               "col": 2
             }
           },
           "Common Data Services": {
+            "name": "Common Data Services",
             "position": {
               "row": 2,
               "col": 2
@@ -1316,7 +1564,8 @@
           }
         }
       },
-      "Service Management": {
+      "Service Management Layer": {
+        "name": "Service Management Layer",
         "description": "Monitors and controls services for smooth operation and functionality.",
         "position": {
           "row": 2,
@@ -1324,24 +1573,28 @@
         },
         "layers": {
           "Service Repository": {
+            "name": "Service Repository",
             "position": {
               "row": 2,
               "col": 1
             }
           },
           "Environment Manager": {
+            "name": "Environment Manager",
             "position": {
               "row": 1,
               "col": 2
             }
           },
           "Service Orchestration": {
+            "name": "Service Orchestration",
             "position": {
               "row": 1,
               "col": 3
             }
           },
           "Common Data Services": {
+            "name": "Common Data Services",
             "position": {
               "row": 2,
               "col": 2,
@@ -1352,6 +1605,7 @@
       },
       "Software Defined Infrastructure": {
         "description": "Focuses on abstract control over underlying hardware through software.",
+        "name": "Software Defined Infrastructure",
         "position": {
           "row": 3,
           "col": 2,
@@ -1359,6 +1613,7 @@
         },
         "layers": {
           "Orchestration": {
+            "name": "Orchestration",
             "position": {
               "row": 1,
               "col": 1,
@@ -1366,6 +1621,7 @@
             }
           },
           "Compute": {
+            "name": "Compute",
             "position": {
               "row": 2,
               "col": 1,
@@ -1373,6 +1629,7 @@
             }
           },
           "Storage": {
+            "name": "Storage",
             "position": {
               "row": 2,
               "col": 2,
@@ -1380,6 +1637,7 @@
             }
           },
           "Network": {
+            "name": "Network",
             "position": {
               "row": 2,
               "col": 3,
@@ -1387,6 +1645,7 @@
             }
           },
           "Accelerators": {
+            "name": "Accelerators",
             "position": {
               "row": 2,
               "col": 4,
@@ -1394,6 +1653,7 @@
             }
           },
           "Security": {
+            "name": "Security",
             "position": {
               "row": 2,
               "col": 5,
@@ -1403,6 +1663,7 @@
         }
       },
       "Physical Layer": {
+        "name": "Physical Layer",
         "description": "Acts as the logical representation of the lower physical layer.",
         "position": {
           "row": 4,
@@ -1411,12 +1672,14 @@
         },
         "layers": {
           "Edge Devices": {
+            "name": "Edge Devices",
             "position": {
               "row": 1,
               "col": 1
             }
           },
           "OT Devices": {
+            "name": "OT Devices",
             "position": {
               "row": 1,
               "col": 2,
@@ -1424,6 +1687,7 @@
             }
           },
           "Mobile Devices": {
+            "name": "Mobile Devices",
             "position": {
               "row": 1,
               "col": 3,
@@ -1431,6 +1695,7 @@
             }
           },
           "Labtops and Desktops": {
+            "name": "Labtops and Desktops",
             "position": {
               "row": 1,
               "col": 4,
@@ -1438,6 +1703,7 @@
             }
           },
           "Datacenter Devices": {
+            "name": "Datacenter Devices",
             "position": {
               "row": 2,
               "col": 1,
@@ -1445,6 +1711,7 @@
             }
           },
           "Private Cloud": {
+            "name": "Private Cloud",
             "position": {
               "row": 2,
               "col": 2,
@@ -1452,6 +1719,7 @@
             }
           },
           "Public Cloud": {
+            "name": "Public Cloud",
             "position": {
               "row": 2,
               "col": 3,
@@ -1462,6 +1730,7 @@
       },
       "Identity Aspect": {
         "description": "Manages all identity-related elements like authentication and user properties.",
+        "name": "Identity Aspect",
         "position": {
           "row": 1,
           "col": 1,
@@ -1469,24 +1738,28 @@
         },
         "layers": {
           "Access": {
+            "name": "Access",
             "position": {
               "row": 1,
               "col": 1
             }
           },
           "Authorization": {
+            "name": "Authorization",
             "position": {
               "row": 2,
               "col": 1
             }
           },
           "Authentication": {
+            "name": "Authentication",
             "position": {
               "row": 3,
               "col": 1
             }
           },
           "Key Management": {
+            "name": "Key Management",
             "position": {
               "row": 4,
               "col": 1
@@ -1511,6 +1784,7 @@
         },
         "layers": {
           "Architecture & Trust Foundations": {
+            "name": "Architecture & Trust Foundations",
             "description": "Establishes principles of security by design and zero-trust architecture, defining core building blocks like product assurance, secure boot, attestation, and trusted execution environments.",
             "position": {
               "row": 4,
@@ -1519,6 +1793,7 @@
             },
             "layers": {
               "Product Security Assurance & Secure Supply Chain": {
+                "name": "Product Security Assurance & Secure Supply Chain",
                 "description": "Ensures hardware and firmware integrity through proactive issue remediation and secure supply chain practices.",
                 "position": {
                   "row": 1,
@@ -1526,6 +1801,7 @@
                 }
               },
               "Zero Trust Architecture": {
+                "name": "Zero Trust Architecture",
                 "description": "Assumes all computing operates in a hostile environment, enforcing strict identity-based authentication and authorization.",
                 "position": {
                   "row": 2,
@@ -1533,6 +1809,7 @@
                 }
               },
               "Root of Trust": {
+                "name": "Root of Trust",
                 "description": "Incorporates hardware-based security technologies to establish a foundation of trust within the execution environment.",
                 "position": {
                   "row": 3,
@@ -1540,6 +1817,7 @@
                 }
               },
               "Secure Boot & Attestation": {
+                "name": "Secure Boot & Attestation",
                 "description": "Ensures systems start and operate only with verified and authorized code, preventing execution of malicious or tampered code.",
                 "position": {
                   "row": 4,
@@ -1548,6 +1826,7 @@
               }
             },
             "Trusted Execution Environments (TEE) / Confidential Computing": {
+              "name": "Trusted Execution Environments (TEE) / Confidential Computing",
               "description": "Protects data in use in shared environments, ensuring only authorized users have access and preventing tampering, viewing, or theft.",
               "position": {
                 "row": 5,
@@ -1556,6 +1835,7 @@
             }
           },
           "Infrastructure & Host Security": {
+            "name": "Infrastructure & Host Security",
             "description": "Enforces hardening and protective measures across servers, containers, and edge devices, including runtime protections, host-based firewalls, and endpoint detection and response.",
             "position": {
               "row": 2,
@@ -1563,6 +1843,7 @@
             },
             "layers": {
               "System Hardening": {
+                "name": "System Hardening",
                 "description": "Reduces the attack surface by configuring and securing software components to minimize vulnerabilities.",
                 "position": {
                   "row": 1,
@@ -1570,6 +1851,7 @@
                 }
               },
               "Runtime Protection": {
+                "name": "Runtime Protection",
                 "description": "Maintains secure execution environments for applications, containers, and virtual machines during runtime.",
                 "position": {
                   "row": 2,
@@ -1577,6 +1859,7 @@
                 }
               },
               "Host-based Firewalls & EDR": {
+                "name": "Host-based Firewalls & EDR",
                 "description": "Safeguards individual systems and endpoints by filtering network traffic and detecting potential threats.",
                 "position": {
                   "row": 3,
@@ -1584,6 +1867,7 @@
                 }
               },
               "Edge Security": {
+                "name": "Edge Security",
                 "description": "Ensures devices and systems operating at the network's edge are protected against physical and cyber threats.",
                 "position": {
                   "row": 4,
@@ -1593,6 +1877,7 @@
             }
           },
           "Network & Communications Security": {
+            "name": "Network & Communications Security",
             "description": "Protects the confidentiality and integrity of data in motion, leveraging technologies like microsegmentation, SDN-based controls, and pervasive encryption.",
             "position": {
               "row": 3,
@@ -1601,6 +1886,7 @@
             },
             "layers": {
               "East-West & North-South Encryption": {
+                "name": "East-West & North-South Encryption",
                 "description": "Secures traffic entering, exiting, and moving laterally within a network to maintain data confidentiality and integrity.",
                 "position": {
                   "row": 1,
@@ -1608,6 +1894,7 @@
                 }
               },
               "Microsegmentation": {
+                "name": "Microsegmentation",
                 "description": "Divides networks into granular, isolated segments with tailored security policies to prevent lateral movement of threats.",
                 "position": {
                   "row": 2,
@@ -1615,6 +1902,7 @@
                 }
               },
               "SDN Security": {
+                "name": "SDN Security",
                 "description": "Applies dynamic security policies and monitors traffic flows in real time using a centralized controller.",
                 "position": {
                   "row": 3,
@@ -1622,6 +1910,7 @@
                 }
               },
               "DDoS Protection": {
+                "name": "DDoS Protection",
                 "description": "Protects against large-scale attacks that aim to overwhelm network resources and disrupt service availability.",
                 "position": {
                   "row": 4,
@@ -1631,6 +1920,7 @@
             }
           },
           "Data & Application Security": {
+            "name": "Data & Application Security",
             "description": "Embeds security into the application lifecycle and data handling practices, including encryption across all data states, robust secrets management, and secure development practices.",
             "position": {
               "row": 2,
@@ -1638,6 +1928,7 @@
             },
             "layers": {
               "Encryption": {
+                "name": "Encryption",
                 "description": "Protects data in storage and on the network using strong encryption algorithms.",
                 "position": {
                   "row": 1,
@@ -1645,6 +1936,7 @@
                 }
               },
               "Secure Software Supply Chain": {
+                "name": "Secure Software Supply Chain",
                 "description": "Ensures the integrity and trustworthiness of all components within the software stack.",
                 "position": {
                   "row": 2,
@@ -1652,6 +1944,7 @@
                 }
               },
               "DevSecOps & CI/CD Security": {
+                "name": "DevSecOps & CI/CD Security",
                 "description": "Integrates security into the CI/CD pipeline, ensuring secure coding practices and automated vulnerability scanning.",
                 "position": {
                   "row": 3,
@@ -1661,6 +1954,7 @@
             }
           },
           "Threat Detection & Response": {
+            "name": "Threat Detection & Response",
             "description": "Provides real-time monitoring and analysis of system behavior to combat evolving threats, including tools like EDR/XDR, user and entity behavior analytics, and deception technologies.",
             "position": {
               "row": 2,
@@ -1669,6 +1963,7 @@
             },
             "layers": {
               "EDR/XDR": {
+                "name": "EDR/XDR",
                 "description": "Monitors endpoints for suspicious behavior and aggregates data across multiple domains for centralized threat correlation.",
                 "position": {
                   "row": 1,
@@ -1676,6 +1971,7 @@
                 }
               },
               "Threat Intelligence & Analytics": {
+                "name": "Threat Intelligence & Analytics",
                 "description": "Integrates real-time threat intelligence feeds and machine learning-based analytics to detect anomalies and emerging threats.",
                 "position": {
                   "row": 2,
@@ -1683,6 +1979,7 @@
                 }
               },
               "UEBA & Insider Threat Detection": {
+                "name": "UEBA & Insider Threat Detection",
                 "description": "Profiles users and entities to detect deviations from established behavior and uncover insider threats.",
                 "position": {
                   "row": 3,
@@ -1690,6 +1987,7 @@
                 }
               },
               "Deception Technologies": {
+                "name": "Deception Technologies",
                 "description": "Uses deception tools to lure adversaries into controlled traps, triggering immediate investigation or automated containment.",
                 "position": {
                   "row": 4,
@@ -1699,6 +1997,7 @@
             }
           },
           "Resilience, Remediation & Compliance": {
+            "name": "Resilience, Remediation & Compliance",
             "description": "Ensures systems can recover from compromise while meeting regulatory and operational mandates, covering automated recovery playbooks, audit logging, security chaos engineering, and SBOMs.",
             "position": {
               "row": 1,
@@ -1707,6 +2006,7 @@
             },
             "layers": {
               "Remediation & Recovery Playbooks": {
+                "name": "Remediation & Recovery Playbooks",
                 "description": "Predefined, tested incident response and recovery playbooks embedded into orchestration layers.",
                 "position": {
                   "row": 1,
@@ -1714,6 +2014,7 @@
                 }
               },
               "Security Chaos Engineering": {
+                "name": "Security Chaos Engineering",
                 "description": "Deliberately injects faults, attacks, or misconfigurations into systems to test their resilience.",
                 "position": {
                   "row": 2,
@@ -1721,6 +2022,7 @@
                 }
               },
               "Audit Logging & Compliance": {
+                "name": "Audit Logging & Compliance",
                 "description": "Captures security-relevant events across the stack, ensuring integrity for forensic analysis, compliance audits, and incident reviews.",
                 "position": {
                   "row": 3,
@@ -1728,6 +2030,7 @@
                 }
               },
               "Supply Chain Security & SBOM": {
+                "name": "Supply Chain Security & SBOM",
                 "description": "Generates and maintains a complete and traceable Software Bill of Materials for every build artifact.",
                 "position": {
                   "row": 4,
@@ -1744,7 +2047,7 @@
     "name": "Process Domain",
     "description": "Processes of the system including supporting, strategic and operational processes.",
     "orientation": "back",
-    "color": "#ff6f00",
+    "color": "#e59034",
     "position": {
       "row": 2,
       "col": 2
@@ -2056,7 +2359,7 @@
     "name": "Organizational Domain",
     "description": "People centric organizational structure of the system.",
     "orientation": "left",
-    "color": "#228B22",
+    "color": "#007c66",
     "position": {
       "row": 2,
       "col": 1

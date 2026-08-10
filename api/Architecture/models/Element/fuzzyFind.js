@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'fuzzyFind',
+    friendlyname: 'fuzzyFind',
     description: 'Find a set of elements that contain the given string',
     static: true, // True is for Class methods. False is for object based.
     inputs: {

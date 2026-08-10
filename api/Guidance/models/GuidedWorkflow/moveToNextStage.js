@@ -1,5 +1,5 @@
 module.exports = {
-    friendlyName: 'moveToNextStage',
+    friendlyname: 'moveToNextStage',
     description: 'Move the workflow to the next stage.',
     static: false, // Instance-based method
     inputs: {},

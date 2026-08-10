@@ -29,7 +29,7 @@ export const packageNodes = derived(packages, ($packages) => {
             idMap[cname] = {
                 ...pkg.classes[cname],
                 id: cname,
-                name: cname,
+                "name": cname,
                 type: "Class",
                 link: `/api/${cname}/list`,
                 expandLink: `/api/model/get?id=${cname}`,
@@ -59,7 +59,7 @@ export const modelNodes = derived(models, ($models) => {
             id: cname,
             expandLink: `/api/model/get?id=${cname}`,
             link: `/api/${cname}/list`,
-            name: cname,
+            "name": cname,
             type: "Class",
             _view: Model
         };

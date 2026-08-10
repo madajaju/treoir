@@ -1,5 +1,5 @@
 module.exports = {
-    friendlyName: 'convertJSON',
+    friendlyname: 'convertJSON',
     description: 'Convert to Descriptive JSON that has the definition of the Class in _type. Used for the UI',
     static: false, // True is for Class methods. False is for object based.
     inputs: {

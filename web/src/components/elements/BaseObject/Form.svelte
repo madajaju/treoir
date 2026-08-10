@@ -4,7 +4,7 @@
 
 <div class="form">
     <h3>Actor: {element.id}</h3>
-    <label>Name:</label>
+    <label>"name":</label>
     <input type="text" bind:value={element.name} />
 
     <label>Description:</label>

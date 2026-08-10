@@ -1,7 +1,7 @@
 const AClass = require('ailtire/src/Server/AClass');
 
 module.exports = {
-    friendlyName: 'convertJSON',
+    friendlyname: 'convertJSON',
     description: 'Convert Suggestion JSON',
     static: true, // True is for Class methods. False is for object based.
     inputs: {
@@ -24,7 +24,7 @@ module.exports = {
         if (!suggObj) {
             let clsName = sugg.type;
             let cls = AClass.getClass(clsName);
-            suggObj = new cls({id: eid, name: sugg.name});
+            suggObj = new cls({id: eid, "name": sugg.name});
         }
         for(let aname in sugg) {
             if(suggObj.definition.associations.hasOwnProperty(aname)) {

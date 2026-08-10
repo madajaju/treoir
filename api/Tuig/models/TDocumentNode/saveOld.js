@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'save',
+    friendlyname: 'save',
     description: 'Save the TDocument to json',
     static: false,
     inputs: {},

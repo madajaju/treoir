@@ -10,11 +10,11 @@ function buildCustomerOverlayIndex(customer) {
     // Result shape:
     // [
     //   {
-    //     name: phase.name,
+    //     "name": phase.name,
     //     phase,
     //     layers: {
     //       [layerPath]: {
-    //         name: layerPath,
+    //         "name": layerPath,
     //         count,
     //         elements: [engagements...],
     //         phase,
@@ -34,7 +34,7 @@ function buildCustomerOverlayIndex(customer) {
         const phaseKey = phase.name || 'phase';
         if (!phasesIndex[phaseKey]) {
             phasesIndex[phaseKey] = {
-                name: phaseKey,
+                "name": phaseKey,
                 phase,
                 customer,
                 layers: {}
@@ -59,7 +59,7 @@ function buildCustomerOverlayIndex(customer) {
 
                     if (!phaseEntry.layers[layerName]) {
                         phaseEntry.layers[layerName] = {
-                            name: layerName,
+                            "name": layerName,
                             count: 0,
                             elements: [],
                             phase,
@@ -191,7 +191,7 @@ export function applyCustomerOverlay(svgEl, customer, callback) {
             if (!aggregated[aggKey]) {
                 aggregated[aggKey] = {
                     cell,
-                    name: resolvedLayerName,
+                    "name": resolvedLayerName,
                     phase: phaseEntry.phase,
                     customer: phaseEntry.customer,
                     count: 0,

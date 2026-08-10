@@ -1,10 +1,10 @@
 
 class Region {
     static definition = {
-        name: 'Region',
+        "name": 'Region',
         description: 'Region that partner operates',
         attributes: {
-            name: {
+            "name": {
                 type: 'string',
                 description: 'The Name of the region',
             }

@@ -19,7 +19,7 @@
     // Recursive helper to render layers with sublayers
     function renderLayers(layerList) {
         return layerList.map(layer => ({
-            name: layer.name,
+            "name": layer.name,
             description: layer.description,
             color: layer.color,
             layers: layer.layers || [], // Make sure sublayers exist

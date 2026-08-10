@@ -1,5 +1,5 @@
 module.exports = {
-    friendlyName: 'reset',
+    friendlyname: 'reset',
     description: 'Reset the workflow to its initial state.',
     static: false, // Instance-based method
     inputs: {},

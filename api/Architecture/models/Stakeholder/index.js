@@ -1,11 +1,11 @@
 
 class Stakeholder {
     static definition = {
-        name: 'Stakeholder',
+        "name": 'Stakeholder',
         description: 'This is a Stakeholder of the system.',
         unique: (obj) => { return obj.name;},
         attributes: {
-            name: {
+            "name": {
                 type: 'string',
                 description: 'Name of the Stakeholder',
             },

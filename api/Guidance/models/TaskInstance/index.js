@@ -1,9 +1,9 @@
 class TaskInstance {
     static definition = {
-        name: 'TaskInstance',
+        "name": 'TaskInstance',
         description: 'Represents a specific instance of a task generated during workflow execution.',
         attributes: {
-            name: {
+            "name": {
                 type: 'string',
                 description: 'Name of the task instance.',
             },

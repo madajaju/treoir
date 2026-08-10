@@ -1,6 +1,6 @@
 module.exports = {
     shortname: 'guide',
-    name: 'Guidance',
+    "name": 'Guidance',
     description: 'WorkflowEngine is a package that contains...',
     color: 'lightblue'
 };

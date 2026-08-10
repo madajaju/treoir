@@ -1,7 +1,7 @@
 
 class ElementSuggestion {
     static definition = {
-        name: 'ElementSuggestion',
+        "name": 'ElementSuggestion',
         description: 'Suggestion made from the AI to create and element.',
         extends: 'Suggestion',
         attributes: {

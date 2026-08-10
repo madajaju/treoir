@@ -8,7 +8,7 @@
             const engagementsCount = prompt("Enter the number of engagements for the supplier:", "0");
             const key = crypto.randomUUID(); // Generate a unique ID for new suppliers
             data.suppliers[key] = {
-                name: supplierName,
+                "name": supplierName,
                 description: supplierDescription || "",
                 engagements: parseInt(engagementsCount) || 0
             };
@@ -101,7 +101,7 @@
 <form>
     <!-- Name -->
     <div class="form-row">
-        <label for="name">Name:</label>
+        <label for="name">"name":</label>
         <input id="name" type="text" placeholder="Enter name" bind:value={data.name} required />
     </div>
 

@@ -87,7 +87,7 @@
                     graphObj?.setData(data.nodes, data.links);
                 } else {
                     let data = {nodes: {}, links: []};
-                    data.nodes[node.id] = {id: node.id, name: node.name, color: node.color};
+                    data.nodes[node.id] = {id: node.id, "name": node.name, color: node.color};
                     data.links.push({source: node.id, target: node.id});
                     graphObj?.setData(data.nodes, data.links);
                 }
@@ -137,7 +137,7 @@
                     graphObj?.setData(data.nodes, data.links);
                 } else {
                     let data = {nodes: {}, links: []};
-                    data.nodes[node.id] = {id: node.id, name: node.name, color: node.color};
+                    data.nodes[node.id] = {id: node.id, "name": node.name, color: node.color};
                     data.links.push({source: node.id, target: node.id});
                     graphObj?.setData(data.nodes, data.links);
                 }
@@ -151,7 +151,9 @@
             }
             graph2D = 'Generating the diagram';
             let graph2DDiv = document.getElementById(`preview2d${id}`);
-            defaultView.selectLayer(graph2DDiv, selectNode, drillDown);
+//            defaultView.selectLayer(graph2DDiv, selectNode, drillDown);
+              defaultView.selectLayer(graph2DDiv, node);
+
         }
     }
 
@@ -177,7 +179,7 @@
                     graphObj?.setData(data.nodes, data.links);
                 } else {
                     let data = {nodes: {}, links: []};
-                    data.nodes[node.id] = {id: node.id, name: node.name, color: node.color};
+                    data.nodes[node.id] = {id: node.id, "name": node.name, color: node.color};
                     data.links.push({source: node.id, target: node.id});
                     graphObj?.setData(data.nodes, data.links);
                 }
@@ -227,7 +229,7 @@
         let id = [];
         for (let i in myLayers) {
             id.push(myLayers[i]);
-            chain.push({name: myLayers[i], id: id.join('-')});
+            chain.push({"name": myLayers[i], id: id.join('-')});
         }
         const breadcrumbEl = document.getElementById('breadcrumb');
 
@@ -259,13 +261,13 @@
             btn.addEventListener('click', () => {
                 // rootLayer = layers
                 //buildBreadcrumb(layers);
-                selectedNode.set({id: "GEAR", name: "GEAR", _children: Object.values($layerNodes)})
+                selectedNode.set({id: "GEAR", "name": "GEAR", _children: Object.values($layerNodes)})
                 selectedValue.set(null);
-                selectNode({id: "GEAR", name: "GEAR", _children: Object.values($layerNodes)});
+                selectNode({id: "GEAR", "name": "GEAR", _children: Object.values($layerNodes)});
                 updateGraphData($selectedNode, depth);
             });
             breadcrumbEl.prepend(btn, Object.assign(document.createElement('span'), {
-                className: 'sep',
+                classname: 'sep',
                 textContent: '›'
             }));
         }

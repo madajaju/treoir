@@ -45,7 +45,7 @@
                 [
                     { el: createCustomButton("Save", saveText),
                         command: 'save',
-                        className: "toasetui-editor-custom-clear",
+                        classname: "toasetui-editor-custom-clear",
                         tooltip: "Save Changes"
                     },
 
@@ -59,12 +59,12 @@
                 [{
                     el: createAIButton(),
                     command: 'ai',
-                    className: "toastui-editor-custom-clear", // for styling
+                    classname: "toastui-editor-custom-clear", // for styling
                     tooltip: "GenAI Documentation ",
                 }],
                 [
                     { el: createCustomButton("Close", closeEditor), command: 'close',
-                        className: "toastui-editor-custom-clear", // for styling
+                        classname: "toastui-editor-custom-clear", // for styling
                         tooltip: "Close Editor" },
                 ]
             ],

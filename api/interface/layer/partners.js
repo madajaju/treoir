@@ -2,7 +2,7 @@ const fs = require('fs');
 const {description} = require("./list");
 
 module.exports = {
-    friendlyName: 'partners',
+    friendlyname: 'partners',
     description: 'Partners for the layer specified',
     static: true, // True is for Class methods. False is for object based.
     inputs: {
@@ -35,7 +35,7 @@ module.exports = {
                         if (!retval.hasOwnProperty(partner.name)) {
                             retval[partner.name] = {
                                 elements: {},
-                                name: partner.name,
+                                "name": partner.name,
                                 description: partner.description,
                                 color: partner.color
                             };

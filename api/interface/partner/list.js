@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'show',
+    friendlyname: 'show',
     description: 'Description of the method',
     static: true, // True is for Class methods. False is for object based.
     inputs: {

@@ -1,5 +1,5 @@
 module.exports = {
-    friendlyName: 'wait',
+    friendlyname: 'wait',
     description: 'Transition the task from InProgress to Waiting.',
     static: false, // This is an object-based method
     inputs: {},

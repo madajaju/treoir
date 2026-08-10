@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'export',
+    friendlyname: 'export',
     description: 'Export the customer file',
     static: true, // True is for Class methods. False is for object based.
     inputs: {
@@ -26,7 +26,7 @@ module.exports = {
         let retObj = {
         };
         retObj[partner.name] = {
-            name: partner.name,
+            "name": partner.name,
             color: partner.color,
             description: partner.description,
             elements: {},
@@ -34,7 +34,7 @@ module.exports = {
         for(let ename in partner.elements) {
             let element = partner.elements[ename];
             retObj[partner.name].elements[ename] = {
-                name: element.name,
+                "name": element.name,
                 color: element.color,
                 description: element.description,
                 layers: [],

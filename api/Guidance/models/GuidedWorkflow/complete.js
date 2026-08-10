@@ -1,5 +1,5 @@
 module.exports = {
-    friendlyName: 'complete',
+    friendlyname: 'complete',
     description: 'Mark the workflow as completed.',
     static: false, // Instance-based method
     inputs: {},

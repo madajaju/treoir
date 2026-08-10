@@ -24,7 +24,7 @@ const data = {
   },
   "layers": {
     "Application Layer": {
-        name: "Application Layer",
+        "name": "Application Layer",
       "description": "Handles user-facing applications, ensuring interaction between system and users.",
       "position": {
         "row": 1,
@@ -33,28 +33,28 @@ const data = {
       },
       "layers": {
         "Analytics Services": {
-            name: "Analytics Services",
+            "name": "Analytics Services",
           "position": {
             "row": 1,
             "col": 1
           }
         },
         "AI ML Services": {
-            name: "AI ML Services",
+            "name": "AI ML Services",
           "position": {
             "row": 1,
             "col": 2
           }
         },
         "Workflow Services": {
-            name: "Workflow Services",
+            "name": "Workflow Services",
           "position": {
             "row": 1,
             "col": 3
           }
         },
         "Developer Services": {
-            name: "Developer Services",
+            "name": "Developer Services",
           "position": {
             "row": 2,
             "col": 1,
@@ -65,7 +65,7 @@ const data = {
     },
     "Distributed Information Management Layer": {
       "description": "Oversees the efficient distribution and access of system data across modules.",
-        name: "Distributed Information Management Layer",
+        "name": "Distributed Information Management Layer",
       "position": {
         "row": 2,
         "col": 2,
@@ -73,7 +73,7 @@ const data = {
       },
       "layers": {
         "Data Definition Framework": {
-            name: "Data Definition Framework",
+            "name": "Data Definition Framework",
           "position": {
             "row": 1,
             "col": 1,
@@ -81,14 +81,14 @@ const data = {
           }
         },
         "Data Management Layer": {
-            name: "Data Management Layer",
+            "name": "Data Management Layer",
           "position": {
             "row": 1,
             "col": 2
           }
         },
         "Common Data Services": {
-            name: "Common Data Services",
+            "name": "Common Data Services",
           "position": {
             "row": 2,
             "col": 2
@@ -97,7 +97,7 @@ const data = {
       }
     },
     "Service Management Layer": {
-        name: "Service Management Layer",
+        "name": "Service Management Layer",
       "description": "Monitors and controls services for smooth operation and functionality.",
       "position": {
         "row": 2,
@@ -105,28 +105,28 @@ const data = {
       },
       "layers": {
         "Service Repository": {
-            name: "Service Repository",
+            "name": "Service Repository",
           "position": {
             "row": 2,
             "col": 1
           }
         },
         "Environment Manager": {
-            name: "Environment Manager",
+            "name": "Environment Manager",
           "position": {
             "row": 1,
             "col": 2
           }
         },
         "Service Orchestration": {
-            name: "Service Orchestration",
+            "name": "Service Orchestration",
           "position": {
             "row": 1,
             "col": 3
           }
         },
         "Common Data Services": {
-            name: "Common Data Services",
+            "name": "Common Data Services",
           "position": {
             "row": 2,
             "col": 2,
@@ -137,7 +137,7 @@ const data = {
     },
     "Software Defined Infrastructure": {
       "description": "Focuses on abstract control over underlying hardware through software.",
-        name: "Software Defined Infrastructure",
+        "name": "Software Defined Infrastructure",
       "position": {
         "row": 3,
         "col": 2,
@@ -145,7 +145,7 @@ const data = {
       },
       "layers": {
         "Orchestration": {
-            name: "Orchestration",
+            "name": "Orchestration",
           "position": {
             "row": 1,
             "col": 1,
@@ -153,7 +153,7 @@ const data = {
           }
         },
         "Compute": {
-            name: "Compute",
+            "name": "Compute",
           "position": {
             "row": 2,
             "col": 1,
@@ -161,7 +161,7 @@ const data = {
           }
         },
         "Storage": {
-            name: "Storage",
+            "name": "Storage",
           "position": {
             "row": 2,
             "col": 2,
@@ -169,7 +169,7 @@ const data = {
           }
         },
         "Network": {
-            name: "Network",
+            "name": "Network",
           "position": {
             "row": 2,
             "col": 3,
@@ -177,7 +177,7 @@ const data = {
           }
         },
         "Accelerators": {
-            name: "Accelerators",
+            "name": "Accelerators",
           "position": {
             "row": 2,
             "col": 4,
@@ -185,7 +185,7 @@ const data = {
           }
         },
         "Security": {
-            name: "Security",
+            "name": "Security",
           "position": {
             "row": 2,
             "col": 5,
@@ -195,7 +195,7 @@ const data = {
       }
     },
     "Physical Layer": {
-        name: "Physical Layer",
+        "name": "Physical Layer",
       "description": "Acts as the logical representation of the lower physical layer.",
       "position": {
         "row": 4,
@@ -204,14 +204,14 @@ const data = {
       },
       "layers": {
         "Edge Devices": {
-            name: "Edge Devices",
+            "name": "Edge Devices",
           "position": {
             "row": 1,
             "col": 1
           }
         },
         "OT Devices": {
-            name: "OT Devices",
+            "name": "OT Devices",
           "position": {
             "row": 1,
             "col": 2,
@@ -219,7 +219,7 @@ const data = {
           }
         },
         "Mobile Devices": {
-            name: "Mobile Devices",
+            "name": "Mobile Devices",
           "position": {
             "row": 1,
             "col": 3,
@@ -227,7 +227,7 @@ const data = {
           }
         },
         "Labtops and Desktops": {
-            name: "Labtops and Desktops",
+            "name": "Labtops and Desktops",
           "position": {
             "row": 1,
             "col": 4,
@@ -235,7 +235,7 @@ const data = {
           }
         },
         "Datacenter Devices": {
-            name: "Datacenter Devices",
+            "name": "Datacenter Devices",
           "position": {
             "row": 2,
             "col": 1,
@@ -243,7 +243,7 @@ const data = {
           }
         },
         "Private Cloud": {
-            name: "Private Cloud",
+            "name": "Private Cloud",
           "position": {
             "row": 2,
             "col": 2,
@@ -251,7 +251,7 @@ const data = {
           }
         },
         "Public Cloud": {
-            name: "Public Cloud",
+            "name": "Public Cloud",
           "position": {
             "row": 2,
             "col": 3,
@@ -262,7 +262,7 @@ const data = {
     },
     "Identity Aspect": {
       "description": "Manages all identity-related elements like authentication and user properties.",
-        name: "Identity Aspect",
+        "name": "Identity Aspect",
       "position": {
         "row": 1,
         "col": 1,
@@ -270,28 +270,28 @@ const data = {
       },
       "layers": {
         "Access": {
-            name: "Access",
+            "name": "Access",
           "position": {
             "row": 1,
             "col": 1
           }
         },
         "Authorization": {
-            name: "Authorization",
+            "name": "Authorization",
           "position": {
             "row": 2,
             "col": 1
           }
         },
         "Authentication": {
-            name: "Authentication",
+            "name": "Authentication",
           "position": {
             "row": 3,
             "col": 1
           }
         },
         "Key Management": {
-            name: "Key Management",
+            "name": "Key Management",
           "position": {
             "row": 4,
             "col": 1
@@ -316,7 +316,7 @@ const data = {
       },
       "layers": {
         "Architecture & Trust Foundations": {
-            name: "Architecture & Trust Foundations",
+            "name": "Architecture & Trust Foundations",
           "description": "Establishes principles of security by design and zero-trust architecture, defining core building blocks like product assurance, secure boot, attestation, and trusted execution environments.",
           "position": {
             "row": 4,
@@ -325,7 +325,7 @@ const data = {
           },
           "layers": {
             "Product Security Assurance & Secure Supply Chain": {
-                name: "Product Security Assurance & Secure Supply Chain",
+                "name": "Product Security Assurance & Secure Supply Chain",
               "description": "Ensures hardware and firmware integrity through proactive issue remediation and secure supply chain practices.",
               "position": {
                 "row": 1,
@@ -333,7 +333,7 @@ const data = {
               }
             },
             "Zero Trust Architecture": {
-                name: "Zero Trust Architecture",
+                "name": "Zero Trust Architecture",
               "description": "Assumes all computing operates in a hostile environment, enforcing strict identity-based authentication and authorization.",
               "position": {
                 "row": 2,
@@ -341,7 +341,7 @@ const data = {
               }
             },
             "Root of Trust": {
-                name: "Root of Trust",
+                "name": "Root of Trust",
               "description": "Incorporates hardware-based security technologies to establish a foundation of trust within the execution environment.",
               "position": {
                 "row": 3,
@@ -349,7 +349,7 @@ const data = {
               }
             },
             "Secure Boot & Attestation": {
-                name: "Secure Boot & Attestation",
+                "name": "Secure Boot & Attestation",
               "description": "Ensures systems start and operate only with verified and authorized code, preventing execution of malicious or tampered code.",
               "position": {
                 "row": 4,
@@ -358,7 +358,7 @@ const data = {
             }
           },
           "Trusted Execution Environments (TEE) / Confidential Computing": {
-                name: "Trusted Execution Environments (TEE) / Confidential Computing",
+                "name": "Trusted Execution Environments (TEE) / Confidential Computing",
             "description": "Protects data in use in shared environments, ensuring only authorized users have access and preventing tampering, viewing, or theft.",
             "position": {
               "row": 5,
@@ -367,7 +367,7 @@ const data = {
           }
         },
         "Infrastructure & Host Security": {
-            name: "Infrastructure & Host Security",
+            "name": "Infrastructure & Host Security",
           "description": "Enforces hardening and protective measures across servers, containers, and edge devices, including runtime protections, host-based firewalls, and endpoint detection and response.",
           "position": {
             "row": 2,
@@ -375,7 +375,7 @@ const data = {
           },
           "layers": {
             "System Hardening": {
-                name: "System Hardening",
+                "name": "System Hardening",
               "description": "Reduces the attack surface by configuring and securing software components to minimize vulnerabilities.",
               "position": {
                 "row": 1,
@@ -383,7 +383,7 @@ const data = {
               }
             },
             "Runtime Protection": {
-                name: "Runtime Protection",
+                "name": "Runtime Protection",
               "description": "Maintains secure execution environments for applications, containers, and virtual machines during runtime.",
               "position": {
                 "row": 2,
@@ -391,7 +391,7 @@ const data = {
               }
             },
             "Host-based Firewalls & EDR": {
-                name: "Host-based Firewalls & EDR",
+                "name": "Host-based Firewalls & EDR",
               "description": "Safeguards individual systems and endpoints by filtering network traffic and detecting potential threats.",
               "position": {
                 "row": 3,
@@ -399,7 +399,7 @@ const data = {
               }
             },
             "Edge Security": {
-                name: "Edge Security",
+                "name": "Edge Security",
               "description": "Ensures devices and systems operating at the network's edge are protected against physical and cyber threats.",
               "position": {
                 "row": 4,
@@ -409,7 +409,7 @@ const data = {
           }
         },
         "Network & Communications Security": {
-            name: "Network & Communications Security",
+            "name": "Network & Communications Security",
           "description": "Protects the confidentiality and integrity of data in motion, leveraging technologies like microsegmentation, SDN-based controls, and pervasive encryption.",
           "position": {
             "row": 3,
@@ -418,7 +418,7 @@ const data = {
           },
           "layers": {
             "East-West & North-South Encryption": {
-                name: "East-West & North-South Encryption",
+                "name": "East-West & North-South Encryption",
               "description": "Secures traffic entering, exiting, and moving laterally within a network to maintain data confidentiality and integrity.",
               "position": {
                 "row": 1,
@@ -426,7 +426,7 @@ const data = {
               }
             },
             "Microsegmentation": {
-                name: "Microsegmentation",
+                "name": "Microsegmentation",
               "description": "Divides networks into granular, isolated segments with tailored security policies to prevent lateral movement of threats.",
               "position": {
                 "row": 2,
@@ -434,7 +434,7 @@ const data = {
               }
             },
             "SDN Security": {
-                name: "SDN Security",
+                "name": "SDN Security",
               "description": "Applies dynamic security policies and monitors traffic flows in real time using a centralized controller.",
               "position": {
                 "row": 3,
@@ -442,7 +442,7 @@ const data = {
               }
             },
             "DDoS Protection": {
-                name: "DDoS Protection",
+                "name": "DDoS Protection",
               "description": "Protects against large-scale attacks that aim to overwhelm network resources and disrupt service availability.",
               "position": {
                 "row": 4,
@@ -452,7 +452,7 @@ const data = {
           }
         },
         "Data & Application Security": {
-            name: "Data & Application Security",
+            "name": "Data & Application Security",
           "description": "Embeds security into the application lifecycle and data handling practices, including encryption across all data states, robust secrets management, and secure development practices.",
           "position": {
             "row": 2,
@@ -460,7 +460,7 @@ const data = {
           },
           "layers": {
             "Encryption": {
-                name: "Encryption",
+                "name": "Encryption",
               "description": "Protects data in storage and on the network using strong encryption algorithms.",
               "position": {
                 "row": 1,
@@ -468,7 +468,7 @@ const data = {
               }
             },
             "Secure Software Supply Chain": {
-                name: "Secure Software Supply Chain",
+                "name": "Secure Software Supply Chain",
               "description": "Ensures the integrity and trustworthiness of all components within the software stack.",
               "position": {
                 "row": 2,
@@ -476,7 +476,7 @@ const data = {
               }
             },
             "DevSecOps & CI/CD Security": {
-                name: "DevSecOps & CI/CD Security",
+                "name": "DevSecOps & CI/CD Security",
               "description": "Integrates security into the CI/CD pipeline, ensuring secure coding practices and automated vulnerability scanning.",
               "position": {
                 "row": 3,
@@ -486,7 +486,7 @@ const data = {
           }
         },
         "Threat Detection & Response": {
-            name: "Threat Detection & Response",
+            "name": "Threat Detection & Response",
           "description": "Provides real-time monitoring and analysis of system behavior to combat evolving threats, including tools like EDR/XDR, user and entity behavior analytics, and deception technologies.",
           "position": {
             "row": 2,
@@ -495,7 +495,7 @@ const data = {
           },
           "layers": {
             "EDR/XDR": {
-                name: "EDR/XDR",
+                "name": "EDR/XDR",
               "description": "Monitors endpoints for suspicious behavior and aggregates data across multiple domains for centralized threat correlation.",
               "position": {
                 "row": 1,
@@ -503,7 +503,7 @@ const data = {
               }
             },
             "Threat Intelligence & Analytics": {
-                name: "Threat Intelligence & Analytics",
+                "name": "Threat Intelligence & Analytics",
               "description": "Integrates real-time threat intelligence feeds and machine learning-based analytics to detect anomalies and emerging threats.",
               "position": {
                 "row": 2,
@@ -511,7 +511,7 @@ const data = {
               }
             },
             "UEBA & Insider Threat Detection": {
-                name: "UEBA & Insider Threat Detection",
+                "name": "UEBA & Insider Threat Detection",
               "description": "Profiles users and entities to detect deviations from established behavior and uncover insider threats.",
               "position": {
                 "row": 3,
@@ -519,7 +519,7 @@ const data = {
               }
             },
             "Deception Technologies": {
-                name: "Deception Technologies",
+                "name": "Deception Technologies",
               "description": "Uses deception tools to lure adversaries into controlled traps, triggering immediate investigation or automated containment.",
               "position": {
                 "row": 4,
@@ -529,7 +529,7 @@ const data = {
           }
         },
         "Resilience, Remediation & Compliance": {
-            name: "Resilience, Remediation & Compliance",
+            "name": "Resilience, Remediation & Compliance",
           "description": "Ensures systems can recover from compromise while meeting regulatory and operational mandates, covering automated recovery playbooks, audit logging, security chaos engineering, and SBOMs.",
           "position": {
             "row": 1,
@@ -538,7 +538,7 @@ const data = {
           },
           "layers": {
             "Remediation & Recovery Playbooks": {
-                name: "Remediation & Recovery Playbooks",
+                "name": "Remediation & Recovery Playbooks",
               "description": "Predefined, tested incident response and recovery playbooks embedded into orchestration layers.",
               "position": {
                 "row": 1,
@@ -546,7 +546,7 @@ const data = {
               }
             },
             "Security Chaos Engineering": {
-                name: "Security Chaos Engineering",
+                "name": "Security Chaos Engineering",
               "description": "Deliberately injects faults, attacks, or misconfigurations into systems to test their resilience.",
               "position": {
                 "row": 2,
@@ -554,7 +554,7 @@ const data = {
               }
             },
             "Audit Logging & Compliance": {
-                name: "Audit Logging & Compliance",
+                "name": "Audit Logging & Compliance",
               "description": "Captures security-relevant events across the stack, ensuring integrity for forensic analysis, compliance audits, and incident reviews.",
               "position": {
                 "row": 3,
@@ -562,7 +562,7 @@ const data = {
               }
             },
             "Supply Chain Security & SBOM": {
-                name: "Supply Chain Security & SBOM",
+                "name": "Supply Chain Security & SBOM",
               "description": "Generates and maintains a complete and traceable Software Bill of Materials for every build artifact.",
               "position": {
                 "row": 4,

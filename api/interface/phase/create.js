@@ -1,9 +1,9 @@
 module.exports = {
-    friendlyName: 'create',
+    friendlyname: 'create',
     description: 'Create a new customer',
     static: true, // True is for Class methods. False is for object based.
     inputs: {
-        name: {
+        "name": {
             description: 'Name of the Phase',
             type: 'string',
             required: true
@@ -45,7 +45,7 @@ module.exports = {
             customer = new Customer.find(customer);
         }
         let details = {
-            name: inputs.name,
+            "name": inputs.name,
             description: inputs.description || "TBD",
             color: inputs.color || "#4400ff",
             targetDate: inputs.targetDate || new Date(),

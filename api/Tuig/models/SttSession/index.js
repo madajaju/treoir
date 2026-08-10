@@ -1,6 +1,6 @@
 class SttSession {
     static definition = {
-        name: 'SttSession',
+        "name": 'SttSession',
         description: 'The "SttSession" handles the voice recognition and transcription of audio files. for the AI voice assistant.',
         attributes: {
             id: {
@@ -18,7 +18,7 @@ class SttSession {
                 cardinality: "n",
                 composition: false,
                 owner: true,
-                name:  "nodes",
+                "name":  "nodes",
                 via: "owner"
             },
         },

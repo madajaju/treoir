@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'accept',
+    friendlyname: 'accept',
     description: 'Accept the ElementSuggestion for the context provided.',
     static: false, // True is for Class methods. False is for object based.
     inputs: {
@@ -31,7 +31,7 @@ module.exports = {
         }
         if(!myPhase) {
 
-            myPhase =  new Phase({name: "Current", color: "#44ffff", order: 0, targetDate: new Date(), details: "Current Phase"})
+            myPhase =  new Phase({"name": "Current", color: "#44ffff", order: 0, targetDate: new Date(), details: "Current Phase"})
             customer.addToPhases(myPhase);
         }
         // Now check for the supplier
@@ -60,7 +60,7 @@ module.exports = {
             if(mySelfSupplier) {
                 mySupplier = mySelfSupplier;
             } else {
-                mySupplier = myPhase.addToSuppliers({name: "Self"});
+                mySupplier = myPhase.addToSuppliers({"name": "Self"});
             }
         }
 
@@ -74,7 +74,7 @@ module.exports = {
         }
         let layer = Layer.find(obj.layer);
         if(!obj.element) {
-            obj.element = new Element({name: obj.name, description: obj.description});
+            obj.element = new Element({"name": obj.name, description: obj.description});
             obj.element.addToLayers(layer);
             if(mySupplier.partner) {
                 obj.element.addToPartners(mySupplier.partner);
@@ -82,7 +82,7 @@ module.exports = {
             }
         }
         if(!newEngagement) {
-            newEngagement = mySupplier.addToEngagements({name: obj.name, description: obj.description, element: obj.element});
+            newEngagement = mySupplier.addToEngagements({"name": obj.name, description: obj.description, element: obj.element});
         }
         newEngagement.addToLayers(layer);
         obj.artifact = newEngagement;

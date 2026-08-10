@@ -1,10 +1,10 @@
 
 class Suggestion {
     static definition = {
-        name: 'Suggestion',
+        "name": 'Suggestion',
         description: 'A Suggestion is a Suggestion to create something in the system from the AI.',
         attributes: {
-           name: {
+           "name": {
                 type: 'string',
                 description: 'Name of the suggestion.',
             },

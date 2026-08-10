@@ -1,7 +1,7 @@
 
 class WordReader {
     static definition = {
-        name: 'WordReader',
+        "name": 'WordReader',
         extends: 'DocumentReader',
         description: 'Word Document Reader to convert a word document into a set of document Nodes.',
         attributes: {

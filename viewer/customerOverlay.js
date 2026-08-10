@@ -12,7 +12,7 @@ export function buildPhaseTheme(data) {
     const phases = data?.phases || {};
     const names = Object.keys(phases);
     const decorated = names.map(n => ({
-        name: n,
+        "name": n,
         order: phases[n]?.order ?? Infinity
     }));
     decorated.sort((a, b) => (a.order - b.order) || a.name.localeCompare(b.name));
@@ -47,7 +47,7 @@ export function buildOverlayIndex(data, opts = {}) {
                     if (!bucket[pname]) bucket[pname] = {count: 0, engagements: []};
                     bucket[pname].count++;
                     bucket[pname].engagements.push({
-                        supplier: sup.name, name: eng.name, description: eng.description
+                        supplier: sup.name, "name": eng.name, description: eng.description
                     });
                 }
             }
@@ -133,7 +133,7 @@ export function addPinsForNode(svgEl, group, phases) {
         }
         const cx = xCur + pinW / 2, cy = y + 14 + row * rowH;
         const color = phaseTheme.styles[name].stroke;
-        const pin = drawPin(svgEl, group, {phaseName: name, color, cx, cy, count: cnt});
+        const pin = drawPin(svgEl, group, {phasename: name, color, cx, cy, count: cnt});
         // tooltip
         const title = document.createElementNS(svgEl.namespaceURI, 'title');
         const lines = [`${name}: ${cnt} engagement${cnt > 1 ? 's' : ''}`];

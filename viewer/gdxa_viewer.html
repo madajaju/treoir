@@ -593,10 +593,10 @@
             return Object.keys(layers).map(k => {
                 const v = layers[k] || {};
                 if (typeof v === 'object') {
-                    return {name: v.name || k, ...v};
+                    return {"name": v.name || k, ...v};
                 }
                 // primitive fallback
-                return {name: k, value: v};
+                return {"name": k, value: v};
             });
         }
 
@@ -638,7 +638,7 @@
         const names = Object.keys(phasesObj);
 
         // Sort by explicit "order" if present, otherwise by name
-        const decorated = names.map(n => ({name: n, order: phasesObj[n]?.order ?? Number.POSITIVE_INFINITY}));
+        const decorated = names.map(n => ({"name": n, order: phasesObj[n]?.order ?? Number.POSITIVE_INFINITY}));
         decorated.sort((a, b) => (a.order - b.order) || a.name.localeCompare(b.name));
         const order = decorated.map(d => d.name);
 
@@ -694,7 +694,7 @@
                         bucket[phaseKey].count += 1;
                         bucket[phaseKey].engagements.push({
                             supplier: sup.name || "",
-                            name: eng.name || "",
+                            "name": eng.name || "",
                             element: eng.element || "",
                             description: eng.description || ""
                         });
@@ -966,7 +966,7 @@
                 buildBreadcrumb(window.gdxa);
             });
             breadcrumbEl.prepend(btn, Object.assign(document.createElement('span'), {
-                className: 'sep',
+                classname: 'sep',
                 textContent: '›'
             }));
         }

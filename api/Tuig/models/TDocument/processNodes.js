@@ -1,5 +1,5 @@
 module.exports = {
-    friendlyName: 'processNodes',
+    friendlyname: 'processNodes',
     description: 'Processs the nodes in the document with the function defined in the inputs based on the query',
     static: false,
     inputs: {

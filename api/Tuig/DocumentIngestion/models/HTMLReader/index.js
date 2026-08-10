@@ -1,7 +1,7 @@
 
 class HTMLReader {
     static definition = {
-        name: 'HTMLReader',
+        "name": 'HTMLReader',
         extends: 'DocumentReader',
         description: 'HTMLReader converts a HTML file into a set of DocumentNodes. ',
         attributes: {

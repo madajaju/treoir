@@ -1,10 +1,10 @@
 
 class Layer {
     static definition = {
-        name: 'Layer',
+        "name": 'Layer',
         description: 'Layer of the Architecture',
         attributes: {
-            name: {
+            "name": {
                 type: 'string',
                 description: "Name of the layer",
             },

@@ -3,11 +3,11 @@ const fs = require('fs');
 
 
 module.exports = {
-    friendlyName: 'getNode',
+    friendlyname: 'getNode',
     description: 'Get Node by Name',
     static: false,
     inputs: {
-        name: {
+        "name": {
             type: 'string',
             description: "Name of the Node",
         }

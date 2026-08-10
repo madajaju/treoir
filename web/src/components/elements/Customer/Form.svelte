@@ -40,7 +40,7 @@
     }
 
     function handleAddAsset(asset) {
-        formAssetProps = {data: {name: "", description: "", url: ""} };
+        formAssetProps = {data: {"name": "", description: "", url: ""} };
         isEditingAsset = false; // Set flag to adding mode
         isAssetOpen = true; // Open the dialog
     }
@@ -58,7 +58,7 @@
     }
 
     function handleAddPhase() {
-        formProps = {data: {name: "", description: "", color: "#ffffff", targetDate: "", kpis: ""}}; // Empty data for a new phase
+        formProps = {data: {"name": "", description: "", color: "#ffffff", targetDate: "", kpis: ""}}; // Empty data for a new phase
         isEditingPhase = false; // Set flag to adding mode
         isPhaseOpen = true; // Open the dialog
     }
@@ -262,7 +262,7 @@
         <form on:submit|preventDefault={handleSave}>
             <!-- Name -->
             <div class="form-row">
-                <label for="name">Name:</label>
+                <label for="name">"name":</label>
                 <input id="name" type="text" bind:value={name} placeholder="Enter customer name" required/>
             </div>
 

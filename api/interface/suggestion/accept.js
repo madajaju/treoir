@@ -2,7 +2,7 @@ const fs = require('fs');
 const AClass = require('ailtire/src/Server/AClass');
 
 module.exports = {
-    friendlyName: 'accept',
+    friendlyname: 'accept',
     description: 'Accept the suggestion by adding it to the context',
     static: true, // True is for Class methods. False is for object based.
     inputs: {

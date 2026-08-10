@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'convert',
+    friendlyname: 'convert',
     description: 'Convert the document into a set of DocumentNodes attached to the document specified',
     static: true,
     inputs: {
@@ -47,7 +47,7 @@ module.exports = {
         let lines = fileText.split("\n");
         document.save();
         for(let i in lines) {
-            let node = document.addToNodes({text: lines[i],name: `row_${i}`, metadataSeparator: '\n', metadata: {row: i,url: url}});
+            let node = document.addToNodes({text: lines[i],"name": `row_${i}`, metadataSeparator: '\n', metadata: {row: i,url: url}});
             node.save();
         }
         document.save();

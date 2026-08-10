@@ -1,7 +1,7 @@
 const fs = require('fs');
 const AIHelper = require('ailtire/src/Server/AIHelper.js');
 module.exports = {
-    friendlyName: 'generate',
+    friendlyname: 'generate',
     description: 'Ask AI to Generate documentation for the customer from the user prompt.',
     static: true, // True is for Class methods. False is for object based.
     inputs: {
@@ -95,7 +95,7 @@ async function _mapElements(prompt, customer) {
         let result = results[i];
         let suppliers = await Supplier.fuzzyFind({query:result.suppliers});
         if(suppliers.length === 0) {
-            let supplier = new Supplier({name: result.suppliers});
+            let supplier = new Supplier({"name": result.suppliers});
             suppliers.push(supplier);
         }
         let elements = await Element.fuzzyFind({query: result.name, suppliers: suppliers});
@@ -109,7 +109,7 @@ async function _mapElements(prompt, customer) {
                 let layer = Layer.find({id: layers[i]});
                 if(layer) {
                     let sugg = new EngagementSuggestion({
-                        name: result.name,
+                        "name": result.name,
                         description: result.description,
                         layer: layers[i],
                         supplier: suppliers[0]
@@ -125,7 +125,7 @@ async function _mapElements(prompt, customer) {
                 for (let k in element.layers) {
                     let layer = element.layers[k];
                     let sugg = new EngagementSuggestion({
-                        name: result.name,
+                        "name": result.name,
                         description: result.description,
                         element: element,
                         layer: layer.name,

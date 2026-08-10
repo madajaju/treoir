@@ -1,10 +1,10 @@
 
 class Supplier {
     static definition = {
-        name: 'Supplier',
+        "name": 'Supplier',
         description: 'This represents a supplier of a product or service. It should map to one of the partners in the GEAR. If not then the supplier is the customer themselves',
         attributes: {
-            name: {
+            "name": {
                 type: 'string',
                 description: 'The name of the supplier, e.g., Intel.'
             },

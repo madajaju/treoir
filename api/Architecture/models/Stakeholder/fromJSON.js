@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'fromJSON',
+    friendlyname: 'fromJSON',
     description: 'Convert fromJSON to Ailtire Objecct',
     static: true, // True is for Class methods. False is for object based.
     inputs: {
@@ -24,7 +24,7 @@ module.exports = {
             let stakeholder = inputs.stakeholders[i];
             let stakeholderObj = Stakeholder.find(stakeholder.name);
             if (!stakeholderObj) {
-                stakeholderObj = new Stakeholder({id: stakeholder.name, name: stakeholder.name, description: stakeholder.description});
+                stakeholderObj = new Stakeholder({id: stakeholder.name, "name": stakeholder.name, description: stakeholder.description});
             }
             stakeholderObj.save();
             retval.push(stakeholderObj);

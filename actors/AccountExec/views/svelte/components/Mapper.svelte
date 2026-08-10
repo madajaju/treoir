@@ -40,7 +40,7 @@
         try {
             // New file handle for creating/saving the file
             const options = {
-                suggestedName: fileName,
+                suggestedname: fileName,
                 types: [
                     {
                         description: 'JSON Files',
@@ -166,7 +166,7 @@
 
     }
     function buildAskURL() {
-       return `/api/customer/askAndMap?${$currentCustomer.id}`;
+       return `/api/customer/askAndMap?customer=${$currentCustomer.id}`;
     }
 </script>
 

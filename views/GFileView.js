@@ -29,10 +29,10 @@ export default class GFileView {
     static newFileForm() {
         if (!w2ui.newFileForm) {
             return {
-                name: 'newFileForm',
+                "name": 'newFileForm',
                 fields: [
                     {
-                        name: 'type',
+                        "name": 'type',
                         type: 'radio',
                         options: {
                             items: ['Customer', 'Partner', 'Architecture'] // Set radio options
@@ -44,7 +44,7 @@ export default class GFileView {
                         }
                     },
                     {
-                        name: 'name',
+                        "name": 'name',
                         type: 'text',
                         required: true,
                         html: {

@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'load',
+    friendlyname: 'load',
     description: 'Load the document from the database',
     static: true,
     inputs: {

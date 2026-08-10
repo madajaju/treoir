@@ -1,5 +1,5 @@
 module.exports = {
-    friendlyName: 'convertJSON',
+    friendlyname: 'convertJSON',
     description: 'Convert the suggestion to JSON',
     static: false, // True is for Class methods. False is for object based.
     inputs: {

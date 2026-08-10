@@ -226,7 +226,7 @@ export function buildOverlayIndex(partner) {
                         currentLevel._children[part] = {
                             _parent: currentLevel,
                             count: 0,
-                            name: currentLevel.name + '-' + part,
+                            "name": currentLevel.name + '-' + part,
                             elements: [],
                             _children: {}
                         };
@@ -234,7 +234,7 @@ export function buildOverlayIndex(partner) {
                         currentLevel._children[part] = {
                             _parent: currentLevel,
                             count: 0,
-                            name: part,
+                            "name": part,
                             elements: [],
                             _children: {}
                         };

@@ -13,7 +13,7 @@ export const gdxa = {
         'Process Domain': process_domain,
         'Organizational Domain': organizational_domain
     },
-    name: "GEAR",
+    "name": "GEAR",
     id: "GEAR"
 };
 

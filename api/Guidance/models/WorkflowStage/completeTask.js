@@ -1,5 +1,5 @@
 module.exports = {
-    friendlyName: 'completeTask',
+    friendlyname: 'completeTask',
     description: 'Initialize the stage, setting its status to initiated.',
     static: false, // Instance-based method
     inputs: {},

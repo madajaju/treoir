@@ -27,7 +27,7 @@
         const id = crypto.randomUUID();
         let doc: LoadedDocument = {
             id,
-            name: file.name,
+            "name": file.name,
             sizeBytes: file.size,
             status: 'uploading',
             progress: 0,
@@ -77,7 +77,7 @@
             // 1. Immediately show new doc in tray as "uploading"
             addDocument({
                 id,
-                name: file.name,
+                "name": file.name,
                 sizeBytes: file.size,
                 status: 'uploading',
                 progress: 0,

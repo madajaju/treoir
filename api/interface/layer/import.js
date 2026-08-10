@@ -2,7 +2,7 @@ const fs = require('fs');
 const Layer = require("express/lib/router/layer");
 
 module.exports = {
-    friendlyName: 'import',
+    friendlyname: 'import',
     description: 'Import Partner file',
     static: true, // True is for Class methods. False is for object based.
     inputs: {
@@ -30,7 +30,7 @@ module.exports = {
             let partner = partners[pname];
             let partnerObj = Partner.find(partner.name);
             if(!partnerObj) {
-                partnerObj = new Partner({name: partner.name});
+                partnerObj = new Partner({"name": partner.name});
             }
             partnerObj.description = partner.description || partnerObj.description || '';
             partnerObj.color = partner.color || partnerObj.color || '';
@@ -38,7 +38,7 @@ module.exports = {
             for(let element in partner.elements) {
                 let elementObj = Element.find(element.name);
                 if(!elementObj) {
-                    elementObj = new Element({name: element.name});
+                    elementObj = new Element({"name": element.name});
                 }
                 elementObj.description = element.description || elementObj.description || '';
                 elementObj.color = element.color || elementObj.color || '';

@@ -1,7 +1,7 @@
 
 class CSVReader {
     static definition = {
-        name: 'CSVReader',
+        "name": 'CSVReader',
         extends: 'DocumentReader',
         description: 'Comma Separated Value Reader and converter into Document Nodes.',
         attributes: {

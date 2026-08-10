@@ -3,7 +3,7 @@ const fs = require('fs');
 const marked = require('marked');
 
 module.exports = {
-    friendlyName: 'convert',
+    friendlyname: 'convert',
     description: 'Convert the document into a set of DocumentNodes attached to the document specified',
     static: true,
     inputs: {
@@ -49,7 +49,7 @@ module.exports = {
 
         for(let i in documents) {
             let doc = documents[i];
-            let node = document.addToNodes({text: doc.text,name: doc.name, metadata: doc.metadata});
+            let node = document.addToNodes({text: doc.text,"name": doc.name, metadata: doc.metadata});
             node.save();
         }
         document.save();

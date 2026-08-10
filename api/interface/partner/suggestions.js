@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 module.exports = {
-    friendlyName: 'suggestions',
+    friendlyname: 'suggestions',
     description: 'List all of the suggestions for the partner',
     static: true, // True is for Class methods. False is for object based.
     inputs: {

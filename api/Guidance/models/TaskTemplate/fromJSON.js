@@ -1,7 +1,7 @@
 const AClass = require("ailtire/src/Server/AClass");
 
 module.exports = {
-    friendlyName: 'fromJSON',
+    friendlyname: 'fromJSON',
     description: 'Create a TaskTemplate instance from a JSON object',
     static: true, // Class-based method
     inputs: {

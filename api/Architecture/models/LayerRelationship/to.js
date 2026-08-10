@@ -1,5 +1,5 @@
 module.exports = {
-    friendlyName: 'to',
+    friendlyname: 'to',
     description: 'Convert Layer file to Objects',
     static: false, // True is for Class methods. False is for object based.
     inputs: {

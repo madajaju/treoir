@@ -1,5 +1,5 @@
 module.exports = {
-    friendlyName: 'fromJSON',
+    friendlyname: 'fromJSON',
     description: 'Convert Layer file to Objects',
     static: true, // True is for Class methods. False is for object based.
     inputs: {
@@ -38,7 +38,7 @@ module.exports = {
             for(let i in layer.relationships) {
                 let rel = layer.relationships[i];
                 let relObj = new LayerRelationship( {
-                    name: rel.name,
+                    "name": rel.name,
                     description: rel.description,
                     from: layerObj,
                 });
@@ -77,7 +77,7 @@ function _processSubLayers(layerObj, layer) {
         for(let i in subLayer.relationships) {
             let rel = subLayer.relationships[i];
             let relObj = new LayerRelationship( {
-                name: rel.name,
+                "name": rel.name,
                 description: rel.description,
                 from: subLayerObj,
             });

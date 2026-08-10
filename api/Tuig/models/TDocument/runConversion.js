@@ -7,7 +7,7 @@ const xlsx = require('xlsx');
 */
 
 module.exports = {
-    friendlyName: 'runConversion',
+    friendlyname: 'runConversion',
     description: 'Convert TDocument to text',
     static: false,
     inputs: {
@@ -78,7 +78,7 @@ module.exports = {
                         const sheetName = workbook.SheetNames[i];
                         const worksheet = workbook.Sheets[sheetName];
                         const jsonData = xlsx.utils.sheet_to_json(worksheet, {header: 1});
-                        textArray.push(`{ sheetName: ${sheetName}, table: ${JSON.stringify(jsonData)} }`);
+                        textArray.push(`{ sheetname: ${sheetName}, table: ${JSON.stringify(jsonData)} }`);
                     }
                     fileText = textArray.join(',\n');
                 } catch (e) {
@@ -93,7 +93,7 @@ module.exports = {
                         const sheetName = workbook.SheetNames[i];
                         const worksheet = workbook.Sheets[sheetName];
                         const jsonData = xlsx.utils.sheet_to_json(worksheet, {header: 1});
-                        textArray.push(`{ sheetName: ${sheetName}, table: ${JSON.stringify(jsonData)} }`);
+                        textArray.push(`{ sheetname: ${sheetName}, table: ${JSON.stringify(jsonData)} }`);
                     }
                     fileText = textArray.join(',\n');
                 } catch (e) {

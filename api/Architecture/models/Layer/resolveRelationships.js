@@ -1,5 +1,5 @@
 module.exports = {
-    friendlyName: 'resolveRelationships',
+    friendlyname: 'resolveRelationships',
     description: 'Convert all of the relationships from ids to objects. The relationships should be loaded before this function is called.',
     static: false, // True is for Class methods. False is for object based.
     inputs: {
@@ -20,7 +20,7 @@ module.exports = {
                     relationship.to = layer;
                 }
                 else {
-                    let layer =  Layer.find({name: relationship._to});
+                    let layer =  Layer.find({"name": relationship._to});
                     if(layer) {
                         relationship.to = layer;
                     } else {

@@ -16,7 +16,7 @@
 
 
     let author = {
-        name: "Dr. Darren Pulsipher",
+        "name": "Dr. Darren Pulsipher",
         title: "Chief Solution Architect of Public Sector"
     };
     async function printToPDF() {

@@ -33,7 +33,7 @@ export const actorNodes = derived(actors, ($actors) => {
                 idMap[sname] = {
                     ...scenario,
                     id: sname,
-                    name: sname,
+                    "name": sname,
                     type: "Scenario",
                     _view: Scenario
                 };

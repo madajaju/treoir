@@ -2,7 +2,7 @@ const fs = require('fs');
 const Layer = require("./index");
 
 module.exports = {
-    friendlyName: 'convertDJSON',
+    friendlyname: 'convertDJSON',
     description: 'Convert the layer to Descriptive JSON',
     static: false, // True is for Class methods. False is for object based.
     inputs: {
@@ -33,7 +33,7 @@ module.exports = {
         for(let i in obj.relationships) {
             if(obj.relationships[i].to) {
                 retval.relationships.push({
-                    name: obj.relationships[i].name,
+                    "name": obj.relationships[i].name,
                     description: obj.relationships[i].description,
                     from: obj.id,
                     to: obj.relationships[i].to.id
@@ -69,7 +69,7 @@ function _processSubLayers(currentDepth, targetDepth, retval, layer) {
         for(let i in subLayer.relationships) {
             if(subLayer.relationships[i].to) {
                 tempLayer.relationships.push({
-                    name: subLayer.relationships[i].name,
+                    "name": subLayer.relationships[i].name,
                     description: subLayer.relationships[i].description,
                     from: subLayer.id,
                     to: subLayer.relationships[i].to.id

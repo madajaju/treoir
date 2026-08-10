@@ -149,7 +149,7 @@ export function create3DDefault(graphObj, level) {
     graphObj.add(rootGroup);
     layerNodes.subscribe((layers) => {
         let topLayer = {
-            name: "GEAR",
+            "name": "GEAR",
             id: "GEAR",
             _object3D: rootGroup,
             layers: Object.values(layers),

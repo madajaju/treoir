@@ -25,7 +25,7 @@ export function create2D(graph2DDiv, element, selectNodeCallback = null, drillDo
             nodesById.set(layer.id, layer);
             return {
                 id: layer.id,
-                name: layer.name,
+                "name": layer.name,
                 description: layer.description || "",
                 color: layer.color || '#4a90e2'
             };
@@ -39,7 +39,7 @@ export function create2D(graph2DDiv, element, selectNodeCallback = null, drillDo
                         d3Links.push({
                             source: rel.from,
                             target: rel.to,
-                            name: rel.name,
+                            "name": rel.name,
                             description: rel.description || "",
                             from: rel.from,
                             to: rel.to
@@ -255,7 +255,7 @@ export function create2D(graph2DDiv, element, selectNodeCallback = null, drillDo
                     .html(`<strong>Relationship:</strong><br/>
                         From: <em>${d.from}</em><br/>
                         To: <em>${d.to}</em><br/>
-                        Name: <strong>${d.name}</strong><br/>
+                        "name": <strong>${d.name}</strong><br/>
                         Description: ${d.description || 'No description'}`);
             })
             .on("mousemove", (event) => {

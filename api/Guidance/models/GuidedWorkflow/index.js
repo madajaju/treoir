@@ -1,9 +1,9 @@
 class GuidedWorkflow {
     static definition = {
-        name: 'GuidedWorkflow',
+        "name": 'GuidedWorkflow',
         description: 'A sequence of tasks to guide a solution architect through a GEAR mapping session.',
         attributes: {
-            name: {
+            "name": {
                 type: 'string',
                 description: 'Name of the workflow or engagement.',
             },
